@@ -1,0 +1,85 @@
+html, body, app-root, #root {
+  background: #0a0a0a !important;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  overflow-x: hidden;
+}
+// Global styles for the portfolio app
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+// =============================
+// NAVIGATION BAR (TOP)
+// =============================
+.main-navbar {
+  width: 100vw;
+  height: 72px;
+  background: rgba(24, 24, 27, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px 0 32px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin-right: 32px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  color: #d1d5db;
+  font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+  font-weight: 600;
+  font-size: 1.13rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Make 'Get CV' nav item teal blue font only */
+.navbar-links li:last-child {
+  color: #00d9ff;
+  font-weight: 700;
+}
+
+.navbar-links li:hover {
+  color: #00d9ff;
+}
+
+.navbar-links li::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00d9ff;
+  transition: width 0.3s ease;
+}
+
+.navbar-links li:hover::after {
+  width: 100%;
+}

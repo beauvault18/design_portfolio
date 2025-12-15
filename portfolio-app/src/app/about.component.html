@@ -1,0 +1,134 @@
+<main class="about-root">
+	<!-- SECTION 1: HERO ABOUT INTRO -->
+	<section class="about-hero">
+		<div class="about-hero__content">
+			<div class="about-hero__text">
+				<h1 class="about-hero__headline">
+					I'm all about crafting stunning products that don't just look good they actually make people's lives easier and better
+				</h1>
+			</div>
+			<div class="about-hero__image">
+				<img [src]="mainImage" alt="Portrait of Beau" />
+			</div>
+								<!-- SECTION: AUTO-SCROLL CAROUSEL -->
+								<div class="carousel-wrapper">
+									<div class="carousel-track">
+										<ng-container *ngFor="let img of carouselImages.concat(carouselImages)">
+											<img [src]="img" alt="About photo carousel" />
+										</ng-container>
+									</div>
+									<div class="fade fade-left"></div>
+									<div class="fade fade-right"></div>
+								</div>
+		</div>
+	</section>
+
+	<!-- SECTION 2: QUICK STATS STRIP -->
+	<section class="about-stats">
+		<div class="about-stats__row">
+			<div class="about-stats__item">
+				<span class="about-stats__label">Design</span>
+				<span class="about-stats__value">3 years</span>
+			</div>
+			<div class="about-stats__item">
+				<span class="about-stats__label">Events / Production</span>
+				<span class="about-stats__value">7 years</span>
+			</div>
+			<div class="about-stats__item">
+				<span class="about-stats__label">Location</span>
+				<span class="about-stats__value">New York City, USA</span>
+			</div>
+			<div class="about-stats__item">
+				<span class="about-stats__label">Freelance</span>
+				<span class="about-stats__value">Available</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- SECTION 3: WORK EXPERIENCE & SYSTEMS ARCHITECTURE -->
+	<section class="about-experience">
+		<h2 class="about-experience__title">Work Experience &amp; Systems Architecture</h2>
+		<div class="about-experience__table">
+			<div class="about-experience__header">YEAR</div>
+			<div class="about-experience__header">ROLE &amp; LOCATION</div>
+			<div class="about-experience__header">DESCRIPTION</div>
+
+			<!-- Row 1 -->
+			<div class="about-experience__year">2025 – Present</div>
+			<div class="about-experience__role">
+				Vcarecompanion / DigitalBulletStudio<br />
+				<span class="about-experience__role-sub">Internship UX/UI Designer / Animator</span>
+			</div>
+			<div class="about-experience__desc">
+				Designed interactive AI-driven presentations (converting complex data into clear, user-friendly visual stories). Built front-end UI for an AI assistant app using Unity/VSC, optimized for recycled hardware. Created character animations and scalable demo systems.
+			</div>
+
+			<!-- Row 2 -->
+			<div class="about-experience__year">2024 – 2025</div>
+			<div class="about-experience__role">
+				Kula Sport Center<br />
+				<span class="about-experience__role-sub">Head Digital Curriculum Designer (Remote)</span>
+			</div>
+			<div class="about-experience__desc">
+				Architected curriculum flow and delivery systems (Information Architecture) for online certifications, impacting 10,000+ athletes. Produced mobile-first educational content and integrated scalable training structures.
+			</div>
+
+			<!-- Row 3 -->
+			<div class="about-experience__year">2016 – 2020</div>
+			<div class="about-experience__role">
+				Flex Events HQ / Wadapalooza / HYROX<br />
+				<span class="about-experience__role-sub">Director of Operations / Head Staff Member / Event MC</span>
+			</div>
+			<div class="about-experience__desc">
+				Directed complex event logistics, staffing, and operations for regional fitness festivals (3,000+ competitors). Designed athlete briefing systems and heat schedules to streamline event operations, demonstrating mastery of process flow and large-scale systems management.
+			</div>
+
+			<!-- Row 4 -->
+			<div class="about-experience__year">2014 – 2018</div>
+			<div class="about-experience__role">
+				Various Consultancies &amp; Internships<br />
+				<span class="about-experience__role-sub">Web/Graphic Design Consultant / Design Intern</span>
+			</div>
+			<div class="about-experience__desc">
+				Rebuilt Squarespace websites to improve site structure and user navigation (Blue Elan Records). Created visual branding (logos, album artwork) and designed toy prototypes (K’Nex). Contributed to an educational game focused on sensory-sensitive design and 3D environments (Skyless Game Studio).
+			</div>
+		</div>
+	</section>
+
+	<!-- SECTION 4: NARRATIVE STORY BLOCKS -->
+	<section class="about-narrative">
+		<div class="about-narrative__block">
+			<h3 class="about-narrative__title">Part I: The Performance Architect</h3>
+			<p>To augment my coaching abilities, I became a trainer and CrossFit coach, specializing in creating comprehensive programs that allowed athletes to achieve their goals and recover from injury. I quickly learned that true coaching requires understanding not just physical endurance but the positive mentality necessary to sustain complex regimens over time.</p>
+			<p>My work centered on helping injured athletes make full recoveries, inspiring them to become stronger both physically and mentally than before. This experience taught me that rehabilitation is about more than restoration it's about transformation. This became my guiding mantra: "Rebuilt To Inspire."</p>
+		</div>
+		<div class="about-narrative__block">
+			<h3 class="about-narrative__title">Part II: Resilience Reframed</h3>
+			<p>This passion for recovery unexpectedly expanded in the summer of 2019 when I was diagnosed with Stage III Germ Cell Cancer. Immediately, I realized my athletic history had trained me for this defining moment. I embraced the situation openly, sharing my story daily on social media during chemotherapy treatments and two major surgeries.</p>
+			<p>Today, I am cancer-free and stronger than ever. This journey provided me with a first-hand understanding of the critical mental and physical challenges individuals face during their most vulnerable moments. It fundamentally reframed my approach: UX is applied empathy. Designing protocols for high-risk recovery demands the same meticulous attention to user needs and constraints required for enterprise digital products.</p>
+		</div>
+		<div class="about-narrative__block">
+			<h3 class="about-narrative__title">Explorer of AI &amp; Future Systems</h3>
+			<p>I now apply this system-centric mindset as an explorer of modern technology and Artificial Intelligence (AI). I actively test new ways every day to use AI tools from generative design prompts to technical documentation assistance to maximize efficiency and enhance creative output across every project touchpoint.</p>
+			<p>My goal in exploring AI is twofold: Simplification and Optimization (making the design pipeline faster and more intuitive for users) and Creative Ideation (using AI to push creative boundaries beyond traditional limitations). I believe the most successful systems are those that are constantly optimized for resilience, clarity, and scalable growth.</p>
+		</div>
+	</section>
+
+	<!-- SECTION 5: CONTACT CTA -->
+	<section class="about-contact">
+		<div class="about-contact__content">
+			<div class="about-contact__headline">
+				<h2>Got an idea?<br />Share with me</h2>
+			</div>
+			<div class="about-contact__right">
+				<div class="about-contact__supporting">
+					Ready for a design adventure, or need product design advice? Ping me for fun collaboration
+				</div>
+				<button class="about-contact__button">
+					Drop a message
+					<span class="about-contact__arrow">➔</span>
+				</button>
+			</div>
+		</div>
+	</section>
+</main>
