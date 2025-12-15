@@ -55,8 +55,8 @@
     </h2>
   </div>
 
-  <!-- Intro Paragraph and CTA Button (Side by Side Under Title) -->
-  <div class="hero-below-row">
+  <!-- Intro Paragraph and CTA Button (Centered Below Title) -->
+  <div class="hero-below">
     <div class="hero-intro">
       Hello there, I am Beau – a product designer specializing in web mobile apps and animation. I craft user-focused designs that drive conversations and resonate with audiences.
     </div>
@@ -64,17 +64,4 @@
       <button class="cta-btn">Contact Me</button>
     </div>
   </div>
-  <!-- Portfolio Cards Section -->
-
-<section class="project-stack-section" #projectStack>
-  <div class="project-stack">
-    <article
-      class="project-card"
-      *ngFor="let project of projects; let i = index"
-      [style.transform]="cardTransforms[i]"
-      [style.opacity]="cardOpacities[i]"
-    >
-      <h3 class="project-title">{{ project.title }}</h3>
-    </article>
-  </div>
-</section>
+</div>

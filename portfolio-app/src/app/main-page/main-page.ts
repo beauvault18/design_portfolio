@@ -6,9 +6,24 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <div class="hero-bg">
-      <svg class="circle-svg c1" width="420" height="420" viewBox="0 0 420 420"><circle cx="210" cy="210" r="200" stroke="#fff2" stroke-width="2" fill="none"/><circle cx="210" cy="210" r="150" stroke="#fff2" stroke-width="1.5" fill="none"/><circle cx="210" cy="210" r="100" stroke="#fff2" stroke-width="1" fill="none"/><circle cx="210" cy="210" r="50" stroke="#fff2" stroke-width="1" fill="none"/><circle cx="210" cy="210" r="4" fill="#fff6"/></svg>
-      <svg class="circle-svg c2" width="320" height="320" viewBox="0 0 320 320"><circle cx="160" cy="160" r="150" stroke="#fff2" stroke-width="1.5" fill="none"/><circle cx="160" cy="160" r="100" stroke="#fff2" stroke-width="1" fill="none"/><circle cx="160" cy="160" r="50" stroke="#fff2" stroke-width="1" fill="none"/><circle cx="160" cy="160" r="4" fill="#fff6"/></svg>
-      <svg class="circle-svg c3" width="220" height="220" viewBox="0 0 220 220"><circle cx="110" cy="110" r="100" stroke="#fff2" stroke-width="1" fill="none"/><circle cx="110" cy="110" r="50" stroke="#fff2" stroke-width="1" fill="none"/><circle cx="110" cy="110" r="4" fill="#fff6"/></svg>
+      <svg class="circle-svg c1" width="420" height="420" viewBox="0 0 420 420">
+        <circle cx="210" cy="210" r="200" stroke="#fff2" stroke-width="2" fill="none" />
+        <circle cx="210" cy="210" r="150" stroke="#fff2" stroke-width="1.5" fill="none" />
+        <circle cx="210" cy="210" r="100" stroke="#fff2" stroke-width="1" fill="none" />
+        <circle cx="210" cy="210" r="50" stroke="#fff2" stroke-width="1" fill="none" />
+        <circle cx="210" cy="210" r="4" fill="#fff6" />
+      </svg>
+      <svg class="circle-svg c2" width="320" height="320" viewBox="0 0 320 320">
+        <circle cx="160" cy="160" r="150" stroke="#fff2" stroke-width="1.5" fill="none" />
+        <circle cx="160" cy="160" r="100" stroke="#fff2" stroke-width="1" fill="none" />
+        <circle cx="160" cy="160" r="50" stroke="#fff2" stroke-width="1" fill="none" />
+        <circle cx="160" cy="160" r="4" fill="#fff6" />
+      </svg>
+      <svg class="circle-svg c3" width="220" height="220" viewBox="0 0 220 220">
+        <circle cx="110" cy="110" r="100" stroke="#fff2" stroke-width="1" fill="none" />
+        <circle cx="110" cy="110" r="50" stroke="#fff2" stroke-width="1" fill="none" />
+        <circle cx="110" cy="110" r="4" fill="#fff6" />
+      </svg>
       <div class="main-content">
         <h1 class="main-title">
           <span class="outlined">WEB &amp; MOBILE</span><br />
@@ -16,7 +31,9 @@ import { Component } from '@angular/core';
         </h1>
         <div class="desc-row">
           <p class="main-desc">
-            Hello there, I am Beau - a product designer specializing in web mobile apps and animation. I craft user - focused designs that drive conversations and resonate with audiences.
+            Hello there, I am Beau - a product designer specializing in web mobile apps and
+            animation. I craft user - focused designs that drive conversations and resonate with
+            audiences.
           </p>
           <button class="contact-btn">Contact Me</button>
         </div>
@@ -109,6 +126,4 @@ import { Component } from '@angular/core';
     }
   `,
 })
-export class MainPage {
-
-}
+export class MainPage {}
