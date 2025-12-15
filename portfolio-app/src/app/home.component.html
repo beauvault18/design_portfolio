@@ -64,4 +64,17 @@
       <button class="cta-btn">Contact Me</button>
     </div>
   </div>
-</div>
+  <!-- Portfolio Cards Section -->
+
+<section class="project-stack-section" #projectStack>
+  <div class="project-stack">
+    <article
+      class="project-card"
+      *ngFor="let project of projects; let i = index"
+      [style.transform]="cardTransforms[i]"
+      [style.opacity]="cardOpacities[i]"
+    >
+      <h3 class="project-title">{{ project.title }}</h3>
+    </article>
+  </div>
+</section>
