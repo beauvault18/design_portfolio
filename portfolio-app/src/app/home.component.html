@@ -2,7 +2,7 @@
   NAVIGATION BAR (TOP)
 -->
 <nav class="main-navbar">
-  <div class="navbar-logo">BW</div>
+  <div class="navbar-logo" routerLink="/" style="cursor:pointer;">BW</div>
   <ul class="navbar-links">
     <li>UI/Design</li>
     <li>Projects</li>
@@ -65,3 +65,43 @@
     </div>
   </div>
 </div>
+
+<!--
+  PROJECT STACK SECTION: Scroll-reactive stacking cards
+-->
+<section class="project-stack-section">
+  <div class="project-stack">
+    <div
+      *ngFor="let project of projects; let i = index"
+      #projectCard
+      class="project-card"
+      [attr.data-index]="i"
+    >
+      <!-- Card content (LEFT side) -->
+      <div class="project-card__content">
+        <div class="project-card__meta">
+          <span class="project-card__year">{{ project.year }}</span>
+          <span class="project-card__divider">/</span>
+          <span class="project-card__role">{{ project.role }}</span>
+        </div>
+        <h3 class="project-card__title">{{ project.title }}</h3>
+        <div class="project-card__tags">
+          <span *ngFor="let tag of project.tags" class="project-card__tag">{{ tag }}</span>
+        </div>
+      </div>
+
+      <!-- Image placeholder area (RIGHT side) -->
+      <div class="project-card__image">
+        <div class="project-card__image-placeholder">
+          <div class="project-card__image-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

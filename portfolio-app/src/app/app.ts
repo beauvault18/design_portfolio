@@ -1,16 +1,16 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { AboutMe } from './about-me/about-me';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, AboutMe],
+  imports: [RouterOutlet, RouterLink, HomeComponent, AboutMe],
   template: `
     <div class="app-root">
       <nav class="main-navbar">
-        <div class="navbar-logo">BW</div>
+        <div class="navbar-logo" routerLink="/" style="cursor:pointer;">BW</div>
         <ul class="navbar-links">
           <li>UI/Design</li>
           <li>Projects</li>

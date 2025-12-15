@@ -10,16 +10,19 @@
 			<div class="about-hero__image">
 				<img [src]="mainImage" alt="Portrait of Beau" />
 			</div>
-								<!-- SECTION: AUTO-SCROLL CAROUSEL -->
-								<div class="carousel-wrapper">
-									<div class="carousel-track">
-										<ng-container *ngFor="let img of carouselImages.concat(carouselImages)">
-											<img [src]="img" alt="About photo carousel" />
-										</ng-container>
-									</div>
-									<div class="fade fade-left"></div>
-									<div class="fade fade-right"></div>
-								</div>
+		</div>
+	</section>
+
+	<!-- SECTION: AUTO-SCROLL CAROUSEL -->
+	<section class="carousel-section">
+		<div class="carousel-wrapper">
+			<div class="carousel-track">
+				<ng-container *ngFor="let img of carouselImages.concat(carouselImages)">
+					<img [src]="img" alt="About photo carousel" />
+				</ng-container>
+			</div>
+			<div class="fade fade-left"></div>
+			<div class="fade fade-right"></div>
 		</div>
 	</section>
 
@@ -90,7 +93,7 @@
 				<span class="about-experience__role-sub">Web/Graphic Design Consultant / Design Intern</span>
 			</div>
 			<div class="about-experience__desc">
-				Rebuilt Squarespace websites to improve site structure and user navigation (Blue Elan Records). Created visual branding (logos, album artwork) and designed toy prototypes (K’Nex). Contributed to an educational game focused on sensory-sensitive design and 3D environments (Skyless Game Studio).
+				Rebuilt Squarespace websites to improve site structure and user navigation (Blue Elan Records). Created visual branding (logos, album artwork) and designed toy prototypes (K'Nex). Contributed to an educational game focused on sensory-sensitive design and 3D environments (Skyless Game Studio).
 			</div>
 		</div>
 	</section>
