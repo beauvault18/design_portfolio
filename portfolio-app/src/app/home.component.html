@@ -58,7 +58,7 @@
   <!-- Intro Paragraph and CTA Button (Centered Below Title) -->
   <div class="hero-below">
     <div class="hero-intro">
-      Hello there, I am Beau – a product designer specializing in web mobile apps and animation. I craft user-focused designs that drive conversations and resonate with audiences.
+      Hello there, I am Beau – a product designer specializing in web mobile apps and animation.<br />I craft user-focused designs that drive conversations and resonate with audiences.
     </div>
     <div class="hero-cta">
       <button class="cta-btn">Contact Me</button>
@@ -70,6 +70,9 @@
   PROJECT STACK SECTION: Scroll-reactive stacking cards
 -->
 <section class="project-stack-section">
+  <!-- Large faded background title -->
+  <div class="section-bg-title">Recent Works</div>
+
   <div class="project-stack">
     <div
       *ngFor="let project of projects; let i = index"
@@ -282,3 +285,12 @@
     </div>
   </div>
 </section>
+
+<!--
+  FOOTER SECTION: End of page
+-->
+<footer class="page-footer">
+  <div class="footer-content">
+    <p class="footer-text">More projects coming soon</p>
+  </div>
+</footer>

@@ -4,7 +4,7 @@
 html,
 body,
 .hero-bg {
-  background: #0a0a0a !important;
+  background: #000 !important;
   min-height: 100vh;
   width: 100vw;
   margin: 0;
@@ -111,13 +111,13 @@ body {
   align-items: center;
   padding: 8rem 2rem 4rem;
   overflow: hidden;
-  background: #0a0a0a;
+  background: #000;
 }
 
 .hero-bg {
   position: relative;
   z-index: 1;
-  background: #0a0a0a;
+  background: #000;
   /* Add grid pattern overlay */
   background-image:
     linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
@@ -151,11 +151,15 @@ body {
 
   .radar-ring {
     position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.35);
     border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow:
+      0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 20px rgba(0, 217, 255, 0.15),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -185,29 +189,29 @@ body {
     animation: pulse-ring 4s 1.5s infinite ease-in-out;
   }
 }
-// Top Left Radar
+// Top Left Radar - DOUBLE SIZE
 .radar-topleft {
   top: 22%;
   left: 22%;
   .ring1 {
-    width: 150px;
-    height: 150px;
-    animation: pulse-ring 4s infinite ease-in-out;
+    width: 300px;
+    height: 300px;
+    animation: pulse-ring 2.5s infinite ease-in-out;
   }
   .ring2 {
-    width: 250px;
-    height: 250px;
-    animation: pulse-ring 4s 0.5s infinite ease-in-out;
+    width: 500px;
+    height: 500px;
+    animation: pulse-ring 2.5s 0.3s infinite ease-in-out;
   }
   .ring3 {
-    width: 350px;
-    height: 350px;
-    animation: pulse-ring 4s 1s infinite ease-in-out;
+    width: 700px;
+    height: 700px;
+    animation: pulse-ring 2.5s 0.6s infinite ease-in-out;
   }
   .ring4 {
-    width: 450px;
-    height: 450px;
-    animation: pulse-ring 4s 1.5s infinite ease-in-out;
+    width: 900px;
+    height: 900px;
+    animation: pulse-ring 2.5s 0.9s infinite ease-in-out;
   }
 }
 
@@ -239,17 +243,17 @@ body {
   .ring1 {
     width: 180px;
     height: 180px;
-    animation: pulse-ring 5s infinite ease-in-out;
+    animation: pulse-ring 3.2s infinite ease-in-out;
   }
   .ring2 {
     width: 300px;
     height: 300px;
-    animation: pulse-ring 5s 0.7s infinite ease-in-out;
+    animation: pulse-ring 3.2s 0.5s infinite ease-in-out;
   }
   .ring3 {
     width: 420px;
     height: 420px;
-    animation: pulse-ring 5s 1.4s infinite ease-in-out;
+    animation: pulse-ring 3.2s 1s infinite ease-in-out;
   }
 }
 
@@ -269,30 +273,39 @@ body {
     animation: pulse-ring 6s 1s infinite ease-in-out;
   }
 }
-// Bottom Right Radar
+// Bottom Right Radar - HALF SIZE & MOVED UP
 .radar-bottomright {
-  bottom: 18%;
-  right: 25%;
+  bottom: 41%;
+  left: 32%;
   .ring1 {
-    width: 200px;
-    height: 200px;
-    animation: pulse-ring 6s infinite ease-in-out;
+    width: 100px;
+    height: 100px;
+    animation: pulse-ring 4s infinite ease-in-out;
   }
   .ring2 {
-    width: 340px;
-    height: 340px;
-    animation: pulse-ring 6s 1s infinite ease-in-out;
+    width: 170px;
+    height: 170px;
+    animation: pulse-ring 4s 0.7s infinite ease-in-out;
   }
 }
 
 @keyframes pulse-ring {
   0%, 100% {
-    opacity: 0.15;
+    opacity: 0.2;
     transform: translate(-50%, -50%) scale(1);
+    box-shadow:
+      0 0 8px rgba(255, 255, 255, 0.1),
+      0 0 15px rgba(0, 217, 255, 0.08),
+      inset 0 0 8px rgba(255, 255, 255, 0.05);
   }
   50% {
-    opacity: 0.3;
-    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1.02);
+    box-shadow:
+      0 0 18px rgba(255, 255, 255, 0.25),
+      0 0 30px rgba(0, 217, 255, 0.2),
+      0 0 45px rgba(0, 217, 255, 0.1),
+      inset 0 0 15px rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -307,7 +320,7 @@ body {
 }
 
 .hero-headline {
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(4.5rem, 12vw, 10.5rem);
   font-weight: 900;
   letter-spacing: 0.05em;
   line-height: 1.1;
@@ -315,22 +328,22 @@ body {
   text-transform: uppercase;
   position: relative;
   color: #ffffff;
-  text-shadow: 
-    0 0 20px rgba(255, 0, 100, 0.5),
-    0 0 40px rgba(255, 0, 100, 0.3),
-    2px 2px 0 rgba(255, 0, 100, 0.8),
-    -1px -1px 0 rgba(255, 0, 100, 0.6);
+  text-shadow:
+    0 0 20px rgba(0, 217, 255, 0.5),
+    0 0 40px rgba(0, 217, 255, 0.3),
+    2px 2px 0 rgba(0, 217, 255, 0.8),
+    -1px -1px 0 rgba(0, 217, 255, 0.6);
   white-space: nowrap;
 }
 
 .hero-subheadline {
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, 7.5vw, 6.75rem);
   font-weight: 700;
   letter-spacing: 0.1em;
   margin-top: 0.5rem;
   text-transform: uppercase;
   color: #ffffff;
-  text-shadow: 
+  text-shadow:
     0 0 15px rgba(0, 217, 255, 0.4),
     0 0 30px rgba(0, 217, 255, 0.2),
     1px 1px 0 rgba(0, 217, 255, 0.6);
@@ -411,25 +424,26 @@ body {
 .hero-below {
   text-align: left;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1900px;
   z-index: 10;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 0.5rem;
   position: relative;
-  margin: 0 auto;
+  margin: 6rem auto 0;
 }
 
 .hero-intro {
-  font-size: 1.15rem;
+  font-size: 1.725rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.85);
   font-weight: 400;
-  max-width: 700px;
+  max-width: 1700px;
   width: 100%;
   margin-bottom: 0;
+  margin-left: 6rem;
   text-align: left;
   white-space: normal;
 }
@@ -438,21 +452,24 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-shrink: 0;
+  margin-right: 18rem;
 }
 
 .cta-btn {
-  padding: 1rem 3rem;
-  font-size: 1.1rem;
+  padding: 1.5rem 4.5rem;
+  font-size: 1.65rem;
   font-weight: 600;
   color: #ffffff;
   background: transparent;
-  border: 2px solid #00d9ff;
+  border: 3px solid #00d9ff;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   position: relative;
+  white-space: nowrap;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
 
@@ -487,36 +504,66 @@ body {
 // =============================
 .project-stack-section {
   width: 100vw;
-  min-height: 250vh; // Reduced scroll distance - less empty space
+  min-height: 120vh; // Just enough for card transitions
   background: #000;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   position: relative;
   z-index: 1;
-  padding: 10vh 0 5vh 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+// Large faded background title
+.section-bg-title {
+  position: absolute;
+  top: 12rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(4rem, 9vw, 11rem);
+  font-weight: 900;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.02)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .project-stack {
   position: sticky;
-  top: 12vh;
+  top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 1300px;
-  min-height: 900px;
+  height: 80vh;
   perspective: 1200px;
   perspective-origin: center center;
   transform-style: preserve-3d;
+  z-index: 2;
 }
 
 .project-card {
-  position: relative;
-  width: 80vw;
-  max-width: 1200px;
-  height: 600px;
-  margin-bottom: -200px; // More overlap for dramatic stacking effect
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 85vw;
+  max-width: 1400px;
+  height: 700px;
   border-radius: 2.5rem;
   display: flex;
   flex-direction: row;
@@ -1094,4 +1141,30 @@ body {
   .hero-subheadline {
     font-size: 1.5rem;
   }
+}
+
+// =============================
+// FOOTER SECTION
+// =============================
+.page-footer {
+  width: 100vw;
+  background: #000;
+  padding: 2rem 2rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  letter-spacing: 0.02em;
 }
