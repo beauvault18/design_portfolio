@@ -79,20 +79,197 @@
     >
       <!-- Card content (LEFT side) -->
       <div class="project-card__content">
-        <div class="project-card__meta">
-          <span class="project-card__year">{{ project.year }}</span>
-          <span class="project-card__divider">/</span>
-          <span class="project-card__role">{{ project.role }}</span>
-        </div>
-        <h3 class="project-card__title">{{ project.title }}</h3>
-        <div class="project-card__tags">
-          <span *ngFor="let tag of project.tags" class="project-card__tag">{{ tag }}</span>
-        </div>
+        <!-- KSP ENHANCED CONTENT -->
+        <ng-container *ngIf="project.title === 'KSP Mental Performance'">
+          <!-- Category Pills -->
+          <div class="project-card__categories">
+            <span class="category-pill">SPORTS PSYCHOLOGY & EDTECH</span>
+            <span class="category-pill">PRODUCTION</span>
+          </div>
+
+          <!-- Title -->
+          <h3 class="project-card__title">{{ project.title }}</h3>
+
+          <!-- Subtitle -->
+          <p class="project-card__subtitle">Human First, Athlete Always</p>
+
+          <!-- Description -->
+          <p class="project-card__description">
+            A revolutionary wellness program for youth athletes that combines cutting-edge sports psychology with micro-learning technology. Built around the core philosophy of "Human First, Athlete Always," this platform delivers research-backed mental performance training through bite-sized, engaging content.
+          </p>
+
+          <!-- Feature Highlights -->
+          <ul class="project-card__features">
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Micro-learning:</strong> 2-minute videos with 15-minute weekly commitment</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Evidence-based</strong> content from certified Mental Performance Consultants</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Interactive</strong> team discussions for shared learning and growth</span>
+            </li>
+          </ul>
+
+          <!-- Tech Stack -->
+          <div class="project-card__tech-divider"></div>
+          <div class="project-card__tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag tech-tag--more">+2 more</span>
+          </div>
+        </ng-container>
+
+        <!-- CONTINUO ENHANCED CONTENT -->
+        <ng-container *ngIf="project.title === 'Continuo iPad App'">
+          <!-- Category Pills -->
+          <div class="project-card__categories">
+            <span class="category-pill">HEALTHCARE AI & EDTECH</span>
+            <span class="category-pill">PRODUCTION</span>
+          </div>
+
+          <!-- Title -->
+          <h3 class="project-card__title">{{ project.title }}</h3>
+
+          <!-- Subtitle -->
+          <p class="project-card__subtitle">Healthcare AI Innovation, Designed for Live Demonstration</p>
+
+          <!-- Description -->
+          <p class="project-card__description">
+            Continuo is a professional-grade iPad application built to showcase healthcare AI innovation through interactive, event-ready demonstrations. Designed for nurses, doctors, and healthcare administrators, the app transforms complex AI-powered workflows into clear, engaging experiences that support business development, education, and stakeholder engagement.
+          </p>
+
+          <!-- Feature Highlights -->
+          <ul class="project-card__features">
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>iPad-optimized,</strong> landscape-only UI for professional healthcare settings</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Interactive video demos</strong> with a 50/50 split-screen layout</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Role-based news carousels</strong> for Nurses, Doctors, and Administrators</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Secure contact collection</strong> with local storage and admin export</span>
+            </li>
+          </ul>
+
+          <!-- Tech Stack -->
+          <div class="project-card__tech-divider"></div>
+          <div class="project-card__tech-stack">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">iPadOS</span>
+            <span class="tech-tag">Hive</span>
+            <span class="tech-tag tech-tag--more">+3 more</span>
+          </div>
+        </ng-container>
+
+        <!-- ZELDA PUZZLE ENHANCED CONTENT -->
+        <ng-container *ngIf="project.title === 'Zelda Puzzle'">
+          <!-- Category Pills -->
+          <div class="project-card__categories">
+            <span class="category-pill">INTERACTION DESIGN</span>
+            <span class="category-pill">CREATIVE WEB</span>
+          </div>
+
+          <!-- Title -->
+          <h3 class="project-card__title">{{ project.title }}</h3>
+
+          <!-- Subtitle -->
+          <p class="project-card__subtitle">Zelda-Inspired Interactive Web Puzzle</p>
+
+          <!-- Description -->
+          <p class="project-card__description">
+            A foundational web design and development project that evolved into an interactive, Zelda-inspired puzzle experience. Built to challenge traditional portfolio navigation, the project uses keyboard-driven interaction, intentional state management, and visual progression to transform a portfolio entry point into an experience—demonstrating front-end fundamentals through play.
+          </p>
+
+          <!-- Feature Highlights -->
+          <ul class="project-card__features">
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Keyboard-driven puzzle</strong> inspired by Ocarina of Time mechanics</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Progressive Triforce animation</strong> driven by state logic</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Minimal, distraction-free UI</strong> focused on interaction</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Scalable architecture</strong> designed for future puzzle expansion</span>
+            </li>
+          </ul>
+
+          <!-- Tech Stack -->
+          <div class="project-card__tech-divider"></div>
+          <div class="project-card__tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Astro</span>
+            <span class="tech-tag tech-tag--more">+1 more</span>
+          </div>
+        </ng-container>
+
+        <!-- DEFAULT CONTENT (for other cards) -->
+        <ng-container *ngIf="project.title !== 'KSP Mental Performance' && project.title !== 'Continuo iPad App' && project.title !== 'Zelda Puzzle'">
+          <div class="project-card__meta">
+            <span class="project-card__year">{{ project.year }}</span>
+            <span class="project-card__divider">/</span>
+            <span class="project-card__role">{{ project.role }}</span>
+          </div>
+          <h3 class="project-card__title">{{ project.title }}</h3>
+          <div class="project-card__tags">
+            <span *ngFor="let tag of project.tags" class="project-card__tag">{{ tag }}</span>
+          </div>
+        </ng-container>
       </div>
 
       <!-- Image placeholder area (RIGHT side) -->
       <div class="project-card__image">
-        <div class="project-card__image-placeholder">
+        <div class="project-image" *ngIf="project.image">
+          <img
+            [src]="project.image"
+            [alt]="project.title"
+          />
+        </div>
+        <div class="project-card__image-placeholder" *ngIf="!project.image">
           <div class="project-card__image-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>

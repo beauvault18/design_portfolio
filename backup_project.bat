@@ -13,3 +13,4 @@ robocopy %SOURCE% %DEST% /E /XD psyche /XF backup_project.bat
 REM Done
 ECHO Backup complete! Files copied to %DEST%
 PAUSE
+./backup_project.sh

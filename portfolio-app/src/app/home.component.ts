@@ -8,6 +8,7 @@ interface Project {
   role: string;
   tags: string[];
   image?: string;
+  route?: string;
 }
 
 @Component({
@@ -26,21 +27,24 @@ export class HomeComponent implements AfterViewInit {
       year: '2024',
       role: 'Lead Designer',
       tags: ['Mobile App', 'UX/UI', 'Mental Health'],
-      image: ''
+      image: 'assets/projects/ksp/ksp-hero.png',
+      route: '/projects/ksp-mental-performance'
     },
     {
-      title: 'Continou',
-      year: '2025',
-      role: 'Product Designer',
-      tags: ['Web App', 'SaaS', 'Productivity'],
-      image: ''
-    },
-    {
-      title: "Zelda's Puzzle",
+      title: 'Continuo iPad App',
       year: '2024',
-      role: 'UI Designer',
-      tags: ['Game Design', 'Interactive', 'Puzzle'],
-      image: ''
+      role: 'Lead Product Designer · Flutter Developer',
+      tags: ['Healthcare AI', 'iPad App', 'UX/UI', 'EdTech'],
+      image: 'assets/projects/continuo/continuo-main-menu.png',
+      route: '/projects/continuo'
+    },
+    {
+      title: 'Zelda Puzzle',
+      year: '2024',
+      role: 'Designer · Front-End Developer',
+      tags: ['Interaction Design', 'Creative UX', 'Web'],
+      image: 'assets/projects/intor_test/triforce-ocarina.png',
+      route: '/projects/zelda-puzzle'
     }
   ];
 
@@ -94,17 +98,17 @@ export class HomeComponent implements AfterViewInit {
       // Calculate how far this card has scrolled with increased multiplier
       const cardProgress = scrollProgress * cardCount * 2;
 
-      // Add delay for first and second cards - they need more scroll before animating
+      // Add significant delays for all cards - gives users time to read content
       let relativeProgress;
       if (index === 0) {
-        // First card: Add a 0.6 threshold delay (60% more scroll needed before it starts moving)
-        relativeProgress = Math.max(0, Math.min(1, (cardProgress - 0.6) / (1 - 0.6)));
+        // First card: Add a 0.8 threshold delay (80% more scroll needed before it starts moving)
+        relativeProgress = Math.max(0, Math.min(1, (cardProgress - 0.8) / (1 - 0.8)));
       } else if (index === 1) {
-        // Second card: Add a 0.4 threshold delay (40% more scroll for extended viewing)
-        relativeProgress = Math.max(0, Math.min(1, (cardProgress - index - 0.4) / (1 - 0.4)));
+        // Second card: Add a 0.7 threshold delay (70% more scroll for extended viewing)
+        relativeProgress = Math.max(0, Math.min(1, (cardProgress - index - 0.7) / (1 - 0.7)));
       } else {
-        // Third card and beyond: Normal animation
-        relativeProgress = Math.max(0, Math.min(1, cardProgress - index));
+        // Third card: Add a 0.5 threshold delay (50% more scroll for reading time)
+        relativeProgress = Math.max(0, Math.min(1, (cardProgress - index - 0.5) / (1 - 0.5)));
       }
 
       // Apply spring-like easing
