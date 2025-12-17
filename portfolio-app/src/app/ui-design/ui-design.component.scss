@@ -313,6 +313,119 @@ $ui-text-muted: rgba(255, 255, 255, 0.7);
 }
 
 // =============================
+// INTERACTIVE PROTOTYPES SECTION
+// =============================
+.design-prototypes {
+  padding: 80px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: $ui-text-muted;
+  margin: -32px 0 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prototypes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 32px;
+}
+
+.prototype-card {
+  background: $ui-card-bg;
+  border: 1px solid $ui-border;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba($ui-accent, 0.3);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.prototype-card__header {
+  padding: 24px 28px;
+  border-bottom: 1px solid $ui-border;
+}
+
+.prototype-card__label {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba($ui-accent, 0.1);
+  border: 1px solid rgba($ui-accent, 0.3);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: $ui-accent;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.prototype-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: $ui-text;
+}
+
+.prototype-card__description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: $ui-text-muted;
+  margin: 0;
+}
+
+.prototype-card__embed {
+  background: #1a1a1a;
+  position: relative;
+
+  iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    display: block;
+  }
+}
+
+.prototype-card__footer {
+  padding: 16px 28px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid $ui-border;
+}
+
+.prototype-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: $ui-accent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: lighten($ui-accent, 10%);
+    gap: 12px;
+  }
+
+  svg {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover svg {
+    transform: translate(2px, -2px);
+  }
+}
+
+// =============================
 // FEATURED PROJECTS SECTION
 // =============================
 .design-projects {
@@ -681,7 +794,8 @@ $ui-text-muted: rgba(255, 255, 255, 0.7);
 
   .design-philosophy,
   .design-projects,
-  .design-skills {
+  .design-skills,
+  .design-prototypes {
     padding: 64px 24px;
   }
 
@@ -692,6 +806,19 @@ $ui-text-muted: rgba(255, 255, 255, 0.7);
   .philosophy-grid,
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .prototypes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prototype-card__embed iframe {
+    height: 400px;
+  }
+
+  .section-subtitle {
+    margin: -24px 0 32px;
+    font-size: 1rem;
   }
 
   .process-timeline {

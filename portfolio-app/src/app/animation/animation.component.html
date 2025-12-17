@@ -1,0 +1,323 @@
+<div class="animation-page">
+  <!-- Navigation Bar -->
+  <nav class="main-navbar">
+    <div class="navbar-logo" routerLink="/">BW</div>
+    <ul class="navbar-links">
+      <li routerLink="/ui-design">UI/Design</li>
+      <li>Projects</li>
+      <li routerLink="/animation" class="active">Animation</li>
+      <li routerLink="/projects/zelda-puzzle">Puzzle</li>
+      <li routerLink="/about">About</li>
+      <li>Contact</li>
+      <li>Get CV</li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__content">
+      <span class="hero__badge">Motion Design Portfolio</span>
+      <h1 class="hero__title">Animation & Motion Design Showcase</h1>
+      <p class="hero__subtitle">
+        From brand sequences to 3D modeling, explore a collection of motion design work
+        that brings ideas to life through movement, timing, and visual storytelling.
+      </p>
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__number">15+</span>
+          <span class="stat__label">Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">4</span>
+          <span class="stat__label">Categories</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">6+</span>
+          <span class="stat__label">Tools</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__orb hero__orb--green"></div>
+      <div class="hero__orb hero__orb--purple"></div>
+    </div>
+  </section>
+
+  <!-- Category Navigation -->
+  <nav class="category-nav">
+    <div class="category-nav__container">
+      <button
+        *ngFor="let cat of categories"
+        class="category-pill"
+        [class.category-pill--active]="activeCategory === cat.id"
+        (click)="scrollToSection(cat.id)"
+      >
+        <span class="category-pill__icon">
+          <ng-container [ngSwitch]="cat.icon">
+            <svg *ngSwitchCase="'film'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+              <line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/>
+              <line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/>
+              <line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/>
+              <line x1="17" y1="7" x2="22" y2="7"/>
+            </svg>
+            <svg *ngSwitchCase="'layers'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+            </svg>
+            <svg *ngSwitchCase="'cube'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+            <svg *ngSwitchCase="'sword'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
+              <path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M19 21l2-2"/>
+            </svg>
+          </ng-container>
+        </span>
+        {{ cat.label }}
+      </button>
+    </div>
+  </nav>
+
+  <!-- Section 1: Misfit Athletics -->
+  <section id="misfit" class="section">
+    <div class="section__header">
+      <span class="section__number">01</span>
+      <h2 class="section__title">Misfit Athletics</h2>
+      <p class="section__description">
+        Complete brand motion package for Misfit Athletics including logo animation, brand identity motion, and merchandise design.
+      </p>
+    </div>
+
+    <div class="projects-grid projects-grid--brand">
+      <article
+        *ngFor="let project of misfitProjects; let i = index"
+        class="project-card"
+        [class.project-card--featured]="project.featured"
+        (click)="project.videoUrl && openModal(project.videoUrl, project.title)"
+      >
+        <div class="project-card__media">
+          <div class="project-card__thumbnail" [style.backgroundImage]="'url(' + project.thumbnail + ')'">
+            <div class="project-card__overlay" *ngIf="project.videoUrl">
+              <div class="play-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__tags">
+            <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+          </div>
+          <h3 class="project-card__title">{{ project.title }}</h3>
+          <p class="project-card__description">{{ project.description }}</p>
+          <div class="project-card__tools" *ngIf="project.tools">
+            <span class="tool" *ngFor="let tool of project.tools">{{ tool }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 2: Title Sequences -->
+  <section id="titles" class="section section--alt">
+    <div class="section__header">
+      <span class="section__number">02</span>
+      <h2 class="section__title">Title Sequences</h2>
+      <p class="section__description">
+        Dynamic title sequences and event promos with bold typography and high-energy motion design.
+      </p>
+    </div>
+
+    <div class="projects-grid projects-grid--brand">
+      <article
+        *ngFor="let project of titleProjects"
+        class="project-card"
+        [class.project-card--featured]="project.featured"
+        (click)="project.videoUrl && openModal(project.videoUrl, project.title)"
+      >
+        <div class="project-card__media">
+          <div class="project-card__thumbnail" [style.backgroundImage]="'url(' + project.thumbnail + ')'">
+            <div class="project-card__overlay" *ngIf="project.videoUrl">
+              <div class="play-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__tags">
+            <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+          </div>
+          <h3 class="project-card__title">{{ project.title }}</h3>
+          <p class="project-card__description">{{ project.description }}</p>
+          <div class="project-card__tools" *ngIf="project.tools">
+            <span class="tool" *ngFor="let tool of project.tools">{{ tool }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 3: 3D Product Design (K'NEX) -->
+  <section id="3d" class="section">
+    <div class="section__header">
+      <span class="section__number">03</span>
+      <h2 class="section__title">3D Product Design</h2>
+      <p class="section__description">
+        Nostalgic 3D recreation with modern rendering techniques and product visualization.
+      </p>
+    </div>
+
+    <div class="projects-grid projects-grid--3d">
+      <article
+        *ngFor="let project of modelingProjects"
+        class="project-card project-card--featured"
+      >
+        <div class="project-card__media">
+          <div class="project-card__thumbnail" [style.backgroundImage]="'url(' + project.thumbnail + ')'">
+          </div>
+        </div>
+        <div class="project-card__content">
+          <div class="project-card__tags">
+            <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+          </div>
+          <h3 class="project-card__title">{{ project.title }}</h3>
+          <p class="project-card__description">{{ project.description }}</p>
+          <div class="project-card__tools" *ngIf="project.tools">
+            <span class="tool" *ngFor="let tool of project.tools">{{ tool }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 4: Game-Inspired Sword Animation -->
+  <section id="sword" class="section section--sword">
+    <!-- Full-width hero banner -->
+    <div class="sword-hero">
+      <div class="sword-hero__bg" [style.backgroundImage]="'url(' + swordProject.thumbnail + ')'"></div>
+      <div class="sword-hero__overlay"></div>
+      <div class="sword-hero__content">
+        <span class="section__number">04</span>
+        <h2 class="sword-hero__title">{{ swordProject.title }}</h2>
+        <p class="sword-hero__description">{{ swordProject.description }}</p>
+        <div class="sword-hero__tags">
+          <span class="tag tag--glow" *ngFor="let tag of swordProject.tags">{{ tag }}</span>
+        </div>
+        <button
+          class="sword-hero__cta"
+          (click)="swordProject.videoUrl && openModal(swordProject.videoUrl, swordProject.title)"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          Watch Full Animation
+        </button>
+      </div>
+    </div>
+
+    <!-- Two-column layout for details -->
+    <div class="sword-details">
+      <div class="sword-details__left">
+        <h3 class="sword-details__heading">Process & Techniques</h3>
+        <div class="process-list">
+          <div class="process-item">
+            <span class="process-item__number">01</span>
+            <div class="process-item__content">
+              <h4>Concept & Reference</h4>
+              <p>Gathering reference materials from iconic games and developing the visual direction.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <span class="process-item__number">02</span>
+            <div class="process-item__content">
+              <h4>3D Modeling</h4>
+              <p>Creating detailed sword models with attention to blade geometry and handle details.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <span class="process-item__number">03</span>
+            <div class="process-item__content">
+              <h4>Texturing & Materials</h4>
+              <p>Applying realistic metal textures, wear patterns, and glowing magical elements.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <span class="process-item__number">04</span>
+            <div class="process-item__content">
+              <h4>Animation & VFX</h4>
+              <p>Bringing the swords to life with dynamic motion and particle effects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sword-details__right">
+        <h3 class="sword-details__heading">Gallery</h3>
+        <div class="sword-gallery">
+          <div
+            class="sword-gallery__item"
+            *ngFor="let item of swordGallery"
+            [style.backgroundImage]="'url(' + item.image + ')'"
+          >
+            <span class="sword-gallery__caption">{{ item.caption }}</span>
+          </div>
+        </div>
+        <div class="sword-tools">
+          <h4>Tools Used</h4>
+          <div class="sword-tools__list">
+            <span class="tool tool--large" *ngFor="let tool of swordProject.tools">{{ tool }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-content">
+      <div class="footer-cta">
+        <h3>Interested in working together?</h3>
+        <p>Let's create something amazing with motion.</p>
+        <button class="footer-button" routerLink="/about">Get in Touch</button>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-text">Designed & Built by Beau Whitman</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">LinkedIn</a>
+          <a href="#" class="footer-link">Dribbble</a>
+          <a href="#" class="footer-link">Vimeo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div class="modal" [class.modal--active]="isModalOpen" (click)="closeModal()">
+    <div class="modal__content" (click)="$event.stopPropagation()">
+      <button class="modal__close" (click)="closeModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal__video-container">
+        <video
+          *ngIf="isModalOpen && currentVideo"
+          [src]="currentVideo"
+          controls
+          autoplay
+          class="modal__video"
+        >
+          Your browser does not support video playback.
+        </video>
+      </div>
+      <p class="modal__title">{{ currentVideoTitle }}</p>
+    </div>
+  </div>
+</div>

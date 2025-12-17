@@ -9,18 +9,6 @@ import { AboutMe } from './about-me/about-me';
   imports: [RouterOutlet, RouterLink, HomeComponent, AboutMe],
   template: `
     <div class="app-root">
-      <nav class="main-navbar">
-        <div class="navbar-logo" routerLink="/" style="cursor:pointer;">BW</div>
-        <ul class="navbar-links">
-          <li>UI/Design</li>
-          <li>Projects</li>
-          <li>Animation</li>
-          <li>Puzzle</li>
-          <li routerLink="/about" style="cursor:pointer;">About</li>
-          <li>Contact</li>
-          <li>Get CV</li>
-        </ul>
-      </nav>
       <router-outlet></router-outlet>
     </div>
   `,
