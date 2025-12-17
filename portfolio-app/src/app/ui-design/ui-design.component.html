@@ -1,0 +1,194 @@
+<!-- UI/Design Page -->
+<div class="ui-design-page">
+
+  <!-- Navigation Bar -->
+  <nav class="main-navbar">
+    <div class="navbar-logo" routerLink="/" style="cursor:pointer;">BW</div>
+    <ul class="navbar-links">
+      <li routerLink="/ui-design" class="active" style="cursor:pointer;">UI/Design</li>
+      <li>Projects</li>
+      <li>Animation</li>
+      <li routerLink="/projects/zelda-puzzle" style="cursor:pointer;">Puzzle</li>
+      <li routerLink="/about" style="cursor:pointer;">About</li>
+      <li>Contact</li>
+      <li>Get CV</li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="design-hero">
+    <div class="design-hero__content">
+      <span class="design-hero__label">UI/UX Design</span>
+      <h1 class="design-hero__title">Crafting Digital<br/>Experiences</h1>
+      <p class="design-hero__subtitle">I design intuitive, beautiful interfaces that put users first. From wireframes to polished prototypes, every pixel has a purpose.</p>
+    </div>
+    <div class="design-hero__stats">
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">4+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Client Satisfaction</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Philosophy Section -->
+  <section class="design-philosophy">
+    <h2 class="section-title">Design Philosophy</h2>
+    <div class="philosophy-grid">
+      <div class="philosophy-card">
+        <div class="philosophy-card__icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+        </div>
+        <h3 class="philosophy-card__title">User-Centered</h3>
+        <p class="philosophy-card__text">Every design decision starts with understanding user needs, pain points, and goals.</p>
+      </div>
+      <div class="philosophy-card">
+        <div class="philosophy-card__icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+        </div>
+        <h3 class="philosophy-card__title">Systematic</h3>
+        <p class="philosophy-card__text">Building scalable design systems that ensure consistency across all touchpoints.</p>
+      </div>
+      <div class="philosophy-card">
+        <div class="philosophy-card__icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3 class="philosophy-card__title">Delightful</h3>
+        <p class="philosophy-card__text">Infusing joy into interactions through thoughtful animations and micro-interactions.</p>
+      </div>
+      <div class="philosophy-card">
+        <div class="philosophy-card__icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3 class="philosophy-card__title">Iterative</h3>
+        <p class="philosophy-card__text">Embracing feedback and testing to continuously refine and improve designs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Process Section -->
+  <section class="design-process">
+    <h2 class="section-title">My Design Process</h2>
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="process-step__number">01</div>
+        <div class="process-step__content">
+          <h3>Discover</h3>
+          <p>Research users, analyze competitors, and define the problem space through interviews and data analysis.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">02</div>
+        <div class="process-step__content">
+          <h3>Define</h3>
+          <p>Synthesize research into personas, user journeys, and clear design requirements.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">03</div>
+        <div class="process-step__content">
+          <h3>Design</h3>
+          <p>Create wireframes, visual designs, and interactive prototypes that bring ideas to life.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">04</div>
+        <div class="process-step__content">
+          <h3>Deliver</h3>
+          <p>Hand off polished designs with detailed specs, collaborate with developers, and iterate based on feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="design-projects">
+    <h2 class="section-title">Featured Design Work</h2>
+    <div class="projects-grid">
+      <div
+        *ngFor="let project of designProjects"
+        class="project-card"
+        [routerLink]="project.route"
+        [style.cursor]="project.route ? 'pointer' : 'default'">
+        <div class="project-card__image">
+          <img [src]="project.image" [alt]="project.title" />
+          <div class="project-card__overlay">
+            <span class="view-project">View Project</span>
+          </div>
+        </div>
+        <div class="project-card__content">
+          <span class="project-card__category">{{ project.category }}</span>
+          <h3 class="project-card__title">{{ project.title }}</h3>
+          <p class="project-card__description">{{ project.description }}</p>
+          <div class="project-card__tags">
+            <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="design-skills">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <div class="skills-container">
+      <div class="skills-bars">
+        <div *ngFor="let skill of skills" class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-level">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" [style.width.%]="skill.level"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tools-grid">
+        <h3 class="tools-title">Tools I Use</h3>
+        <div class="tools-list">
+          <div *ngFor="let tool of tools" class="tool-item">
+            <div class="tool-icon">
+              <span>{{ tool.icon.toUpperCase() }}</span>
+            </div>
+            <span class="tool-name">{{ tool.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="design-cta">
+    <div class="cta-content">
+      <h2>Let's Create Something Amazing</h2>
+      <p>Have a project in mind? I'd love to hear about it and explore how we can work together.</p>
+      <button class="cta-button">Get In Touch</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-content">
+      <p class="footer-text">Designed & Built by Beau Whitman</p>
+    </div>
+  </footer>
+
+</div>

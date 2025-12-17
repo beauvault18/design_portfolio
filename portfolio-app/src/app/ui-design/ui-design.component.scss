@@ -1,0 +1,739 @@
+// =============================
+// UI/DESIGN PAGE STYLES
+// =============================
+
+// Variables
+$ui-accent: #00d9ff;
+$ui-accent-secondary: #7c3aed;
+$ui-bg: #000;
+$ui-card-bg: rgba(24, 24, 27, 0.6);
+$ui-border: rgba(255, 255, 255, 0.08);
+$ui-text: #ffffff;
+$ui-text-muted: rgba(255, 255, 255, 0.7);
+
+// =============================
+// PAGE CONTAINER
+// =============================
+.ui-design-page {
+  background: $ui-bg;
+  min-height: 100vh;
+  color: $ui-text;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// =============================
+// NAVIGATION BAR
+// =============================
+.main-navbar {
+  width: 100vw;
+  height: 72px;
+  background: rgba(24, 24, 27, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px 0 32px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin-right: 32px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    color: #d1d5db;
+    font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+    font-weight: 600;
+    font-size: 1.13rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+
+    &:hover {
+      color: $ui-accent;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $ui-accent;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after,
+    &.active::after {
+      width: 100%;
+    }
+
+    &.active {
+      color: $ui-accent;
+    }
+
+    &:last-child {
+      color: $ui-accent;
+      font-weight: 700;
+    }
+  }
+}
+
+// =============================
+// HERO SECTION
+// =============================
+.design-hero {
+  padding: 160px 48px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 64px;
+}
+
+.design-hero__content {
+  max-width: 700px;
+}
+
+.design-hero__label {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba($ui-accent, 0.1);
+  border: 1px solid rgba($ui-accent, 0.3);
+  border-radius: 24px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $ui-accent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.design-hero__title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 24px;
+  background: linear-gradient(135deg, $ui-text 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.design-hero__subtitle {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: $ui-text-muted;
+  margin: 0;
+  max-width: 560px;
+}
+
+.design-hero__stats {
+  display: flex;
+  gap: 48px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: $ui-accent;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: $ui-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// =============================
+// SECTION TITLE
+// =============================
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 48px;
+  color: $ui-text;
+}
+
+// =============================
+// DESIGN PHILOSOPHY SECTION
+// =============================
+.design-philosophy {
+  padding: 80px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.philosophy-card {
+  background: $ui-card-bg;
+  border: 1px solid $ui-border;
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba($ui-accent, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.philosophy-card__icon {
+  width: 64px;
+  height: 64px;
+  background: rgba($ui-accent, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: $ui-accent;
+}
+
+.philosophy-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: $ui-text;
+}
+
+.philosophy-card__text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: $ui-text-muted;
+  margin: 0;
+}
+
+// =============================
+// DESIGN PROCESS SECTION
+// =============================
+.design-process {
+  padding: 80px 48px;
+  background: rgba(24, 24, 27, 0.3);
+}
+
+.process-timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba($ui-accent, 0.3), transparent);
+  }
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+.process-step__number {
+  width: 64px;
+  height: 64px;
+  background: $ui-bg;
+  border: 2px solid $ui-accent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: $ui-accent;
+  margin: 0 auto 24px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+
+  .process-step:hover & {
+    background: $ui-accent;
+    color: $ui-bg;
+    transform: scale(1.1);
+  }
+}
+
+.process-step__content {
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: $ui-text;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: $ui-text-muted;
+    margin: 0;
+  }
+}
+
+// =============================
+// FEATURED PROJECTS SECTION
+// =============================
+.design-projects {
+  padding: 80px 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.project-card {
+  background: $ui-card-bg;
+  border: 1px solid $ui-border;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba($ui-accent, 0.3);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+
+    .project-card__overlay {
+      opacity: 1;
+    }
+
+    .project-card__image img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.project-card__image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+}
+
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.view-project {
+  padding: 12px 28px;
+  background: $ui-accent;
+  color: $ui-bg;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-card__content {
+  padding: 24px;
+}
+
+.project-card__category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $ui-accent;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.project-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: $ui-text;
+}
+
+.project-card__description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: $ui-text-muted;
+  margin: 0 0 16px;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 6px 14px;
+  background: rgba($ui-accent, 0.08);
+  border: 1px solid rgba($ui-accent, 0.2);
+  border-radius: 16px;
+  font-size: 0.75rem;
+  color: rgba($ui-text, 0.8);
+  font-weight: 500;
+}
+
+// =============================
+// SKILLS SECTION
+// =============================
+.design-skills {
+  padding: 80px 48px;
+  background: rgba(24, 24, 27, 0.3);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.skills-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skill-item {
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .skill-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $ui-text;
+  }
+
+  .skill-level {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $ui-accent;
+  }
+}
+
+.skill-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, $ui-accent, $ui-accent-secondary);
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.tools-grid {
+  h3.tools-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 24px;
+    color: $ui-text;
+  }
+}
+
+.tools-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: $ui-card-bg;
+  border: 1px solid $ui-border;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba($ui-accent, 0.3);
+    transform: translateY(-4px);
+  }
+}
+
+.tool-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba($ui-accent, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: $ui-accent;
+  letter-spacing: 0.05em;
+}
+
+.tool-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $ui-text-muted;
+  text-align: center;
+}
+
+// =============================
+// CTA SECTION
+// =============================
+.design-cta {
+  padding: 100px 48px;
+  background: linear-gradient(135deg, rgba($ui-accent, 0.1) 0%, rgba($ui-accent-secondary, 0.1) 100%);
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 16px;
+    color: $ui-text;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: $ui-text-muted;
+    margin: 0 0 32px;
+  }
+}
+
+.cta-button {
+  padding: 16px 48px;
+  background: $ui-accent;
+  color: $ui-bg;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba($ui-accent, 0.3);
+  }
+}
+
+// =============================
+// FOOTER
+// =============================
+.page-footer {
+  padding: 40px 48px;
+  background: $ui-bg;
+  border-top: 1px solid $ui-border;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: $ui-text-muted;
+  margin: 0;
+}
+
+// =============================
+// RESPONSIVE DESIGN
+// =============================
+@media (max-width: 1200px) {
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .design-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 140px 32px 64px;
+  }
+
+  .design-hero__stats {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .navbar-links {
+    gap: 24px;
+  }
+
+  .navbar-links li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-navbar {
+    padding: 0 24px 0 16px;
+  }
+
+  .navbar-logo {
+    font-size: 1.75rem;
+  }
+
+  .design-hero {
+    padding: 120px 24px 48px;
+  }
+
+  .design-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .design-hero__stats {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .design-philosophy,
+  .design-projects,
+  .design-skills {
+    padding: 64px 24px;
+  }
+
+  .design-process {
+    padding: 64px 24px;
+  }
+
+  .philosophy-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .tools-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .design-cta {
+    padding: 64px 24px;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .design-hero__title {
+    font-size: 2rem;
+  }
+
+  .design-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .stat-item {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .tools-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}

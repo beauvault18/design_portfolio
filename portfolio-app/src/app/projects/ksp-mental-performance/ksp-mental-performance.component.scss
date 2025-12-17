@@ -1,0 +1,561 @@
+// =============================
+// KSP MENTAL PERFORMANCE CASE STUDY STYLES
+// =============================
+
+// Variables
+$ksp-bg: #000;
+$ksp-bg-dark: #0a0a0a;
+$ksp-text-primary: #fff;
+$ksp-text-secondary: rgba(255, 255, 255, 0.7);
+$ksp-text-muted: rgba(255, 255, 255, 0.5);
+$ksp-accent: #E53935;
+$ksp-card-bg: #1a1a1a;
+$ksp-max-width: 1140px;
+$ksp-font: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+// Host styles
+:host {
+  display: block;
+  background: $ksp-bg;
+  min-height: 100vh;
+  color: $ksp-text-primary;
+  font-family: $ksp-font;
+}
+
+// Main container
+.ksp-case-study {
+  width: 100%;
+  background: $ksp-bg;
+  padding-top: 72px; // Account for fixed navbar
+}
+
+// =============================
+// SECTION 1: HERO
+// =============================
+.ksp-hero {
+  max-width: $ksp-max-width;
+  margin: 0 auto;
+  padding: 80px 48px 60px;
+  text-align: center;
+}
+
+.ksp-hero__content {
+  margin-bottom: 48px;
+}
+
+.ksp-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: $ksp-text-primary;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.ksp-hero__subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: $ksp-text-secondary;
+  margin: 0;
+}
+
+.ksp-hero__image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// =============================
+// SECTION 2: PROJECT META ROW
+// =============================
+.ksp-meta {
+  max-width: $ksp-max-width;
+  margin: 0 auto;
+  padding: 48px 48px 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ksp-meta__row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+}
+
+.ksp-meta__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ksp-meta__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $ksp-text-muted;
+}
+
+.ksp-meta__value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $ksp-text-primary;
+  line-height: 1.5;
+}
+
+.ksp-meta__item--cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ksp-meta__download-btn {
+  display: inline-block;
+  background: $ksp-accent;
+  color: $ksp-text-primary;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: darken($ksp-accent, 8%);
+    transform: translateY(-1px);
+  }
+}
+
+// =============================
+// GENERAL SECTIONS
+// =============================
+.ksp-section {
+  max-width: $ksp-max-width;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+.ksp-section--centered {
+  text-align: center;
+}
+
+.ksp-section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $ksp-text-primary;
+  margin: 0 0 32px;
+  letter-spacing: -0.01em;
+}
+
+.ksp-section__subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $ksp-text-secondary;
+  margin: 0 0 32px;
+}
+
+.ksp-section__content {
+  max-width: 800px;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $ksp-text-secondary;
+    margin: 0 0 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: $ksp-text-primary;
+      font-weight: 600;
+    }
+  }
+}
+
+// =============================
+// SECTION 4: ROADBLOCKS
+// =============================
+.ksp-roadblocks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+
+  li {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: $ksp-text-primary;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: $ksp-text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// =============================
+// SECTION 5: FLOW DIAGRAM
+// =============================
+.ksp-flow-diagram {
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.ksp-flow-diagram__caption {
+  font-size: 0.9rem;
+  color: $ksp-text-muted;
+  font-style: italic;
+  margin-top: 24px;
+}
+
+// =============================
+// SECTIONS 6 & 7: FEATURE LISTS
+// =============================
+.ksp-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+
+  li {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: $ksp-text-primary;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: $ksp-text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// =============================
+// SECTION 8: MOBILE UI SCREENS
+// =============================
+.ksp-mobile-screens {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ksp-mobile-screens__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+
+  img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.ksp-mobile-screens__caption {
+  font-size: 0.85rem;
+  color: $ksp-text-muted;
+  font-style: italic;
+  margin-top: 32px;
+}
+
+// =============================
+// SECTION 9: METRICS GRID
+// =============================
+.ksp-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+}
+
+.ksp-metric-card {
+  background: $ksp-card-bg;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ksp-metric-card__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $ksp-accent;
+  margin-bottom: 16px;
+}
+
+.ksp-metric-card__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $ksp-text-secondary;
+  margin: 0;
+}
+
+// =============================
+// SECTION 10: TESTIMONIALS
+// =============================
+.ksp-testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+}
+
+.ksp-testimonial {
+  background: $ksp-card-bg;
+  border-left: 4px solid $ksp-accent;
+  border-radius: 0 8px 8px 0;
+  padding: 32px;
+}
+
+.ksp-testimonial__quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: $ksp-text-primary;
+  margin: 0 0 16px;
+}
+
+.ksp-testimonial__author {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: $ksp-text-muted;
+}
+
+// =============================
+// SECTION 12: VALIDATION
+// =============================
+.ksp-validation {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ksp-validation__image {
+  margin-bottom: 48px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.ksp-validation__panel {
+  background: $ksp-card-bg;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: left;
+}
+
+.ksp-validation__panel-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $ksp-text-primary;
+  margin: 0 0 28px;
+}
+
+.ksp-validation__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: $ksp-text-primary;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: $ksp-text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// =============================
+// SECTION 13: NEXT PROJECT CTA
+// =============================
+.ksp-next-project {
+  max-width: $ksp-max-width;
+  margin: 0 auto;
+  padding: 64px 48px 100px;
+  text-align: center;
+}
+
+.ksp-next-project__btn {
+  display: inline-block;
+  background: transparent;
+  color: $ksp-accent;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: $ksp-font;
+  padding: 16px 40px;
+  border: 2px solid $ksp-accent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $ksp-accent;
+    color: $ksp-text-primary;
+  }
+}
+
+// =============================
+// RESPONSIVE STYLES
+// =============================
+@media (max-width: 1024px) {
+  .ksp-meta__row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .ksp-metrics-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ksp-hero {
+    padding: 60px 24px 40px;
+  }
+
+  .ksp-hero__content {
+    margin-bottom: 32px;
+  }
+
+  .ksp-meta {
+    padding: 32px 24px 48px;
+  }
+
+  .ksp-meta__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .ksp-meta__item--cta {
+    grid-column: span 2;
+  }
+
+  .ksp-section {
+    padding: 48px 24px;
+  }
+
+  .ksp-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ksp-mobile-screens__container {
+    flex-direction: column;
+    gap: 32px;
+
+    img {
+      max-width: 280px;
+    }
+  }
+
+  .ksp-testimonial {
+    padding: 24px;
+  }
+
+  .ksp-validation__panel {
+    padding: 28px;
+  }
+
+  .ksp-next-project {
+    padding: 48px 24px 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ksp-hero {
+    padding: 48px 16px 32px;
+  }
+
+  .ksp-meta {
+    padding: 24px 16px 36px;
+  }
+
+  .ksp-meta__row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ksp-meta__item--cta {
+    grid-column: span 1;
+  }
+
+  .ksp-section {
+    padding: 40px 16px;
+  }
+
+  .ksp-section__content p,
+  .ksp-roadblocks li p,
+  .ksp-feature-list li p {
+    font-size: 1rem;
+  }
+
+  .ksp-metric-card {
+    padding: 24px;
+  }
+
+  .ksp-testimonial__quote {
+    font-size: 1rem;
+  }
+
+  .ksp-next-project__btn {
+    padding: 14px 32px;
+    font-size: 0.95rem;
+  }
+}

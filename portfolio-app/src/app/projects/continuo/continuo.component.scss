@@ -1,0 +1,671 @@
+// =============================
+// CONTINUO IPAD APP CASE STUDY STYLES
+// =============================
+
+// Variables
+$continuo-bg: #000;
+$continuo-text-primary: #fff;
+$continuo-text-secondary: rgba(255, 255, 255, 0.7);
+$continuo-text-muted: rgba(255, 255, 255, 0.5);
+$continuo-accent: #3B82F6;
+$continuo-accent-light: rgba(59, 130, 246, 0.15);
+$continuo-card-bg: #111;
+$continuo-card-bg-alt: #0a0a0a;
+$continuo-border: rgba(255, 255, 255, 0.1);
+$continuo-max-width: 1140px;
+$continuo-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+// Host styles
+:host {
+  display: block;
+  background: $continuo-bg;
+  min-height: 100vh;
+  color: $continuo-text-primary;
+  font-family: $continuo-font;
+}
+
+// Main container
+.continuo-case-study {
+  width: 100%;
+  background: $continuo-bg;
+  padding-top: 72px;
+}
+
+// =============================
+// SECTION 1: HERO
+// =============================
+.continuo-hero {
+  max-width: $continuo-max-width;
+  margin: 0 auto;
+  padding: 80px 48px 60px;
+  text-align: center;
+}
+
+.continuo-hero__content {
+  margin-bottom: 48px;
+}
+
+.continuo-hero__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: $continuo-accent;
+  margin: 0 0 16px;
+}
+
+.continuo-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: $continuo-text-primary;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.continuo-hero__subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: $continuo-text-secondary;
+  margin: 0;
+}
+
+.continuo-hero__image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// =============================
+// SECTION 2: PROJECT META ROW
+// =============================
+.continuo-meta {
+  max-width: $continuo-max-width;
+  margin: 0 auto;
+  padding: 48px 48px 64px;
+  border-top: 1px solid $continuo-border;
+  border-bottom: 1px solid $continuo-border;
+}
+
+.continuo-meta__row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+}
+
+.continuo-meta__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.continuo-meta__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $continuo-text-muted;
+}
+
+.continuo-meta__value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $continuo-text-primary;
+  line-height: 1.5;
+}
+
+// =============================
+// GENERAL SECTIONS
+// =============================
+.continuo-section {
+  max-width: $continuo-max-width;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+.continuo-section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $continuo-text-primary;
+  margin: 0 0 32px;
+  letter-spacing: -0.01em;
+}
+
+.continuo-section__content {
+  max-width: 800px;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $continuo-text-secondary;
+    margin: 0 0 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: $continuo-text-primary;
+      font-weight: 600;
+    }
+  }
+
+  &--centered {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+// =============================
+// SCREENSHOT PLACEHOLDERS
+// =============================
+.continuo-screenshot-placeholder {
+  background: $continuo-card-bg-alt;
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 60px 40px;
+  margin-top: 40px;
+  text-align: center;
+
+  &--multi {
+    margin-top: 48px;
+  }
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.placeholder-icon {
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 8px;
+}
+
+.placeholder-content p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $continuo-text-secondary;
+  margin: 0;
+}
+
+.placeholder-note {
+  font-size: 0.85rem;
+  color: $continuo-text-muted;
+}
+
+// =============================
+// FEATURE BLOCKS
+// =============================
+.continuo-feature-block {
+  margin-bottom: 40px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.continuo-feature-block__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $continuo-text-primary;
+  margin: 0 0 12px;
+}
+
+.continuo-feature-block__text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: $continuo-text-secondary;
+  margin: 0;
+  max-width: 800px;
+}
+
+// =============================
+// DEMO GRID (4 demo cards)
+// =============================
+.continuo-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+  max-width: 800px;
+}
+
+.continuo-demo-card {
+  background: $continuo-card-bg;
+  border: 1px solid $continuo-border;
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $continuo-accent;
+    background: $continuo-accent-light;
+  }
+}
+
+.continuo-demo-card__icon {
+  color: $continuo-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.continuo-demo-card__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $continuo-text-primary;
+  line-height: 1.3;
+}
+
+// =============================
+// TECH SPECS (key-value pairs)
+// =============================
+.continuo-tech-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+  max-width: 800px;
+}
+
+.continuo-tech-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+  border-bottom: 1px solid $continuo-border;
+}
+
+.continuo-tech-spec__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $continuo-accent;
+}
+
+.continuo-tech-spec__value {
+  font-size: 0.95rem;
+  color: $continuo-text-secondary;
+  line-height: 1.5;
+}
+
+// =============================
+// ARCHITECTURE TREE
+// =============================
+.continuo-architecture {
+  background: $continuo-card-bg;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.continuo-architecture__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $continuo-text-primary;
+  margin: 0 0 24px;
+}
+
+.continuo-architecture__tree {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+}
+
+.tree-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &--root {
+    font-weight: 700;
+  }
+
+  &--file,
+  &--folder {
+    padding-left: 24px;
+  }
+}
+
+.tree-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.tree-name {
+  color: $continuo-text-primary;
+  font-weight: 600;
+  min-width: 100px;
+}
+
+.tree-desc {
+  color: $continuo-text-muted;
+  font-size: 0.85rem;
+  font-family: $continuo-font;
+}
+
+// =============================
+// DESIGN GRID
+// =============================
+.continuo-design-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.continuo-design-card {
+  background: $continuo-card-bg;
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid $continuo-border;
+}
+
+.continuo-design-card__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $continuo-accent;
+  margin-bottom: 12px;
+}
+
+.continuo-design-card__text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: $continuo-text-secondary;
+  margin: 0;
+}
+
+// =============================
+// CONTRIBUTIONS
+// =============================
+.continuo-contributions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 700px;
+}
+
+.continuo-contribution {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background: $continuo-card-bg;
+  border-radius: 12px;
+  border-left: 4px solid $continuo-accent;
+}
+
+.continuo-contribution__icon {
+  color: $continuo-accent;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.continuo-contribution__content {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $continuo-text-primary;
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: $continuo-text-secondary;
+    margin: 0;
+  }
+}
+
+// =============================
+// FEATURE LISTS
+// =============================
+.continuo-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+
+  li {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: $continuo-text-primary;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: $continuo-text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// =============================
+// ROADMAP
+// =============================
+.continuo-roadmap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 700px;
+}
+
+.continuo-roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: $continuo-card-bg;
+  border-radius: 12px;
+  border: 1px solid $continuo-border;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $continuo-accent;
+    background: $continuo-accent-light;
+  }
+}
+
+.continuo-roadmap-item__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.continuo-roadmap-item__text {
+  font-size: 0.95rem;
+  color: $continuo-text-secondary;
+  line-height: 1.5;
+}
+
+// =============================
+// NEXT PROJECT CTA
+// =============================
+.continuo-next-project {
+  max-width: $continuo-max-width;
+  margin: 0 auto;
+  padding: 64px 48px 100px;
+  text-align: center;
+}
+
+.continuo-next-project__btn {
+  display: inline-block;
+  background: transparent;
+  color: $continuo-accent;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: $continuo-font;
+  padding: 16px 40px;
+  border: 2px solid $continuo-accent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $continuo-accent;
+    color: $continuo-text-primary;
+  }
+}
+
+// =============================
+// RESPONSIVE STYLES
+// =============================
+@media (max-width: 1024px) {
+  .continuo-meta__row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .continuo-demo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .continuo-tech-specs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .continuo-hero {
+    padding: 60px 24px 40px;
+  }
+
+  .continuo-hero__content {
+    margin-bottom: 32px;
+  }
+
+  .continuo-meta {
+    padding: 32px 24px 48px;
+  }
+
+  .continuo-meta__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .continuo-meta__item:last-child {
+    grid-column: span 2;
+  }
+
+  .continuo-section {
+    padding: 48px 24px;
+  }
+
+  .continuo-demo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .continuo-demo-card {
+    padding: 16px 12px;
+  }
+
+  .continuo-design-grid,
+  .continuo-roadmap {
+    grid-template-columns: 1fr;
+  }
+
+  .continuo-next-project {
+    padding: 48px 24px 80px;
+  }
+
+  .continuo-screenshot-placeholder {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .continuo-hero {
+    padding: 48px 16px 32px;
+  }
+
+  .continuo-meta {
+    padding: 24px 16px 36px;
+  }
+
+  .continuo-meta__row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .continuo-meta__item:last-child {
+    grid-column: span 1;
+  }
+
+  .continuo-section {
+    padding: 40px 16px;
+  }
+
+  .continuo-demo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .continuo-demo-card__label {
+    font-size: 0.75rem;
+  }
+
+  .continuo-section__content p,
+  .continuo-feature-list li p,
+  .continuo-feature-block__text {
+    font-size: 1rem;
+  }
+
+  .continuo-contribution {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .continuo-architecture {
+    padding: 24px 16px;
+  }
+
+  .tree-item--file,
+  .tree-item--folder {
+    padding-left: 12px;
+    flex-wrap: wrap;
+  }
+
+  .tree-desc {
+    width: 100%;
+    padding-left: 28px;
+    margin-top: 4px;
+  }
+
+  .continuo-next-project__btn {
+    padding: 14px 32px;
+    font-size: 0.95rem;
+  }
+}
