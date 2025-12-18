@@ -84,6 +84,50 @@ $continuo-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, s
 }
 
 // =============================
+// LIVE DEMO SECTION
+// =============================
+.continuo-demo {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 64px 48px;
+  text-align: center;
+}
+
+.continuo-demo__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $continuo-text-primary;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.continuo-demo__subtitle {
+  font-size: 1rem;
+  color: $continuo-text-secondary;
+  margin: 0 0 32px;
+}
+
+.continuo-demo__wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;
+  background: $continuo-card-bg;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid $continuo-border;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.continuo-demo__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
+}
+
+// =============================
 // SECTION 2: PROJECT META ROW
 // =============================
 .continuo-meta {
@@ -567,6 +611,15 @@ $continuo-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, s
     margin-bottom: 32px;
   }
 
+  .continuo-demo {
+    padding: 48px 24px;
+  }
+
+  .continuo-demo__wrapper {
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+  }
+
   .continuo-meta {
     padding: 32px 24px 48px;
   }
@@ -610,6 +663,14 @@ $continuo-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, s
 @media (max-width: 480px) {
   .continuo-hero {
     padding: 48px 16px 32px;
+  }
+
+  .continuo-demo {
+    padding: 40px 16px;
+  }
+
+  .continuo-demo__wrapper {
+    aspect-ratio: 9 / 16;
   }
 
   .continuo-meta {
