@@ -80,135 +80,501 @@
     </div>
   </nav>
 
-  <!-- Section 1: Misfit Athletics -->
-  <section id="misfit" class="section">
-    <div class="section__header">
-      <span class="section__number">01</span>
-      <h2 class="section__title">Misfit Athletics</h2>
-      <p class="section__description">
-        Complete brand motion package for Misfit Athletics including logo animation, brand identity motion, and merchandise design.
-      </p>
+  <!-- Section 1: Misfit Athletics Case Study -->
+  <section id="misfit" class="section section--misfit">
+    <!-- Hero with Purple Glow -->
+    <div class="misfit-hero">
+      <div class="misfit-hero__glow"></div>
+      <div class="misfit-hero__content">
+        <span class="section__number">01</span>
+        <h2 class="misfit-hero__title">Misfit Athletics</h2>
+        <p class="misfit-hero__subtitle">Brand Motion & Visual Identity Expansion</p>
+      </div>
     </div>
 
-    <div class="projects-grid projects-grid--brand">
-      <article
-        *ngFor="let project of misfitProjects; let i = index"
-        class="project-card"
-        [class.project-card--featured]="project.featured"
-        (click)="project.videoUrl && openModal(project.videoUrl, project.title)"
-      >
-        <div class="project-card__media">
-          <div class="project-card__thumbnail" [style.backgroundImage]="'url(' + project.thumbnail + ')'">
-            <div class="project-card__overlay" *ngIf="project.videoUrl">
-              <div class="play-button">
+    <!-- Overview Section: Two Columns -->
+    <div class="misfit-overview">
+      <div class="misfit-overview__left">
+        <h3 class="misfit-overview__heading">About the Company</h3>
+        <p class="misfit-overview__text">{{ misfitAbout }}</p>
+        <h3 class="misfit-overview__heading">The Challenge</h3>
+        <p class="misfit-overview__text misfit-overview__text--highlight">{{ misfitChallenge }}</p>
+      </div>
+      <div class="misfit-overview__right">
+        <h3 class="misfit-overview__heading">My Role</h3>
+        <ul class="misfit-overview__checklist">
+          <li *ngFor="let role of misfitRole">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            {{ role }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Video Showcase -->
+    <div class="misfit-showcase">
+      <div class="misfit-main-video" (click)="openModal(misfitPodcastVideo, 'Misfit Athletics Podcast')">
+        <video
+          class="misfit-main-video__player"
+          [src]="misfitPodcastVideo"
+          muted
+          loop
+          playsinline
+          #podcastVideo
+          (mouseenter)="podcastVideo.play()"
+          (mouseleave)="podcastVideo.pause(); podcastVideo.currentTime = 0"
+        ></video>
+        <div class="misfit-main-video__overlay">
+          <div class="play-button play-button--large">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deliverables Section -->
+    <div class="misfit-section">
+      <h3 class="misfit-section__title">Key Deliverables</h3>
+      <div class="misfit-deliverables">
+        <div *ngFor="let deliverable of misfitDeliverables" class="misfit-deliverable">
+          <div class="misfit-deliverable__icon">
+            <ng-container [ngSwitch]="deliverable.icon">
+              <svg *ngSwitchCase="'film'" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                <line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+              </svg>
+              <svg *ngSwitchCase="'layers'" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+              </svg>
+              <svg *ngSwitchCase="'cube'" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </ng-container>
+          </div>
+          <h4 class="misfit-deliverable__title">{{ deliverable.title }}</h4>
+          <ul class="misfit-deliverable__list">
+            <li *ngFor="let item of deliverable.items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Motion Principles Section -->
+    <div class="misfit-section misfit-section--dark">
+      <h3 class="misfit-section__title">Visual Direction</h3>
+      <p class="misfit-section__description">The motion system was built around three core principles that define the Misfit brand experience.</p>
+      <div class="misfit-principles">
+        <div *ngFor="let principle of misfitMotionPrinciples" class="misfit-principle">
+          <span class="misfit-principle__number">{{ principle.number }}</span>
+          <h4 class="misfit-principle__title">{{ principle.title }}</h4>
+          <p class="misfit-principle__description">{{ principle.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assets Row: Design Template, Keychain, Brand Video -->
+    <div class="misfit-section">
+      <h3 class="misfit-section__title">Brand Assets</h3>
+      <div class="misfit-bottom-row">
+        <!-- Design Template Image -->
+        <div class="misfit-item misfit-item--clickable" (click)="openImageModal(misfitBottomItems.designTemplate.image, misfitBottomItems.designTemplate.title)">
+          <div class="misfit-item__media">
+            <img [src]="misfitBottomItems.designTemplate.image" [alt]="misfitBottomItems.designTemplate.title" class="misfit-item__image">
+            <div class="misfit-item__overlay">
+              <div class="expand-button expand-button--purple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+                  <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="misfit-item__content">
+            <h4 class="misfit-item__title">{{ misfitBottomItems.designTemplate.title }}</h4>
+            <p class="misfit-item__description">{{ misfitBottomItems.designTemplate.description }}</p>
+          </div>
+        </div>
+
+        <!-- Keychain Image -->
+        <div class="misfit-item misfit-item--clickable" (click)="openImageModal(misfitBottomItems.keychain.image, misfitBottomItems.keychain.title)">
+          <div class="misfit-item__media misfit-item__media--contain">
+            <img [src]="misfitBottomItems.keychain.image" [alt]="misfitBottomItems.keychain.title" class="misfit-item__image misfit-item__image--contain">
+            <div class="misfit-item__overlay">
+              <div class="expand-button expand-button--purple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+                  <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="misfit-item__content">
+            <h4 class="misfit-item__title">{{ misfitBottomItems.keychain.title }}</h4>
+            <p class="misfit-item__description">{{ misfitBottomItems.keychain.description }}</p>
+          </div>
+        </div>
+
+        <!-- Brand Video -->
+        <div class="misfit-item misfit-item--video" (click)="openModal(misfitBottomItems.brandVideo.videoUrl, misfitBottomItems.brandVideo.title)">
+          <div class="misfit-item__media">
+            <video
+              class="misfit-item__video"
+              [src]="misfitBottomItems.brandVideo.videoUrl"
+              muted
+              loop
+              playsinline
+              #brandVideo
+              (mouseenter)="brandVideo.play()"
+              (mouseleave)="brandVideo.pause(); brandVideo.currentTime = 0"
+            ></video>
+            <div class="misfit-item__overlay">
+              <div class="play-button play-button--small play-button--purple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="misfit-item__content">
+            <h4 class="misfit-item__title">{{ misfitBottomItems.brandVideo.title }}</h4>
+            <p class="misfit-item__description">{{ misfitBottomItems.brandVideo.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outcome Section -->
+    <div class="misfit-section misfit-outcome">
+      <h3 class="misfit-section__title">Outcome</h3>
+      <div class="misfit-outcome__grid">
+        <div *ngFor="let outcome of misfitOutcome" class="misfit-outcome__item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <p>{{ outcome }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Title Sequences Case Study -->
+  <section id="titles" class="section section--titles">
+    <!-- Hero with Yellow Glow -->
+    <div class="titles-hero">
+      <div class="titles-hero__glow"></div>
+      <div class="titles-hero__content">
+        <span class="section__number section__number--yellow">02</span>
+        <h2 class="titles-hero__title">Title Sequences</h2>
+        <p class="titles-hero__subtitle">Typography-Driven Motion Design</p>
+      </div>
+    </div>
+
+    <!-- Design Approach -->
+    <div class="titles-approach">
+      <div class="titles-approach__content">
+        <h3 class="titles-approach__heading">Design Approach</h3>
+        <p class="titles-approach__text">{{ titleApproach }}</p>
+        <div class="titles-approach__principles">
+          <div *ngFor="let principle of titlePrinciples" class="titles-approach__principle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <div>
+              <strong>{{ principle.title }}</strong>
+              <span>{{ principle.description }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Cards -->
+    <div class="titles-showcase">
+      <h3 class="titles-section__title">Project Showcase</h3>
+      <div class="titles-grid">
+        <article
+          *ngFor="let project of titleProjects; let i = index"
+          class="titles-card"
+          (click)="project.videoUrl && openModal(project.videoUrl, project.title)"
+          (mouseenter)="project.videoUrl && startPreview($event, project.videoUrl)"
+          (mouseleave)="stopPreview($event)"
+        >
+          <div class="titles-card__media">
+            <video
+              *ngIf="project.videoUrl"
+              class="titles-card__video"
+              [src]="project.videoUrl"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              #previewVideo
+              (loadeddata)="previewVideo.currentTime = 0.5"
+            ></video>
+            <div class="titles-card__overlay">
+              <div class="play-button play-button--yellow">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="5 3 19 12 5 21 5 3"/>
                 </svg>
               </div>
             </div>
           </div>
-        </div>
-        <div class="project-card__content">
-          <div class="project-card__tags">
-            <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
-          </div>
-          <h3 class="project-card__title">{{ project.title }}</h3>
-          <p class="project-card__description">{{ project.description }}</p>
-          <div class="project-card__tools" *ngIf="project.tools">
-            <span class="tool" *ngFor="let tool of project.tools">{{ tool }}</span>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Section 2: Title Sequences -->
-  <section id="titles" class="section section--alt">
-    <div class="section__header">
-      <span class="section__number">02</span>
-      <h2 class="section__title">Title Sequences</h2>
-      <p class="section__description">
-        Dynamic title sequences and event promos with bold typography and high-energy motion design.
-      </p>
-    </div>
-
-    <div class="projects-grid projects-grid--brand">
-      <article
-        *ngFor="let project of titleProjects"
-        class="project-card"
-        [class.project-card--featured]="project.featured"
-        (click)="project.videoUrl && openModal(project.videoUrl, project.title)"
-      >
-        <div class="project-card__media">
-          <div class="project-card__thumbnail" [style.backgroundImage]="'url(' + project.thumbnail + ')'">
-            <div class="project-card__overlay" *ngIf="project.videoUrl">
-              <div class="play-button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="5 3 19 12 5 21 5 3"/>
-                </svg>
-              </div>
+          <div class="titles-card__content">
+            <div class="titles-card__tags">
+              <span class="tag tag--yellow" *ngFor="let tag of project.tags">{{ tag }}</span>
+            </div>
+            <h4 class="titles-card__title">{{ project.title }}</h4>
+            <p class="titles-card__description">{{ project.description }}</p>
+            <div class="titles-card__tools">
+              <span class="tool" *ngFor="let tool of project.tools">{{ tool }}</span>
             </div>
           </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Motion Design Principles -->
+    <div class="titles-section titles-section--dark">
+      <h3 class="titles-section__title">Motion Design Principles</h3>
+      <p class="titles-section__description">Consistent motion rules keep animations bold, clean, and professionally unified.</p>
+      <div class="titles-rules">
+        <div *ngFor="let rule of titleMotionRules" class="titles-rule">
+          <span class="titles-rule__number">{{ rule.number }}</span>
+          <h4 class="titles-rule__title">{{ rule.title }}</h4>
+          <p class="titles-rule__description">{{ rule.description }}</p>
         </div>
-        <div class="project-card__content">
-          <div class="project-card__tags">
-            <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
-          </div>
-          <h3 class="project-card__title">{{ project.title }}</h3>
-          <p class="project-card__description">{{ project.description }}</p>
-          <div class="project-card__tools" *ngIf="project.tools">
-            <span class="tool" *ngFor="let tool of project.tools">{{ tool }}</span>
-          </div>
+      </div>
+    </div>
+
+    <!-- Tools & Workflow -->
+    <div class="titles-section">
+      <h3 class="titles-section__title">Tools & Technical Workflow</h3>
+      <div class="titles-tools">
+        <div *ngFor="let tool of titleTools" class="titles-tool">
+          <h4 class="titles-tool__name">{{ tool.name }}</h4>
+          <ul class="titles-tool__uses">
+            <li *ngFor="let use of tool.uses">{{ use }}</li>
+          </ul>
         </div>
-      </article>
+      </div>
+    </div>
+
+    <!-- Creative Decisions -->
+    <div class="titles-section">
+      <h3 class="titles-section__title">Creative Decisions</h3>
+      <div class="titles-decisions">
+        <div *ngFor="let decision of titleCreativeDecisions" class="titles-decision">
+          <div class="titles-decision__header">
+            <h4 class="titles-decision__project">{{ decision.project }}</h4>
+            <span class="titles-decision__subtitle">{{ decision.subtitle }}</span>
+            <span class="titles-decision__style">{{ decision.style }}</span>
+          </div>
+          <ul class="titles-decision__points">
+            <li *ngFor="let point of decision.points">{{ point }}</li>
+          </ul>
+          <p class="titles-decision__goal">
+            <strong>Goal:</strong> {{ decision.goal }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outcome -->
+    <div class="titles-section titles-outcome">
+      <h3 class="titles-section__title">Outcome</h3>
+      <div class="titles-outcome__grid">
+        <div *ngFor="let outcome of titleOutcome" class="titles-outcome__item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <p>{{ outcome }}</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Section 3: 3D Product Design (K'NEX) -->
-  <section id="3d" class="section">
+  <!-- Section 3: 3D Product Design (Boo's Castle / K'NEX Case Study) -->
+  <section id="3d" class="section section--case-study">
     <div class="section__header">
       <span class="section__number">03</span>
       <h2 class="section__title">3D Product Design</h2>
+      <p class="section__subtitle">K'NEX Super Mario – Ghost House Playset</p>
       <p class="section__description">
-        Nostalgic 3D recreation with modern rendering techniques and product visualization.
+        Gameplay Translation, Product Design, and Visual Development
       </p>
     </div>
 
-    <div class="projects-grid projects-grid--3d">
-      <article
-        *ngFor="let project of modelingProjects"
-        class="project-card project-card--featured"
-      >
-        <div class="project-card__media">
-          <div class="project-card__thumbnail" [style.backgroundImage]="'url(' + project.thumbnail + ')'">
+    <!-- Hero Image and Gallery - Left | Center | Right layout -->
+    <div class="case-study-hero">
+      <!-- Left thumbnails (Box, Ghost) -->
+      <div class="case-study-hero__side case-study-hero__side--left">
+        <div
+          *ngFor="let item of booCastleLeft; let i = index"
+          class="case-study-hero__thumb"
+          (click)="swapWithMain(item, 'left', i)"
+        >
+          <img [src]="item.image" [alt]="item.title" class="case-study-hero__thumb-image">
+          <span class="case-study-hero__thumb-title">{{ item.title }}</span>
+        </div>
+      </div>
+
+      <!-- Main center image -->
+      <div class="case-study-hero__main" (click)="openImageModal(currentMainImage, currentMainTitle)">
+        <img [src]="currentMainImage" [alt]="currentMainTitle" class="case-study-hero__image">
+        <div class="case-study-hero__overlay">
+          <div class="expand-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+              <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+            </svg>
           </div>
         </div>
-        <div class="project-card__content">
-          <div class="project-card__tags">
-            <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+        <span class="case-study-hero__main-title">{{ currentMainTitle }}</span>
+      </div>
+
+      <!-- Right thumbnails (Back View, Side View) -->
+      <div class="case-study-hero__side case-study-hero__side--right">
+        <div
+          *ngFor="let item of booCastleRight; let i = index"
+          class="case-study-hero__thumb"
+          (click)="swapWithMain(item, 'right', i)"
+        >
+          <img [src]="item.image" [alt]="item.title" class="case-study-hero__thumb-image">
+          <span class="case-study-hero__thumb-title">{{ item.title }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview Section -->
+    <div class="case-study-section">
+      <div class="case-study-overview">
+        <div class="case-study-overview__story">
+          <h3 class="case-study-overview__title">Overview</h3>
+          <p class="case-study-overview__text">{{ caseStudyOverview }}</p>
+          <p class="case-study-overview__highlight">{{ caseStudyHighlight }}</p>
+        </div>
+        <div class="case-study-overview__responsibilities">
+          <h4 class="case-study-overview__subtitle">My Responsibilities</h4>
+          <ul class="case-study-overview__list">
+            <li *ngFor="let item of caseStudyResponsibilities">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gameplay to Product Translation -->
+    <div class="case-study-section">
+      <h3 class="case-study-section__title">Gameplay → Product Translation</h3>
+      <p class="case-study-section__description">
+        Translating digital Mario experiences into physical, tactile play required careful analysis of what makes Ghost House levels memorable and fun.
+      </p>
+      <div class="case-study-translation">
+        <div *ngFor="let card of caseStudyTranslation" class="case-study-translation__card">
+          <span class="case-study-translation__icon">{{ card.icon }}</span>
+          <h4 class="case-study-translation__title">{{ card.title }}</h4>
+          <ul class="case-study-translation__list">
+            <li *ngFor="let item of card.items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cost Modeling & Features -->
+    <div class="case-study-section">
+      <h3 class="case-study-section__title">Cost Modeling & Feature Constraints</h3>
+      <p class="case-study-section__description">
+        Each feature had to meet a target MSRP of <strong>$40</strong>. This required real product thinking — balancing creativity with manufacturing realities.
+      </p>
+      <div class="case-study-features">
+        <div class="case-study-features__column case-study-features__column--kept">
+          <div class="case-study-features__header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <h4>Features Kept</h4>
           </div>
-          <h3 class="project-card__title">{{ project.title }}</h3>
-          <p class="project-card__description">{{ project.description }}</p>
-          <div class="project-card__tools" *ngIf="project.tools">
-            <span class="tool" *ngFor="let tool of project.tools">{{ tool }}</span>
+          <ul>
+            <li *ngFor="let feature of caseStudyFeatures.kept">{{ feature }}</li>
+          </ul>
+        </div>
+        <div class="case-study-features__divider">
+          <span>VS</span>
+        </div>
+        <div class="case-study-features__column case-study-features__column--cut">
+          <div class="case-study-features__header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <h4>Features Cut</h4>
+          </div>
+          <ul>
+            <li *ngFor="let feature of caseStudyFeatures.cut">{{ feature }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design Challenges -->
+    <div class="case-study-section">
+      <h3 class="case-study-section__title">Design Challenges</h3>
+      <div class="case-study-challenges">
+        <div *ngFor="let challenge of caseStudyChallenges; let i = index" class="case-study-challenge">
+          <span class="case-study-challenge__number">{{ i + 1 }}</span>
+          <h4 class="case-study-challenge__title">{{ challenge.title }}</h4>
+          <div class="case-study-challenge__content">
+            <div class="case-study-challenge__problem">
+              <span class="case-study-challenge__label">Challenge</span>
+              <p>{{ challenge.problem }}</p>
+            </div>
+            <div class="case-study-challenge__solution">
+              <span class="case-study-challenge__label">Solution</span>
+              <p>{{ challenge.solution }}</p>
+            </div>
           </div>
         </div>
-      </article>
+      </div>
+    </div>
+
+    <!-- What I Learned -->
+    <div class="case-study-section">
+      <h3 class="case-study-section__title">What I Learned</h3>
+      <div class="case-study-learnings">
+        <div *ngFor="let learning of caseStudyLearnings" class="case-study-learning">
+          <span class="case-study-learning__icon">{{ learning.icon }}</span>
+          <p class="case-study-learning__text">{{ learning.text }}</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Section 4: Game-Inspired Sword Animation -->
+  <!-- Section 4: Game-Inspired Sword Animation Case Study -->
   <section id="sword" class="section section--sword">
-    <!-- Full-width hero banner -->
+    <!-- Hero with Background Image and Cyan Glow -->
     <div class="sword-hero">
       <div class="sword-hero__bg" [style.backgroundImage]="'url(' + swordProject.thumbnail + ')'"></div>
       <div class="sword-hero__overlay"></div>
+      <div class="sword-hero__glow"></div>
       <div class="sword-hero__content">
-        <span class="section__number">04</span>
+        <span class="section__number section__number--cyan">04</span>
         <h2 class="sword-hero__title">{{ swordProject.title }}</h2>
-        <p class="sword-hero__description">{{ swordProject.description }}</p>
+        <p class="sword-hero__subtitle">Fantasy Prop Design & Cinematic Animation</p>
         <div class="sword-hero__tags">
-          <span class="tag tag--glow" *ngFor="let tag of swordProject.tags">{{ tag }}</span>
+          <span class="tag tag--cyan" *ngFor="let tag of swordProject.tags">{{ tag }}</span>
         </div>
         <button
           class="sword-hero__cta"
@@ -222,58 +588,100 @@
       </div>
     </div>
 
-    <!-- Two-column layout for details -->
-    <div class="sword-details">
-      <div class="sword-details__left">
-        <h3 class="sword-details__heading">Process & Techniques</h3>
-        <div class="process-list">
-          <div class="process-item">
-            <span class="process-item__number">01</span>
-            <div class="process-item__content">
-              <h4>Concept & Reference</h4>
-              <p>Gathering reference materials from iconic games and developing the visual direction.</p>
-            </div>
-          </div>
-          <div class="process-item">
-            <span class="process-item__number">02</span>
-            <div class="process-item__content">
-              <h4>3D Modeling</h4>
-              <p>Creating detailed sword models with attention to blade geometry and handle details.</p>
-            </div>
-          </div>
-          <div class="process-item">
-            <span class="process-item__number">03</span>
-            <div class="process-item__content">
-              <h4>Texturing & Materials</h4>
-              <p>Applying realistic metal textures, wear patterns, and glowing magical elements.</p>
-            </div>
-          </div>
-          <div class="process-item">
-            <span class="process-item__number">04</span>
-            <div class="process-item__content">
-              <h4>Animation & VFX</h4>
-              <p>Bringing the swords to life with dynamic motion and particle effects.</p>
-            </div>
+    <!-- Project Overview -->
+    <div class="sword-overview">
+      <div class="sword-overview__content">
+        <h3 class="sword-overview__heading">Project Overview</h3>
+        <p class="sword-overview__text">{{ swordOverview }}</p>
+        <p class="sword-overview__highlight">{{ swordOverviewHighlight }}</p>
+      </div>
+    </div>
+
+    <!-- Process & Techniques -->
+    <div class="sword-section">
+      <h3 class="sword-section__title">Process & Techniques</h3>
+      <div class="sword-process">
+        <div *ngFor="let step of swordProcess" class="sword-process__step">
+          <span class="sword-process__number">{{ step.number }}</span>
+          <div class="sword-process__content">
+            <h4 class="sword-process__title">{{ step.title }}</h4>
+            <p class="sword-process__description">{{ step.description }}</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="sword-details__right">
-        <h3 class="sword-details__heading">Gallery</h3>
-        <div class="sword-gallery">
-          <div
-            class="sword-gallery__item"
-            *ngFor="let item of swordGallery"
-            [style.backgroundImage]="'url(' + item.image + ')'"
-          >
-            <span class="sword-gallery__caption">{{ item.caption }}</span>
-          </div>
+    <!-- Design Intent -->
+    <div class="sword-section sword-section--dark">
+      <h3 class="sword-section__title">Design Intent</h3>
+      <div class="sword-intent">
+        <div *ngFor="let intent of swordDesignIntent" class="sword-intent__item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+          <p>{{ intent }}</p>
         </div>
-        <div class="sword-tools">
-          <h4>Tools Used</h4>
-          <div class="sword-tools__list">
-            <span class="tool tool--large" *ngFor="let tool of swordProject.tools">{{ tool }}</span>
+      </div>
+    </div>
+
+    <!-- Tools Used -->
+    <div class="sword-section">
+      <h3 class="sword-section__title">Tools Used</h3>
+      <div class="sword-tools-grid">
+        <span class="sword-tool" *ngFor="let tool of swordTools">{{ tool }}</span>
+      </div>
+    </div>
+
+    <!-- Project Highlights -->
+    <div class="sword-section">
+      <h3 class="sword-section__title">Project Highlights</h3>
+      <div class="sword-highlights">
+        <div *ngFor="let highlight of swordHighlights" class="sword-highlight">
+          <div class="sword-highlight__icon">
+            <ng-container [ngSwitch]="highlight.icon">
+              <svg *ngSwitchCase="'cube'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+              <svg *ngSwitchCase="'sparkles'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3L14.5 8.5L20 9L16 13L17 19L12 16L7 19L8 13L4 9L9.5 8.5L12 3Z"/>
+              </svg>
+              <svg *ngSwitchCase="'sun'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+              <svg *ngSwitchCase="'film'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                <line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+              </svg>
+              <svg *ngSwitchCase="'palette'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="13.5" cy="6.5" r="2.5"/>
+                <circle cx="17.5" cy="10.5" r="2.5"/>
+                <circle cx="8.5" cy="7.5" r="2.5"/>
+                <circle cx="6.5" cy="12.5" r="2.5"/>
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.555C21.965 6.012 17.461 2 12 2z"/>
+              </svg>
+            </ng-container>
           </div>
+          <p class="sword-highlight__text">{{ highlight.text }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- What I Learned -->
+    <div class="sword-section sword-learnings">
+      <h3 class="sword-section__title">What I Learned</h3>
+      <div class="sword-learnings__grid">
+        <div *ngFor="let learning of swordLearnings" class="sword-learning">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <p>{{ learning }}</p>
         </div>
       </div>
     </div>
@@ -318,6 +726,26 @@
         </video>
       </div>
       <p class="modal__title">{{ currentVideoTitle }}</p>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div class="modal modal--image" [class.modal--active]="isImageModalOpen" (click)="closeImageModal()">
+    <div class="modal__content modal__content--image" (click)="$event.stopPropagation()">
+      <button class="modal__close" (click)="closeImageModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal__image-container">
+        <img
+          *ngIf="isImageModalOpen && currentImage"
+          [src]="currentImage"
+          [alt]="currentImageTitle"
+          class="modal__image"
+        >
+      </div>
+      <p class="modal__title">{{ currentImageTitle }}</p>
     </div>
   </div>
 </div>
