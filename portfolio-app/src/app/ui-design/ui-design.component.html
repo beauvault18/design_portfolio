@@ -1,378 +1,364 @@
-<!-- UI/Design Page -->
 <div class="ui-design-page">
-
   <!-- Navigation Bar -->
   <nav class="main-navbar">
-    <div class="navbar-logo" routerLink="/" style="cursor:pointer;">BW</div>
+    <div class="navbar-logo" routerLink="/">BW</div>
     <ul class="navbar-links">
-      <li routerLink="/ui-design" class="active" style="cursor:pointer;">UI/Design</li>
+      <li routerLink="/ui-design" class="active">UI/Design</li>
       <li>Projects</li>
-      <li routerLink="/animation" style="cursor:pointer;">Animation</li>
-      <li routerLink="/product-design" style="cursor:pointer;">Product Design</li>
-      <li routerLink="/projects/zelda-puzzle" style="cursor:pointer;">Puzzle</li>
-      <li routerLink="/about" style="cursor:pointer;">About</li>
+      <li routerLink="/animation">Animation</li>
+      <li routerLink="/product-design">Product Design</li>
+      <li routerLink="/projects/zelda-puzzle">Puzzle</li>
+      <li routerLink="/about">About</li>
       <li>Contact</li>
       <li>Get CV</li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="design-hero">
-    <div class="design-hero__content">
-      <span class="design-hero__label">UI/UX Design</span>
-      <h1 class="design-hero__title">Crafting Digital<br/>Experiences</h1>
-      <p class="design-hero__subtitle">I design intuitive, beautiful interfaces that put users first. From wireframes to polished prototypes, every pixel has a purpose.</p>
-    </div>
-    <div class="design-hero__stats">
-      <div class="stat-item">
-        <span class="stat-number">50+</span>
-        <span class="stat-label">Projects Completed</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">4+</span>
-        <span class="stat-label">Years Experience</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">100%</span>
-        <span class="stat-label">Client Satisfaction</span>
-      </div>
-    </div>
-  </section>
+  <!-- Hero Section - Visual UI/UX Concept -->
+  <section class="hero">
+    <div class="hero__bg-grid"></div>
 
-  <!-- Design Philosophy Section -->
-  <section class="design-philosophy">
-    <h2 class="section-title">Design Philosophy</h2>
-    <div class="philosophy-grid">
-      <div class="philosophy-card">
-        <div class="philosophy-card__icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <!-- Glow orbs -->
+    <div class="hero__glow hero__glow--blue"></div>
+    <div class="hero__glow hero__glow--purple"></div>
+    <div class="hero__glow hero__glow--cyan"></div>
+    <div class="hero__glow hero__glow--red"></div>
+    <div class="hero__glow hero__glow--center"></div>
+
+    <!-- Left Side: The Problem (User Pain Points) -->
+    <div class="hero__concept hero__concept--left">
+      <div class="concept-card concept-card--problem">
+        <div class="concept-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/>
-            <path d="M12 16v-4M12 8h.01"/>
+            <path d="M8 15h8"/>
+            <circle cx="9" cy="9" r="1" fill="currentColor"/>
+            <circle cx="15" cy="9" r="1" fill="currentColor"/>
           </svg>
         </div>
-        <h3 class="philosophy-card__title">User-Centered</h3>
-        <p class="philosophy-card__text">Every design decision starts with understanding user needs, pain points, and goals.</p>
+        <span class="concept-card__label">Confused User</span>
       </div>
-      <div class="philosophy-card">
-        <div class="philosophy-card__icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+      <div class="concept-card concept-card--chaos">
+        <div class="chaos-lines">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="concept-card__label">Cluttered Interface</span>
+      </div>
+      <div class="concept-card concept-card--question">
+        <span class="question-mark">?</span>
+        <span class="concept-card__label">Unclear Goals</span>
+      </div>
+    </div>
+
+    <!-- Center: The Transformation -->
+    <div class="hero__center">
+      <div class="transformation-flow">
+        <div class="flow-arrow flow-arrow--left">
+          <svg width="60" height="24" viewBox="0 0 60 24">
+            <path d="M0 12 L50 12" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+            <path d="M45 7 L55 12 L45 17" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
+        <div class="hero__title-container">
+          <span class="hero__eyebrow">The Art & Science of</span>
+          <h1 class="hero__title">
+            <span class="hero__title-word">UI</span>
+            <span class="hero__title-divider">/</span>
+            <span class="hero__title-word hero__title-word--accent">UX</span>
+          </h1>
+          <p class="hero__tagline">Design</p>
+          <div class="hero__description">
+            <p>Transforming complexity into clarity.<br/>Making technology feel human.</p>
+          </div>
+        </div>
+
+        <div class="flow-arrow flow-arrow--right">
+          <svg width="60" height="24" viewBox="0 0 60 24">
+            <path d="M0 12 L50 12" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+            <path d="M45 7 L55 12 L45 17" stroke="currentColor" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Process Icons Below Title -->
+      <div class="process-icons">
+        <div class="process-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <span>Research</span>
+        </div>
+        <div class="process-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
             <line x1="3" y1="9" x2="21" y2="9"/>
             <line x1="9" y1="21" x2="9" y2="9"/>
           </svg>
+          <span>Wireframe</span>
         </div>
-        <h3 class="philosophy-card__title">Systematic</h3>
-        <p class="philosophy-card__text">Building scalable design systems that ensure consistency across all touchpoints.</p>
+        <div class="process-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+            <path d="M2 2l7.586 7.586"/>
+            <circle cx="11" cy="11" r="2"/>
+          </svg>
+          <span>Design</span>
+        </div>
+        <div class="process-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <circle cx="12" cy="18" r="1"/>
+          </svg>
+          <span>Prototype</span>
+        </div>
+        <div class="process-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+          <span>Test</span>
+        </div>
       </div>
-      <div class="philosophy-card">
-        <div class="philosophy-card__icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </div>
+
+    <!-- Right Side: The Solution (Happy User) -->
+    <div class="hero__concept hero__concept--right">
+      <div class="concept-card concept-card--happy">
+        <div class="concept-card__icon concept-card__icon--success">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+            <circle cx="9" cy="9" r="1" fill="currentColor"/>
+            <circle cx="15" cy="9" r="1" fill="currentColor"/>
           </svg>
         </div>
-        <h3 class="philosophy-card__title">Delightful</h3>
-        <p class="philosophy-card__text">Infusing joy into interactions through thoughtful animations and micro-interactions.</p>
+        <span class="concept-card__label">Delighted User</span>
       </div>
-      <div class="philosophy-card">
-        <div class="philosophy-card__icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      <div class="concept-card concept-card--organized">
+        <div class="organized-grid">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="concept-card__label">Clean Interface</span>
+      </div>
+      <div class="concept-card concept-card--checkmark">
+        <span class="checkmark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"/>
           </svg>
-        </div>
-        <h3 class="philosophy-card__title">Iterative</h3>
-        <p class="philosophy-card__text">Embracing feedback and testing to continuously refine and improve designs.</p>
+        </span>
+        <span class="concept-card__label">Clear Goals</span>
       </div>
     </div>
   </section>
 
-  <!-- Design Process Section -->
-  <section class="design-process">
-    <h2 class="section-title">My Design Process</h2>
-    <div class="process-timeline">
-      <div class="process-step">
-        <div class="process-step__number">01</div>
-        <div class="process-step__content">
-          <h3>Discover</h3>
-          <p>Research users, analyze competitors, and define the problem space through interviews and data analysis.</p>
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="process-step__number">02</div>
-        <div class="process-step__content">
-          <h3>Define</h3>
-          <p>Synthesize research into personas, user journeys, and clear design requirements.</p>
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="process-step__number">03</div>
-        <div class="process-step__content">
-          <h3>Design</h3>
-          <p>Create wireframes, visual designs, and interactive prototypes that bring ideas to life.</p>
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="process-step__number">04</div>
-        <div class="process-step__content">
-          <h3>Deliver</h3>
-          <p>Hand off polished designs with detailed specs, collaborate with developers, and iterate based on feedback.</p>
-        </div>
+  <!-- Category Navigation -->
+  <nav class="category-nav">
+    <div class="category-nav__container">
+      <button
+        *ngFor="let cat of categories"
+        class="category-pill"
+        [class.category-pill--active]="activeCategory === cat.id"
+        (click)="scrollToSection(cat.id)"
+      >
+        <span class="category-pill__icon">
+          <ng-container [ngSwitch]="cat.icon">
+            <svg *ngSwitchCase="'layout'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+            <svg *ngSwitchCase="'smartphone'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+            <svg *ngSwitchCase="'zap'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            <svg *ngSwitchCase="'tool'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </ng-container>
+        </span>
+        {{ cat.label }}
+      </button>
+    </div>
+  </nav>
+
+  <!-- Section 1: Featured Projects -->
+  <section id="projects" class="section section--projects">
+    <!-- Hero with Blue Glow -->
+    <div class="projects-hero">
+      <div class="projects-hero__glow"></div>
+      <div class="projects-hero__content">
+        <span class="section__number">01</span>
+        <h2 class="projects-hero__title">Featured Projects</h2>
+        <p class="projects-hero__subtitle">End-to-End Design Case Studies</p>
       </div>
     </div>
-  </section>
 
-  <!-- Interactive Prototypes Section -->
-  <section class="design-prototypes">
-    <h2 class="section-title">Interactive Prototypes</h2>
-    <p class="section-subtitle">Click through my designs to experience the interactions firsthand</p>
-
-    <div class="prototypes-grid">
-      <!-- Oddish Hover Prototype -->
-      <div class="prototype-card">
-        <div class="prototype-card__header">
-          <span class="prototype-card__label">Hover Interaction</span>
-          <h3 class="prototype-card__title">Oddish Hover</h3>
-          <p class="prototype-card__description">A playful Pokemon-inspired hover interaction with charming character animations.</p>
-        </div>
-        <div class="prototype-card__embed">
-          <iframe
-            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F67iGNn5lLLDez3DeIG9E5x%2FOddish-Hover%3Fnode-id%3D0-1"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="prototype-card__footer">
-          <a href="https://www.figma.com/proto/67iGNn5lLLDez3DeIG9E5x/Oddish-Hover?node-id=0-1" target="_blank" class="prototype-card__link">
-            Open in Figma
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Plant Side Menu Prototype -->
-      <div class="prototype-card">
-        <div class="prototype-card__header">
-          <span class="prototype-card__label">UI Component</span>
-          <h3 class="prototype-card__title">Plant Side Menu</h3>
-          <p class="prototype-card__description">An elegant side navigation menu with smooth animations and plant-themed styling.</p>
-        </div>
-        <div class="prototype-card__embed">
-          <iframe
-            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FijsfV4riyTjm3Y4wVj0HOb%2FPlant-Side-Menu%3Fnode-id%3D0-1"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="prototype-card__footer">
-          <a href="https://www.figma.com/proto/ijsfV4riyTjm3Y4wVj0HOb/Plant-Side-Menu?node-id=0-1" target="_blank" class="prototype-card__link">
-            Open in Figma
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Tokyo Hover Prototype -->
-      <div class="prototype-card">
-        <div class="prototype-card__header">
-          <span class="prototype-card__label">Hover Interaction</span>
-          <h3 class="prototype-card__title">Tokyo Hover</h3>
-          <p class="prototype-card__description">A dynamic hover effect inspired by Tokyo aesthetics with smooth transitions and visual feedback.</p>
-        </div>
-        <div class="prototype-card__embed">
-          <iframe
-            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F14Mga7Iup55iOUCdMdKKjq%2FTokyo-Hover%3Fnode-id%3D0-1"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="prototype-card__footer">
-          <a href="https://www.figma.com/proto/14Mga7Iup55iOUCdMdKKjq/Tokyo-Hover?node-id=0-1" target="_blank" class="prototype-card__link">
-            Open in Figma
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Sushi Hover Prototype -->
-      <div class="prototype-card">
-        <div class="prototype-card__header">
-          <span class="prototype-card__label">Hover Interaction</span>
-          <h3 class="prototype-card__title">Sushi Hover</h3>
-          <p class="prototype-card__description">A playful hover interaction featuring sushi-themed elements with delightful micro-animations.</p>
-        </div>
-        <div class="prototype-card__embed">
-          <iframe
-            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fyws7QWXQjCJM4RdSuGBsu3%2FSushi-Hover%3Fnode-id%3D0-1"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="prototype-card__footer">
-          <a href="https://www.figma.com/proto/yws7QWXQjCJM4RdSuGBsu3/Sushi-Hover?node-id=0-1" target="_blank" class="prototype-card__link">
-            Open in Figma
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Navigation Buttons Prototype -->
-      <div class="prototype-card">
-        <div class="prototype-card__header">
-          <span class="prototype-card__label">UI Component</span>
-          <h3 class="prototype-card__title">Navigation Buttons</h3>
-          <p class="prototype-card__description">A collection of interactive navigation button styles with hover states and transitions.</p>
-        </div>
-        <div class="prototype-card__embed">
-          <iframe
-            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F1oSj6j5oiy3jvONACjATtj%2FNavigation-buttons%3Fnode-id%3D0-1"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="prototype-card__footer">
-          <a href="https://www.figma.com/proto/1oSj6j5oiy3jvONACjATtj/Navigation-buttons?node-id=0-1" target="_blank" class="prototype-card__link">
-            Open in Figma
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Splash Logo Prototype -->
-      <div class="prototype-card">
-        <div class="prototype-card__header">
-          <span class="prototype-card__label">Animation</span>
-          <h3 class="prototype-card__title">Splash Logo</h3>
-          <p class="prototype-card__description">An animated logo splash screen with fluid motion and brand reveal effects.</p>
-        </div>
-        <div class="prototype-card__embed">
-          <iframe
-            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FGaOwQ2oRcn2mouHSUW26R9%2FSplash-logo%3Fnode-id%3D0-1"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="prototype-card__footer">
-          <a href="https://www.figma.com/proto/GaOwQ2oRcn2mouHSUW26R9/Splash-logo?node-id=0-1" target="_blank" class="prototype-card__link">
-            Open in Figma
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Liquid Menu Prototype -->
-      <div class="prototype-card">
-        <div class="prototype-card__header">
-          <span class="prototype-card__label">UI Component</span>
-          <h3 class="prototype-card__title">Liquid Menu</h3>
-          <p class="prototype-card__description">A fluid navigation menu with liquid morphing effects and smooth state transitions.</p>
-        </div>
-        <div class="prototype-card__embed">
-          <iframe
-            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FviNhhsI7HBFodJA50Hwby2%2FLiquid-Menu%3Fnode-id%3D0-1"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="prototype-card__footer">
-          <a href="https://www.figma.com/proto/viNhhsI7HBFodJA50Hwby2/Liquid-Menu?node-id=0-1" target="_blank" class="prototype-card__link">
-            Open in Figma
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Projects Section -->
-  <section class="design-projects">
-    <h2 class="section-title">Featured Design Work</h2>
-    <div class="projects-grid">
-      <div
-        *ngFor="let project of designProjects"
-        class="project-card"
-        [routerLink]="project.route"
-        [style.cursor]="project.route ? 'pointer' : 'default'">
-        <div class="project-card__image">
-          <img [src]="project.image" [alt]="project.title" />
-          <div class="project-card__overlay">
-            <span class="view-project">View Project</span>
-          </div>
-        </div>
-        <div class="project-card__content">
-          <span class="project-card__category">{{ project.category }}</span>
-          <h3 class="project-card__title">{{ project.title }}</h3>
-          <p class="project-card__description">{{ project.description }}</p>
-          <div class="project-card__tags">
-            <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="design-skills">
-    <h2 class="section-title">Skills & Expertise</h2>
-    <div class="skills-container">
-      <div class="skills-bars">
-        <div *ngFor="let skill of skills" class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">{{ skill.name }}</span>
-            <span class="skill-level">{{ skill.level }}%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar__fill" [style.width.%]="skill.level"></div>
-          </div>
-        </div>
-      </div>
-      <div class="tools-grid">
-        <h3 class="tools-title">Tools I Use</h3>
-        <div class="tools-list">
-          <div *ngFor="let tool of tools" class="tool-item">
-            <div class="tool-icon">
-              <span>{{ tool.icon.toUpperCase() }}</span>
+    <!-- Project Cards Grid -->
+    <div class="projects-showcase">
+      <div class="projects-grid">
+        <article
+          *ngFor="let project of designProjects"
+          class="project-card"
+          [routerLink]="project.route"
+        >
+          <div class="project-card__media">
+            <img [src]="project.image" [alt]="project.title" class="project-card__image">
+            <div class="project-card__overlay">
+              <div class="view-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                View Project
+              </div>
             </div>
-            <span class="tool-name">{{ tool.name }}</span>
           </div>
-        </div>
+          <div class="project-card__content">
+            <div class="project-card__tags">
+              <span class="tag tag--blue" *ngFor="let tag of project.tags">{{ tag }}</span>
+            </div>
+            <h3 class="project-card__title">{{ project.title }}</h3>
+            <p class="project-card__description">{{ project.description }}</p>
+            <span class="project-card__category">{{ project.category }}</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="design-cta">
-    <div class="cta-content">
-      <h2>Let's Create Something Amazing</h2>
-      <p>Have a project in mind? I'd love to hear about it and explore how we can work together.</p>
-      <button class="cta-button">Get In Touch</button>
+  <!-- Section 2: Interactive Prototypes -->
+  <section id="prototypes" class="section section--prototypes">
+    <!-- Hero with Purple Glow -->
+    <div class="prototypes-hero">
+      <div class="prototypes-hero__glow"></div>
+      <div class="prototypes-hero__content">
+        <span class="section__number section__number--purple">02</span>
+        <h2 class="prototypes-hero__title">Interactive Prototypes</h2>
+        <p class="prototypes-hero__subtitle">Click through my designs to experience the interactions</p>
+      </div>
+    </div>
+
+    <!-- Prototypes Grid -->
+    <div class="prototypes-showcase">
+      <div class="prototypes-grid">
+        <article *ngFor="let prototype of prototypes" class="prototype-card">
+          <div class="prototype-card__header">
+            <span class="prototype-card__label">{{ prototype.label }}</span>
+            <h3 class="prototype-card__title">{{ prototype.title }}</h3>
+            <p class="prototype-card__description">{{ prototype.description }}</p>
+          </div>
+          <div class="prototype-card__embed">
+            <iframe
+              [src]="prototype.embedUrl"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="prototype-card__footer">
+            <a [href]="prototype.figmaUrl" target="_blank" class="prototype-card__link">
+              Open in Figma
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Design Process -->
+  <section id="process" class="section section--process">
+    <!-- Hero with Cyan Glow -->
+    <div class="process-hero">
+      <div class="process-hero__glow"></div>
+      <div class="process-hero__content">
+        <span class="section__number section__number--cyan">03</span>
+        <h2 class="process-hero__title">Design Process</h2>
+        <p class="process-hero__subtitle">My Approach to Creating Exceptional Experiences</p>
+      </div>
+    </div>
+
+    <!-- Process Overview -->
+    <div class="process-overview">
+      <div class="process-overview__content">
+        <h3 class="process-overview__heading">Design Philosophy</h3>
+        <p class="process-overview__text">{{ designPhilosophy }}</p>
+        <p class="process-overview__highlight">{{ designHighlight }}</p>
+      </div>
+    </div>
+
+    <!-- Process Steps -->
+    <div class="process-section">
+      <h3 class="process-section__title">My Process</h3>
+      <div class="process-steps">
+        <div *ngFor="let step of processSteps" class="process-step">
+          <span class="process-step__number">{{ step.number }}</span>
+          <div class="process-step__content">
+            <h4 class="process-step__title">{{ step.title }}</h4>
+            <p class="process-step__description">{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools & Skills Row -->
+    <div class="process-section">
+      <div class="tools-skills-row">
+        <!-- Tools Used -->
+        <div class="tools-column">
+          <h3 class="process-section__title">Tools I Use</h3>
+          <div class="tools-grid">
+            <span class="tool-item" *ngFor="let tool of tools">{{ tool.name }}</span>
+          </div>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="section-divider"></div>
+
+        <!-- Skills -->
+        <div class="skills-column">
+          <h3 class="process-section__title">Core Skills</h3>
+          <div class="skills-grid">
+            <div *ngFor="let skill of skills" class="skill-item">
+              <div class="skill-item__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <p class="skill-item__text">{{ skill.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="page-footer">
     <div class="footer-content">
-      <p class="footer-text">Designed & Built by Beau Whitman</p>
+      <div class="footer-cta">
+        <h3>Let's Create Something Amazing</h3>
+        <p>Have a project in mind? I'd love to hear about it.</p>
+        <button class="footer-button" routerLink="/about">Get in Touch</button>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-text">Designed & Built by Beau Whitman</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">LinkedIn</a>
+          <a href="#" class="footer-link">Dribbble</a>
+          <a href="#" class="footer-link">Behance</a>
+        </div>
+      </div>
     </div>
   </footer>
-
 </div>
