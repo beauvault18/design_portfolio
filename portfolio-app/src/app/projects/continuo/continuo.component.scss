@@ -128,6 +128,432 @@ $continuo-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, s
 }
 
 // =============================
+// LOW-FIDELITY WIREFRAMES SECTION
+// =============================
+$wf-stroke: rgba(255, 255, 255, 0.25);
+$wf-fill: rgba(255, 255, 255, 0.08);
+$wf-bg: #0d0d0d;
+
+.continuo-wireframes {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  border-bottom: 1px solid $continuo-border;
+}
+
+.continuo-wireframes__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.continuo-wireframes__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $continuo-text-primary;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.continuo-wireframes__subtitle {
+  font-size: 1rem;
+  color: $continuo-text-secondary;
+  margin: 0;
+}
+
+.wireframe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.wireframe-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.wireframe-card__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $continuo-text-muted;
+  margin-bottom: 12px;
+}
+
+.wireframe-frame {
+  background: $wf-bg;
+  border: 1px solid $wf-stroke;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &--landscape {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.wireframe-card__caption {
+  font-size: 0.85rem;
+  color: $continuo-text-secondary;
+  margin: 12px 0 0;
+  line-height: 1.5;
+}
+
+// Common wireframe elements
+.wf-back-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid $wf-stroke;
+  border-radius: 4px;
+  background: $wf-fill;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.wf-heading-line {
+  height: 10px;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 3px;
+  width: 60%;
+
+  &--short {
+    width: 35%;
+  }
+
+  &--center {
+    margin: 0 auto;
+  }
+}
+
+.wf-text-block {
+  height: 6px;
+  background: $wf-fill;
+  border-radius: 2px;
+  width: 100%;
+  margin-top: 8px;
+
+  &--short {
+    width: 70%;
+  }
+}
+
+// Wireframe 1: Main Menu
+.wf-main-menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 24px;
+}
+
+.wf-logo {
+  width: 50%;
+  height: 20px;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 4px;
+}
+
+.wf-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 45%;
+}
+
+.wf-btn {
+  height: 18px;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 4px;
+}
+
+// Wireframe 2: Role Selection
+.wf-role-select {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: relative;
+}
+
+.wf-role-select .wf-heading-line {
+  width: 50%;
+  margin: 24px auto 16px;
+}
+
+.wf-role-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 8px;
+  align-content: center;
+}
+
+.wf-role-card {
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 6px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.wf-role-icon {
+  width: 24px;
+  height: 24px;
+  border: 1px solid $wf-stroke;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.wf-role-text {
+  width: 80%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+// Wireframe 3: News Carousel
+.wf-news-carousel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: relative;
+}
+
+.wf-carousel-header {
+  padding: 20px 0 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.wf-carousel-track {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.wf-news-card {
+  flex: 0 0 28%;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &--partial {
+    flex: 0 0 15%;
+    opacity: 0.5;
+  }
+}
+
+.wf-news-img {
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.wf-news-text {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  width: 100%;
+
+  &--short {
+    width: 60%;
+  }
+}
+
+// Wireframe 4: Feature Gallery
+.wf-feature-gallery {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: relative;
+}
+
+.wf-feature-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+  padding: 20px 8px 8px;
+}
+
+.wf-feature-tile {
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wf-feature-thumb {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  min-height: 40px;
+}
+
+.wf-feature-label {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  width: 70%;
+}
+
+// Wireframe 5: Video Detail (50/50)
+.wf-video-detail {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.wf-video-left {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid $wf-stroke;
+}
+
+.wf-video-player {
+  width: 90%;
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid $wf-stroke;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wf-play-icon {
+  width: 28px;
+  height: 28px;
+  border: 1px solid $wf-stroke;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $wf-fill;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    fill: rgba(255, 255, 255, 0.3);
+    margin-left: 2px;
+  }
+}
+
+.wf-video-right {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+
+  .wf-heading-line {
+    width: 70%;
+  }
+}
+
+// Wireframe 6: Contact Form
+.wf-contact-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+}
+
+.wf-form-container {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.wf-form-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wf-input {
+  height: 14px;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.wf-submit-btn {
+  width: 40%;
+  height: 16px;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+// Responsive wireframe adjustments
+@media (max-width: 1024px) {
+  .wireframe-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .continuo-wireframes {
+    padding: 64px 24px;
+  }
+
+  .wireframe-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .wireframe-frame--landscape {
+    aspect-ratio: 4 / 3;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .continuo-wireframes {
+    padding: 48px 16px;
+  }
+
+  .wireframe-frame--landscape {
+    max-width: 100%;
+  }
+}
+
+// =============================
 // SECTION 2: PROJECT META ROW
 // =============================
 .continuo-meta {
