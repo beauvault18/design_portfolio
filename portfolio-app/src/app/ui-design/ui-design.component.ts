@@ -64,7 +64,7 @@ export class UiDesignComponent {
       title: 'Continuo iPad App',
       category: 'Tablet App Design',
       description: 'An interactive iPad application for healthcare demonstrations, featuring role-based navigation and video content management.',
-      image: 'assets/continuo/continuo-hero.png',
+      image: 'assets/projects/continuo/continuo-main-menu.png',
       tags: ['iPad UI', 'Healthcare', 'Flutter'],
       route: '/projects/continuo'
     },
