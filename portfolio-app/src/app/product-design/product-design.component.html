@@ -1,0 +1,323 @@
+<div class="product-design-page">
+  <!-- Navigation Bar -->
+  <nav class="main-navbar">
+    <div class="navbar-logo" routerLink="/">BW</div>
+    <ul class="navbar-links">
+      <li routerLink="/ui-design">UI/Design</li>
+      <li>Projects</li>
+      <li routerLink="/animation">Animation</li>
+      <li routerLink="/product-design" class="active">Product Design</li>
+      <li routerLink="/projects/zelda-puzzle">Puzzle</li>
+      <li routerLink="/about">About</li>
+      <li>Contact</li>
+      <li>Get CV</li>
+    </ul>
+  </nav>
+
+  <!-- 3D Product Design Hero -->
+  <div class="product-hero">
+    <div class="product-hero__glow"></div>
+    <div class="product-hero__grid"></div>
+    <div class="product-hero__content">
+      <div class="product-hero__cube">
+        <div class="product-hero__cube-face product-hero__cube-face--front"></div>
+        <div class="product-hero__cube-face product-hero__cube-face--back"></div>
+        <div class="product-hero__cube-face product-hero__cube-face--left"></div>
+        <div class="product-hero__cube-face product-hero__cube-face--right"></div>
+        <div class="product-hero__cube-face product-hero__cube-face--top"></div>
+        <div class="product-hero__cube-face product-hero__cube-face--bottom"></div>
+      </div>
+      <h2 class="product-hero__title">3D Product Design</h2>
+      <div class="product-hero__line"></div>
+      <p class="product-hero__subtitle">From Concept to Physical Reality</p>
+    </div>
+  </div>
+
+  <!-- K'NEX Sub-Header -->
+  <div class="case-study-subheader case-study-subheader--knex">
+    <p class="case-study-subheader__subtitle">Licensed Toy Development</p>
+    <h3 class="case-study-subheader__title">K'NEX Super Mario – Ghost House Playset</h3>
+    <p class="case-study-subheader__description">Gameplay Translation, Product Design, and Visual Development</p>
+  </div>
+
+  <!-- Hero Image and Gallery - Left | Center | Right layout -->
+  <div class="case-study-hero">
+    <!-- Left thumbnails (Box, Ghost) -->
+    <div class="case-study-hero__side case-study-hero__side--left">
+      <div
+        *ngFor="let item of booCastleLeft; let i = index"
+        class="case-study-hero__thumb"
+        (click)="swapWithMain(item, 'left', i)"
+      >
+        <img [src]="item.image" [alt]="item.title" class="case-study-hero__thumb-image">
+        <span class="case-study-hero__thumb-title">{{ item.title }}</span>
+      </div>
+    </div>
+
+    <!-- Main center image -->
+    <div class="case-study-hero__main" (click)="openImageModal(currentMainImage, currentMainTitle)">
+      <img [src]="currentMainImage" [alt]="currentMainTitle" class="case-study-hero__image">
+      <div class="case-study-hero__overlay">
+        <div class="expand-button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+            <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+          </svg>
+        </div>
+      </div>
+      <span class="case-study-hero__main-title">{{ currentMainTitle }}</span>
+    </div>
+
+    <!-- Right thumbnails (Back View, Side View) -->
+    <div class="case-study-hero__side case-study-hero__side--right">
+      <div
+        *ngFor="let item of booCastleRight; let i = index"
+        class="case-study-hero__thumb"
+        (click)="swapWithMain(item, 'right', i)"
+      >
+        <img [src]="item.image" [alt]="item.title" class="case-study-hero__thumb-image">
+        <span class="case-study-hero__thumb-title">{{ item.title }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overview Section -->
+  <div class="case-study-section">
+    <div class="case-study-overview">
+      <div class="case-study-overview__story">
+        <h3 class="case-study-overview__title">Overview</h3>
+        <p class="case-study-overview__text">{{ caseStudyOverview }}</p>
+        <p class="case-study-overview__highlight">{{ caseStudyHighlight }}</p>
+      </div>
+      <div class="case-study-overview__responsibilities">
+        <h4 class="case-study-overview__subtitle">My Responsibilities</h4>
+        <ul class="case-study-overview__list">
+          <li *ngFor="let item of caseStudyResponsibilities">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gameplay to Product Translation -->
+  <div class="case-study-section">
+    <h3 class="case-study-section__title">Gameplay → Product Translation</h3>
+    <p class="case-study-section__description">
+      Translating digital Mario experiences into physical, tactile play required careful analysis of what makes Ghost House levels memorable and fun.
+    </p>
+    <div class="case-study-translation">
+      <div *ngFor="let card of caseStudyTranslation" class="case-study-translation__card">
+        <h4 class="case-study-translation__title">{{ card.title }}</h4>
+        <ul class="case-study-translation__list">
+          <li *ngFor="let item of card.items">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cost Modeling & Features -->
+  <div class="case-study-section">
+    <h3 class="case-study-section__title">Cost Modeling & Feature Constraints</h3>
+    <p class="case-study-section__description">
+      Each feature had to meet a target price point. This required real product thinking — balancing creativity with manufacturing realities.
+    </p>
+    <div class="case-study-features">
+      <div class="case-study-features__column case-study-features__column--kept">
+        <div class="case-study-features__header">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <h4>Features Kept</h4>
+        </div>
+        <ul>
+          <li *ngFor="let feature of caseStudyFeatures.kept">{{ feature }}</li>
+        </ul>
+      </div>
+      <div class="case-study-features__divider">
+        <span>VS</span>
+      </div>
+      <div class="case-study-features__column case-study-features__column--cut">
+        <div class="case-study-features__header">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+          <h4>Features Cut</h4>
+        </div>
+        <ul>
+          <li *ngFor="let feature of caseStudyFeatures.cut">{{ feature }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design Challenges -->
+  <div class="case-study-section">
+    <h3 class="case-study-section__title">Design Challenges</h3>
+    <div class="case-study-challenges">
+      <div *ngFor="let challenge of caseStudyChallenges; let i = index" class="case-study-challenge">
+        <span class="case-study-challenge__number">{{ i + 1 }}</span>
+        <h4 class="case-study-challenge__title">{{ challenge.title }}</h4>
+        <div class="case-study-challenge__content">
+          <div class="case-study-challenge__problem">
+            <span class="case-study-challenge__label">Challenge</span>
+            <p>{{ challenge.problem }}</p>
+          </div>
+          <div class="case-study-challenge__solution">
+            <span class="case-study-challenge__label">Solution</span>
+            <p>{{ challenge.solution }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What I Learned -->
+  <div class="case-study-section">
+    <h3 class="case-study-section__title">What I Learned</h3>
+    <div class="case-study-learnings">
+      <div *ngFor="let learning of caseStudyLearnings" class="case-study-learning">
+        <div class="case-study-learning__front">
+          <span class="case-study-learning__keyword">{{ learning.keyword }}</span>
+        </div>
+        <div class="case-study-learning__back">
+          <p class="case-study-learning__definition">{{ learning.definition }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- White Erase Chair Project Divider -->
+  <div class="project-divider"></div>
+
+  <!-- White Erase Chair Sub-Header -->
+  <div class="case-study-subheader case-study-subheader--green">
+    <p class="case-study-subheader__subtitle">{{ whiteEraseChair.subtitle }}</p>
+    <h3 class="case-study-subheader__title">{{ whiteEraseChair.title }}</h3>
+  </div>
+
+  <!-- White Erase Chair: Gallery (thumbs left) + Main Image + Overview (right) -->
+  <div class="case-study-section">
+    <div class="white-erase-intro">
+      <!-- Left: Thumbnails + Main Image -->
+      <div class="white-erase-intro__gallery">
+        <!-- Thumbnails Column -->
+        <div class="white-erase-intro__thumbs">
+          <div
+            *ngFor="let item of whiteEraseGallery; let i = index"
+            class="white-erase-intro__thumb"
+            (click)="swapWhiteEraseImage(item, i)"
+          >
+            <img [src]="item.image" [alt]="item.caption">
+            <span class="white-erase-intro__thumb-title">{{ item.caption }}</span>
+          </div>
+        </div>
+        <!-- Main Image -->
+        <div class="white-erase-intro__main" (click)="openImageModal(whiteEraseMainImage, whiteEraseMainTitle)">
+          <img [src]="whiteEraseMainImage" [alt]="whiteEraseMainTitle">
+          <div class="white-erase-intro__main-overlay">
+            <div class="expand-button expand-button--green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+                <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+              </svg>
+            </div>
+          </div>
+          <span class="white-erase-intro__main-title">{{ whiteEraseMainTitle }}</span>
+        </div>
+      </div>
+      <!-- Right: Overview -->
+      <div class="white-erase-intro__content">
+        <h3 class="white-erase-intro__title">Overview</h3>
+        <p class="white-erase-intro__text">{{ whiteEraseChair.description }}</p>
+      </div>
+    </div>
+    <!-- Tags below both -->
+    <div class="white-erase-intro__tags">
+      <span class="tag tag--green" *ngFor="let tag of whiteEraseChair.tags">{{ tag }}</span>
+    </div>
+  </div>
+
+  <!-- White Erase Chair Process & Techniques -->
+  <div class="case-study-section white-erase-process-section">
+    <h3 class="white-erase-process-section__title">Process & Techniques</h3>
+    <div class="white-erase-process-grid">
+      <div *ngFor="let step of whiteEraseProcess" class="white-erase-flip-card">
+        <div class="white-erase-flip-card__inner">
+          <div class="white-erase-flip-card__front">
+            <span class="white-erase-flip-card__step">Step {{ step.number }}</span>
+          </div>
+          <div class="white-erase-flip-card__back">
+            <h4 class="white-erase-flip-card__title">{{ step.title }}</h4>
+            <p class="white-erase-flip-card__description">{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- White Erase Chair Tools -->
+  <div class="case-study-section">
+    <h3 class="case-study-section__title case-study-section__title--green">Tools Used</h3>
+    <div class="white-erase-tools__grid">
+      <span class="white-erase-tool" *ngFor="let tool of whiteEraseTools">{{ tool }}</span>
+    </div>
+  </div>
+
+  <!-- White Erase Chair What I Learned -->
+  <div class="case-study-section">
+    <h3 class="case-study-section__title case-study-section__title--green">What I Learned</h3>
+    <div class="case-study-learnings case-study-learnings--green">
+      <div *ngFor="let learning of whiteEraseLearnings" class="case-study-learning case-study-learning--green">
+        <div class="case-study-learning__front">
+          <span class="case-study-learning__keyword">{{ learning.keyword }}</span>
+        </div>
+        <div class="case-study-learning__back">
+          <p class="case-study-learning__definition">{{ learning.definition }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-content">
+      <div class="footer-cta">
+        <h3>Interested in working together?</h3>
+        <p>Let's create something amazing.</p>
+        <button class="footer-button" routerLink="/about">Get in Touch</button>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-text">Designed & Built by Beau Whitman</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">LinkedIn</a>
+          <a href="#" class="footer-link">Dribbble</a>
+          <a href="#" class="footer-link">Vimeo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Image Modal -->
+  <div class="modal modal--image" [class.modal--active]="isImageModalOpen" (click)="closeImageModal()">
+    <div class="modal__content modal__content--image" (click)="$event.stopPropagation()">
+      <button class="modal__close" (click)="closeImageModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal__image-container">
+        <img
+          *ngIf="isImageModalOpen && currentImage"
+          [src]="currentImage"
+          [alt]="currentImageTitle"
+          class="modal__image"
+        >
+      </div>
+      <p class="modal__title">{{ currentImageTitle }}</p>
+    </div>
+  </div>
+</div>

@@ -46,7 +46,6 @@ export class AnimationComponent implements AfterViewInit, OnDestroy {
   categories: Category[] = [
     { id: 'misfit', label: 'Misfit Athletics', icon: 'layers' },
     { id: 'titles', label: 'Title Sequences', icon: 'film' },
-    { id: '3d', label: '3D Product Design', icon: 'cube' },
     { id: 'sword', label: 'Sword Animation', icon: 'sword' },
   ];
 
@@ -235,111 +234,6 @@ export class AnimationComponent implements AfterViewInit, OnDestroy {
     'Professional polish through strong type, rhythm, and lighting',
   ];
 
-  // 3D Product Design - Boo's Castle
-  booCastleMain = {
-    title: "Boo's Castle",
-    description: "A detailed 3D product design inspired by Nintendo's iconic Boo character. Complete toy packaging design with multiple angles showcasing the haunted castle playset.",
-    image: 'assets/animation/product 2.jpg',
-    tags: ['3D Modeling', 'Product Design', 'Toy Design'],
-    tools: ['Blender', 'Cinema 4D'],
-  };
-
-  // Left side thumbnails (Box and Ghost)
-  booCastleLeft = [
-    { image: 'assets/animation/box.png', title: 'Box Design' },
-    { image: 'assets/animation/ghost.png', title: 'Ghost Character' },
-  ];
-
-  // Right side thumbnails (Views)
-  booCastleRight = [
-    { image: 'assets/animation/backview.png', title: 'Back View' },
-    { image: 'assets/animation/sideview.png', title: 'Side View' },
-  ];
-
-  // Current main image
-  currentMainImage = 'assets/animation/product 2.jpg';
-  currentMainTitle = "Boo's Castle";
-
-  // Swap thumbnail with main image
-  swapWithMain(thumbnail: { image: string; title: string }, side: 'left' | 'right', index: number): void {
-    // Store current main
-    const oldMain = { image: this.currentMainImage, title: this.currentMainTitle };
-
-    // Set new main from thumbnail
-    this.currentMainImage = thumbnail.image;
-    this.currentMainTitle = thumbnail.title;
-
-    // Replace thumbnail with old main
-    if (side === 'left') {
-      this.booCastleLeft[index] = oldMain;
-    } else {
-      this.booCastleRight[index] = oldMain;
-    }
-  }
-
-  // K'NEX Case Study Data
-  caseStudyOverview = `During high school, I joined a specialized design program where I collaborated directly with the K'NEX product team on a licensed Super Mario playset. The goal was to translate an iconic "Ghost House" level from the Mario universe into a physical toy that would meet strict manufacturing constraints and perform well on retail shelves.`;
-
-  caseStudyHighlight = `Despite being a student, I contributed to core parts of the product's development: gameplay research, feature selection, price-point modeling, prototyping, and visual design. The final design was part of the K'NEX x Nintendo Mario line and sold in major retail stores.`;
-
-  caseStudyResponsibilities = [
-    'Gameplay Research & Feature Extraction',
-    'Cost Modeling & Feature Prioritization',
-    'Visual Design: Painting & Sticker Development',
-    'Prototype Assembly & User Testing',
-    'Brand Guideline Compliance (Nintendo)',
-  ];
-
-  caseStudyTranslation = [
-    {
-      icon: '🎮',
-      title: 'Gameplay Mechanics Identified',
-      items: ['Moving platforms', 'Hidden Boos that appear/disappear', 'Multi-level exploration', 'Trap steps & sliding elements', 'Secret passages'],
-    },
-    {
-      icon: '🏗️',
-      title: 'Physical Features Selected',
-      items: ['Rotating ghost platform', 'Pop-up Boo mechanism', 'Three-story structure', 'Hinged trap door stairs', 'Modular room layout'],
-    },
-    {
-      icon: '💡',
-      title: 'Why These Choices Matter',
-      items: ['Tactile engagement over visual tricks', 'Replayable discovery moments', 'Age-appropriate complexity', "Compatible with existing K'NEX parts", '"Haunted" atmosphere captured'],
-    },
-  ];
-
-  caseStudyFeatures = {
-    kept: ['Rotating ghost platform', 'Pop-up Boo figure', 'Three-story structure', 'Trap door mechanism', 'Custom decal sheets', 'Mario & Boo minifigures'],
-    cut: ['LED lighting effects', 'Sound module', 'Motorized elements', 'Extra character figures', 'Larger footprint design', 'Complex gear mechanisms'],
-  };
-
-  caseStudyChallenges = [
-    {
-      title: 'Translating Digital Mechanics Into Physical Play',
-      problem: 'The Mario Ghost House level contains visual tricks and illusions that are impossible to fully replicate physically.',
-      solution: 'Focused on mechanics that could be "felt" physically: movement, levels, reveals, and tactile discovery moments.',
-    },
-    {
-      title: 'Hitting a Price Point Without Sacrificing Play Value',
-      problem: 'Fun vs. cost was a constant balancing act throughout development.',
-      solution: "Reused standard K'NEX parts, removed costly ideas, emphasized modular construction that maximized play value.",
-    },
-    {
-      title: 'Sticker Legibility at Small Scale',
-      problem: 'Nintendo graphics are highly detailed; sticker surfaces on toys are very small.',
-      solution: 'Simplified shapes, increased contrast, prioritized silhouettes over texture for maximum visual impact.',
-    },
-  ];
-
-  caseStudyLearnings = [
-    { icon: '🎯', text: 'How to map digital experiences into physical products' },
-    { icon: '💰', text: 'How cost constraints shape creative decisions' },
-    { icon: '🎨', text: 'How to design within strict brand guidelines (Nintendo)' },
-    { icon: '🔄', text: 'How to build intuitive play flow through prototyping' },
-    { icon: '✨', text: 'How environmental graphics dramatically influence toy atmosphere' },
-    { icon: '🤝', text: 'How to collaborate with engineering and manufacturing teams' },
-  ];
-
   // Sword Animation Project
   swordProject: AnimationProject = {
     title: 'Game-Inspired 3D Sword Animation',
@@ -392,7 +286,7 @@ export class AnimationComponent implements AfterViewInit, OnDestroy {
     'Build a clean, reusable workflow for future prop animations',
   ];
 
-  swordTools = ['Blender', 'After Effects', 'DaVinci Resolve', 'Photoshop'];
+  swordTools = ['Blender', 'After Effects', '3ds Max', 'Photoshop'];
 
   swordHighlights = [
     { icon: 'cube', text: 'Hero-prop modeling with clean topology' },
@@ -471,7 +365,7 @@ export class AnimationComponent implements AfterViewInit, OnDestroy {
   // Track scroll for active category
   @HostListener('window:scroll')
   onScroll(): void {
-    const sections = ['misfit', 'titles', '3d', 'sword'];
+    const sections = ['misfit', 'titles', 'sword'];
     for (const section of sections) {
       const element = document.getElementById(section);
       if (element) {
@@ -552,6 +446,48 @@ export class AnimationComponent implements AfterViewInit, OnDestroy {
     const titlesHeader = document.getElementById('titles-header');
     if (titlesHeader) {
       titleCardsObserver.observe(titlesHeader);
+    }
+
+    // Observer for titles-hero animated title sequence
+    const titlesHeroObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-animating');
+            titlesHeroObserver.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '0px 0px -10% 0px',
+      }
+    );
+
+    const titlesHero = document.querySelector('.titles-hero');
+    if (titlesHero) {
+      titlesHeroObserver.observe(titlesHero);
+    }
+
+    // Trigger smoke explosion on category nav when scan line reaches bottom
+    const categoryNav = document.querySelector('.category-nav');
+    if (categoryNav) {
+      // The scan line animation takes 8.5s total: 6s drop + 2.5s smoke (no extra wait)
+      // Line reaches bottom at 71% of 8.5s = ~6s
+      const triggerExplosion = () => {
+        categoryNav.classList.add('is-exploding');
+        // Remove class after smoke animation completes (2.5s) so it can be triggered again
+        setTimeout(() => {
+          categoryNav.classList.remove('is-exploding');
+        }, 2500);
+      };
+
+      // First trigger at 6s when scan line first hits bottom
+      // Then repeat every 8.5s to match the full animation cycle
+      setTimeout(() => {
+        triggerExplosion();
+        setInterval(triggerExplosion, 8500);
+      }, 6000);
     }
   }
 
