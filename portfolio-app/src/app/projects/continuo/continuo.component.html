@@ -3,20 +3,20 @@
 
   <!-- SECTION 1: HERO -->
   <section class="continuo-hero">
-    <div class="continuo-hero__content">
-      <p class="continuo-hero__label">Digital Product Design Portfolio Entry</p>
-      <h1 class="continuo-hero__title">Continuo iPad App</h1>
-      <p class="continuo-hero__subtitle">Healthcare AI Innovation – Case Study</p>
-    </div>
-    <div class="continuo-hero__image">
-      <img src="assets/continuo/hero-cover.png" alt="Continuo iPad App Main Menu" />
+    <div class="continuo-hero__badge">Case Study</div>
+    <h1 class="continuo-hero__title">Continuo iPad App</h1>
+    <p class="continuo-hero__subtitle">A healthcare AI showcase application built with Flutter for trade shows and conferences</p>
+    <div class="continuo-hero__tags">
+      <span class="hero-tag">Flutter</span>
+      <span class="hero-tag">iPad</span>
+      <span class="hero-tag">Healthcare</span>
+      <span class="hero-tag">AI</span>
     </div>
   </section>
 
   <!-- SECTION: LIVE DEMO -->
   <section class="continuo-demo">
-    <h2 class="continuo-demo__title">Try the App</h2>
-    <p class="continuo-demo__subtitle">Explore the live demo below (best experienced on larger screens)</p>
+    <div class="continuo-demo__glow"></div>
     <div class="continuo-demo__wrapper">
       <iframe
         src="/assets/continuo/app/index.html"
@@ -26,6 +26,7 @@
         loading="lazy">
       </iframe>
     </div>
+    <p class="continuo-demo__hint">Interactive demo — best on larger screens</p>
   </section>
 
   <!-- SECTION: LOW-FIDELITY WIREFRAMES -->
@@ -196,6 +197,230 @@
     </div>
   </section>
 
+  <!-- SECTION: CODE SHOWCASE -->
+  <section class="continuo-code-showcase">
+    <div class="continuo-code-showcase__header">
+      <h2 class="continuo-code-showcase__title">Code Architecture</h2>
+      <p class="continuo-code-showcase__subtitle">Clean, maintainable Flutter/Dart code with reusable components and thoughtful state management</p>
+    </div>
+
+    <div class="code-examples">
+      <!-- Code Example 1: Custom Button Component -->
+      <div class="code-example">
+        <div class="code-example__header">
+          <div class="code-example__badge">Widget</div>
+          <h3 class="code-example__title">CustomButton Component</h3>
+        </div>
+        <div class="code-example__description">
+          <p>A reusable, configurable button widget with hover animations, customizable styling, and consistent behavior across the app. Demonstrates proper widget composition and state management.</p>
+        </div>
+        <div class="code-example__block">
+          <div class="code-block__header">
+            <span class="code-block__filename">lib/widgets/custom_button.dart</span>
+            <span class="code-block__lang">Dart</span>
+          </div>
+          <pre class="code-block__content"><code><span class="code-keyword">class</span> <span class="code-class">CustomButton</span> <span class="code-keyword">extends</span> <span class="code-class">StatefulWidget</span> &#123;
+  <span class="code-keyword">final</span> <span class="code-type">String</span> text;
+  <span class="code-keyword">final</span> <span class="code-type">VoidCallback</span>? onTap;
+  <span class="code-keyword">final</span> <span class="code-type">double</span> width;
+  <span class="code-keyword">final</span> <span class="code-type">double</span> height;
+  <span class="code-keyword">final</span> <span class="code-type">Color</span>? backgroundColor;
+  <span class="code-keyword">final</span> <span class="code-type">double</span> borderRadius;
+  <span class="code-keyword">final</span> <span class="code-type">double</span> fontSize;
+
+  <span class="code-keyword">const</span> <span class="code-function">CustomButton</span>(&#123;
+    <span class="code-keyword">required</span> <span class="code-keyword">this</span>.text,
+    <span class="code-keyword">this</span>.width = <span class="code-number">420</span>,
+    <span class="code-keyword">this</span>.height = <span class="code-number">72</span>,
+    <span class="code-keyword">this</span>.borderRadius = <span class="code-number">12</span>,
+  &#125;);
+&#125;
+
+<span class="code-keyword">class</span> <span class="code-class">_CustomButtonState</span> <span class="code-keyword">extends</span> <span class="code-class">State</span>&lt;<span class="code-class">CustomButton</span>&gt; &#123;
+  <span class="code-type">bool</span> _hovering = <span class="code-keyword">false</span>;
+
+  <span class="code-decorator">@override</span>
+  <span class="code-type">Widget</span> <span class="code-function">build</span>(<span class="code-type">BuildContext</span> context) &#123;
+    <span class="code-keyword">return</span> <span class="code-class">MouseRegion</span>(
+      onEnter: (_) =&gt; <span class="code-function">setState</span>(() =&gt; _hovering = <span class="code-keyword">true</span>),
+      onExit: (_) =&gt; <span class="code-function">setState</span>(() =&gt; _hovering = <span class="code-keyword">false</span>),
+      child: <span class="code-class">AnimatedScale</span>(
+        scale: _hovering ? <span class="code-number">1.05</span> : <span class="code-number">1.0</span>,
+        duration: <span class="code-keyword">const</span> <span class="code-class">Duration</span>(milliseconds: <span class="code-number">200</span>),
+        child: <span class="code-class">Container</span>(
+          decoration: <span class="code-class">BoxDecoration</span>(
+            color: _hovering ? bg.<span class="code-function">withOpacity</span>(<span class="code-number">0.92</span>) : bg,
+            boxShadow: _hovering ? [<span class="code-class">BoxShadow</span>(...)] : [],
+          ),
+        ),
+      ),
+    );
+  &#125;
+&#125;</code></pre>
+        </div>
+        <div class="code-example__highlights">
+          <span class="highlight-tag">Hover States</span>
+          <span class="highlight-tag">Animation</span>
+          <span class="highlight-tag">Reusable Props</span>
+        </div>
+      </div>
+
+      <!-- Code Example 2: Theme System -->
+      <div class="code-example">
+        <div class="code-example__header">
+          <div class="code-example__badge">Design System</div>
+          <h3 class="code-example__title">Centralized Theme</h3>
+        </div>
+        <div class="code-example__description">
+          <p>A centralized theme configuration ensuring visual consistency across the entire application. Defines brand colors, typography hierarchy, and Material 3 color scheme integration.</p>
+        </div>
+        <div class="code-example__block">
+          <div class="code-block__header">
+            <span class="code-block__filename">lib/utils/theme.dart</span>
+            <span class="code-block__lang">Dart</span>
+          </div>
+          <pre class="code-block__content"><code><span class="code-keyword">import</span> <span class="code-string">'package:flutter/material.dart'</span>;
+
+<span class="code-keyword">const</span> continuoBlue = <span class="code-class">Color</span>(<span class="code-number">0xFF0072CE</span>);
+<span class="code-keyword">const</span> continuoAccent = <span class="code-class">Color</span>(<span class="code-number">0xFFE8F3FF</span>);
+<span class="code-keyword">const</span> continuoText = <span class="code-class">Color</span>(<span class="code-number">0xFF001E3C</span>);
+<span class="code-keyword">const</span> continuoBackground = <span class="code-class">Color</span>(<span class="code-number">0xFFFFFFFF</span>);
+
+<span class="code-keyword">final</span> continuoTheme = <span class="code-class">ThemeData</span>(
+  brightness: <span class="code-class">Brightness</span>.light,
+  primaryColor: continuoBlue,
+  scaffoldBackgroundColor: continuoBackground,
+  fontFamily: <span class="code-string">'SF Pro Display'</span>,
+  textTheme: <span class="code-keyword">const</span> <span class="code-class">TextTheme</span>(
+    displayLarge: <span class="code-class">TextStyle</span>(
+      fontSize: <span class="code-number">32</span>,
+      fontWeight: <span class="code-class">FontWeight</span>.bold,
+      color: continuoText,
+    ),
+    titleLarge: <span class="code-class">TextStyle</span>(
+      fontSize: <span class="code-number">22</span>,
+      fontWeight: <span class="code-class">FontWeight</span>.w600,
+    ),
+  ),
+  colorScheme: <span class="code-class">ColorScheme</span>.<span class="code-function">fromSwatch</span>().<span class="code-function">copyWith</span>(
+    primary: continuoBlue,
+    secondary: continuoAccent,
+  ),
+  useMaterial3: <span class="code-keyword">true</span>,
+);</code></pre>
+        </div>
+        <div class="code-example__highlights">
+          <span class="highlight-tag">Brand Colors</span>
+          <span class="highlight-tag">Typography Scale</span>
+          <span class="highlight-tag">Material 3</span>
+        </div>
+      </div>
+
+      <!-- Code Example 3: Inactivity Timer -->
+      <div class="code-example">
+        <div class="code-example__header">
+          <div class="code-example__badge">Utility</div>
+          <h3 class="code-example__title">Inactivity Timer Singleton</h3>
+        </div>
+        <div class="code-example__description">
+          <p>A singleton pattern implementation for managing app-wide inactivity detection. Essential for trade show kiosk mode—automatically resets the app after periods of user inactivity.</p>
+        </div>
+        <div class="code-example__block">
+          <div class="code-block__header">
+            <span class="code-block__filename">lib/utils/inactivity_timer.dart</span>
+            <span class="code-block__lang">Dart</span>
+          </div>
+          <pre class="code-block__content"><code><span class="code-comment">/// Singleton that manages global inactivity logic.</span>
+<span class="code-comment">/// Triggers callback after [timeout] of inactivity.</span>
+<span class="code-keyword">class</span> <span class="code-class">InactivityTimer</span> <span class="code-keyword">with</span> <span class="code-class">WidgetsBindingObserver</span> &#123;
+  <span class="code-keyword">static final</span> <span class="code-class">InactivityTimer</span> _instance =
+      <span class="code-class">InactivityTimer</span>.<span class="code-function">_internal</span>();
+  <span class="code-keyword">factory</span> <span class="code-function">InactivityTimer</span>() =&gt; _instance;
+  <span class="code-class">InactivityTimer</span>.<span class="code-function">_internal</span>();
+
+  <span class="code-type">Timer</span>? _timer;
+  <span class="code-type">Duration</span> timeout = <span class="code-keyword">const</span> <span class="code-class">Duration</span>(seconds: <span class="code-number">60</span>);
+  <span class="code-type">VoidCallback</span>? onTimeout;
+  <span class="code-type">bool</span> _paused = <span class="code-keyword">false</span>;
+
+  <span class="code-type">void</span> <span class="code-function">start</span>(<span class="code-type">VoidCallback</span> onTimeout) &#123;
+    <span class="code-keyword">this</span>.onTimeout = onTimeout;
+    <span class="code-function">_reset</span>();
+    <span class="code-class">WidgetsBinding</span>.instance.<span class="code-function">addObserver</span>(<span class="code-keyword">this</span>);
+  &#125;
+
+  <span class="code-type">void</span> <span class="code-function">userActivity</span>() =&gt; <span class="code-function">_reset</span>();
+
+  <span class="code-decorator">@override</span>
+  <span class="code-type">void</span> <span class="code-function">didChangeAppLifecycleState</span>(<span class="code-type">AppLifecycleState</span> state) &#123;
+    <span class="code-keyword">if</span> (state == <span class="code-class">AppLifecycleState</span>.paused) <span class="code-function">pause</span>();
+    <span class="code-keyword">else if</span> (state == <span class="code-class">AppLifecycleState</span>.resumed) <span class="code-function">resume</span>();
+  &#125;
+&#125;</code></pre>
+        </div>
+        <div class="code-example__highlights">
+          <span class="highlight-tag">Singleton Pattern</span>
+          <span class="highlight-tag">Lifecycle Aware</span>
+          <span class="highlight-tag">Kiosk Mode</span>
+        </div>
+      </div>
+
+      <!-- Code Example 4: Page Transitions -->
+      <div class="code-example">
+        <div class="code-example__header">
+          <div class="code-example__badge">Navigation</div>
+          <h3 class="code-example__title">Custom Page Transitions</h3>
+        </div>
+        <div class="code-example__description">
+          <p>Smooth fade transitions between screens using AnimationController with custom easing curves. Creates a polished, professional feel throughout the navigation experience.</p>
+        </div>
+        <div class="code-example__block">
+          <div class="code-block__header">
+            <span class="code-block__filename">lib/screens/ai_in_healthcare/role_select_screen.dart</span>
+            <span class="code-block__lang">Dart</span>
+          </div>
+          <pre class="code-block__content"><code><span class="code-keyword">class</span> <span class="code-class">_RoleSelectScreenState</span> <span class="code-keyword">extends</span> <span class="code-class">State</span>&lt;<span class="code-class">RoleSelectScreen</span>&gt;
+    <span class="code-keyword">with</span> <span class="code-class">SingleTickerProviderStateMixin</span> &#123;
+  <span class="code-keyword">late</span> <span class="code-type">AnimationController</span> _controller;
+  <span class="code-keyword">late</span> <span class="code-type">Animation</span>&lt;<span class="code-type">double</span>&gt; _fadeAnim;
+
+  <span class="code-decorator">@override</span>
+  <span class="code-type">void</span> <span class="code-function">initState</span>() &#123;
+    <span class="code-keyword">super</span>.<span class="code-function">initState</span>();
+    _controller = <span class="code-class">AnimationController</span>(
+      vsync: <span class="code-keyword">this</span>,
+      duration: <span class="code-keyword">const</span> <span class="code-class">Duration</span>(milliseconds: <span class="code-number">600</span>),
+    );
+    _fadeAnim = <span class="code-class">CurvedAnimation</span>(
+      parent: _controller,
+      curve: <span class="code-class">Curves</span>.easeInOut,
+    );
+  &#125;
+
+  <span class="code-type">void</span> <span class="code-function">_onRoleTap</span>(<span class="code-type">int</span> idx) <span class="code-keyword">async</span> &#123;
+    <span class="code-keyword">await</span> _controller.<span class="code-function">reverse</span>();
+    <span class="code-keyword">await</span> <span class="code-class">Navigator</span>.<span class="code-function">of</span>(context).<span class="code-function">push</span>(
+      <span class="code-class">PageRouteBuilder</span>(
+        pageBuilder: (context, anim1, anim2) =&gt;
+            <span class="code-class">RoleNewsScreen</span>(role: roles[idx]),
+        transitionsBuilder: (context, anim, _, child) =&gt;
+            <span class="code-class">FadeTransition</span>(opacity: anim, child: child),
+        transitionDuration: <span class="code-keyword">const</span> <span class="code-class">Duration</span>(milliseconds: <span class="code-number">600</span>),
+      ),
+    );
+    _controller.<span class="code-function">forward</span>();
+  &#125;
+&#125;</code></pre>
+        </div>
+        <div class="code-example__highlights">
+          <span class="highlight-tag">AnimationController</span>
+          <span class="highlight-tag">Custom Curves</span>
+          <span class="highlight-tag">PageRouteBuilder</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION 2: PROJECT META ROW -->
   <section class="continuo-meta">
     <div class="continuo-meta__row">
@@ -229,18 +454,8 @@
       <p>Continuo is a professional-grade iPad application, meticulously crafted with Flutter, that exemplifies the intersection of healthcare innovation and digital product design. The app is purpose-built for healthcare professionals—including nurses, doctors, and administrators—serving as a showcase for advanced AI-driven healthcare solutions at industry events, conferences, and business development meetings.</p>
       <p>The primary objective is to deliver complex healthcare technology concepts through an intuitive, visually engaging, and highly interactive user experience. The app's design language is rooted in trust, clarity, and professionalism, aligning with the expectations of the healthcare sector.</p>
     </div>
-    <div class="continuo-screenshot-placeholder">
-      <div class="placeholder-content">
-        <span class="placeholder-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-        </span>
-        <p>Main Menu Screenshot</p>
-        <span class="placeholder-note">Showing branding, layout, and navigation elements</span>
-      </div>
+    <div class="continuo-screenshot-single">
+      <img src="assets/projects/continuo/continuo-main-menu.png" alt="Continuo iPad App Main Menu showing branding and navigation" />
     </div>
   </section>
 
@@ -256,43 +471,42 @@
     <div class="continuo-feature-block">
       <h3 class="continuo-feature-block__title">Interactive Video Demonstrations</h3>
       <p class="continuo-feature-block__text">A signature 50/50 split-screen design presents video content alongside contextual information, supporting four core product demos:</p>
-      <div class="continuo-demo-grid">
-        <div class="continuo-demo-card">
-          <span class="continuo-demo-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-              <line x1="12" y1="19" x2="12" y2="22"/>
-            </svg>
-          </span>
-          <span class="continuo-demo-card__label">Transcription Intelligence</span>
+      <div class="continuo-feature-showcase">
+        <div class="feature-showcase-card">
+          <div class="feature-showcase-card__image">
+            <img src="assets/projects/continuo/feature-transcription.png" alt="Transcription Intelligence feature" />
+          </div>
+          <div class="feature-showcase-card__content">
+            <h4>Transcription Intelligence</h4>
+            <p>AI-powered real-time transcription of patient-provider conversations with smart note generation.</p>
+          </div>
         </div>
-        <div class="continuo-demo-card">
-          <span class="continuo-demo-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-          </span>
-          <span class="continuo-demo-card__label">Bluetooth Vitals</span>
+        <div class="feature-showcase-card">
+          <div class="feature-showcase-card__image">
+            <img src="assets/projects/continuo/feature-vitals.png" alt="Bluetooth Vitals Capture feature" />
+          </div>
+          <div class="feature-showcase-card__content">
+            <h4>Bluetooth Vitals</h4>
+            <p>Seamless integration with medical devices for automatic vital sign capture and documentation.</p>
+          </div>
         </div>
-        <div class="continuo-demo-card">
-          <span class="continuo-demo-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-            </svg>
-          </span>
-          <span class="continuo-demo-card__label">Voice Vitals</span>
+        <div class="feature-showcase-card">
+          <div class="feature-showcase-card__image">
+            <img src="assets/projects/continuo/feature-voice.png" alt="Voice Vitals Entry feature" />
+          </div>
+          <div class="feature-showcase-card__content">
+            <h4>Voice Vitals</h4>
+            <p>Hands-free vital sign entry through natural language voice commands.</p>
+          </div>
         </div>
-        <div class="continuo-demo-card">
-          <span class="continuo-demo-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="M7 15h0M2 9.5h20"/>
-            </svg>
-          </span>
-          <span class="continuo-demo-card__label">Billing Codes</span>
+        <div class="feature-showcase-card">
+          <div class="feature-showcase-card__image">
+            <img src="assets/projects/continuo/feature-billing.png" alt="AI Billing Code Suggestions feature" />
+          </div>
+          <div class="feature-showcase-card__content">
+            <h4>Billing Codes</h4>
+            <p>AI-assisted billing code suggestions based on clinical documentation and encounter data.</p>
+          </div>
         </div>
       </div>
       <p class="continuo-feature-block__text">This format enhances comprehension and engagement, allowing users to explore features at their own pace.</p>
@@ -323,19 +537,6 @@
       <p class="continuo-feature-block__text">The app employs SF Pro Display and a healthcare-appropriate color palette, with careful attention to hierarchy, contrast, and readability.</p>
     </div>
 
-    <div class="continuo-screenshot-placeholder continuo-screenshot-placeholder--multi">
-      <div class="placeholder-content">
-        <span class="placeholder-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-        </span>
-        <p>Annotated Screenshots</p>
-        <span class="placeholder-note">Video demo screen, news carousel, contact form, admin dashboard</span>
-      </div>
-    </div>
   </section>
 
   <!-- SECTION 5: TECHNOLOGY STACK & INFORMATION ARCHITECTURE -->
@@ -404,19 +605,6 @@
       </div>
     </div>
 
-    <div class="continuo-screenshot-placeholder">
-      <div class="placeholder-content">
-        <span class="placeholder-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-        </span>
-        <p>Architecture Diagram</p>
-        <span class="placeholder-note">Folder structure and simplified architecture chart</span>
-      </div>
-    </div>
   </section>
 
   <!-- SECTION 6: DESIGN SYSTEM -->
