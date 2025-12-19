@@ -57,15 +57,19 @@ $radius-xl: 24px;
 }
 
 .navbar-logo {
+  font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
   font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: $text-primary;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: color $transition-fast;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #2a2a2a 60%, #1a1a1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.2s ease;
 
   &:hover {
-    color: $accent-blue;
+    opacity: 0.85;
   }
 }
 
@@ -100,6 +104,26 @@ $radius-xl: 24px;
         height: 2px;
         background: $accent-blue;
         border-radius: 1px;
+      }
+    }
+
+    &:last-child {
+      color: #00d9ff;
+      font-weight: 600;
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(0, 217, 255, 0.2);
+        border-color: #00d9ff;
+        color: #00d9ff;
+      }
+
+      &::after {
+        display: none;
       }
     }
   }

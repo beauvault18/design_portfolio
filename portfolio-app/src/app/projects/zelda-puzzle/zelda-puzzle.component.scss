@@ -24,6 +24,81 @@ $zelda-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans
   font-family: $zelda-font;
 }
 
+// =============================
+// NAVIGATION BAR
+// =============================
+.main-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $zelda-border;
+}
+
+.navbar-logo {
+  font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #2a2a2a 60%, #1a1a1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $zelda-text-secondary;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $zelda-text-primary;
+    }
+
+    &.active {
+      color: $zelda-accent;
+    }
+
+    &:last-child {
+      color: #00d9ff;
+      font-weight: 600;
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(0, 217, 255, 0.2);
+        border-color: #00d9ff;
+        color: #00d9ff;
+      }
+    }
+  }
+}
+
 // Main container
 .zelda-case-study {
   width: 100%;
@@ -313,6 +388,10 @@ $zelda-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+
+  &--three {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .zelda-process-card {
@@ -794,6 +873,427 @@ $zelda-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans
 }
 
 // =============================
+// LOW-FIDELITY WIREFRAMES
+// =============================
+$wf-stroke: rgba(255, 215, 0, 0.25);
+$wf-fill: rgba(255, 255, 255, 0.08);
+$wf-bg: #0a0a0a;
+$wf-gold: rgba(255, 215, 0, 0.5);
+$wf-blue: rgba(74, 144, 226, 0.6);
+
+.zelda-wireframes {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  border-bottom: 1px solid $zelda-border;
+}
+
+.zelda-wireframes__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.zelda-wireframes__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $zelda-text-primary;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.zelda-wireframes__subtitle {
+  font-size: 1rem;
+  color: $zelda-text-secondary;
+  margin: 0;
+}
+
+.wireframe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+
+  &--five {
+    grid-template-columns: repeat(3, 1fr);
+
+    .wireframe-card:nth-child(4),
+    .wireframe-card:nth-child(5) {
+      justify-self: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .wireframe-card:nth-child(4) {
+      grid-column: 1 / 2;
+      justify-self: end;
+    }
+
+    .wireframe-card:nth-child(5) {
+      grid-column: 2 / 4;
+      justify-self: start;
+    }
+  }
+}
+
+.wireframe-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.wireframe-card__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $zelda-accent;
+  margin-bottom: 12px;
+}
+
+.wireframe-frame {
+  background: $wf-bg;
+  border: 1px solid $wf-stroke;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+
+  &--landscape {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+.wireframe-card__caption {
+  font-size: 0.85rem;
+  color: $zelda-text-secondary;
+  margin: 12px 0 0;
+  line-height: 1.5;
+}
+
+// =============================
+// WIREFRAME 1: Click to Start
+// =============================
+.wf-click-start {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.wf-pulsing-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: pulse-opacity 2s ease-in-out infinite;
+}
+
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+// =============================
+// WIREFRAME 2: Ocarina + Triforce Hotspots
+// =============================
+.wf-ocarina-puzzle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.wf-typewriter-text {
+  width: 70%;
+  height: 5px;
+  background: $wf-fill;
+  border-radius: 2px;
+}
+
+.wf-ocarina-centered {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wf-ocarina-body {
+  width: 120px;
+  height: 55px;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 18px;
+    background: $wf-fill;
+    border: 1px solid $wf-stroke;
+    border-radius: 0 50% 50% 0;
+  }
+}
+
+.wf-triforce-hotspots {
+  position: absolute;
+  top: 8px;
+  width: 60px;
+  height: 45px;
+}
+
+.wf-hotspot {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid $wf-gold;
+  cursor: pointer;
+
+  &--top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--left {
+    bottom: 0;
+    left: 2px;
+  }
+
+  &--right {
+    bottom: 0;
+    right: 2px;
+  }
+}
+
+.wf-hint-text {
+  width: 50%;
+  height: 4px;
+  background: $wf-fill;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+// =============================
+// WIREFRAME 3: Musical Sequence
+// =============================
+.wf-sequence-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.wf-ocarina-small {
+  width: 70px;
+  height: 32px;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 10px;
+    background: $wf-fill;
+    border: 1px solid $wf-stroke;
+    border-radius: 0 50% 50% 0;
+  }
+}
+
+.wf-ocarina-instruction {
+  width: 60%;
+  height: 5px;
+  background: $wf-fill;
+  border-radius: 2px;
+}
+
+.wf-notes-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.wf-note {
+  width: 20px;
+  height: 28px;
+  background: $wf-fill;
+  border: 1px solid $wf-stroke;
+  border-radius: 4px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: $wf-stroke;
+  }
+
+  &--left::after { content: '←'; }
+  &--up::after { content: '↑'; }
+  &--right::after { content: '→'; }
+
+  &--lit {
+    background: $wf-gold;
+    border-color: $zelda-accent;
+  }
+}
+
+.wf-arrow-hint {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.15em;
+}
+
+// =============================
+// WIREFRAME 4: Song Complete
+// =============================
+.wf-song-complete {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+}
+
+.wf-notes-lit {
+  display: flex;
+  gap: 10px;
+}
+
+.wf-song-title-blue {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $wf-blue;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+}
+
+// =============================
+// WIREFRAME 5: Logo Reveal
+// =============================
+.wf-logo-reveal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+}
+
+.wf-triforce-assembled {
+  position: relative;
+  width: 50px;
+  height: 42px;
+  margin-bottom: 8px;
+}
+
+.wf-tri {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid $zelda-accent;
+
+  &--top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--left {
+    bottom: 0;
+    left: 1px;
+  }
+
+  &--right {
+    bottom: 0;
+    right: 1px;
+  }
+}
+
+.wf-shield {
+  width: 70px;
+  height: 80px;
+  border: 2px solid $wf-stroke;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 215, 0, 0.05);
+}
+
+.wf-sword {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 6px;
+  height: 60px;
+  background: linear-gradient(to bottom, #888 0%, #ccc 30%, #888 100%);
+  border-radius: 2px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 6px;
+    background: $wf-gold;
+    border-radius: 2px;
+  }
+}
+
+.wf-title-zeldas {
+  font-size: 1rem;
+  font-weight: 800;
+  color: $zelda-accent;
+  letter-spacing: 0.15em;
+  margin-top: 50px;
+  z-index: 2;
+}
+
+.wf-title-puzzle {
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+// =============================
 // TESTING INSIGHTS
 // =============================
 .zelda-testing-insights {
@@ -848,6 +1348,194 @@ $zelda-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans
   color: $zelda-text-secondary;
   line-height: 1.6;
   margin: 0;
+}
+
+// =============================
+// CODE SHOWCASE SECTION
+// =============================
+.zelda-code-showcase {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  border-bottom: 1px solid $zelda-border;
+}
+
+.zelda-code-showcase__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.zelda-code-showcase__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $zelda-text-primary;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.zelda-code-showcase__subtitle {
+  font-size: 1rem;
+  color: $zelda-text-secondary;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.code-examples {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.code-example {
+  background: #0a0a0a;
+  border: 1px solid $zelda-border;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+  }
+}
+
+.code-example__header {
+  padding: 24px 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.code-example__badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $zelda-accent;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.code-example__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $zelda-text-primary;
+  margin: 0;
+}
+
+.code-example__description {
+  padding: 16px 24px;
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: $zelda-text-secondary;
+    margin: 0;
+  }
+}
+
+.code-example__block {
+  margin: 0 16px 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-block__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code-block__filename {
+  font-size: 0.75rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  color: $zelda-text-muted;
+}
+
+.code-block__lang {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $zelda-accent;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.code-block__content {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: #e1e1e1;
+  background: transparent;
+
+  code {
+    font-family: inherit;
+    background: none;
+  }
+}
+
+// Syntax highlighting colors
+.code-keyword {
+  color: #ff79c6;
+}
+
+.code-class {
+  color: #8be9fd;
+}
+
+.code-type {
+  color: #8be9fd;
+}
+
+.code-function {
+  color: #50fa7b;
+}
+
+.code-string {
+  color: #f1fa8c;
+}
+
+.code-number {
+  color: #bd93f9;
+}
+
+.code-comment {
+  color: #6272a4;
+  font-style: italic;
+}
+
+.code-decorator {
+  color: #ffb86c;
+}
+
+.code-example__highlights {
+  padding: 0 24px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.highlight-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: $zelda-text-muted;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
 }
 
 // =============================
@@ -987,9 +1675,43 @@ $zelda-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans
   .zelda-results-grid {
     gap: 20px;
   }
+
+  .wireframe-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    &--five {
+      .wireframe-card:nth-child(4),
+      .wireframe-card:nth-child(5) {
+        justify-self: center;
+        max-width: none;
+      }
+
+      .wireframe-card:nth-child(4) {
+        grid-column: auto;
+        justify-self: auto;
+      }
+
+      .wireframe-card:nth-child(5) {
+        grid-column: auto;
+        justify-self: auto;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
+  .main-navbar {
+    padding: 16px 24px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+
+    li {
+      font-size: 0.8rem;
+    }
+  }
+
   .zelda-hero {
     padding: 60px 24px 40px;
   }
@@ -1027,6 +1749,66 @@ $zelda-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans
   .zelda-design-decisions,
   .zelda-testing-insights {
     grid-template-columns: 1fr;
+  }
+
+  .code-examples {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .zelda-code-showcase {
+    padding: 64px 24px;
+  }
+
+  .zelda-wireframes {
+    padding: 64px 24px;
+  }
+
+  .wireframe-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    &--five {
+      .wireframe-card:nth-child(4),
+      .wireframe-card:nth-child(5) {
+        max-width: none;
+        justify-self: auto;
+      }
+
+      .wireframe-card:nth-child(4) {
+        grid-column: auto;
+      }
+
+      .wireframe-card:nth-child(5) {
+        grid-column: auto;
+      }
+    }
+  }
+
+  .wireframe-frame--landscape {
+    aspect-ratio: 16 / 10;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .code-example__header {
+    padding: 20px 20px 0;
+  }
+
+  .code-example__description {
+    padding: 12px 20px;
+  }
+
+  .code-example__block {
+    margin: 0 12px 12px;
+  }
+
+  .code-example__highlights {
+    padding: 0 20px 16px;
+  }
+
+  .code-example__title {
+    font-size: 1rem;
   }
 
   .zelda-results-grid {
@@ -1088,6 +1870,18 @@ $zelda-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans
 }
 
 @media (max-width: 480px) {
+  .main-navbar {
+    padding: 12px 16px;
+  }
+
+  .navbar-links {
+    gap: 12px;
+
+    li {
+      font-size: 0.75rem;
+    }
+  }
+
   .zelda-hero {
     padding: 48px 16px 32px;
   }
@@ -1119,6 +1913,44 @@ $zelda-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans
   .zelda-tech-card,
   .zelda-goal-card {
     padding: 24px 20px;
+  }
+
+  .zelda-code-showcase {
+    padding: 48px 16px;
+  }
+
+  .zelda-wireframes {
+    padding: 48px 16px;
+  }
+
+  .wireframe-frame--landscape {
+    max-width: 100%;
+  }
+
+  .wf-pulsing-text {
+    font-size: 0.75rem;
+  }
+
+  .wf-song-title-blue {
+    font-size: 0.7rem;
+  }
+
+  .wf-title-zeldas {
+    font-size: 0.85rem;
+    margin-top: 40px;
+  }
+
+  .wf-title-puzzle {
+    font-size: 0.5rem;
+  }
+
+  .code-block__content {
+    font-size: 0.65rem;
+    padding: 12px;
+  }
+
+  .code-block__filename {
+    font-size: 0.65rem;
   }
 
   .zelda-results-grid {

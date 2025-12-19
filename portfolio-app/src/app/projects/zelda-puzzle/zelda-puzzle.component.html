@@ -1,3 +1,17 @@
+<!-- Navigation Bar -->
+<nav class="main-navbar">
+  <div class="navbar-logo" routerLink="/">BW</div>
+  <ul class="navbar-links">
+    <li routerLink="/ui-design">UI/Design</li>
+    <li>Projects</li>
+    <li routerLink="/animation">Animation</li>
+    <li routerLink="/product-design">Product Design</li>
+    <li routerLink="/about">About</li>
+    <li>Contact</li>
+    <li>Get CV</li>
+  </ul>
+</nav>
+
 <!-- Zelda Puzzle Case Study -->
 <div class="zelda-case-study">
 
@@ -7,9 +21,6 @@
       <p class="zelda-hero__label">UX/UI Design & Development</p>
       <h1 class="zelda-hero__title">Zelda Puzzle</h1>
       <p class="zelda-hero__subtitle">A Browser-Based Zelda-Inspired Puzzle Experience</p>
-    </div>
-    <div class="zelda-hero__image">
-      <img src="assets/zelda-puzzle/hero-cover.png" alt="Zelda Puzzle Game Interface" />
     </div>
   </section>
 
@@ -30,7 +41,7 @@
       </div>
       <div class="zelda-meta__item">
         <span class="zelda-meta__label">TIMELINE</span>
-        <span class="zelda-meta__value">4 Weeks</span>
+        <span class="zelda-meta__value">1 Week</span>
       </div>
       <div class="zelda-meta__item">
         <span class="zelda-meta__label">TYPE</span>
@@ -43,7 +54,7 @@
   <section class="zelda-section">
     <h2 class="zelda-section__title">Project Overview</h2>
     <div class="zelda-section__content">
-      <p>I designed a Zelda-inspired browser puzzle game as a personal project to honor my favorite game series and to serve as the opening case study in my portfolio. My role included <strong>UX/UI design, prototyping, and front-end development</strong> using Figma and VS Code over a 4-week timeline.</p>
+      <p>I designed a Zelda-inspired browser puzzle game as a personal project to honor my favorite game series and to serve as the opening case study in my portfolio. My role included <strong>UX/UI design, prototyping, and front-end development</strong> using Figma and VS Code over a 1-week timeline.</p>
       <p>Inspired by the iconic musical puzzles from The Legend of Zelda: Ocarina of Time, this project invites users to solve sequence-based puzzles using keyboard inputs, rewarding correct solutions with the progressive illumination of the Triforce symbol.</p>
     </div>
     <!-- Playable Game Demo -->
@@ -154,38 +165,7 @@
     </div>
   </section>
 
-  <!-- SECTION 6: USERS & RESEARCH -->
-  <section class="zelda-section">
-    <h2 class="zelda-section__title">Users & Research</h2>
-    <div class="zelda-persona-card">
-      <div class="zelda-persona-card__header">
-        <span class="zelda-persona-card__avatar">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </span>
-        <div class="zelda-persona-card__info">
-          <h4 class="zelda-persona-card__name">"Nostalgic Gamer"</h4>
-          <span class="zelda-persona-card__demo">Age 25–40 · Loves classic games</span>
-        </div>
-      </div>
-      <div class="zelda-persona-card__body">
-        <p class="zelda-persona-card__desc">Seeks quick, rewarding challenges that bring back memories of childhood gaming. Values intuitive controls and nostalgic aesthetics over complex mechanics.</p>
-        <div class="zelda-persona-card__needs">
-          <span class="zelda-persona-card__needs-label">Key Needs:</span>
-          <ul>
-            <li>Quick gameplay sessions</li>
-            <li>No downloads required</li>
-            <li>Authentic Zelda feel</li>
-            <li>Works on any device</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 7: CONSTRAINTS & REQUIREMENTS -->
+  <!-- SECTION 6: CONSTRAINTS & REQUIREMENTS -->
   <section class="zelda-section">
     <h2 class="zelda-section__title">Constraints & Requirements</h2>
     <div class="zelda-constraints-grid">
@@ -222,144 +202,233 @@
             <polyline points="12 6 12 12 16 14"/>
           </svg>
         </span>
-        <span class="zelda-constraint__text">4-week timeline, solo development</span>
+        <span class="zelda-constraint__text">1-week timeline, solo development</span>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 8: INFORMATION ARCHITECTURE -->
-  <section class="zelda-section">
-    <h2 class="zelda-section__title">Information Architecture</h2>
-    <div class="zelda-section__content">
-      <p>A streamlined sitemap ensures players can jump into the action quickly while still having access to instructions when needed.</p>
-    </div>
-    <div class="zelda-ia-flow">
-      <div class="zelda-ia-node zelda-ia-node--primary">Home</div>
-      <div class="zelda-ia-arrow">→</div>
-      <div class="zelda-ia-node">Instructions</div>
-      <div class="zelda-ia-arrow">→</div>
-      <div class="zelda-ia-node zelda-ia-node--primary">Game</div>
-      <div class="zelda-ia-arrow">→</div>
-      <div class="zelda-ia-node">Win/Lose</div>
-    </div>
-    <div class="zelda-section__content" style="margin-top: 32px;">
-      <p><strong>Main User Flow:</strong> Start → Learn controls → Solve puzzles → Win</p>
-      <p>The flow minimizes clicks to start playing, respecting the user's time while still providing clarity.</p>
-    </div>
-  </section>
-
-  <!-- SECTION 9: WIREFRAMES & DESIGN -->
+  <!-- SECTION 7: WIREFRAMES & DESIGN -->
   <section class="zelda-section">
     <h2 class="zelda-section__title">Wireframes & Design Process</h2>
-    <div class="zelda-process-grid">
+    <div class="zelda-process-grid zelda-process-grid--three">
       <div class="zelda-process-card">
         <span class="zelda-process-card__number">01</span>
-        <h4 class="zelda-process-card__title">Low-Fi Sketches</h4>
-        <p class="zelda-process-card__text">Quick sketches exploring layout and puzzle flow, focusing on the Triforce as the central visual element.</p>
+        <h4 class="zelda-process-card__title">Build the Foundation</h4>
+        <p class="zelda-process-card__text">Used Visual Studio Code to build out each screen and interaction, focusing on getting the core puzzle mechanics working simply.</p>
       </div>
       <div class="zelda-process-card">
         <span class="zelda-process-card__number">02</span>
-        <h4 class="zelda-process-card__title">Mid-Fi Wireframes</h4>
-        <p class="zelda-process-card__text">Figma wireframes to test button placement for mobile usability and overall structure.</p>
+        <h4 class="zelda-process-card__title">Color & Sound</h4>
+        <p class="zelda-process-card__text">Added the gold Triforce palette, visual feedback animations, and synthesized the N64 ocarina sounds using Web Audio API.</p>
       </div>
       <div class="zelda-process-card">
         <span class="zelda-process-card__number">03</span>
-        <h4 class="zelda-process-card__title">High-Fi Design</h4>
-        <p class="zelda-process-card__text">Final UI with pixel-art Zelda theme, custom icons, animations, and light/dark mode toggle.</p>
-      </div>
-      <div class="zelda-process-card">
-        <span class="zelda-process-card__number">04</span>
-        <h4 class="zelda-process-card__title">Component System</h4>
-        <p class="zelda-process-card__text">Reusable component system for buttons, tiles, and popups ensuring visual consistency.</p>
-      </div>
-    </div>
-    <div class="zelda-screenshot-placeholder zelda-screenshot-placeholder--multi">
-      <div class="placeholder-content">
-        <span class="placeholder-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-        </span>
-        <p>Wireframe Progression</p>
-        <span class="placeholder-note">Low-fi → Mid-fi → High-fi wireframes</span>
+        <h4 class="zelda-process-card__title">Polish & Details</h4>
+        <p class="zelda-process-card__text">Refined the small details—easing curves, glow effects, timing adjustments—to make the experience feel complete and polished.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 10: DESIGN RATIONALE -->
-  <section class="zelda-section">
-    <h2 class="zelda-section__title">Design Rationale</h2>
-    <div class="zelda-design-decisions">
-      <div class="zelda-design-decision">
-        <div class="zelda-design-decision__color" style="background: linear-gradient(135deg, #2d5016 0%, #FFD700 100%);"></div>
-        <div class="zelda-design-decision__content">
-          <h4>Green/Gold Palette</h4>
-          <p>Chosen for Zelda nostalgia—green for Link's tunic, gold for the Triforce</p>
+  <!-- SECTION 9B: LOW-FIDELITY WIREFRAMES -->
+  <section class="zelda-wireframes">
+    <div class="zelda-wireframes__header">
+      <h2 class="zelda-wireframes__title">Low-Fidelity Wireframes</h2>
+      <p class="zelda-wireframes__subtitle">Screen flow planning based on actual game states and interactions</p>
+    </div>
+
+    <div class="wireframe-grid wireframe-grid--five">
+      <!-- Wireframe 1: Click to Start -->
+      <div class="wireframe-card">
+        <div class="wireframe-card__label">01 — Click to Start</div>
+        <div class="wireframe-frame wireframe-frame--landscape">
+          <div class="wf-click-start">
+            <div class="wf-pulsing-text">Click to Start</div>
+          </div>
         </div>
+        <p class="wireframe-card__caption">Black screen with centered pulsing "Click to Start" text</p>
       </div>
-      <div class="zelda-design-decision">
-        <span class="zelda-design-decision__icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-          </svg>
-        </span>
-        <div class="zelda-design-decision__content">
-          <h4>Large, Clear Buttons</h4>
-          <p>Prioritizing accessibility with touch-friendly targets and clear visual hierarchy</p>
+
+      <!-- Wireframe 2: Ocarina + Triforce Hotspots -->
+      <div class="wireframe-card">
+        <div class="wireframe-card__label">02 — Triforce Puzzle</div>
+        <div class="wireframe-frame wireframe-frame--landscape">
+          <div class="wf-ocarina-puzzle">
+            <div class="wf-typewriter-text"></div>
+            <div class="wf-ocarina-centered">
+              <div class="wf-ocarina-body"></div>
+              <div class="wf-triforce-hotspots">
+                <div class="wf-hotspot wf-hotspot--top"></div>
+                <div class="wf-hotspot wf-hotspot--left"></div>
+                <div class="wf-hotspot wf-hotspot--right"></div>
+              </div>
+            </div>
+            <div class="wf-hint-text"></div>
+          </div>
         </div>
+        <p class="wireframe-card__caption">Ocarina with 3 clickable Triforce triangle hotspots that turn gold</p>
       </div>
-      <div class="zelda-design-decision">
-        <span class="zelda-design-decision__icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7"/>
-            <rect x="14" y="3" width="7" height="7"/>
-            <rect x="14" y="14" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/>
-          </svg>
-        </span>
-        <div class="zelda-design-decision__content">
-          <h4>Simple Grid Layout</h4>
-          <p>Clean, uncluttered interface that focuses attention on the puzzle</p>
+
+      <!-- Wireframe 3: Arrow Key Sequence -->
+      <div class="wireframe-card">
+        <div class="wireframe-card__label">03 — Musical Sequence</div>
+        <div class="wireframe-frame wireframe-frame--landscape">
+          <div class="wf-sequence-screen">
+            <div class="wf-ocarina-small"></div>
+            <div class="wf-ocarina-instruction"></div>
+            <div class="wf-notes-row">
+              <div class="wf-note wf-note--left"></div>
+              <div class="wf-note wf-note--up"></div>
+              <div class="wf-note wf-note--right"></div>
+              <div class="wf-note wf-note--left"></div>
+              <div class="wf-note wf-note--up"></div>
+              <div class="wf-note wf-note--right"></div>
+            </div>
+            <div class="wf-arrow-hint">← ↑ → ← ↑ →</div>
+          </div>
         </div>
+        <p class="wireframe-card__caption">Ocarina shrunk to top, musical notes below with arrow key sequence</p>
       </div>
-      <div class="zelda-design-decision">
-        <span class="zelda-design-decision__icon" style="font-family: 'Press Start 2P', monospace; font-size: 14px; color: #FFD700;">Aa</span>
-        <div class="zelda-design-decision__content">
-          <h4>Custom Retro Font</h4>
-          <p>Pixel-style typography reinforcing the classic game aesthetic</p>
+
+      <!-- Wireframe 4: Song Title Reveal -->
+      <div class="wireframe-card">
+        <div class="wireframe-card__label">04 — Song Complete</div>
+        <div class="wireframe-frame wireframe-frame--landscape">
+          <div class="wf-song-complete">
+            <div class="wf-notes-lit">
+              <div class="wf-note wf-note--lit"></div>
+              <div class="wf-note wf-note--lit"></div>
+              <div class="wf-note wf-note--lit"></div>
+              <div class="wf-note wf-note--lit"></div>
+              <div class="wf-note wf-note--lit"></div>
+              <div class="wf-note wf-note--lit"></div>
+            </div>
+            <div class="wf-song-title-blue">Zelda's Lullaby</div>
+          </div>
         </div>
+        <p class="wireframe-card__caption">All notes illuminated with "Zelda's Lullaby" title in blue</p>
+      </div>
+
+      <!-- Wireframe 5: Final Logo Assembly -->
+      <div class="wireframe-card">
+        <div class="wireframe-card__label">05 — Logo Reveal</div>
+        <div class="wireframe-frame wireframe-frame--landscape">
+          <div class="wf-logo-reveal">
+            <div class="wf-triforce-assembled">
+              <div class="wf-tri wf-tri--top"></div>
+              <div class="wf-tri wf-tri--left"></div>
+              <div class="wf-tri wf-tri--right"></div>
+            </div>
+            <div class="wf-shield"></div>
+            <div class="wf-sword"></div>
+            <div class="wf-title-zeldas">ZELDAS</div>
+            <div class="wf-title-puzzle">PUZZLE</div>
+          </div>
+        </div>
+        <p class="wireframe-card__caption">Triforce assembles, shield appears, sword animates in, title reveals</p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 11: PROTOTYPE & INTERACTION -->
-  <section class="zelda-section">
-    <h2 class="zelda-section__title">Prototype & Interaction</h2>
-    <div class="zelda-section__content">
-      <p>A clickable Figma prototype was created for user testing, allowing testers to experience the full puzzle flow before development began.</p>
+  <!-- SECTION 9: CODE ARCHITECTURE -->
+  <section class="zelda-code-showcase">
+    <div class="zelda-code-showcase__header">
+      <h2 class="zelda-code-showcase__title">Code Architecture</h2>
+      <p class="zelda-code-showcase__subtitle">Advanced JavaScript techniques with Web Audio API synthesis and HTML5 Canvas animations</p>
     </div>
-    <div class="zelda-interaction-demo">
-      <div class="zelda-keyboard-visual">
-        <div class="zelda-key" data-note="A">A</div>
-        <div class="zelda-key" data-note="S">S</div>
-        <div class="zelda-key" data-note="D">D</div>
-        <div class="zelda-key" data-note="F">F</div>
-        <div class="zelda-key" data-note="G">G</div>
+
+    <div class="code-examples">
+      <!-- Code Example 1: Web Audio API Synthesis -->
+      <div class="code-example">
+        <div class="code-example__header">
+          <div class="code-example__badge">Audio</div>
+          <h3 class="code-example__title">N64 Ocarina Sound Synthesis</h3>
+        </div>
+        <div class="code-example__description">
+          <p>Custom audio synthesis using multiple oscillators, filters, and gain nodes to recreate the iconic N64 ocarina sound with authentic timbre and envelope shaping.</p>
+        </div>
+        <div class="code-example__block">
+          <div class="code-block__header">
+            <span class="code-block__filename">index.html - playNote()</span>
+            <span class="code-block__lang">JavaScript</span>
+          </div>
+          <pre class="code-block__content"><code><span class="code-keyword">function</span> <span class="code-function">playNote</span>(frequency) &#123;
+  <span class="code-keyword">const</span> oscillator = audioContext.<span class="code-function">createOscillator</span>();
+  <span class="code-keyword">const</span> oscillator2 = audioContext.<span class="code-function">createOscillator</span>();
+  <span class="code-keyword">const</span> gainNode = audioContext.<span class="code-function">createGain</span>();
+  <span class="code-keyword">const</span> filter = audioContext.<span class="code-function">createBiquadFilter</span>();
+
+  <span class="code-comment">// Use square waves for N64 digital quality</span>
+  oscillator.frequency.value = frequency;
+  oscillator.type = <span class="code-string">'square'</span>;
+
+  oscillator2.frequency.value = frequency * <span class="code-number">2</span>;
+  oscillator2.type = <span class="code-string">'sine'</span>; <span class="code-comment">// Soften the square wave</span>
+
+  <span class="code-comment">// Lowpass filter for warmth</span>
+  filter.type = <span class="code-string">'lowpass'</span>;
+  filter.frequency.<span class="code-function">setValueAtTime</span>(<span class="code-number">1800</span>, audioContext.currentTime);
+  filter.Q.<span class="code-function">setValueAtTime</span>(<span class="code-number">2</span>, audioContext.currentTime);
+
+  <span class="code-comment">// N64 ocarina envelope - quick attack, sustained</span>
+  masterGain.gain.<span class="code-function">setValueAtTime</span>(<span class="code-number">0</span>, audioContext.currentTime);
+  masterGain.gain.<span class="code-function">linearRampToValueAtTime</span>(<span class="code-number">0.35</span>, audioContext.currentTime + <span class="code-number">0.05</span>);
+  masterGain.gain.<span class="code-function">exponentialRampToValueAtTime</span>(<span class="code-number">0.01</span>, audioContext.currentTime + <span class="code-number">0.8</span>);
+&#125;</code></pre>
+        </div>
+        <div class="code-example__highlights">
+          <span class="highlight-tag">AudioContext</span>
+          <span class="highlight-tag">Oscillators</span>
+          <span class="highlight-tag">BiquadFilter</span>
+          <span class="highlight-tag">Gain Envelopes</span>
+        </div>
       </div>
-      <p class="zelda-interaction-demo__caption">Keyboard keys map to musical notes, creating an intuitive input system</p>
-    </div>
-    <div class="zelda-screenshot-placeholder">
-      <div class="placeholder-content">
-        <span class="placeholder-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"/>
-            <polygon points="10 8 16 12 10 16 10 8"/>
-          </svg>
-        </span>
-        <p>Gameplay Demo Video</p>
-        <span class="placeholder-note">Embedded video showing full puzzle interaction</span>
+
+      <!-- Code Example 2: Canvas Animation -->
+      <div class="code-example">
+        <div class="code-example__header">
+          <div class="code-example__badge">Animation</div>
+          <h3 class="code-example__title">Triforce Canvas Animation</h3>
+        </div>
+        <div class="code-example__description">
+          <p>Dynamic Triforce animation with custom easing functions, gradient fills, and glow effects using the HTML5 Canvas 2D API and requestAnimationFrame.</p>
+        </div>
+        <div class="code-example__block">
+          <div class="code-block__header">
+            <span class="code-block__filename">index.html - redrawCanvas()</span>
+            <span class="code-block__lang">JavaScript</span>
+          </div>
+          <pre class="code-block__content"><code><span class="code-comment">// Draw animating triangles on main canvas</span>
+<span class="code-keyword">for</span> (<span class="code-keyword">let</span> i = <span class="code-number">0</span>; i < <span class="code-number">3</span>; i++) &#123;
+  <span class="code-keyword">const</span> startPos = savedTrianglePositions[i];
+  <span class="code-keyword">const</span> endPos = targetPositions[i];
+
+  <span class="code-comment">// Ease-out cubic interpolation</span>
+  <span class="code-keyword">const</span> eased = <span class="code-number">1</span> - <span class="code-class">Math</span>.<span class="code-function">pow</span>(<span class="code-number">1</span> - triforceAssemblyProgress, <span class="code-number">3</span>);
+  <span class="code-keyword">const</span> currentX = startPos.x + (endPos.x - startPos.x) * eased;
+  <span class="code-keyword">const</span> currentY = startPos.y + (endPos.y - startPos.y) * eased;
+
+  ctx.<span class="code-function">save</span>();
+  ctx.<span class="code-function">translate</span>(currentX, currentY);
+
+  <span class="code-comment">// Create rich gold gradient</span>
+  <span class="code-keyword">const</span> gradient = ctx.<span class="code-function">createLinearGradient</span>(<span class="code-number">0</span>, -height/<span class="code-number">2</span>, <span class="code-number">0</span>, height/<span class="code-number">2</span>);
+  gradient.<span class="code-function">addColorStop</span>(<span class="code-number">0</span>, <span class="code-string">'#FFE066'</span>);
+  gradient.<span class="code-function">addColorStop</span>(<span class="code-number">0.5</span>, <span class="code-string">'#DAA520'</span>);
+  gradient.<span class="code-function">addColorStop</span>(<span class="code-number">1</span>, <span class="code-string">'#8B6914'</span>);
+
+  ctx.fillStyle = gradient;
+  ctx.shadowColor = <span class="code-string">'#FFD700'</span>;
+  ctx.shadowBlur = <span class="code-number">12</span>;
+  ctx.<span class="code-function">fill</span>();
+  ctx.<span class="code-function">restore</span>();
+&#125;</code></pre>
+        </div>
+        <div class="code-example__highlights">
+          <span class="highlight-tag">Canvas 2D</span>
+          <span class="highlight-tag">Easing Functions</span>
+          <span class="highlight-tag">Gradient Fills</span>
+          <span class="highlight-tag">requestAnimationFrame</span>
+        </div>
       </div>
     </div>
   </section>
@@ -409,7 +478,7 @@
         <span class="zelda-result-card__note">On nostalgia & ease of use</span>
       </div>
       <div class="zelda-result-card">
-        <span class="zelda-result-card__number">4 wks</span>
+        <span class="zelda-result-card__number">1 wk</span>
         <span class="zelda-result-card__label">Delivered On Time</span>
         <span class="zelda-result-card__note">Solo development</span>
       </div>

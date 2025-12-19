@@ -50,9 +50,18 @@ body {
   font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 2.1rem;
-  color: #fff;
   letter-spacing: 0.05em;
   margin-right: 32px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #2a2a2a 60%, #1a1a1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .navbar-links {
@@ -74,10 +83,24 @@ body {
   position: relative;
 }
 
-/* Make 'Get CV' nav item teal blue font only */
+/* Make 'Get CV' nav item a button */
 .navbar-links li:last-child {
   color: #00d9ff;
-  font-weight: 700;
+  font-weight: 600;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 217, 255, 0.2);
+    border-color: #00d9ff;
+  }
+
+  &::after {
+    display: none;
+  }
 }
 
 .navbar-links li:hover {
