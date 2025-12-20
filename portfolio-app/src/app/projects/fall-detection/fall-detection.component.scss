@@ -1,0 +1,1199 @@
+// =============================
+// AI FALL DETECTION CASE STUDY STYLES
+// =============================
+
+// Variables
+$fall-bg: #000;
+$fall-text-primary: #fff;
+$fall-text-secondary: rgba(255, 255, 255, 0.7);
+$fall-text-muted: rgba(255, 255, 255, 0.5);
+$fall-accent: #ff4444; // Red/alert color for healthcare safety
+$fall-accent-glow: rgba(255, 68, 68, 0.3);
+$fall-accent-secondary: #00d9ff; // Cyan for tech elements
+$fall-card-bg: #111;
+$fall-card-bg-alt: #0a0a0a;
+$fall-border: rgba(255, 255, 255, 0.1);
+$fall-max-width: 1140px;
+$fall-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+// Host styles
+:host {
+  display: block;
+  background: $fall-bg;
+  min-height: 100vh;
+  color: $fall-text-primary;
+  font-family: $fall-font;
+}
+
+// =============================
+// NAVIGATION BAR
+// =============================
+.main-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $fall-border;
+}
+
+.navbar-logo {
+  font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #2a2a2a 60%, #1a1a1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $fall-text-secondary;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $fall-text-primary;
+    }
+
+    &.active {
+      color: $fall-accent;
+    }
+
+    &:last-child {
+      color: #00d9ff;
+      font-weight: 600;
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(0, 217, 255, 0.2);
+        border-color: #00d9ff;
+        color: #00d9ff;
+      }
+    }
+  }
+}
+
+// Main container
+.fall-case-study {
+  width: 100%;
+  background: $fall-bg;
+  padding-top: 72px;
+}
+
+// =============================
+// SECTION 1: HERO
+// =============================
+.fall-hero {
+  max-width: $fall-max-width;
+  margin: 0 auto;
+  padding: 80px 48px 60px;
+  text-align: center;
+}
+
+.fall-hero__content {
+  margin-bottom: 48px;
+}
+
+.fall-hero__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: $fall-accent;
+  margin: 0 0 16px;
+}
+
+.fall-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: $fall-text-primary;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 40px $fall-accent-glow;
+}
+
+.fall-hero__subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: $fall-text-secondary;
+  margin: 0;
+}
+
+// =============================
+// SECTION 2: PROJECT META ROW
+// =============================
+.fall-meta {
+  max-width: $fall-max-width;
+  margin: 0 auto;
+  padding: 48px 48px 64px;
+  border-top: 1px solid $fall-border;
+  border-bottom: 1px solid $fall-border;
+}
+
+.fall-meta__row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+}
+
+.fall-meta__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fall-meta__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $fall-text-muted;
+}
+
+.fall-meta__value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $fall-text-primary;
+  line-height: 1.5;
+}
+
+// =============================
+// GENERAL SECTIONS
+// =============================
+.fall-section {
+  max-width: $fall-max-width;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+.fall-section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $fall-text-primary;
+  margin: 0 0 32px;
+  letter-spacing: -0.01em;
+}
+
+.fall-section__content {
+  max-width: 800px;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $fall-text-secondary;
+    margin: 0 0 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: $fall-text-primary;
+      font-weight: 600;
+    }
+  }
+
+  &--centered {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+// =============================
+// DEMO EMBED CONTAINER
+// =============================
+.fall-demo-container {
+  margin-top: 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: $fall-card-bg;
+  border: 1px solid $fall-border;
+}
+
+.fall-demo-header {
+  padding: 20px 24px;
+  background: rgba(255, 68, 68, 0.05);
+  border-bottom: 1px solid $fall-border;
+  text-align: center;
+}
+
+.fall-demo-header__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $fall-accent;
+  margin-bottom: 8px;
+}
+
+.fall-demo-header__hint {
+  font-size: 0.9rem;
+  color: $fall-text-muted;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fall-demo-iframe {
+  width: 100%;
+  height: 700px;
+  border: none;
+  display: block;
+  background: #111;
+}
+
+// =============================
+// SCREENSHOT GALLERY
+// =============================
+.fall-screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 24px;
+  background: #0a0a0a;
+}
+
+.fall-screenshot-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: $fall-card-bg;
+  border: 1px solid $fall-border;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $fall-accent-secondary;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.15);
+    transform: translateY(-4px);
+
+    .fall-screenshot-img {
+      transform: scale(1.02);
+    }
+  }
+
+  &--highlight {
+    border-color: rgba(255, 68, 68, 0.4);
+
+    &:hover {
+      border-color: $fall-accent;
+      box-shadow: 0 0 30px rgba(255, 68, 68, 0.25);
+    }
+  }
+}
+
+.fall-screenshot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.fall-screenshot-info {
+  padding: 16px 20px;
+  border-top: 1px solid $fall-border;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.fall-screenshot-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $fall-text-primary;
+  margin-bottom: 4px;
+
+  &--alert {
+    color: $fall-accent;
+  }
+}
+
+.fall-screenshot-desc {
+  font-size: 0.8rem;
+  color: $fall-text-muted;
+  margin: 0;
+  line-height: 1.4;
+}
+
+// Responsive for screenshot gallery
+@media (max-width: 1024px) {
+  .fall-screenshot-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fall-screenshot-card {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .fall-screenshot-gallery {
+    padding: 16px;
+  }
+
+  .fall-screenshot-info {
+    padding: 14px 16px;
+  }
+}
+
+// =============================
+// PAIN POINTS
+// =============================
+.fall-pain-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.fall-pain-point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(255, 100, 100, 0.08);
+  border: 1px solid rgba(255, 100, 100, 0.2);
+  border-radius: 8px;
+}
+
+.fall-pain-point__icon {
+  color: rgba(255, 100, 100, 0.7);
+  flex-shrink: 0;
+}
+
+.fall-pain-point__text {
+  font-size: 0.95rem;
+  color: $fall-text-secondary;
+}
+
+// =============================
+// USER QUOTE
+// =============================
+.fall-user-quote {
+  margin-top: 40px;
+  padding: 32px 40px;
+  background: $fall-card-bg;
+  border-left: 4px solid $fall-accent;
+  border-radius: 0 12px 12px 0;
+
+  blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: $fall-text-primary;
+    margin: 0 0 12px;
+    line-height: 1.6;
+  }
+
+  cite {
+    font-size: 0.9rem;
+    color: $fall-text-muted;
+    font-style: normal;
+  }
+}
+
+// =============================
+// GOALS GRID
+// =============================
+.fall-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.fall-goal-card {
+  background: $fall-card-bg;
+  border-radius: 12px;
+  padding: 28px 24px;
+  border: 1px solid $fall-border;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $fall-accent;
+    box-shadow: 0 0 30px $fall-accent-glow;
+  }
+}
+
+.fall-goal-card__icon {
+  color: $fall-accent;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.fall-goal-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $fall-text-primary;
+  margin: 0 0 8px;
+}
+
+.fall-goal-card__text {
+  font-size: 0.9rem;
+  color: $fall-text-secondary;
+  line-height: 1.5;
+  margin: 0;
+}
+
+// =============================
+// ARCHITECTURE GRID
+// =============================
+.fall-arch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.fall-arch-card {
+  background: $fall-card-bg;
+  border-radius: 12px;
+  padding: 28px 24px;
+  border: 1px solid $fall-border;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $fall-accent-secondary;
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  }
+}
+
+.fall-arch-card__number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: $fall-accent-secondary;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.fall-arch-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $fall-text-primary;
+  margin: 0 0 12px;
+}
+
+.fall-arch-card__text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: $fall-text-secondary;
+  margin: 0 0 16px;
+}
+
+.fall-arch-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: $fall-accent-secondary;
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+}
+
+// =============================
+// CODE SHOWCASE SECTION
+// =============================
+.fall-code-showcase {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 48px;
+  border-bottom: 1px solid $fall-border;
+}
+
+.fall-code-showcase__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.fall-code-showcase__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $fall-text-primary;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.fall-code-showcase__subtitle {
+  font-size: 1rem;
+  color: $fall-text-secondary;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.code-examples {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.code-example {
+  background: #0a0a0a;
+  border: 1px solid $fall-border;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(255, 68, 68, 0.4);
+    box-shadow: 0 8px 32px rgba(255, 68, 68, 0.1);
+  }
+}
+
+.code-example__header {
+  padding: 24px 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.code-example__badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $fall-accent;
+  background: rgba(255, 68, 68, 0.15);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.code-example__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $fall-text-primary;
+  margin: 0;
+}
+
+.code-example__description {
+  padding: 16px 24px;
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: $fall-text-secondary;
+    margin: 0;
+  }
+}
+
+.code-example__block {
+  margin: 0 16px 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-block__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code-block__filename {
+  font-size: 0.75rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  color: $fall-text-muted;
+}
+
+.code-block__lang {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $fall-accent;
+  background: rgba(255, 68, 68, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.code-block__content {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: #e1e1e1;
+  background: transparent;
+
+  code {
+    font-family: inherit;
+    background: none;
+  }
+}
+
+// Syntax highlighting colors
+.code-keyword {
+  color: #ff79c6;
+}
+
+.code-class {
+  color: #8be9fd;
+}
+
+.code-type {
+  color: #8be9fd;
+}
+
+.code-function {
+  color: #50fa7b;
+}
+
+.code-string {
+  color: #f1fa8c;
+}
+
+.code-number {
+  color: #bd93f9;
+}
+
+.code-comment {
+  color: #6272a4;
+  font-style: italic;
+}
+
+.code-decorator {
+  color: #ffb86c;
+}
+
+.code-example__highlights {
+  padding: 0 24px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.highlight-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: $fall-text-muted;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+// =============================
+// FEATURES LIST
+// =============================
+.fall-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+}
+
+.fall-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background: $fall-card-bg;
+  border-radius: 12px;
+  border: 1px solid $fall-border;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $fall-accent-secondary;
+    background: rgba(0, 217, 255, 0.02);
+  }
+}
+
+.fall-feature__icon {
+  color: $fall-accent-secondary;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fall-feature__content {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $fall-text-primary;
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $fall-text-secondary;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// =============================
+// RESULTS GRID
+// =============================
+.fall-section--highlight {
+  background: linear-gradient(180deg, rgba(255, 68, 68, 0.03) 0%, transparent 100%);
+  border-top: 1px solid rgba(255, 68, 68, 0.1);
+  border-bottom: 1px solid rgba(255, 68, 68, 0.1);
+}
+
+.fall-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.fall-result-card {
+  text-align: center;
+  padding: 32px 24px;
+  background: $fall-card-bg;
+  border-radius: 16px;
+  border: 1px solid $fall-border;
+}
+
+.fall-result-card__number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: $fall-accent;
+  margin-bottom: 8px;
+  text-shadow: 0 0 30px $fall-accent-glow;
+}
+
+.fall-result-card__label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $fall-text-primary;
+  margin-bottom: 4px;
+}
+
+.fall-result-card__note {
+  font-size: 0.8rem;
+  color: $fall-text-muted;
+}
+
+// =============================
+// LEARNINGS
+// =============================
+.fall-learnings {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 700px;
+}
+
+.fall-learning {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background: $fall-card-bg;
+  border-radius: 12px;
+  border: 1px solid $fall-border;
+}
+
+.fall-learning__icon {
+  color: $fall-accent;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fall-learning__content {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $fall-text-primary;
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: $fall-text-secondary;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// =============================
+// ROADMAP
+// =============================
+.fall-roadmap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+}
+
+.fall-roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: $fall-card-bg;
+  border-radius: 12px;
+  border: 1px solid $fall-border;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $fall-accent;
+    background: rgba(255, 68, 68, 0.05);
+  }
+}
+
+.fall-roadmap-item__icon {
+  color: $fall-accent;
+  flex-shrink: 0;
+}
+
+.fall-roadmap-item__text {
+  font-size: 0.95rem;
+  color: $fall-text-secondary;
+  line-height: 1.5;
+}
+
+// =============================
+// NEXT PROJECT CTA
+// =============================
+.fall-next-project {
+  max-width: $fall-max-width;
+  margin: 0 auto;
+  padding: 64px 48px 100px;
+  text-align: center;
+}
+
+.fall-next-project__btn {
+  display: inline-block;
+  background: transparent;
+  color: $fall-accent;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: $fall-font;
+  padding: 16px 40px;
+  border: 2px solid $fall-accent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $fall-accent;
+    color: $fall-bg;
+    box-shadow: 0 0 30px $fall-accent-glow;
+  }
+}
+
+// =============================
+// RESPONSIVE STYLES
+// =============================
+@media (max-width: 1024px) {
+  .fall-meta__row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .fall-goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fall-arch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fall-results-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-navbar {
+    padding: 16px 24px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+
+    li {
+      font-size: 0.8rem;
+    }
+  }
+
+  .fall-hero {
+    padding: 60px 24px 40px;
+  }
+
+  .fall-hero__content {
+    margin-bottom: 32px;
+  }
+
+  .fall-meta {
+    padding: 32px 24px 48px;
+  }
+
+  .fall-meta__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .fall-meta__item:last-child {
+    grid-column: span 2;
+  }
+
+  .fall-section {
+    padding: 48px 24px;
+  }
+
+  .fall-goals-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .fall-arch-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fall-roadmap {
+    grid-template-columns: 1fr;
+  }
+
+  .code-examples {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .fall-code-showcase {
+    padding: 64px 24px;
+  }
+
+  .fall-results-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .fall-result-card {
+    padding: 20px 12px;
+  }
+
+  .fall-result-card__number {
+    font-size: 1.75rem;
+  }
+
+  .fall-pain-points {
+    flex-direction: column;
+  }
+
+  .fall-user-quote {
+    padding: 24px;
+  }
+
+  .fall-next-project {
+    padding: 48px 24px 80px;
+  }
+
+  .fall-demo-iframe {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-navbar {
+    padding: 12px 16px;
+  }
+
+  .navbar-links {
+    gap: 12px;
+
+    li {
+      font-size: 0.75rem;
+    }
+  }
+
+  .fall-hero {
+    padding: 48px 16px 32px;
+  }
+
+  .fall-meta {
+    padding: 24px 16px 36px;
+  }
+
+  .fall-meta__row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .fall-meta__item:last-child {
+    grid-column: span 1;
+  }
+
+  .fall-section {
+    padding: 40px 16px;
+  }
+
+  .fall-goals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fall-goal-card {
+    padding: 24px 20px;
+  }
+
+  .fall-code-showcase {
+    padding: 48px 16px;
+  }
+
+  .code-block__content {
+    font-size: 0.65rem;
+    padding: 12px;
+  }
+
+  .code-block__filename {
+    font-size: 0.65rem;
+  }
+
+  .fall-results-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .fall-result-card {
+    padding: 24px 20px;
+  }
+
+  .fall-result-card__number {
+    font-size: 2rem;
+  }
+
+  .fall-learning,
+  .fall-feature {
+    padding: 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .fall-user-quote {
+    padding: 20px;
+
+    blockquote {
+      font-size: 1.1rem;
+    }
+  }
+
+  .fall-section__content p {
+    font-size: 1rem;
+  }
+
+  .fall-next-project__btn {
+    padding: 14px 32px;
+    font-size: 0.95rem;
+  }
+}
+
+// =============================
+// LIGHTBOX
+// =============================
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: zoom-out;
+  animation: lightboxFadeIn 0.2s ease;
+}
+
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  animation: lightboxImageIn 0.3s ease;
+}
+
+@keyframes lightboxImageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

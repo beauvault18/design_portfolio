@@ -190,7 +190,7 @@ body {
 .radar-topleft {
   top: 15%;
   left: 10%;
-  
+
   .ring1 {
     width: 150px;
     height: 150px;
@@ -242,7 +242,7 @@ body {
 .radar-topright {
   top: 20%;
   right: 15%;
-  
+
   .ring1 {
     width: 180px;
     height: 180px;
@@ -284,7 +284,7 @@ body {
 .radar-bottomright {
   bottom: 15%;
   right: 10%;
-  
+
   .ring1 {
     width: 200px;
     height: 200px;
@@ -378,7 +378,7 @@ body {
 .glitch {
   position: relative;
   display: inline-block;
-  
+
   span {
     position: absolute;
     top: 0;
@@ -391,7 +391,7 @@ body {
   span:first-child {
     animation: glitch-1 2.5s infinite;
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-    text-shadow: 
+    text-shadow:
       -2px 0 #00eaff,
       2px 2px #e11d48;
   }
@@ -399,7 +399,7 @@ body {
   span:last-child {
     animation: glitch-2 2.5s infinite;
     clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-    text-shadow: 
+    text-shadow:
       2px 0 #e11d48,
       -2px -2px #00eaff;
   }

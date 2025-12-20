@@ -43,6 +43,14 @@ export class HomeComponent {
       tags: ['Interaction Design', 'Creative UX', 'Web'],
       image: 'assets/projects/intor_test/triforce-ocarina.png',
       route: '/projects/zelda-puzzle'
+    },
+    {
+      title: 'AI Fall Detection System',
+      year: '2024',
+      role: 'Full-Stack Developer · ML Engineer',
+      tags: ['AI/ML', 'Healthcare', 'Computer Vision', 'React'],
+      image: 'assets/fall-detection/fall-detection-hero.png',
+      route: '/projects/fall-detection'
     }
   ];
 }

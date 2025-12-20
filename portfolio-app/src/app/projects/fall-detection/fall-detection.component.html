@@ -1,0 +1,502 @@
+<!-- Navigation Bar -->
+<nav class="main-navbar">
+  <div class="navbar-logo" routerLink="/">BW</div>
+  <ul class="navbar-links">
+    <li routerLink="/ui-design">UI/Design</li>
+    <li>Projects</li>
+    <li routerLink="/animation">Animation</li>
+    <li routerLink="/product-design">Product Design</li>
+    <li routerLink="/about">About</li>
+    <li>Contact</li>
+    <li>Get CV</li>
+  </ul>
+</nav>
+
+<!-- AI Fall Detection Case Study -->
+<div class="fall-case-study">
+
+  <!-- SECTION 1: HERO -->
+  <section class="fall-hero">
+    <div class="fall-hero__content">
+      <p class="fall-hero__label">AI & Computer Vision</p>
+      <h1 class="fall-hero__title">AI Fall Detection System</h1>
+      <p class="fall-hero__subtitle">Real-Time Safety Monitoring with YOLOv8</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PROJECT META ROW -->
+  <section class="fall-meta">
+    <div class="fall-meta__row">
+      <div class="fall-meta__item">
+        <span class="fall-meta__label">MY ROLE</span>
+        <span class="fall-meta__value">Full-Stack Developer & ML Engineer</span>
+      </div>
+      <div class="fall-meta__item">
+        <span class="fall-meta__label">DELIVERABLES</span>
+        <span class="fall-meta__value">ML Pipeline, REST API, React Frontend</span>
+      </div>
+      <div class="fall-meta__item">
+        <span class="fall-meta__label">TOOLS</span>
+        <span class="fall-meta__value">Python, FastAPI, React, YOLOv8</span>
+      </div>
+      <div class="fall-meta__item">
+        <span class="fall-meta__label">TIMELINE</span>
+        <span class="fall-meta__value">2 Weeks</span>
+      </div>
+      <div class="fall-meta__item">
+        <span class="fall-meta__label">TYPE</span>
+        <span class="fall-meta__value">Personal Project</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PROJECT OVERVIEW -->
+  <section class="fall-section">
+    <h2 class="fall-section__title">Project Overview</h2>
+    <div class="fall-section__content">
+      <p>I developed an AI-powered fall detection system designed for healthcare facilities and elderly care environments. The system uses <strong>YOLOv8 computer vision</strong> to analyze video feeds in real-time, detecting falls and immediately alerting on-duty staff to reduce emergency response times.</p>
+      <p>This project demonstrates the intersection of <strong>machine learning, full-stack development, and practical healthcare safety applications</strong>—combining Python backend services with a modern React frontend to create a complete, deployable solution.</p>
+    </div>
+    <!-- Application Screenshots -->
+    <div class="fall-demo-container">
+      <div class="fall-demo-header">
+        <span class="fall-demo-header__label">Application Demo</span>
+        <p class="fall-demo-header__hint">The AI-powered fall detection system in action — from upload to detection to staff alert.</p>
+      </div>
+      <div class="fall-screenshot-gallery">
+        <div class="fall-screenshot-card" (click)="openLightbox('assets/fall-detection/example 1.png')">
+          <img src="assets/fall-detection/example 1.png" alt="Fall Detection App - Upload Interface" class="fall-screenshot-img">
+          <div class="fall-screenshot-info">
+            <span class="fall-screenshot-label">Upload Interface</span>
+            <p class="fall-screenshot-desc">Drag-and-drop upload for images and videos</p>
+          </div>
+        </div>
+        <div class="fall-screenshot-card fall-screenshot-card--highlight" (click)="openLightbox('assets/fall-detection/example2.png')">
+          <img src="assets/fall-detection/example2.png" alt="Fall Detection App - Detection Results" class="fall-screenshot-img">
+          <div class="fall-screenshot-info">
+            <span class="fall-screenshot-label fall-screenshot-label--alert">Fall Detected</span>
+            <p class="fall-screenshot-desc">AI identifies fall with bounding box overlay</p>
+          </div>
+        </div>
+        <div class="fall-screenshot-card" (click)="openLightbox('assets/fall-detection/example3.png')">
+          <img src="assets/fall-detection/example3.png" alt="Fall Detection App - Staff Alert" class="fall-screenshot-img">
+          <div class="fall-screenshot-info">
+            <span class="fall-screenshot-label">Staff Alert</span>
+            <p class="fall-screenshot-desc">Immediate notification to on-duty personnel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THE PROBLEM -->
+  <section class="fall-section">
+    <h2 class="fall-section__title">The Problem</h2>
+    <div class="fall-section__content">
+      <p>Falls are a leading cause of injury in healthcare and elderly care facilities. Current monitoring solutions rely heavily on <strong>manual observation</strong> or basic motion sensors that generate false alarms. Staff often learn about falls only after a patient has been on the ground for extended periods, increasing injury severity.</p>
+    </div>
+    <div class="fall-pain-points">
+      <div class="fall-pain-point">
+        <span class="fall-pain-point__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+        </span>
+        <span class="fall-pain-point__text">Delayed response times after falls occur</span>
+      </div>
+      <div class="fall-pain-point">
+        <span class="fall-pain-point__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+        </span>
+        <span class="fall-pain-point__text">High false alarm rates with motion sensors</span>
+      </div>
+      <div class="fall-pain-point">
+        <span class="fall-pain-point__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+        </span>
+        <span class="fall-pain-point__text">Understaffed facilities can't monitor all areas</span>
+      </div>
+    </div>
+    <div class="fall-user-quote">
+      <blockquote>"We need a system that can monitor common areas 24/7 and alert us the moment something happens—not after a patient has pressed their call button."</blockquote>
+      <cite>— Healthcare Facility Administrator</cite>
+    </div>
+  </section>
+
+  <!-- SECTION 5: GOALS & SUCCESS METRICS -->
+  <section class="fall-section">
+    <h2 class="fall-section__title">Goals & Success Metrics</h2>
+    <div class="fall-goals-grid">
+      <div class="fall-goal-card">
+        <span class="fall-goal-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </span>
+        <h4 class="fall-goal-card__title">Real-Time Detection</h4>
+        <p class="fall-goal-card__text">Process video frames and detect falls within seconds of occurrence</p>
+      </div>
+      <div class="fall-goal-card">
+        <span class="fall-goal-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </span>
+        <h4 class="fall-goal-card__title">Instant Alerts</h4>
+        <p class="fall-goal-card__text">Notify on-duty staff immediately with location and context</p>
+      </div>
+      <div class="fall-goal-card">
+        <span class="fall-goal-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </span>
+        <h4 class="fall-goal-card__title">High Accuracy</h4>
+        <p class="fall-goal-card__text">Achieve >70% confidence threshold to minimize false positives</p>
+      </div>
+      <div class="fall-goal-card">
+        <span class="fall-goal-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+        </span>
+        <h4 class="fall-goal-card__title">Easy Deployment</h4>
+        <p class="fall-goal-card__text">Simple web interface requiring no specialized training</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: TECHNICAL ARCHITECTURE -->
+  <section class="fall-section">
+    <h2 class="fall-section__title">Technical Architecture</h2>
+    <div class="fall-section__content">
+      <p>The system is built as a <strong>three-tier architecture</strong> separating the ML inference engine, REST API layer, and web frontend. This modular approach allows each component to scale independently and makes the codebase maintainable.</p>
+    </div>
+    <div class="fall-arch-grid">
+      <div class="fall-arch-card">
+        <span class="fall-arch-card__number">01</span>
+        <h4 class="fall-arch-card__title">ML Service Layer</h4>
+        <p class="fall-arch-card__text">YOLOv8 model for object detection with configurable confidence thresholds. Supports both generic detection and specialized fall detection via Roboflow integration.</p>
+        <div class="fall-arch-card__tech">
+          <span>YOLOv8</span>
+          <span>PIL</span>
+          <span>NumPy</span>
+          <span>Roboflow</span>
+        </div>
+      </div>
+      <div class="fall-arch-card">
+        <span class="fall-arch-card__number">02</span>
+        <h4 class="fall-arch-card__title">API Backend</h4>
+        <p class="fall-arch-card__text">FastAPI server handling file uploads, scan requests, and history retrieval. Includes input validation, error handling, and MongoDB persistence for scan records.</p>
+        <div class="fall-arch-card__tech">
+          <span>FastAPI</span>
+          <span>Pydantic</span>
+          <span>MongoDB</span>
+          <span>Python</span>
+        </div>
+      </div>
+      <div class="fall-arch-card">
+        <span class="fall-arch-card__number">03</span>
+        <h4 class="fall-arch-card__title">React Frontend</h4>
+        <p class="fall-arch-card__text">Modern React application with drag-and-drop file uploads, real-time progress tracking, and an alert dashboard displaying detection results and staff notifications.</p>
+        <div class="fall-arch-card__tech">
+          <span>React 19</span>
+          <span>react-dropzone</span>
+          <span>PWA</span>
+          <span>CSS-in-JS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: CODE SHOWCASE -->
+  <section class="fall-code-showcase">
+    <div class="fall-code-showcase__header">
+      <h2 class="fall-code-showcase__title">Code Architecture</h2>
+      <p class="fall-code-showcase__subtitle">Key implementation details showcasing ML integration and real-time processing</p>
+    </div>
+
+    <div class="code-examples">
+      <!-- Code Example 1: ML Detection -->
+      <div class="code-example">
+        <div class="code-example__header">
+          <div class="code-example__badge">ML</div>
+          <h3 class="code-example__title">YOLOv8 Detection Pipeline</h3>
+        </div>
+        <div class="code-example__description">
+          <p>The detection pipeline processes images through YOLOv8, extracts bounding boxes, and draws annotated overlays with confidence scores and class-specific colors.</p>
+        </div>
+        <div class="code-example__block">
+          <div class="code-block__header">
+            <span class="code-block__filename">ml_service.py - detect_generic()</span>
+            <span class="code-block__lang">Python</span>
+          </div>
+          <pre class="code-block__content"><code><span class="code-keyword">def</span> <span class="code-function">detect_generic</span>(self, image: np.ndarray) -> List[Dict]:
+    <span class="code-string">"""Run YOLOv8 detection on image."""</span>
+    <span class="code-keyword">try</span>:
+        results = self.yolo_model(image, verbose=<span class="code-keyword">False</span>)
+        detections = []
+        <span class="code-keyword">for</span> result <span class="code-keyword">in</span> results:
+            <span class="code-keyword">for</span> box <span class="code-keyword">in</span> result.boxes:
+                detections.<span class="code-function">append</span>(&#123;
+                    <span class="code-string">'label'</span>: result.names[<span class="code-function">int</span>(box.cls)],
+                    <span class="code-string">'confidence'</span>: <span class="code-function">float</span>(box.conf),
+                    <span class="code-string">'bbox'</span>: [<span class="code-function">int</span>(x) <span class="code-keyword">for</span> x <span class="code-keyword">in</span> box.xyxy[<span class="code-number">0</span>].tolist()]
+                &#125;)
+        <span class="code-keyword">return</span> detections
+    <span class="code-keyword">except</span> Exception <span class="code-keyword">as</span> e:
+        logger.<span class="code-function">error</span>(<span class="code-string">f"YOLO detection failed: &#123;e&#125;"</span>)
+        <span class="code-keyword">return</span> []</code></pre>
+        </div>
+        <div class="code-example__highlights">
+          <span class="highlight-tag">YOLO Inference</span>
+          <span class="highlight-tag">Bounding Boxes</span>
+          <span class="highlight-tag">Confidence Scores</span>
+          <span class="highlight-tag">Error Handling</span>
+        </div>
+      </div>
+
+      <!-- Code Example 2: Alert System -->
+      <div class="code-example">
+        <div class="code-example__header">
+          <div class="code-example__badge">Frontend</div>
+          <h3 class="code-example__title">Staff Alert Dashboard</h3>
+        </div>
+        <div class="code-example__description">
+          <p>When a detection occurs, the frontend generates an alert message with timestamp, location, and on-duty staff contacts, ready to dispatch immediately.</p>
+        </div>
+        <div class="code-example__block">
+          <div class="code-block__header">
+            <span class="code-block__filename">ScanResults.js - AlertSection</span>
+            <span class="code-block__lang">JavaScript</span>
+          </div>
+          <pre class="code-block__content"><code><span class="code-keyword">const</span> FACILITY_STAFF = [
+  &#123; name: <span class="code-string">'Sarah Mitchell'</span>, role: <span class="code-string">'Floor Supervisor'</span>,
+    phone: <span class="code-string">'(555) 234-5678'</span>, onDuty: <span class="code-keyword">true</span> &#125;,
+  &#123; name: <span class="code-string">'James Rodriguez'</span>, role: <span class="code-string">'Safety Officer'</span>,
+    phone: <span class="code-string">'(555) 345-6789'</span>, onDuty: <span class="code-keyword">true</span> &#125;,
+];
+
+<span class="code-keyword">const</span> alertMessage = <span class="code-string">`FALL ALERT: Detected at $&#123;location&#125;.
+Time: $&#123;timeStr&#125; on $&#123;dateStr&#125;.
+$&#123;result.total_detections&#125; person(s) in frame.
+Immediate response required.`</span>;
+
+<span class="code-comment">// Dispatch to all on-duty staff</span>
+<span class="code-keyword">const</span> onDutyStaff = FACILITY_STAFF.<span class="code-function">filter</span>(s => s.onDuty);</code></pre>
+        </div>
+        <div class="code-example__highlights">
+          <span class="highlight-tag">Alert System</span>
+          <span class="highlight-tag">Staff Roster</span>
+          <span class="highlight-tag">Real-time Dispatch</span>
+          <span class="highlight-tag">Location Context</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: KEY FEATURES -->
+  <section class="fall-section">
+    <h2 class="fall-section__title">Key Features</h2>
+    <div class="fall-features-list">
+      <div class="fall-feature">
+        <span class="fall-feature__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </span>
+        <div class="fall-feature__content">
+          <h4>Visual Detection with Bounding Boxes</h4>
+          <p>Each detected object is highlighted with a color-coded bounding box and confidence percentage, making it easy to understand what the AI identified.</p>
+        </div>
+      </div>
+      <div class="fall-feature">
+        <span class="fall-feature__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </span>
+        <div class="fall-feature__content">
+          <h4>Drag-and-Drop Upload</h4>
+          <p>Users can drag images or videos directly onto the interface, with real-time upload progress and support for JPG, PNG, MP4, AVI, and MOV formats.</p>
+        </div>
+      </div>
+      <div class="fall-feature">
+        <span class="fall-feature__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+        </span>
+        <div class="fall-feature__content">
+          <h4>Scan History & Persistence</h4>
+          <p>All scans are stored in MongoDB with metadata, allowing staff to review past detections, filter by file type, and access video thumbnails.</p>
+        </div>
+      </div>
+      <div class="fall-feature">
+        <span class="fall-feature__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </span>
+        <div class="fall-feature__content">
+          <h4>Staff Alert Dashboard</h4>
+          <p>When detections occur, the system displays on-duty staff with contact information and generates pre-formatted alert messages ready for dispatch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: FINAL OUTCOME -->
+  <section class="fall-section fall-section--highlight">
+    <h2 class="fall-section__title">Technical Achievements</h2>
+    <div class="fall-results-grid">
+      <div class="fall-result-card">
+        <span class="fall-result-card__number">&lt;2s</span>
+        <span class="fall-result-card__label">Processing Time</span>
+        <span class="fall-result-card__note">Per image analysis</span>
+      </div>
+      <div class="fall-result-card">
+        <span class="fall-result-card__number">70%+</span>
+        <span class="fall-result-card__label">Confidence Threshold</span>
+        <span class="fall-result-card__note">Configurable via env</span>
+      </div>
+      <div class="fall-result-card">
+        <span class="fall-result-card__number">6</span>
+        <span class="fall-result-card__label">File Formats</span>
+        <span class="fall-result-card__note">Image & video support</span>
+      </div>
+    </div>
+    <div class="fall-section__content fall-section__content--centered" style="margin-top: 48px;">
+      <p>Built a <strong>complete, production-ready fall detection system</strong> that demonstrates real-world ML application development—from model integration to user interface design and staff notification workflows.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 10: WHAT I LEARNED -->
+  <section class="fall-section">
+    <h2 class="fall-section__title">What I Learned</h2>
+    <div class="fall-learnings">
+      <div class="fall-learning">
+        <span class="fall-learning__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+        </span>
+        <div class="fall-learning__content">
+          <h4>ML Model Integration Requires Robust Error Handling</h4>
+          <p>Production ML services need extensive error handling—models can fail on unexpected inputs, and the system must gracefully degrade rather than crash.</p>
+        </div>
+      </div>
+      <div class="fall-learning">
+        <span class="fall-learning__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </span>
+        <div class="fall-learning__content">
+          <h4>User Context is Critical for Alerts</h4>
+          <p>Detection alone isn't valuable—staff need location, timestamp, and clear instructions. The alert message design is as important as the detection accuracy.</p>
+        </div>
+      </div>
+      <div class="fall-learning">
+        <span class="fall-learning__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </span>
+        <div class="fall-learning__content">
+          <h4>Confidence Thresholds Require Tuning</h4>
+          <p>The 70% default threshold balances false positives vs. missed detections. Real deployment would require iterative tuning based on facility feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: NEXT STEPS -->
+  <section class="fall-section">
+    <h2 class="fall-section__title">Next Steps</h2>
+    <div class="fall-roadmap">
+      <div class="fall-roadmap-item">
+        <span class="fall-roadmap-item__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 6l-9.5 9.5-5-5L1 18"/>
+            <path d="M17 6h6v6"/>
+          </svg>
+        </span>
+        <span class="fall-roadmap-item__text">Train specialized fall detection model with healthcare-specific data</span>
+      </div>
+      <div class="fall-roadmap-item">
+        <span class="fall-roadmap-item__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </span>
+        <span class="fall-roadmap-item__text">Integrate SMS/push notification for immediate staff alerts</span>
+      </div>
+      <div class="fall-roadmap-item">
+        <span class="fall-roadmap-item__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </span>
+        <span class="fall-roadmap-item__text">Add live RTSP camera stream processing</span>
+      </div>
+      <div class="fall-roadmap-item">
+        <span class="fall-roadmap-item__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+        </span>
+        <span class="fall-roadmap-item__text">Build admin dashboard for multi-camera facility management</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: NEXT PROJECT CTA -->
+  <section class="fall-next-project">
+    <button class="fall-next-project__btn" routerLink="/projects/ksp-mental-performance">Next Project: KSP Mental Performance</button>
+  </section>
+
+</div>
+
+<!-- Lightbox Overlay -->
+<div class="lightbox-overlay" *ngIf="lightboxImage" (click)="closeLightbox()">
+  <button class="lightbox-close" (click)="closeLightbox()">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+  <img [src]="lightboxImage" alt="Fullscreen view" class="lightbox-image" (click)="$event.stopPropagation()">
+</div>

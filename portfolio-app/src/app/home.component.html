@@ -250,8 +250,66 @@
           </div>
         </ng-container>
 
+        <!-- AI FALL DETECTION SYSTEM ENHANCED CONTENT -->
+        <ng-container *ngIf="project.title === 'AI Fall Detection System'">
+          <!-- Category Pills -->
+          <div class="project-card__categories">
+            <span class="category-pill">AI & COMPUTER VISION</span>
+            <span class="category-pill">HEALTHCARE SAFETY</span>
+          </div>
+
+          <!-- Title -->
+          <h3 class="project-card__title">{{ project.title }}</h3>
+
+          <!-- Subtitle -->
+          <p class="project-card__subtitle">Real-Time Safety Monitoring with YOLOv8</p>
+
+          <!-- Description -->
+          <p class="project-card__description">
+            An AI-powered fall detection system designed for healthcare facilities and elderly care environments. Using advanced computer vision with YOLOv8, the system analyzes video feeds in real-time to detect falls and immediately alert on-duty staff, reducing emergency response times and improving patient safety outcomes.
+          </p>
+
+          <!-- Feature Highlights -->
+          <ul class="project-card__features">
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>YOLOv8 detection</strong> with configurable confidence thresholds</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Real-time alert system</strong> with staff notification dashboard</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Image & video analysis</strong> with annotated bounding boxes</span>
+            </li>
+            <li>
+              <svg class="feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8L7 12L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span><strong>Scan history & tracking</strong> with MongoDB persistence</span>
+            </li>
+          </ul>
+
+          <!-- Tech Stack -->
+          <div class="project-card__tech-divider"></div>
+          <div class="project-card__tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">YOLOv8</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag tech-tag--more">+3 more</span>
+          </div>
+        </ng-container>
+
         <!-- DEFAULT CONTENT (for other cards) -->
-        <ng-container *ngIf="project.title !== 'KSP Mental Performance' && project.title !== 'Continuo iPad App' && project.title !== 'Zelda Puzzle'">
+        <ng-container *ngIf="project.title !== 'KSP Mental Performance' && project.title !== 'Continuo iPad App' && project.title !== 'Zelda Puzzle' && project.title !== 'AI Fall Detection System'">
           <div class="project-card__meta">
             <span class="project-card__year">{{ project.year }}</span>
             <span class="project-card__divider">/</span>
