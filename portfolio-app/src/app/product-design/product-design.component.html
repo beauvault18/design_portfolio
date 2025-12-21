@@ -4,12 +4,10 @@
     <div class="navbar-logo" routerLink="/">BW</div>
     <ul class="navbar-links">
       <li routerLink="/ui-design">UI/Design</li>
-      <li>Projects</li>
-      <li routerLink="/animation">Animation</li>
       <li routerLink="/product-design" class="active">Product Design</li>
+      <li routerLink="/animation">Animation</li>
       <li routerLink="/about">About</li>
-      <li>Contact</li>
-      <li>Get CV</li>
+      <li><a href="assets/Beau_Whitman_CV.docx.pdf" download>Get CV</a></li>
     </ul>
   </nav>
 
@@ -287,7 +285,7 @@
       <div class="footer-cta">
         <h3>Interested in working together?</h3>
         <p>Let's create something amazing.</p>
-        <button class="footer-button" routerLink="/about">Get in Touch</button>
+        <button class="footer-button" (click)="openContactModal()">Get in Touch</button>
       </div>
       <div class="footer-bottom">
         <p class="footer-text">Designed & Built by Beau Whitman</p>
@@ -317,6 +315,21 @@
         >
       </div>
       <p class="modal__title">{{ currentImageTitle }}</p>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal-overlay" *ngIf="showContactModal" (click)="closeContactModal()">
+    <div class="contact-modal" (click)="$event.stopPropagation()">
+      <button class="contact-modal__close" (click)="closeContactModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <h3 class="contact-modal__title">Get in Touch</h3>
+      <p class="contact-modal__text">Please email me at</p>
+      <a href="mailto:Beauvault18@gmail.com" class="contact-modal__email">Beauvault18&#64;gmail.com</a>
     </div>
   </div>
 </div>

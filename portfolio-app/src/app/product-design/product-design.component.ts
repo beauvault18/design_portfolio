@@ -15,6 +15,9 @@ export class ProductDesignComponent implements AfterViewInit, OnDestroy {
   currentImage = '';
   currentImageTitle = '';
 
+  // Contact Modal state
+  showContactModal = false;
+
   // Intersection Observer for scroll animations
   private observer: IntersectionObserver | null = null;
 
@@ -247,5 +250,15 @@ export class ProductDesignComponent implements AfterViewInit, OnDestroy {
     if (this.observer) {
       this.observer.disconnect();
     }
+  }
+
+  // Open contact modal
+  openContactModal(): void {
+    this.showContactModal = true;
+  }
+
+  // Close contact modal
+  closeContactModal(): void {
+    this.showContactModal = false;
   }
 }

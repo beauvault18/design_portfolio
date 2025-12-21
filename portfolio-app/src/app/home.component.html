@@ -5,12 +5,10 @@
   <div class="navbar-logo" routerLink="/" style="cursor:pointer;">BW</div>
   <ul class="navbar-links">
     <li routerLink="/ui-design" style="cursor:pointer;">UI/Design</li>
-    <li>Projects</li>
-    <li routerLink="/animation" style="cursor:pointer;">Animation</li>
     <li routerLink="/product-design" style="cursor:pointer;">Product Design</li>
+    <li routerLink="/animation" style="cursor:pointer;">Animation</li>
     <li routerLink="/about" style="cursor:pointer;">About</li>
-    <li>Contact</li>
-    <li>Get CV</li>
+    <li><a href="assets/Beau_Whitman_CV.docx.pdf" download style="cursor:pointer;">Get CV</a></li>
   </ul>
 </nav>
 
@@ -61,25 +59,59 @@
       Hello there, I am Beau – a product designer specializing in web mobile apps and animation.<br />I craft user-focused designs that drive conversations and resonate with audiences.
     </div>
     <div class="hero-cta">
-      <button class="cta-btn">Contact Me</button>
+      <button class="cta-btn" (click)="openContactModal()">Contact Me</button>
     </div>
   </div>
 </div>
 
-<!--
-  PROJECT STACK SECTION: Scroll-reactive stacking cards
--->
-<section class="project-stack-section">
-  <!-- Large faded background title -->
-  <div class="section-bg-title">Recent Works</div>
+<!-- Contact Modal -->
+<div class="contact-modal-overlay" *ngIf="showContactModal" (click)="closeContactModal()">
+  <div class="contact-modal" (click)="$event.stopPropagation()">
+    <button class="contact-modal__close" (click)="closeContactModal()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <h3 class="contact-modal__title">Get in Touch</h3>
+    <p class="contact-modal__text">Please email me at</p>
+    <a href="mailto:Beauvault18@gmail.com" class="contact-modal__email">Beauvault18&#64;gmail.com</a>
+  </div>
+</div>
 
-  <div class="project-stack">
-    <div
-      *ngFor="let project of projects; let i = index"
-      class="project-card"
-      [routerLink]="project.route"
-      [style.cursor]="project.route ? 'pointer' : 'default'"
-    >
+<!--
+  PROJECT CAROUSEL SECTION: 3D rotating carousel
+  Cards rotate automatically and pause on hover
+-->
+<section class="project-carousel-section">
+  <!-- Background title - stretched and faded behind carousel -->
+  <div class="carousel-bg-title" aria-hidden="true">RECENT WORKS</div>
+
+  <!-- Navigation arrows -->
+  <button class="carousel-nav carousel-nav--prev" (click)="prevCard()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <button class="carousel-nav carousel-nav--next" (click)="nextCard()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 6 15 12 9 18"></polyline>
+    </svg>
+  </button>
+
+  <!-- 3D Carousel container -->
+  <div class="carousel-container">
+    <div class="carousel-track" [ngStyle]="getCarouselStyle()">
+      <div
+        *ngFor="let project of projects; let i = index"
+        class="project-card"
+        [class.card-active]="isCardActive(i)"
+        [routerLink]="project.route"
+        [style.cursor]="project.route ? 'pointer' : 'default'"
+        [ngStyle]="getCardStyle(i)"
+        (mouseenter)="onCardMouseEnter()"
+        (mouseleave)="onCardMouseLeave()"
+      >
       <!-- Card content (LEFT side) -->
       <div class="project-card__content">
         <!-- KSP ENHANCED CONTENT -->
@@ -341,6 +373,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </section>
 

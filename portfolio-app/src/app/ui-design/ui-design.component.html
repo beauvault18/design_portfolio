@@ -4,12 +4,10 @@
     <div class="navbar-logo" routerLink="/">BW</div>
     <ul class="navbar-links">
       <li routerLink="/ui-design" class="active">UI/Design</li>
-      <li>Projects</li>
-      <li routerLink="/animation">Animation</li>
       <li routerLink="/product-design">Product Design</li>
+      <li routerLink="/animation">Animation</li>
       <li routerLink="/about">About</li>
-      <li>Contact</li>
-      <li>Get CV</li>
+      <li><a href="assets/Beau_Whitman_CV.docx.pdf" download>Get CV</a></li>
     </ul>
   </nav>
 
@@ -194,7 +192,6 @@
     <div class="projects-hero">
       <div class="projects-hero__glow"></div>
       <div class="projects-hero__content">
-        <span class="section__number">01</span>
         <h2 class="projects-hero__title">Featured Projects</h2>
         <p class="projects-hero__subtitle">End-to-End Design Case Studies</p>
       </div>
@@ -239,7 +236,6 @@
     <div class="prototypes-hero">
       <div class="prototypes-hero__glow"></div>
       <div class="prototypes-hero__content">
-        <span class="section__number section__number--purple">02</span>
         <h2 class="prototypes-hero__title">Interactive Prototypes</h2>
         <p class="prototypes-hero__subtitle">Click through my designs to experience the interactions</p>
       </div>
@@ -248,7 +244,7 @@
     <!-- Prototypes Grid -->
     <div class="prototypes-showcase">
       <div class="prototypes-grid">
-        <article *ngFor="let prototype of prototypes" class="prototype-card">
+        <article *ngFor="let prototype of prototypes" class="prototype-card" [class.prototype-card--wide]="prototype.isWide">
           <div class="prototype-card__header">
             <span class="prototype-card__label">{{ prototype.label }}</span>
             <h3 class="prototype-card__title">{{ prototype.title }}</h3>
@@ -275,41 +271,8 @@
     </div>
   </section>
 
-  <!-- Section 3: Design Process -->
+  <!-- Section 3: Tools & Skills -->
   <section id="process" class="section section--process">
-    <!-- Hero with Cyan Glow -->
-    <div class="process-hero">
-      <div class="process-hero__glow"></div>
-      <div class="process-hero__content">
-        <span class="section__number section__number--cyan">03</span>
-        <h2 class="process-hero__title">Design Process</h2>
-        <p class="process-hero__subtitle">My Approach to Creating Exceptional Experiences</p>
-      </div>
-    </div>
-
-    <!-- Process Overview -->
-    <div class="process-overview">
-      <div class="process-overview__content">
-        <h3 class="process-overview__heading">Design Philosophy</h3>
-        <p class="process-overview__text">{{ designPhilosophy }}</p>
-        <p class="process-overview__highlight">{{ designHighlight }}</p>
-      </div>
-    </div>
-
-    <!-- Process Steps -->
-    <div class="process-section">
-      <h3 class="process-section__title">My Process</h3>
-      <div class="process-steps">
-        <div *ngFor="let step of processSteps" class="process-step">
-          <span class="process-step__number">{{ step.number }}</span>
-          <div class="process-step__content">
-            <h4 class="process-step__title">{{ step.title }}</h4>
-            <p class="process-step__description">{{ step.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Tools & Skills Row -->
     <div class="process-section">
       <div class="tools-skills-row">
@@ -348,7 +311,7 @@
       <div class="footer-cta">
         <h3>Let's Create Something Amazing</h3>
         <p>Have a project in mind? I'd love to hear about it.</p>
-        <button class="footer-button" routerLink="/about">Get in Touch</button>
+        <button class="footer-button" (click)="openContactModal()">Get in Touch</button>
       </div>
       <div class="footer-bottom">
         <p class="footer-text">Designed & Built by Beau Whitman</p>
@@ -360,4 +323,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal-overlay" *ngIf="showContactModal" (click)="closeContactModal()">
+    <div class="contact-modal" (click)="$event.stopPropagation()">
+      <button class="contact-modal__close" (click)="closeContactModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <h3 class="contact-modal__title">Get in Touch</h3>
+      <p class="contact-modal__text">Please email me at</p>
+      <a href="mailto:Beauvault18@gmail.com" class="contact-modal__email">Beauvault18&#64;gmail.com</a>
+    </div>
+  </div>
 </div>

@@ -24,6 +24,7 @@ interface Prototype {
   description: string;
   embedUrl: SafeResourceUrl;
   figmaUrl: string;
+  isWide?: boolean;
 }
 
 interface ProcessStep {
@@ -42,6 +43,9 @@ interface ProcessStep {
 export class UiDesignComponent {
   // Active category for navigation
   activeCategory = 'projects';
+
+  // Contact modal visibility
+  showContactModal = false;
 
   // Categories for navigation
   categories: Category[] = [
@@ -72,7 +76,7 @@ export class UiDesignComponent {
       title: 'Zelda Puzzle',
       category: 'Interactive Web Design',
       description: 'A browser-based puzzle game inspired by The Legend of Zelda, featuring canvas animations and audio integration.',
-      image: 'assets/zelda-puzzle/intor_test/images/triforce-ocarina.png',
+      image: 'assets/projects/intor_test/triforce-ocarina.png',
       tags: ['Web Design', 'Game UI', 'Animation'],
       route: '/projects/zelda-puzzle'
     }
@@ -159,13 +163,6 @@ export class UiDesignComponent {
         figmaUrl: 'https://www.figma.com/proto/14Mga7Iup55iOUCdMdKKjq/Tokyo-Hover?node-id=0-1'
       },
       {
-        title: 'Sushi Hover',
-        label: 'Hover Interaction',
-        description: 'A playful hover interaction featuring sushi-themed elements with micro-animations.',
-        embedUrl: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fyws7QWXQjCJM4RdSuGBsu3%2FSushi-Hover%3Fnode-id%3D0-1',
-        figmaUrl: 'https://www.figma.com/proto/yws7QWXQjCJM4RdSuGBsu3/Sushi-Hover?node-id=0-1'
-      },
-      {
         title: 'Navigation Buttons',
         label: 'UI Component',
         description: 'A collection of interactive navigation button styles with hover states.',
@@ -178,6 +175,21 @@ export class UiDesignComponent {
         description: 'A fluid navigation menu with liquid morphing effects and smooth state transitions.',
         embedUrl: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FviNhhsI7HBFodJA50Hwby2%2FLiquid-Menu%3Fnode-id%3D0-1',
         figmaUrl: 'https://www.figma.com/proto/viNhhsI7HBFodJA50Hwby2/Liquid-Menu?node-id=0-1'
+      },
+      {
+        title: 'Splash Logo',
+        label: 'Logo Animation',
+        description: 'An animated splash logo with smooth motion effects and dynamic transitions.',
+        embedUrl: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FGaOwQ2oRcn2mouHSUW26R9%2FSplash-logo%3Fnode-id%3D0-1',
+        figmaUrl: 'https://www.figma.com/proto/GaOwQ2oRcn2mouHSUW26R9/Splash-logo?node-id=0-1'
+      },
+      {
+        title: 'Drink Drop',
+        label: 'Wireframe Walkthrough',
+        description: 'A Figma wireframe walkthrough for the Drink Drop app concept.',
+        embedUrl: 'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5n2DYvncRkwdDtl7kGwvUI%2FDrink_Drop%3Fnode-id%3D0-1',
+        figmaUrl: 'https://www.figma.com/proto/5n2DYvncRkwdDtl7kGwvUI/Drink_Drop?node-id=0-1',
+        isWide: true
       }
     ];
 
@@ -212,5 +224,15 @@ export class UiDesignComponent {
         }
       }
     }
+  }
+
+  // Open contact modal
+  openContactModal(): void {
+    this.showContactModal = true;
+  }
+
+  // Close contact modal
+  closeContactModal(): void {
+    this.showContactModal = false;
   }
 }

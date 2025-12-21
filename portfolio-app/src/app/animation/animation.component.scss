@@ -136,8 +136,8 @@ $radius-xl: 24px;
 // =============================
 .hero {
   position: relative;
-  padding: 40px 48px 30px;
-  min-height: 35vh;
+  padding: 60px 48px 50px;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3067,6 +3067,115 @@ $radius-xl: 24px;
   max-width: 100%;
   max-height: 80vh;
   object-fit: contain;
+}
+
+// =============================
+// CONTACT MODAL
+// =============================
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.contact-modal {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba($accent-green, 0.3);
+  border-radius: 20px;
+  padding: 3rem 4rem;
+  text-align: center;
+  position: relative;
+  max-width: 450px;
+  width: 90%;
+  box-shadow:
+    0 0 60px rgba($accent-green, 0.15),
+    0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: $accent-green;
+    background: rgba($accent-green, 0.1);
+  }
+}
+
+.contact-modal__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.contact-modal__text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.75rem;
+  font-weight: 400;
+}
+
+.contact-modal__email {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $accent-green;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba($accent-green, 0.4);
+  border-radius: 30px;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  background: rgba($accent-green, 0.05);
+
+  &:hover {
+    background: rgba($accent-green, 0.15);
+    border-color: $accent-green;
+    box-shadow: 0 0 20px rgba($accent-green, 0.3);
+  }
 }
 
 // =============================
