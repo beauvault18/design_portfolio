@@ -136,8 +136,8 @@ $radius-xl: 24px;
 // =============================
 .hero {
   position: relative;
-  padding: 60px 48px 50px;
-  min-height: 70vh;
+  padding: 60px 48px 290px;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -816,6 +816,170 @@ $radius-xl: 24px;
     margin: 0;
     letter-spacing: 0.02em;
   }
+}
+
+// Dog Sprite Animation - Preload all images to prevent flickering
+.dog-sprite {
+  width: 450px;
+  height: 450px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: -180px;
+  // Preload all sprite images by including them (hidden) - prevents loading flicker
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background-image:
+      url('/assets/animation/dog-sprites/dog_frame_004.png'),
+      url('/assets/animation/dog-sprites/dog_frame_005.png'),
+      url('/assets/animation/dog-sprites/dog_frame_006.png'),
+      url('/assets/animation/dog-sprites/dog_frame_007.png'),
+      url('/assets/animation/dog-sprites/dog_frame_008.png'),
+      url('/assets/animation/dog-sprites/dog_frame_009.png'),
+      url('/assets/animation/dog-sprites/dog_frame_010.png'),
+      url('/assets/animation/dog-sprites/dog_frame_011.png'),
+      url('/assets/animation/dog-sprites/dog_frame_012.png'),
+      url('/assets/animation/dog-sprites/dog_frame_013.png'),
+      url('/assets/animation/dog-sprites/dog_frame_014.png'),
+      url('/assets/animation/dog-sprites/dog_frame_015.png'),
+      url('/assets/animation/dog-sprites/dog_frame_016.png'),
+      url('/assets/animation/dog-sprites/dog_frame_017.png'),
+      url('/assets/animation/dog-sprites/dog_frame_018.png'),
+      url('/assets/animation/dog-sprites/dog_frame_019.png'),
+      url('/assets/animation/dog-sprites/dog_frame_020.png'),
+      url('/assets/animation/dog-sprites/dog_frame_021.png'),
+      url('/assets/animation/dog-sprites/dog_frame_022.png'),
+      url('/assets/animation/dog-sprites/dog_frame_023.png'),
+      url('/assets/animation/dog-sprites/dog_frame_024.png'),
+      url('/assets/animation/dog-sprites/dog_frame_025.png'),
+      url('/assets/animation/dog-sprites/dog_frame_026.png'),
+      url('/assets/animation/dog-sprites/dog_frame_027.png'),
+      url('/assets/animation/dog-sprites/dog_frame_028.png'),
+      url('/assets/animation/dog-sprites/dog_frame_029.png'),
+      url('/assets/animation/dog-sprites/dog_frame_030.png'),
+      url('/assets/animation/dog-sprites/dog_frame_031.png'),
+      url('/assets/animation/dog-sprites/dog_frame_032.png'),
+      url('/assets/animation/dog-sprites/dog_frame_033.png'),
+      url('/assets/animation/dog-sprites/dog_frame_034.png'),
+      url('/assets/animation/dog-sprites/dog_frame_035.png'),
+      url('/assets/animation/dog-sprites/dog_frame_036.png'),
+      url('/assets/animation/dog-sprites/dog_frame_037.png'),
+      url('/assets/animation/dog-sprites/dog_frame_038.png'),
+      url('/assets/animation/dog-sprites/dog_frame_039.png'),
+      url('/assets/animation/dog-sprites/dog_frame_040.png'),
+      url('/assets/animation/dog-sprites/dog_frame_041.png'),
+      url('/assets/animation/dog-sprites/dog_frame_042.png'),
+      url('/assets/animation/dog-sprites/dog_frame_043.png'),
+      url('/assets/animation/dog-sprites/dog_frame_044.png'),
+      url('/assets/animation/dog-sprites/dog_frame_045.png'),
+      url('/assets/animation/dog-sprites/dog_frame_046.png'),
+      url('/assets/animation/dog-sprites/dog_frame_047.png'),
+      url('/assets/animation/dog-sprites/dog_frame_048.png'),
+      url('/assets/animation/dog-sprites/dog_frame_049.png'),
+      url('/assets/animation/dog-sprites/dog_frame_050.png'),
+      url('/assets/animation/dog-sprites/dog_frame_051.png'),
+      url('/assets/animation/dog-sprites/dog_frame_052.png'),
+      url('/assets/animation/dog-sprites/dog_frame_053.png'),
+      url('/assets/animation/dog-sprites/dog_frame_054.png'),
+      url('/assets/animation/dog-sprites/dog_frame_055.png'),
+      url('/assets/animation/dog-sprites/dog_frame_056.png'),
+      url('/assets/animation/dog-sprites/dog_frame_057.png');
+  }
+
+  &--active {
+    animation:
+      dogSprites 4s steps(1) forwards,
+      dogMove 4s ease-out forwards,
+      dogTailWag 0.6s steps(1) 4s infinite;
+  }
+}
+
+// Movement animation - smooth slide from right to center with fade in
+@keyframes dogMove {
+  0% {
+    opacity: 0;
+    transform: translateX(600px);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Tail wagging loop - cycles through sitting frames after run completes
+@keyframes dogTailWag {
+  0% { background-image: url('/assets/animation/dog-sprites/dog_frame_054.png'); }
+  25% { background-image: url('/assets/animation/dog-sprites/dog_frame_055.png'); }
+  50% { background-image: url('/assets/animation/dog-sprites/dog_frame_056.png'); }
+  75% { background-image: url('/assets/animation/dog-sprites/dog_frame_057.png'); }
+  100% { background-image: url('/assets/animation/dog-sprites/dog_frame_054.png'); }
+}
+
+// Sprite frame animation - using steps(1) for instant frame changes (no flickering)
+@keyframes dogSprites {
+  0% { background-image: url('/assets/animation/dog-sprites/dog_frame_004.png'); }
+  2% { background-image: url('/assets/animation/dog-sprites/dog_frame_005.png'); }
+  4% { background-image: url('/assets/animation/dog-sprites/dog_frame_006.png'); }
+  6% { background-image: url('/assets/animation/dog-sprites/dog_frame_007.png'); }
+  8% { background-image: url('/assets/animation/dog-sprites/dog_frame_008.png'); }
+  10% { background-image: url('/assets/animation/dog-sprites/dog_frame_009.png'); }
+  12% { background-image: url('/assets/animation/dog-sprites/dog_frame_010.png'); }
+  14% { background-image: url('/assets/animation/dog-sprites/dog_frame_011.png'); }
+  16% { background-image: url('/assets/animation/dog-sprites/dog_frame_012.png'); }
+  18% { background-image: url('/assets/animation/dog-sprites/dog_frame_013.png'); }
+  20% { background-image: url('/assets/animation/dog-sprites/dog_frame_014.png'); }
+  22% { background-image: url('/assets/animation/dog-sprites/dog_frame_015.png'); }
+  24% { background-image: url('/assets/animation/dog-sprites/dog_frame_016.png'); }
+  26% { background-image: url('/assets/animation/dog-sprites/dog_frame_017.png'); }
+  28% { background-image: url('/assets/animation/dog-sprites/dog_frame_018.png'); }
+  30% { background-image: url('/assets/animation/dog-sprites/dog_frame_019.png'); }
+  32% { background-image: url('/assets/animation/dog-sprites/dog_frame_020.png'); }
+  34% { background-image: url('/assets/animation/dog-sprites/dog_frame_021.png'); }
+  36% { background-image: url('/assets/animation/dog-sprites/dog_frame_022.png'); }
+  38% { background-image: url('/assets/animation/dog-sprites/dog_frame_023.png'); }
+  40% { background-image: url('/assets/animation/dog-sprites/dog_frame_024.png'); }
+  42% { background-image: url('/assets/animation/dog-sprites/dog_frame_025.png'); }
+  44% { background-image: url('/assets/animation/dog-sprites/dog_frame_026.png'); }
+  46% { background-image: url('/assets/animation/dog-sprites/dog_frame_027.png'); }
+  48% { background-image: url('/assets/animation/dog-sprites/dog_frame_028.png'); }
+  50% { background-image: url('/assets/animation/dog-sprites/dog_frame_029.png'); }
+  52% { background-image: url('/assets/animation/dog-sprites/dog_frame_030.png'); }
+  54% { background-image: url('/assets/animation/dog-sprites/dog_frame_031.png'); }
+  56% { background-image: url('/assets/animation/dog-sprites/dog_frame_032.png'); }
+  58% { background-image: url('/assets/animation/dog-sprites/dog_frame_033.png'); }
+  60% { background-image: url('/assets/animation/dog-sprites/dog_frame_034.png'); }
+  62% { background-image: url('/assets/animation/dog-sprites/dog_frame_035.png'); }
+  64% { background-image: url('/assets/animation/dog-sprites/dog_frame_036.png'); }
+  66% { background-image: url('/assets/animation/dog-sprites/dog_frame_037.png'); }
+  68% { background-image: url('/assets/animation/dog-sprites/dog_frame_038.png'); }
+  70% { background-image: url('/assets/animation/dog-sprites/dog_frame_039.png'); }
+  72% { background-image: url('/assets/animation/dog-sprites/dog_frame_040.png'); }
+  74% { background-image: url('/assets/animation/dog-sprites/dog_frame_041.png'); }
+  76% { background-image: url('/assets/animation/dog-sprites/dog_frame_042.png'); }
+  78% { background-image: url('/assets/animation/dog-sprites/dog_frame_043.png'); }
+  80% { background-image: url('/assets/animation/dog-sprites/dog_frame_044.png'); }
+  82% { background-image: url('/assets/animation/dog-sprites/dog_frame_045.png'); }
+  84% { background-image: url('/assets/animation/dog-sprites/dog_frame_046.png'); }
+  86% { background-image: url('/assets/animation/dog-sprites/dog_frame_047.png'); }
+  88% { background-image: url('/assets/animation/dog-sprites/dog_frame_048.png'); }
+  90% { background-image: url('/assets/animation/dog-sprites/dog_frame_049.png'); }
+  91% { background-image: url('/assets/animation/dog-sprites/dog_frame_050.png'); }
+  92% { background-image: url('/assets/animation/dog-sprites/dog_frame_051.png'); }
+  93% { background-image: url('/assets/animation/dog-sprites/dog_frame_052.png'); }
+  94% { background-image: url('/assets/animation/dog-sprites/dog_frame_053.png'); }
+  95% { background-image: url('/assets/animation/dog-sprites/dog_frame_054.png'); }
+  96% { background-image: url('/assets/animation/dog-sprites/dog_frame_055.png'); }
+  97% { background-image: url('/assets/animation/dog-sprites/dog_frame_056.png'); }
+  100% { background-image: url('/assets/animation/dog-sprites/dog_frame_057.png'); }
 }
 
 // Misfit Video Layout (Cards on either side of video)

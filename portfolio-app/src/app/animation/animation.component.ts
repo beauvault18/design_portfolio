@@ -39,8 +39,12 @@ export class AnimationComponent implements AfterViewInit, OnDestroy {
   // Contact Modal state
   showContactModal = false;
 
+  // Dog sprite animation state
+  isDogAnimating = false;
+
   // Intersection Observer for scroll animations
   private observer: IntersectionObserver | null = null;
+  private dogObserver: IntersectionObserver | null = null;
 
   // Active category for navigation
   activeCategory = 'misfit';
@@ -472,6 +476,27 @@ export class AnimationComponent implements AfterViewInit, OnDestroy {
       titlesHeroObserver.observe(titlesHero);
     }
 
+    // Observer for dog sprite animation in Misfit section
+    this.dogObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !this.isDogAnimating) {
+            this.isDogAnimating = true;
+            this.dogObserver?.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+        rootMargin: '0px 0px -10% 0px',
+      }
+    );
+
+    const mainHero = document.querySelector('.hero');
+    if (mainHero) {
+      this.dogObserver.observe(mainHero);
+    }
+
     // Trigger smoke explosion on category nav when scan line reaches bottom
     const categoryNav = document.querySelector('.category-nav');
     if (categoryNav) {
@@ -498,6 +523,9 @@ export class AnimationComponent implements AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.observer) {
       this.observer.disconnect();
+    }
+    if (this.dogObserver) {
+      this.dogObserver.disconnect();
     }
   }
 

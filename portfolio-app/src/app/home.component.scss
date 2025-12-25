@@ -533,6 +533,7 @@ body {
   position: relative;
   z-index: 1;
   padding: 2rem 0 4rem;
+  margin-top: 384px; // Drop down 4 inches
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -639,8 +640,8 @@ body {
   justify-content: space-between;
   overflow: hidden;
 
-  // Styling
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  // Styling - no border, blends with background
+  border: none;
 
   // Position in center of track, transforms move it out
   position: absolute;
@@ -662,21 +663,21 @@ body {
   // Slight opacity for non-active cards
   opacity: 0.4;
 
-  // Card backgrounds by index
+  // Card backgrounds by index - unique gradients for each card
   &:nth-child(1) {
-    background: linear-gradient(135deg, #4a1a1a 0%, #1a0505 100%);
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
   }
 
   &:nth-child(2) {
-    background: linear-gradient(135deg, #1a2a4a 0%, #05091a 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   }
 
   &:nth-child(3) {
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
   }
 
   &:nth-child(4) {
-    background: linear-gradient(135deg, #2a1a1a 0%, #0a0505 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #4a1942 100%);
   }
 
   // Active card - facing front
@@ -694,7 +695,7 @@ body {
   padding: 2rem 2rem 2rem 2.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.5rem;
   position: relative;
   z-index: 2;
