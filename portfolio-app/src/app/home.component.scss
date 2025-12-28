@@ -133,6 +133,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 8rem 2rem 4rem;
+  padding-top: calc(8rem + 288px);
   overflow: hidden;
   background: #000;
 }
@@ -298,7 +299,7 @@ body {
 }
 // Bottom Right Radar - HALF SIZE & MOVED UP
 .radar-bottomright {
-  bottom: 41%;
+  bottom: calc(41% - 192px);
   left: 32%;
   .ring1 {
     width: 100px;

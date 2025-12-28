@@ -6,6 +6,7 @@
       <li routerLink="/ui-design" class="active">UI/Design</li>
       <li routerLink="/product-design">Product Design</li>
       <li routerLink="/animation">Animation</li>
+      <li routerLink="/recent-projects">Recent Projects</li>
       <li routerLink="/about">About</li>
       <li><a href="assets/Beau_Whitman_CV.docx.pdf" download>Get CV</a></li>
     </ul>
@@ -186,51 +187,7 @@
     </div>
   </nav>
 
-  <!-- Section 1: Featured Projects -->
-  <section id="projects" class="section section--projects">
-    <!-- Hero with Blue Glow -->
-    <div class="projects-hero">
-      <div class="projects-hero__glow"></div>
-      <div class="projects-hero__content">
-        <h2 class="projects-hero__title">Featured Projects</h2>
-        <p class="projects-hero__subtitle">End-to-End Design Case Studies</p>
-      </div>
-    </div>
-
-    <!-- Project Cards Grid -->
-    <div class="projects-showcase">
-      <div class="projects-grid">
-        <article
-          *ngFor="let project of designProjects"
-          class="project-card"
-          [routerLink]="project.route"
-        >
-          <div class="project-card__media">
-            <img [src]="project.image" [alt]="project.title" class="project-card__image">
-            <div class="project-card__overlay">
-              <div class="view-button">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                  <circle cx="12" cy="12" r="3"/>
-                </svg>
-                View Project
-              </div>
-            </div>
-          </div>
-          <div class="project-card__content">
-            <div class="project-card__tags">
-              <span class="tag tag--blue" *ngFor="let tag of project.tags">{{ tag }}</span>
-            </div>
-            <h3 class="project-card__title">{{ project.title }}</h3>
-            <p class="project-card__description">{{ project.description }}</p>
-            <span class="project-card__category">{{ project.category }}</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 2: Interactive Prototypes -->
+  <!-- Section 1: Interactive Prototypes -->
   <section id="prototypes" class="section section--prototypes">
     <!-- Hero with Purple Glow -->
     <div class="prototypes-hero">
@@ -271,7 +228,7 @@
     </div>
   </section>
 
-  <!-- Section 3: Tools & Skills -->
+  <!-- Section 2: Tools & Skills -->
   <section id="process" class="section section--process">
     <!-- Tools & Skills Row -->
     <div class="process-section">

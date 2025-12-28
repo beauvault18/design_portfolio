@@ -1,0 +1,136 @@
+<div class="recent-projects-page">
+  <!-- Navigation Bar -->
+  <nav class="main-navbar">
+    <div class="navbar-logo" routerLink="/">BW</div>
+    <ul class="navbar-links">
+      <li routerLink="/ui-design">UI/Design</li>
+      <li routerLink="/product-design">Product Design</li>
+      <li routerLink="/animation">Animation</li>
+      <li routerLink="/recent-projects" class="active">Recent Projects</li>
+      <li routerLink="/about">About</li>
+      <li><a href="assets/Beau_Whitman_CV.docx.pdf" download>Get CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--green"></div>
+    <div class="hero__glow hero__glow--purple"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">
+        <span class="hero__title-line">Recent <span class="hero__title-line--accent">Projects</span></span>
+      </h1>
+      <p class="hero__subtitle">
+        A curated collection of my latest work across UI design, animation, and product design.
+      </p>
+    </div>
+  </section>
+
+  <!-- Project Navigation Bar -->
+  <nav class="project-nav">
+    <div class="project-nav__container">
+      <a *ngFor="let project of projects" class="project-nav__pill" [routerLink]="project.route">
+        {{ project.title }}
+      </a>
+    </div>
+  </nav>
+
+  <!-- Projects Section - Vertical Scroll -->
+  <section class="projects-section">
+    <div class="projects-container">
+      <div
+        *ngFor="let project of projects; let i = index"
+        class="project-card"
+        [routerLink]="project.route"
+        [style.cursor]="project.route ? 'pointer' : 'default'"
+      >
+        <!-- Image area (TOP) -->
+        <div class="project-card__image">
+          <div class="project-image" *ngIf="project.image" [class.project-image--portrait]="project.title === 'AI Fall Detection System'">
+            <img
+              [src]="project.image"
+              [alt]="project.title"
+            />
+          </div>
+          <div class="project-card__image-placeholder" *ngIf="!project.image">
+            <div class="project-card__image-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card content (BOTTOM) -->
+        <div class="project-card__content">
+          <div class="project-card__meta">
+            <span class="project-card__year">{{ project.year }}</span>
+            <span class="project-card__divider">/</span>
+            <span class="project-card__role">{{ project.role }}</span>
+          </div>
+          <h3 class="project-card__title">{{ project.title }}</h3>
+
+          <!-- Subtitle -->
+          <p class="project-card__subtitle" *ngIf="project.title === 'KSP Mental Performance'">Human First, Athlete Always</p>
+          <p class="project-card__subtitle" *ngIf="project.title === 'Continuo iPad App'">Healthcare AI Innovation for Live Demos</p>
+          <p class="project-card__subtitle" *ngIf="project.title === 'Zelda Puzzle'">Interactive Web Puzzle Experience</p>
+          <p class="project-card__subtitle" *ngIf="project.title === 'AI Fall Detection System'">Real-Time Safety Monitoring with YOLOv8</p>
+
+          <!-- Description -->
+          <p class="project-card__description" *ngIf="project.title === 'KSP Mental Performance'">
+            A wellness program for youth athletes combining sports psychology with micro-learning technology.
+          </p>
+          <p class="project-card__description" *ngIf="project.title === 'Continuo iPad App'">
+            Professional iPad app showcasing healthcare AI through interactive, event-ready demonstrations.
+          </p>
+          <p class="project-card__description" *ngIf="project.title === 'Zelda Puzzle'">
+            A Zelda-inspired puzzle using keyboard interaction and visual progression for portfolio navigation.
+          </p>
+          <p class="project-card__description" *ngIf="project.title === 'AI Fall Detection System'">
+            AI-powered fall detection for healthcare facilities using YOLOv8 computer vision.
+          </p>
+
+          <div class="project-card__tags">
+            <span *ngFor="let tag of project.tags" class="project-card__tag">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-content">
+      <div class="footer-cta">
+        <h3>Let's Create Something Amazing</h3>
+        <p>Have a project in mind? I'd love to hear about it.</p>
+        <button class="footer-button" (click)="openContactModal()">Get in Touch</button>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-text">Designed & Built by Beau Whitman</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">LinkedIn</a>
+          <a href="#" class="footer-link">Dribbble</a>
+          <a href="#" class="footer-link">Behance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="contact-modal" *ngIf="showContactModal" (click)="closeContactModal()">
+    <div class="contact-modal__content" (click)="$event.stopPropagation()">
+      <button class="contact-modal__close" (click)="closeContactModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <h3 class="contact-modal__title">Get in Touch</h3>
+      <p class="contact-modal__text">Please email me at</p>
+      <a href="mailto:Beauvault18@gmail.com" class="contact-modal__email">Beauvault18&#64;gmail.com</a>
+    </div>
+  </div>
+</div>

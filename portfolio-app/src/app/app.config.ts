@@ -10,6 +10,7 @@ import { FallDetectionComponent } from './projects/fall-detection/fall-detection
 import { UiDesignComponent } from './ui-design/ui-design.component';
 import { AnimationComponent } from './animation/animation.component';
 import { ProductDesignComponent } from './product-design/product-design.component';
+import { RecentProjectsComponent } from './recent-projects/recent-projects.component';
 
 const routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes = [
   { path: 'ui-design', component: UiDesignComponent },
   { path: 'animation', component: AnimationComponent },
   { path: 'product-design', component: ProductDesignComponent },
+  { path: 'recent-projects', component: RecentProjectsComponent },
   { path: 'projects/ksp-mental-performance', component: KspMentalPerformanceComponent },
   { path: 'projects/continuo', component: ContinuoComponent },
   { path: 'projects/zelda-puzzle', component: ZeldaPuzzleComponent },
