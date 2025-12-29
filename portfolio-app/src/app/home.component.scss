@@ -26,32 +26,28 @@ body {
 }
 
 // =============================
-// NAVIGATION BAR (TOP)
+// NAVIGATION BAR (TOP) - Matches other pages
 // =============================
 .main-navbar {
-  width: 100vw;
-  height: 72px;
-  background: rgba(24, 24, 27, 0.95);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px 0 32px;
-  box-sizing: border-box;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(#0b0b0b, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-logo {
   font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: 2.1rem;
   letter-spacing: 0.05em;
-  margin-right: 32px;
   cursor: pointer;
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #2a2a2a 60%, #1a1a1a 100%);
   -webkit-background-clip: text;
@@ -66,60 +62,43 @@ body {
 
 .navbar-links {
   display: flex;
-  align-items: center;
-  gap: 36px;
+  gap: 32px;
   list-style: none;
   margin: 0;
   padding: 0;
-}
 
-.navbar-links li {
-  color: #d1d5db;
-  font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
-  font-weight: 600;
-  font-size: 1.13rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  position: relative;
-}
+  li {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    position: relative;
 
-/* Make 'Get CV' nav item a button */
-.navbar-links li:last-child {
-  color: #00d9ff;
-  font-weight: 600;
-  background: rgba(0, 217, 255, 0.1);
-  border: 1px solid rgba(0, 217, 255, 0.3);
-  padding: 8px 18px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+    &:hover {
+      color: #fff;
+    }
 
-  &:hover {
-    background: rgba(0, 217, 255, 0.2);
-    border-color: #00d9ff;
+    &:last-child {
+      color: #00d9ff;
+      font-weight: 600;
+      background: rgba(0, 217, 255, 0.1);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(0, 217, 255, 0.2);
+        border-color: #00d9ff;
+        color: #00d9ff;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
   }
-
-  &::after {
-    display: none;
-  }
-}
-
-.navbar-links li:hover {
-  color: #00d9ff;
-}
-
-.navbar-links li::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #00d9ff;
-  transition: width 0.3s ease;
-}
-
-.navbar-links li:hover::after {
-  width: 100%;
 }
 
 // =============================
@@ -343,7 +322,7 @@ body {
 }
 
 .hero-headline {
-  font-size: clamp(4.5rem, 12vw, 10.5rem);
+  font-size: clamp(3.6rem, 9.6vw, 8.4rem);
   font-weight: 900;
   letter-spacing: 0.05em;
   line-height: 1.1;
@@ -352,23 +331,23 @@ body {
   position: relative;
   color: #ffffff;
   text-shadow:
-    0 0 20px rgba(0, 217, 255, 0.5),
-    0 0 40px rgba(0, 217, 255, 0.3),
+    0 0 16px rgba(0, 217, 255, 0.5),
+    0 0 32px rgba(0, 217, 255, 0.3),
     2px 2px 0 rgba(0, 217, 255, 0.8),
     -1px -1px 0 rgba(0, 217, 255, 0.6);
   white-space: nowrap;
 }
 
 .hero-subheadline {
-  font-size: clamp(3rem, 7.5vw, 6.75rem);
+  font-size: clamp(2.4rem, 6vw, 5.4rem);
   font-weight: 700;
   letter-spacing: 0.1em;
   margin-top: 0.5rem;
   text-transform: uppercase;
   color: #ffffff;
   text-shadow:
-    0 0 15px rgba(0, 217, 255, 0.4),
-    0 0 30px rgba(0, 217, 255, 0.2),
+    0 0 12px rgba(0, 217, 255, 0.4),
+    0 0 24px rgba(0, 217, 255, 0.2),
     1px 1px 0 rgba(0, 217, 255, 0.6);
 }
 
@@ -459,14 +438,14 @@ body {
 }
 
 .hero-intro {
-  font-size: 1.725rem;
+  font-size: 1.38rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.85);
   font-weight: 400;
-  max-width: 1700px;
+  max-width: 1360px;
   width: 100%;
   margin-bottom: 0;
-  margin-left: 6rem;
+  margin-left: 4.8rem;
   text-align: left;
   white-space: normal;
 }
@@ -480,13 +459,13 @@ body {
 }
 
 .cta-btn {
-  padding: 1.5rem 4.5rem;
-  font-size: 1.65rem;
+  padding: 1.2rem 3.6rem;
+  font-size: 1.32rem;
   font-weight: 600;
   color: #ffffff;
   background: transparent;
-  border: 3px solid #00d9ff;
-  border-radius: 50px;
+  border: 2px solid #00d9ff;
+  border-radius: 40px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
