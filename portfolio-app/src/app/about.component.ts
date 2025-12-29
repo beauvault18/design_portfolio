@@ -18,7 +18,12 @@ export class AboutComponent {
     'assets/IMG_5783.JPG',
     'assets/IMG_5784.JPG',
     'assets/IMG_5785.JPG',
-    'assets/IMG_5786.JPG'
+    'assets/IMG_5786.JPG',
+    'assets/IMG_6016.jpg',
+    'assets/IMG_6017.jpg',
+    'assets/IMG_6018.jpg',
+    'assets/IMG_6019.jpg',
+    'assets/IMG_6020.jpg'
   ];
   visibleCount = 5; // Number of thumbnails visible at once
   startIndex = 0;
