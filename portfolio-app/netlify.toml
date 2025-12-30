@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "dist/portfolio-app/browser"
 
+[build.environment]
+  GIT_LFS_ENABLED = "true"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
