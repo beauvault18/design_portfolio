@@ -221,8 +221,8 @@ $radius-xl: 24px;
 // =============================
 .product-hero {
   position: relative;
-  padding: 60px 48px 290px;
-  min-height: auto;
+  padding: 80px 48px;
+  min-height: calc(50vh - 36px);
   display: flex;
   align-items: center;
   justify-content: center;
