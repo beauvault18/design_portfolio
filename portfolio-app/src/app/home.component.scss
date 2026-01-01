@@ -351,6 +351,38 @@ body {
     1px 1px 0 rgba(0, 217, 255, 0.6);
 }
 
+.hero-specialization {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-skills {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 1rem 0 0;
+  letter-spacing: 0.03em;
+}
+
+.nav-contact-btn {
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  color: #00d9ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 217, 255, 0.2);
+    border-color: #00d9ff;
+  }
+}
+
 // =============================
 // GLITCH EFFECT
 // =============================

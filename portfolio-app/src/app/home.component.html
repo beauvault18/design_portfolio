@@ -4,12 +4,10 @@
 <nav class="main-navbar">
   <div class="navbar-logo" routerLink="/" style="cursor:pointer;">BW</div>
   <ul class="navbar-links">
-    <li routerLink="/ui-design" style="cursor:pointer;">UI/Design</li>
-    <li routerLink="/product-design" style="cursor:pointer;">Product Design</li>
-    <li routerLink="/animation" style="cursor:pointer;">Animation</li>
-    <li routerLink="/recent-projects" style="cursor:pointer;">Recent Projects</li>
+    <li routerLink="/recent-projects" style="cursor:pointer;">Work</li>
     <li routerLink="/about" style="cursor:pointer;">About</li>
-    <li><a href="assets/Beau_Whitman_CV.docx.pdf" download style="cursor:pointer;">Get CV</a></li>
+    <li><a href="assets/Beau_Whitman_CV.docx.pdf" download style="cursor:pointer;">Resume</a></li>
+    <li><button class="nav-contact-btn" (click)="openContactModal()" style="cursor:pointer;">Contact</button></li>
   </ul>
 </nav>
 
@@ -41,24 +39,26 @@
 
   <!-- Main Headline -->
   <div class="hero-center">
-    <h1 class="hero-headline glitch" aria-label="WEB & MOBILE">
-      <span aria-hidden="true">WEB &amp; MOBILE</span>
-      WEB &amp; MOBILE
-      <span aria-hidden="true">WEB &amp; MOBILE</span>
+    <h1 class="hero-headline glitch" aria-label="ASSOCIATE UX/UI">
+      <span aria-hidden="true">ASSOCIATE UX/UI</span>
+      ASSOCIATE UX/UI
+      <span aria-hidden="true">ASSOCIATE UX/UI</span>
     </h1>
     <br />
-    <h2 class="hero-subheadline glitch" aria-label="ANIMATION DESIGNER">
-      <span aria-hidden="true">ANIMATION DESIGNER</span>
-      ANIMATION DESIGNER
-      <span aria-hidden="true">ANIMATION DESIGNER</span>
+    <h2 class="hero-subheadline glitch" aria-label="DESIGNER">
+      <span aria-hidden="true">DESIGNER</span>
+      DESIGNER
+      <span aria-hidden="true">DESIGNER</span>
     </h2>
+    <p class="hero-specialization">Product Design for Web &amp; Mobile Experiences</p>
   </div>
 
   <!-- Intro Paragraph and CTA Button (Centered Below Title) -->
   <div class="hero-below">
     <div class="hero-intro">
-      Hello there, I am Beau – a designer specializing in web mobile apps and animation.<br />I craft user-focused designs that drive conversations and resonate with audiences.
+      I design intuitive, user-centered digital products and interfaces,<br />working across design and engineering teams to turn complex systems into clear, usable experiences.
     </div>
+    <p class="hero-skills">Figma • Prototyping • User Flows • UI Systems • Front-End Implementation</p>
     <div class="hero-cta">
       <button class="cta-btn" (click)="openContactModal()">Contact Me</button>
     </div>

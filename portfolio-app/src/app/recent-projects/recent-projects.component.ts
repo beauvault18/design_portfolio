@@ -41,7 +41,7 @@ export class RecentProjectsComponent {
     {
       title: 'KSP Mental Performance',
       year: '2024',
-      role: 'Lead Designer',
+      role: 'UX Designer',
       tags: ['Mobile App', 'UX/UI', 'Mental Health'],
       image: 'assets/projects/ksp/ksp-hero.png',
       route: '/projects/ksp-mental-performance'
@@ -49,7 +49,7 @@ export class RecentProjectsComponent {
     {
       title: 'Continuo iPad App',
       year: '2024',
-      role: 'Lead Product Designer · Flutter Developer',
+      role: 'Product Designer · Flutter Developer',
       tags: ['Healthcare AI', 'iPad App', 'UX/UI', 'EdTech'],
       image: 'assets/projects/continuo/continuo-main-menu.png',
       route: '/projects/continuo'
@@ -57,7 +57,7 @@ export class RecentProjectsComponent {
     {
       title: 'Zelda Puzzle',
       year: '2024',
-      role: 'Designer · Front-End Developer',
+      role: 'UX/UI Designer · Developer',
       tags: ['Interaction Design', 'Creative UX', 'Web'],
       image: 'assets/projects/intor_test/triforce-ocarina.png',
       route: '/projects/zelda-puzzle'
@@ -65,7 +65,7 @@ export class RecentProjectsComponent {
     {
       title: 'AI Fall Detection System',
       year: '2024',
-      role: 'Full-Stack Developer · ML Engineer',
+      role: 'Developer · ML Engineer',
       tags: ['AI/ML', 'Healthcare', 'Computer Vision', 'React'],
       image: 'assets/fall-detection/fall-detection-hero.png',
       route: '/projects/fall-detection'
