@@ -42,14 +42,13 @@ interface ProcessStep {
 })
 export class UiDesignComponent {
   // Active category for navigation
-  activeCategory = 'projects';
+  activeCategory = 'prototypes';
 
   // Contact modal visibility
   showContactModal = false;
 
   // Categories for navigation
   categories: Category[] = [
-    { id: 'projects', label: 'Featured Projects', icon: 'layout' },
     { id: 'prototypes', label: 'Prototypes', icon: 'smartphone' },
     { id: 'process', label: 'Design Process', icon: 'tool' },
   ];
@@ -213,7 +212,7 @@ export class UiDesignComponent {
   // Track scroll for active category
   @HostListener('window:scroll')
   onScroll(): void {
-    const sections = ['projects', 'prototypes', 'process'];
+    const sections = ['prototypes', 'process'];
     for (const section of sections) {
       const element = document.getElementById(section);
       if (element) {
