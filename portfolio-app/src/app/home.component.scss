@@ -66,6 +66,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 
   li {
     font-size: 0.9rem;
@@ -77,26 +78,6 @@ body {
 
     &:hover {
       color: #fff;
-    }
-
-    &:last-child {
-      color: #00d9ff;
-      font-weight: 600;
-      background: rgba(0, 217, 255, 0.1);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      padding: 8px 18px;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-
-      &:hover {
-        background: rgba(0, 217, 255, 0.2);
-        border-color: #00d9ff;
-        color: #00d9ff;
-      }
-
-      &::after {
-        display: none;
-      }
     }
   }
 }
@@ -366,20 +347,48 @@ body {
   letter-spacing: 0.03em;
 }
 
-.nav-contact-btn {
-  background: rgba(0, 217, 255, 0.1);
-  border: 1px solid rgba(0, 217, 255, 0.3);
-  color: #00d9ff;
-  font-size: 0.9rem;
+// CV Download Button - Clean minimal style
+.nav-cv-item {
+  // Override default navbar-links li styles
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.nav-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
   font-weight: 600;
-  padding: 8px 18px;
-  border-radius: 6px;
+  letter-spacing: 0.08em;
+  padding: 8px 16px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  .nav-cv-icon {
+    opacity: 0.8;
+    transition: all 0.25s ease;
+  }
 
   &:hover {
-    background: rgba(0, 217, 255, 0.2);
-    border-color: #00d9ff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+
+    .nav-cv-icon {
+      opacity: 1;
+      transform: translateY(1px);
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 }
 
