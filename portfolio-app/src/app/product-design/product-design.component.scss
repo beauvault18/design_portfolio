@@ -1568,3 +1568,445 @@ $radius-xl: 24px;
     box-shadow: 0 0 20px rgba($accent-purple, 0.3);
   }
 }
+
+// =============================
+// RESPONSIVE DESIGN
+// =============================
+
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .product-hero {
+    padding: 60px 24px;
+    min-height: auto;
+  }
+
+  .product-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .product-hero__subtitle {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+  }
+
+  .case-study-subheader--knex {
+    padding: 40px 24px;
+  }
+
+  .case-study-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 24px;
+    margin-bottom: 60px;
+  }
+
+  .case-study-hero__side {
+    flex-direction: row;
+    justify-content: center;
+    order: 2;
+  }
+
+  .case-study-hero__main {
+    order: 1;
+    height: 350px;
+  }
+
+  .case-study-section {
+    padding: 0 24px;
+    margin-bottom: 60px;
+  }
+
+  .case-study-overview {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+
+  .case-study-translation {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .case-study-features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .case-study-features__divider {
+    padding-top: 0;
+    padding: 8px 0;
+  }
+
+  .case-study-challenge__content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .case-study-learnings {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .white-erase-intro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .white-erase-intro__gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .white-erase-intro__thumbs {
+    flex-direction: row;
+    justify-content: center;
+    order: 2;
+  }
+
+  .white-erase-intro__main {
+    order: 1;
+  }
+
+  .white-erase-process-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .white-erase-flip-card {
+    height: 200px;
+  }
+
+  .page-footer {
+    padding: 60px 24px;
+    margin-top: 60px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+// Mobile (below 768px)
+@media (max-width: 768px) {
+  .product-hero {
+    padding: 40px 16px;
+  }
+
+  .product-hero__cube {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 24px;
+  }
+
+  .product-hero__cube-face {
+    width: 60px;
+    height: 60px;
+
+    &--front { transform: translateZ(30px); }
+    &--back { transform: translateZ(-30px) rotateY(180deg); }
+    &--left { transform: translateX(-30px) rotateY(-90deg); }
+    &--right { transform: translateX(30px) rotateY(90deg); }
+    &--top { transform: translateY(-30px) rotateX(90deg); }
+    &--bottom { transform: translateY(30px) rotateX(-90deg); }
+  }
+
+  .product-hero__title {
+    font-size: 1.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  .product-hero__subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
+
+  .product-hero__line {
+    width: 80px;
+  }
+
+  .case-study-subheader--knex {
+    padding: 32px 16px;
+
+    .case-study-subheader__subtitle {
+      font-size: 0.8rem;
+    }
+
+    .case-study-subheader__title {
+      font-size: 1.4rem;
+    }
+
+    .case-study-subheader__description {
+      font-size: 0.95rem;
+    }
+  }
+
+  .case-study-hero {
+    padding: 0 16px;
+    margin-bottom: 40px;
+  }
+
+  .case-study-hero__main {
+    height: 280px;
+  }
+
+  .case-study-hero__thumb {
+    width: 70px;
+  }
+
+  .case-study-hero__thumb-image {
+    height: 60px;
+  }
+
+  .case-study-section {
+    padding: 0 16px;
+    margin-bottom: 40px;
+  }
+
+  .case-study-section__title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .case-study-section__description {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .case-study-overview {
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .case-study-overview__title {
+    font-size: 1.25rem;
+  }
+
+  .case-study-overview__text {
+    font-size: 0.95rem;
+  }
+
+  .case-study-translation__card {
+    padding: 20px;
+  }
+
+  .case-study-translation__title {
+    font-size: 1rem;
+  }
+
+  .case-study-features__column {
+    padding: 20px;
+  }
+
+  .case-study-features__header h4 {
+    font-size: 1rem;
+  }
+
+  .case-study-challenge {
+    padding: 20px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .case-study-challenge__number {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .case-study-challenge__title {
+    grid-column: 1;
+    font-size: 1.05rem;
+  }
+
+  .case-study-challenge__content {
+    grid-column: 1;
+  }
+
+  // What I Learned cards - single column on mobile
+  .case-study-learnings {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .case-study-learning__front {
+    min-height: 80px;
+    padding: 16px;
+  }
+
+  .case-study-learning__keyword {
+    font-size: 1.1rem;
+  }
+
+  .case-study-learning__back {
+    padding: 0 16px;
+  }
+
+  .case-study-learning__definition {
+    font-size: 0.85rem;
+  }
+
+  .case-study-learning:hover .case-study-learning__back {
+    max-height: 150px;
+    padding: 16px;
+  }
+
+  .project-divider {
+    margin: 60px 0;
+  }
+
+  .case-study-subheader__title {
+    font-size: 1.5rem;
+  }
+
+  .white-erase-intro__thumb {
+    width: 70px;
+  }
+
+  .white-erase-intro__title {
+    font-size: 1.25rem;
+  }
+
+  .white-erase-intro__text {
+    font-size: 0.95rem;
+  }
+
+  .white-erase-intro__tags {
+    gap: 8px;
+    margin-top: 20px;
+    padding-top: 16px;
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 8px 14px;
+    }
+  }
+
+  .white-erase-process-section__title {
+    font-size: 1.4rem;
+  }
+
+  .white-erase-flip-card {
+    height: 160px;
+
+    &__front,
+    &__back {
+      padding: 20px;
+    }
+
+    &__step {
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    &__description {
+      font-size: 0.85rem;
+    }
+  }
+
+  .white-erase-tools__grid {
+    gap: 8px;
+  }
+
+  .white-erase-tool {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+
+  .page-footer {
+    padding: 40px 16px;
+    margin-top: 40px;
+  }
+
+  .footer-cta {
+    margin-bottom: 32px;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .footer-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    padding-top: 24px;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+
+  .footer-link {
+    font-size: 0.85rem;
+  }
+
+  .contact-modal {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  .contact-modal__title {
+    font-size: 1.4rem;
+  }
+
+  .contact-modal__text {
+    font-size: 1rem;
+  }
+
+  .contact-modal__email {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+// Small mobile (below 480px)
+@media (max-width: 480px) {
+  .product-hero__title {
+    font-size: 1.4rem;
+  }
+
+  .product-hero__subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .case-study-subheader--knex .case-study-subheader__title {
+    font-size: 1.2rem;
+  }
+
+  .case-study-hero__main {
+    height: 220px;
+  }
+
+  .case-study-section__title {
+    font-size: 1.2rem;
+  }
+
+  .case-study-overview__title {
+    font-size: 1.1rem;
+  }
+
+  .case-study-learning__keyword {
+    font-size: 1rem;
+  }
+
+  .footer-cta h3 {
+    font-size: 1.25rem;
+  }
+}
