@@ -1055,10 +1055,253 @@ body {
 }
 
 // =============================
-// RESPONSIVE DESIGN - DISABLED
-// Desktop layout is forced on all devices via viewport meta tag
-// The site will show at desktop size and users can pinch-zoom on mobile
+// RESPONSIVE DESIGN
 // =============================
+
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-specialization {
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+  }
+
+  .hero-below {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 4rem auto 0;
+  }
+
+  .hero-intro {
+    text-align: center;
+    margin-left: 0;
+    font-size: 1.2rem;
+    max-width: 800px;
+
+    br {
+      display: none;
+    }
+  }
+
+  .hero-cta {
+    margin-right: 0;
+    justify-content: center;
+  }
+
+  // Hide some radar rings on tablet
+  .radar-topleft .ring4,
+  .radar-topright .ring3 {
+    display: none;
+  }
+
+  .radar-topleft {
+    left: 10%;
+    top: 15%;
+
+    .ring1 { width: 200px; height: 200px; }
+    .ring2 { width: 350px; height: 350px; }
+    .ring3 { width: 500px; height: 500px; }
+  }
+
+  .radar-topright {
+    right: 10%;
+    top: 20%;
+
+    .ring1 { width: 150px; height: 150px; }
+    .ring2 { width: 250px; height: 250px; }
+  }
+
+  .radar-bottomright {
+    display: none;
+  }
+
+  // Carousel adjustments
+  .carousel-container {
+    width: 90vw;
+    max-width: 800px;
+    height: 550px;
+  }
+
+  .project-card {
+    width: 95%;
+    max-width: 750px;
+    height: 520px;
+    margin-left: -47.5%;
+    margin-top: -260px;
+  }
+}
+
+// Mobile (below 768px)
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 5rem 1.25rem 2.5rem;
+    min-height: calc(100vh - 64px);
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .hero-specialization {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-below {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2.5rem auto 0;
+    padding: 0 0.5rem;
+  }
+
+  .hero-intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-cta {
+    width: 100%;
+  }
+
+  .cta-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  // Hide all radar rings on mobile for cleaner look
+  .radar {
+    display: none;
+  }
+
+  // Carousel - stack vertically on mobile
+  .project-carousel-section {
+    margin-top: 150px;
+    padding: 1.5rem 0;
+  }
+
+  .carousel-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    perspective: none;
+  }
+
+  .carousel-track {
+    transform-style: flat;
+    position: relative;
+  }
+
+  .project-card {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    min-height: 450px;
+    margin: 0 auto 1.5rem;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    transform: none !important;
+    opacity: 1 !important;
+
+    &.card-active {
+      box-shadow: 0 0 40px rgba(0, 217, 255, 0.2);
+    }
+  }
+
+  .project-card__content {
+    flex: none;
+    padding: 1.5rem;
+  }
+
+  .project-card__title {
+    font-size: 1.75rem !important;
+  }
+
+  .project-card__image {
+    flex: none;
+    height: 200px;
+    padding: 0.75rem;
+  }
+
+  .carousel-nav {
+    display: none;
+  }
+
+  .carousel-bg-title {
+    font-size: 2rem;
+    top: -2rem;
+  }
+
+  // Navbar adjustments
+  .main-navbar {
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+// Small mobile (below 480px)
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 4.5rem 1rem 2rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.75rem, 12vw, 2.5rem);
+  }
+
+  .hero-specialization {
+    font-size: 0.95rem;
+    margin-top: 1.25rem;
+  }
+
+  .hero-intro {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .cta-btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .project-card {
+    width: 95%;
+    min-height: 400px;
+  }
+
+  .project-card__content {
+    padding: 1.25rem;
+  }
+
+  .project-card__title {
+    font-size: 1.5rem !important;
+  }
+
+  .project-card__tags {
+    gap: 0.4rem;
+  }
+
+  .project-card__tag {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
 
 // =============================
 // FOOTER SECTION

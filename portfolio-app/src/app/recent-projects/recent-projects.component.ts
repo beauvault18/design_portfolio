@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 interface Project {
   title: string;
@@ -14,7 +15,7 @@ interface Project {
 @Component({
   selector: 'app-recent-projects',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, NavbarComponent],
   templateUrl: './recent-projects.component.html',
   styleUrls: ['./recent-projects.component.scss'],
 })

@@ -345,8 +345,32 @@ $fall-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-
   line-height: 1.4;
 }
 
-// Responsive for screenshot gallery - DISABLED
-// Desktop layout is forced on all devices via viewport meta tag
+// Placeholder for missing screenshots
+.fall-screenshot-placeholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+
+  .fall-screenshot-card:hover & {
+    color: rgba(0, 217, 255, 0.4);
+    background: rgba(0, 217, 255, 0.05);
+  }
+
+  &--alert {
+    background: rgba(255, 68, 68, 0.05);
+    color: rgba(255, 68, 68, 0.3);
+
+    .fall-screenshot-card:hover & {
+      color: rgba(255, 68, 68, 0.5);
+      background: rgba(255, 68, 68, 0.1);
+    }
+  }
+}
 
 // =============================
 // PAIN POINTS
@@ -974,5 +998,186 @@ $fall-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+// =============================
+// RESPONSIVE DESIGN
+// =============================
+
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .fall-hero {
+    min-height: 50vh;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .fall-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .fall-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .fall-meta-row {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .fall-meta-item {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 150px;
+  }
+
+  .fall-screenshot-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .fall-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fall-tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Mobile (below 768px)
+@media (max-width: 768px) {
+  .fall-case-study {
+    padding-top: 64px;
+  }
+
+  .fall-hero {
+    min-height: 40vh;
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .fall-hero__content {
+    max-width: 100%;
+  }
+
+  .fall-hero__title {
+    font-size: 1.75rem;
+  }
+
+  .fall-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .fall-hero__image {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+
+  .fall-section {
+    padding: 2rem 1rem;
+  }
+
+  .fall-section__title {
+    font-size: 1.5rem;
+  }
+
+  .fall-section__content p {
+    font-size: 1rem;
+  }
+
+  .fall-meta-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fall-meta-item {
+    flex: none;
+    width: 100%;
+  }
+
+  .fall-demo-container {
+    margin-top: 2rem;
+  }
+
+  .fall-demo-header {
+    padding: 1rem;
+  }
+
+  .fall-screenshot-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .fall-screenshot-card {
+    border-radius: 8px;
+  }
+
+  .fall-screenshot-placeholder {
+    height: 150px;
+  }
+
+  .fall-screenshot-info {
+    padding: 1rem;
+  }
+
+  .fall-pain-points {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .fall-pain-point {
+    padding: 1rem;
+  }
+
+  .fall-features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .fall-feature-card {
+    padding: 1.25rem;
+  }
+
+  .fall-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .fall-tech-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .fall-code-block {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .lightbox-overlay {
+    padding: 1rem;
+  }
+
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+// Small mobile (below 480px)
+@media (max-width: 480px) {
+  .fall-hero__title {
+    font-size: 1.5rem;
+  }
+
+  .fall-section__title {
+    font-size: 1.25rem;
+  }
+
+  .fall-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fall-screenshot-placeholder {
+    height: 120px;
   }
 }

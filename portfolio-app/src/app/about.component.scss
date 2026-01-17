@@ -468,6 +468,224 @@ main {
 	}
 }
 
-// RESPONSIVE - DISABLED
-// Desktop layout is forced on all devices via viewport meta tag
-// The site will show at desktop size and users can pinch-zoom on mobile
+// =============================
+// RESPONSIVE DESIGN
+// =============================
+
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  main {
+    padding: 0 1.5rem;
+    margin-top: 72px;
+  }
+
+  .about-hero {
+    min-height: auto;
+    padding: 3rem 0 2rem 0;
+  }
+
+  .about-hero__content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .about-hero__headline {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  .about-hero__image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 4/5;
+  }
+
+  .about-stats__row {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .about-experience__table {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .about-experience__header {
+    display: none;
+  }
+
+  .about-contact__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-contact__right {
+    align-items: center;
+    min-width: auto;
+  }
+
+  .about-contact__supporting {
+    text-align: center;
+  }
+
+  .carousel-track img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .carousel-wrapper {
+    height: 300px;
+  }
+}
+
+// Mobile (below 768px)
+@media (max-width: 768px) {
+  main {
+    padding: 0 1rem;
+    margin-top: 64px;
+  }
+
+  .about-hero {
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .about-hero__headline {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .about-hero__image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .about-stats {
+    margin: 0 auto 2rem auto;
+  }
+
+  .about-stats__row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .about-stats__item {
+    align-items: center;
+    text-align: center;
+    min-width: auto;
+  }
+
+  .about-stats__value {
+    font-size: 1.1rem;
+  }
+
+  .about-experience {
+    margin: 2.5rem auto 2rem auto;
+  }
+
+  .about-experience__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-experience__table {
+    padding: 1rem 0;
+  }
+
+  .about-experience__year {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .about-experience__role {
+    font-size: 1rem;
+  }
+
+  .about-experience__desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .about-narrative {
+    margin: 3rem auto 2rem auto;
+    gap: 2.5rem;
+  }
+
+  .about-narrative__title {
+    font-size: 1.2rem;
+  }
+
+  .about-narrative__block p {
+    font-size: 1rem;
+  }
+
+  .about-contact {
+    margin: 3rem auto 2rem auto;
+    padding-bottom: 2rem;
+  }
+
+  .about-contact__headline h2 {
+    font-size: 1.75rem;
+  }
+
+  .about-contact__supporting {
+    font-size: 1rem;
+  }
+
+  .carousel-section {
+    margin: 1.5rem 0;
+  }
+
+  .carousel-track img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .carousel-wrapper {
+    height: 220px;
+  }
+
+  .carousel-track {
+    gap: 16px;
+  }
+
+  .fade {
+    width: 40px;
+  }
+}
+
+// Small mobile (below 480px)
+@media (max-width: 480px) {
+  .about-hero__headline {
+    font-size: 1.25rem;
+  }
+
+  .about-hero__image img {
+    max-width: 260px;
+    border-radius: 1rem;
+  }
+
+  .about-experience__table {
+    font-size: 0.95rem;
+  }
+
+  .about-contact__headline h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-track img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .carousel-wrapper {
+    height: 180px;
+  }
+}

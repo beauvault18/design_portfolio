@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 interface DesignProject {
   title: string;
@@ -36,7 +37,7 @@ interface ProcessStep {
 @Component({
   selector: 'app-ui-design',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, NavbarComponent],
   templateUrl: './ui-design.component.html',
   styleUrls: ['./ui-design.component.scss'],
 })

@@ -1,6 +1,7 @@
 import { Component, HostListener, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 interface AnimationProject {
   title: string;
@@ -21,7 +22,7 @@ interface Category {
 @Component({
   selector: 'app-animation',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, NavbarComponent],
   templateUrl: './animation.component.html',
   styleUrls: ['./animation.component.scss'],
 })

@@ -1,0 +1,365 @@
+// =============================
+// NAVBAR COMPONENT STYLES
+// =============================
+
+.main-navbar {
+  width: 100%;
+  height: 72px;
+  background: rgba(24, 24, 27, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px 0 32px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #2a2a2a 60%, #1a1a1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+// =============================
+// DESKTOP NAVIGATION
+// =============================
+.navbar-links--desktop {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    color: #d1d5db;
+    font-family: 'Inter', 'Montserrat', 'Arial', sans-serif;
+    font-weight: 600;
+    font-size: 1.13rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+
+    &:hover {
+      color: #00d9ff;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #00d9ff;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+// CV Button Styles
+.nav-cv-item {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+
+  &::after {
+    display: none !important;
+  }
+}
+
+.nav-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1.5px solid #00d9ff;
+  color: #00d9ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  .nav-cv-icon {
+    opacity: 0.9;
+    transition: all 0.25s ease;
+  }
+
+  &:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: #00d9ff;
+    color: #00d9ff;
+
+    .nav-cv-icon {
+      opacity: 1;
+      transform: translateY(1px);
+    }
+  }
+}
+
+// =============================
+// HAMBURGER BUTTON (MOBILE)
+// =============================
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1100;
+  position: relative;
+
+  &__line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    position: absolute;
+
+    &:nth-child(1) {
+      top: 14px;
+    }
+
+    &:nth-child(2) {
+      top: 21px;
+    }
+
+    &:nth-child(3) {
+      top: 28px;
+    }
+  }
+
+  &--active {
+    .hamburger__line:nth-child(1) {
+      transform: rotate(45deg);
+      top: 21px;
+    }
+
+    .hamburger__line:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+
+    .hamburger__line:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 21px;
+    }
+  }
+}
+
+// =============================
+// MOBILE NAVIGATION OVERLAY
+// =============================
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// =============================
+// MOBILE NAVIGATION MENU
+// =============================
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  max-width: 320px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+  z-index: 1050;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  padding: 100px 0 40px;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+  &--active {
+    right: 0;
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0 24px;
+    margin: 0;
+
+    li {
+      padding: 18px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.2s ease;
+
+      &:hover,
+      &:active {
+        color: #00d9ff;
+        padding-left: 8px;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 32px 24px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__cv-btn,
+  &__contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  &__cv-btn {
+    background: transparent;
+    border: 2px solid #00d9ff;
+    color: #00d9ff;
+
+    &:hover {
+      background: rgba(0, 217, 255, 0.1);
+    }
+  }
+
+  &__contact-btn {
+    background: #00d9ff;
+    border: 2px solid #00d9ff;
+    color: #0a0a0a;
+
+    &:hover {
+      background: #00c4e6;
+      border-color: #00c4e6;
+    }
+  }
+}
+
+// =============================
+// RESPONSIVE BREAKPOINTS
+// =============================
+@media (max-width: 1024px) {
+  .navbar-links--desktop {
+    gap: 24px;
+
+    li {
+      font-size: 1rem;
+    }
+  }
+
+  .nav-cv-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-navbar {
+    padding: 0 20px;
+    height: 64px;
+  }
+
+  .navbar-logo {
+    font-size: 1.75rem;
+  }
+
+  .navbar-links--desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav-overlay {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-navbar {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .mobile-nav {
+    width: 100%;
+    max-width: none;
+
+    &__links li {
+      font-size: 1.15rem;
+      padding: 16px 0;
+    }
+  }
+}

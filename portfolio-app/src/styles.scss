@@ -1,12 +1,11 @@
 html, body, app-root, #root {
   background: #0a0a0a !important;
   min-height: 100vh;
-  min-width: 1400px;
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;
   position: relative;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 // Global styles for the portfolio app
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
@@ -106,4 +105,85 @@ html, body, app-root, #root {
 
 .navbar-links li:hover::after {
   width: 100%;
+}
+
+// =============================
+// GLOBAL RESPONSIVE UTILITIES
+// =============================
+
+// Hide on mobile
+.hide-mobile {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+// Hide on desktop
+.hide-desktop {
+  @media (min-width: 769px) {
+    display: none !important;
+  }
+}
+
+// =============================
+// RESPONSIVE NAVBAR OVERRIDES
+// =============================
+@media (max-width: 1024px) {
+  .main-navbar {
+    padding: 0 24px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-links li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-navbar {
+    padding: 0 20px;
+    height: 64px;
+  }
+
+  .navbar-logo {
+    font-size: 1.75rem;
+    margin-right: 0;
+  }
+
+  // Hide desktop nav links on mobile (hamburger menu takes over)
+  .navbar-links {
+    display: none;
+  }
+}
+
+// =============================
+// GLOBAL RESPONSIVE CONTACT MODAL
+// =============================
+@media (max-width: 768px) {
+  .contact-modal-overlay {
+    padding: 20px;
+  }
+
+  .contact-modal {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-modal__title {
+    font-size: 1.5rem;
+  }
+
+  .contact-modal__text {
+    font-size: 1rem;
+  }
+
+  .contact-modal__email {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
 }

@@ -3200,6 +3200,383 @@ $radius-xl: 24px;
 }
 
 // =============================
-// RESPONSIVE - DISABLED
-// Desktop layout is forced on all devices via viewport meta tag
+// RESPONSIVE DESIGN
 // =============================
+
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 50vh;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .category-nav__container {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .misfit-video-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .misfit-deliverables {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .misfit-principles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .misfit-bottom-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .titles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .titles-tools {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titles-decisions {
+    grid-template-columns: 1fr;
+  }
+
+  .sword-tools-highlights-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sword-divider {
+    display: none;
+  }
+
+  .page-footer {
+    padding: 3rem 2rem;
+  }
+}
+
+// Mobile (below 768px)
+@media (max-width: 768px) {
+  .animation-page {
+    padding-top: 64px;
+  }
+
+  .hero {
+    min-height: 40vh;
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .hero__title {
+    font-size: 1.75rem;
+  }
+
+  .hero__title-line--accent {
+    display: block;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero__glow {
+    opacity: 0.3;
+  }
+
+  .dog-sprite {
+    width: 80px;
+    height: 80px;
+  }
+
+  .category-nav {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .category-nav__container {
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .category-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  // Misfit Section
+  .misfit-hero {
+    padding: 3rem 1rem;
+  }
+
+  .misfit-hero__title {
+    font-size: 2rem;
+  }
+
+  .misfit-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .misfit-video-layout {
+    padding: 1.5rem 1rem;
+  }
+
+  .misfit-video-layout__card {
+    padding: 1.25rem;
+  }
+
+  .misfit-video-layout__heading {
+    font-size: 1rem;
+  }
+
+  .misfit-video-layout__text {
+    font-size: 0.9rem;
+  }
+
+  .misfit-section {
+    padding: 2rem 1rem;
+  }
+
+  .misfit-section__title {
+    font-size: 1.5rem;
+  }
+
+  .misfit-deliverables {
+    grid-template-columns: 1fr;
+  }
+
+  .misfit-deliverable {
+    padding: 1.25rem;
+  }
+
+  .misfit-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .misfit-principle {
+    padding: 1.25rem;
+  }
+
+  .misfit-bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .misfit-item {
+    border-radius: 12px;
+  }
+
+  .misfit-outcome__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  // Title Sequences Section
+  .titles-hero {
+    padding: 3rem 1rem;
+  }
+
+  .titles-hero__title {
+    font-size: 2rem;
+  }
+
+  .titles-approach {
+    padding: 2rem 1rem;
+  }
+
+  .titles-approach__heading {
+    font-size: 1.25rem;
+  }
+
+  .titles-showcase {
+    padding: 2rem 1rem;
+  }
+
+  .titles-section__title {
+    font-size: 1.5rem;
+  }
+
+  .titles-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .titles-card {
+    border-radius: 12px;
+  }
+
+  .titles-card__media {
+    height: 200px;
+  }
+
+  .titles-card__content {
+    padding: 1.25rem;
+  }
+
+  .titles-card__title {
+    font-size: 1.15rem;
+  }
+
+  .titles-rules {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .titles-tools {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .titles-decisions {
+    gap: 1.5rem;
+  }
+
+  .titles-outcome__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  // Sword Section
+  .sword-hero {
+    min-height: 50vh;
+  }
+
+  .sword-hero__title {
+    font-size: 1.75rem;
+  }
+
+  .sword-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .sword-hero__cta {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .sword-overview {
+    padding: 2rem 1rem;
+  }
+
+  .sword-overview__heading {
+    font-size: 1.25rem;
+  }
+
+  .sword-section {
+    padding: 2rem 1rem;
+  }
+
+  .sword-section__title {
+    font-size: 1.5rem;
+  }
+
+  .sword-process {
+    gap: 1.5rem;
+  }
+
+  .sword-process__step {
+    padding: 1.25rem;
+  }
+
+  .sword-tools-grid {
+    gap: 0.5rem;
+  }
+
+  .sword-tool {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .sword-highlights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  // Modal
+  .modal__content {
+    max-width: 95vw;
+    padding: 1rem;
+  }
+
+  .modal__video {
+    max-height: 60vh;
+  }
+
+  .modal__title {
+    font-size: 1rem;
+  }
+
+  // Footer
+  .page-footer {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .footer-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-cta p {
+    font-size: 1rem;
+  }
+
+  .footer-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .contact-modal-overlay {
+    padding: 1rem;
+  }
+
+  .contact-modal {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+
+  .contact-modal__title {
+    font-size: 1.5rem;
+  }
+
+  .contact-modal__email {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+// Small mobile (below 480px)
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 1.5rem;
+  }
+
+  .misfit-hero__title,
+  .titles-hero__title,
+  .sword-hero__title {
+    font-size: 1.5rem;
+  }
+
+  .titles-card__media {
+    height: 180px;
+  }
+
+  .modal__video {
+    max-height: 50vh;
+  }
+}

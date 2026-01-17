@@ -1,16 +1,5 @@
-<!-- Navigation Bar -->
-<nav class="main-navbar">
-  <div class="navbar-logo" routerLink="/">BW</div>
-  <ul class="navbar-links">
-    <li routerLink="/product-design">Product Design</li>
-    <li routerLink="/ui-design">UI Design</li>
-    <li routerLink="/recent-projects">Recent Projects</li>
-    <li routerLink="/animation">Animation</li>
-    <li routerLink="/about">About</li>
-    <li><a href="assets/Beau_Whitman_CV.docx.pdf" download>Resume</a></li>
-    <li><a href="mailto:Beauvault18@gmail.com" class="nav-contact-link">Contact</a></li>
-  </ul>
-</nav>
+<!-- Shared Navbar Component -->
+<app-navbar></app-navbar>
 
 <!-- AI Fall Detection Case Study -->
 <div class="fall-case-study">
@@ -64,22 +53,39 @@
         <p class="fall-demo-header__hint">The AI-powered fall detection system in action — from upload to detection to staff alert.</p>
       </div>
       <div class="fall-screenshot-gallery">
-        <div class="fall-screenshot-card" (click)="openLightbox('assets/fall-detection/example 1.png')">
-          <img src="assets/fall-detection/example 1.png" alt="Fall Detection App - Upload Interface" class="fall-screenshot-img">
+        <div class="fall-screenshot-card">
+          <div class="fall-screenshot-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
           <div class="fall-screenshot-info">
             <span class="fall-screenshot-label">Upload Interface</span>
             <p class="fall-screenshot-desc">Drag-and-drop upload for images and videos</p>
           </div>
         </div>
-        <div class="fall-screenshot-card fall-screenshot-card--highlight" (click)="openLightbox('assets/fall-detection/example2.png')">
-          <img src="assets/fall-detection/example2.png" alt="Fall Detection App - Detection Results" class="fall-screenshot-img">
+        <div class="fall-screenshot-card fall-screenshot-card--highlight">
+          <div class="fall-screenshot-placeholder fall-screenshot-placeholder--alert">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
           <div class="fall-screenshot-info">
             <span class="fall-screenshot-label fall-screenshot-label--alert">Fall Detected</span>
             <p class="fall-screenshot-desc">AI identifies fall with bounding box overlay</p>
           </div>
         </div>
-        <div class="fall-screenshot-card" (click)="openLightbox('assets/fall-detection/example3.png')">
-          <img src="assets/fall-detection/example3.png" alt="Fall Detection App - Staff Alert" class="fall-screenshot-img">
+        <div class="fall-screenshot-card">
+          <div class="fall-screenshot-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </div>
           <div class="fall-screenshot-info">
             <span class="fall-screenshot-label">Staff Alert</span>
             <p class="fall-screenshot-desc">Immediate notification to on-duty personnel</p>

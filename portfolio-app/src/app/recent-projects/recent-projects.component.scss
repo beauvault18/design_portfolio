@@ -775,6 +775,186 @@ $radius-xl: 24px;
 }
 
 // =============================
-// RESPONSIVE - DISABLED
-// Desktop layout is forced on all devices via viewport meta tag
+// RESPONSIVE DESIGN
 // =============================
+
+// Tablet (768px - 1024px)
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 50vh;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .project-nav__container {
+    gap: 0.75rem;
+    padding: 0 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .projects-container {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .project-card {
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+
+  .project-card__content {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .project-card__image {
+    width: 100%;
+    height: 280px;
+  }
+
+  .project-image {
+    height: 100%;
+  }
+}
+
+// Mobile (below 768px)
+@media (max-width: 768px) {
+  .recent-projects-page {
+    padding-top: 64px;
+  }
+
+  .hero {
+    min-height: 40vh;
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero__glow {
+    opacity: 0.3;
+  }
+
+  .project-nav {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-nav__container {
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .project-nav__pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .projects-section {
+    padding: 1rem 0 3rem;
+  }
+
+  .projects-container {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    border-radius: 16px;
+  }
+
+  .project-card__content {
+    padding: 1.25rem;
+  }
+
+  .project-card__title {
+    font-size: 1.35rem;
+  }
+
+  .project-card__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .project-card__description {
+    font-size: 0.85rem;
+  }
+
+  .project-card__image {
+    height: 220px;
+  }
+
+  .project-card__tags {
+    gap: 0.4rem;
+  }
+
+  .project-card__tag {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .page-footer {
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-cta p {
+    font-size: 1rem;
+  }
+
+  .footer-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  .contact-modal__content {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  .contact-modal__title {
+    font-size: 1.5rem;
+  }
+}
+
+// Small mobile (below 480px)
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 1.75rem;
+  }
+
+  .hero__subtitle {
+    font-size: 0.9rem;
+  }
+
+  .project-card__image {
+    height: 180px;
+  }
+
+  .project-card__title {
+    font-size: 1.2rem;
+  }
+
+  .project-card__meta {
+    font-size: 0.75rem;
+  }
+}
