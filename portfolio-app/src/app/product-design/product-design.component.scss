@@ -1313,8 +1313,8 @@ $radius-xl: 24px;
 .page-footer {
   background: $bg-secondary;
   border-top: 1px solid $border-subtle;
-  padding: 80px 48px;
-  margin-top: 80px;
+  padding: 48px 48px 24px;
+  margin-top: 60px;
 }
 
 .footer-content {
@@ -1324,7 +1324,7 @@ $radius-xl: 24px;
 }
 
 .footer-cta {
-  margin-bottom: 60px;
+  margin-bottom: 24px;
 
   h3 {
     font-size: 2rem;
@@ -1677,14 +1677,12 @@ $radius-xl: 24px;
   }
 
   .page-footer {
-    padding: 60px 24px;
-    margin-top: 60px;
+    padding: 40px 24px 20px;
+    margin-top: 40px;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
+  .footer-cta {
+    margin-bottom: 20px;
   }
 }
 
@@ -1919,12 +1917,12 @@ $radius-xl: 24px;
   }
 
   .page-footer {
-    padding: 40px 16px;
-    margin-top: 40px;
+    padding: 32px 16px 16px;
+    margin-top: 32px;
   }
 
   .footer-cta {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 
     h3 {
       font-size: 1.5rem;
@@ -1941,18 +1939,10 @@ $radius-xl: 24px;
   }
 
   .footer-bottom {
-    padding-top: 24px;
+    padding-top: 16px;
   }
 
   .footer-text {
-    font-size: 0.85rem;
-  }
-
-  .footer-links {
-    gap: 16px;
-  }
-
-  .footer-link {
     font-size: 0.85rem;
   }
 

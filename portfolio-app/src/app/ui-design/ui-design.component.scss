@@ -1374,7 +1374,7 @@ $radius-xl: 24px;
 // FOOTER
 // =============================
 .page-footer {
-  padding: 80px 48px;
+  padding: 48px 48px 24px;
   border-top: 1px solid $border-subtle;
   background: $bg-secondary;
 }
@@ -1386,8 +1386,8 @@ $radius-xl: 24px;
 
 .footer-cta {
   text-align: center;
-  padding-bottom: 60px;
-  margin-bottom: 40px;
+  padding-bottom: 24px;
+  margin-bottom: 16px;
   border-bottom: 1px solid $border-subtle;
 
   h3 {
