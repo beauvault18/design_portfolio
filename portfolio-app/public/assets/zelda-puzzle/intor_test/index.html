@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocarina Display</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        /* Container that scales all content to fit viewport */
+        #game-container {
+            position: relative;
+            width: 1200px;
+            height: 800px;
+            transform-origin: center center;
+        }
+        canvas {
+            width: 1200px;
+            height: 800px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        #zelda-text {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-family: 'MedievalSharp', serif;
+            font-size: 24px;
+            color: #FFFFFF;
+            text-shadow: 
+                2px 2px 0px #000000,
+                -1px -1px 0px #000000,
+                1px -1px 0px #000000,
+                -1px 1px 0px #000000,
+                0px 0px 15px #FFFFFF,
+                0px 0px 25px rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+            line-height: 1.4;
+            opacity: 1;
+            pointer-events: none;
+            letter-spacing: 1px;
+        }
+        #zelda-text.hide {
+            display: none;
+        }
+        #ocarina-text {
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'MedievalSharp', serif;
+            font-size: 22px;
+            color: #FFFFFF;
+            text-shadow: 
+                2px 2px 0px #000000,
+                -1px -1px 0px #000000,
+                1px -1px 0px #000000,
+                -1px 1px 0px #000000,
+                0px 0px 15px #FFFFFF,
+                0px 0px 25px rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+            line-height: 1.4;
+            opacity: 0;
+            pointer-events: none;
+            letter-spacing: 1px;
+            text-align: center;
+            z-index: 10;
+        }
+        #ocarina-text.show {
+            opacity: 1;
+        }
+        #click-to-start {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'MedievalSharp', serif;
+            font-size: 36px;
+            color: #FFFFFF;
+            text-shadow: 
+                2px 2px 0px #000000,
+                -1px -1px 0px #000000,
+                1px -1px 0px #000000,
+                -1px 1px 0px #000000,
+                0px 0px 15px #FFFFFF,
+                0px 0px 25px rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+            cursor: pointer;
+            letter-spacing: 2px;
+            animation: pulse 2s ease-in-out infinite;
+            pointer-events: auto;
+            z-index: 10;
+        }
+        #click-to-start.hide {
+            display: none;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        #song-title {
+            position: absolute;
+            top: 542px;
+            left: calc(50% + 15px);
+            transform: translateX(-50%);
+            font-family: 'MedievalSharp', serif;
+            font-size: 24px;
+            color: #4A90E2;
+            text-shadow: 
+                2px 2px 0px #1A4D7A,
+                -1px -1px 0px #1A4D7A,
+                1px -1px 0px #1A4D7A,
+                -1px 1px 0px #1A4D7A,
+                0px 0px 20px #4A90E2,
+                0px 0px 30px rgba(74, 144, 226, 0.6);
+            white-space: nowrap;
+            letter-spacing: 3px;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 10;
+        }
+        #song-title.show {
+            opacity: 1;
+            transition: opacity 1s ease-in;
+        }
+
+        /* Shield background - large and bright */
+        #shield-bg {
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 192px);
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: auto;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0;
+        }
+
+        #shield-bg.show {
+            opacity: 1;
+        }
+
+        #shield-bg img.shield-img {
+            width: 100%;
+            height: auto;
+            filter: brightness(1.5);
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Black mask to hide sword behind shield */
+        .shield-mask {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+            height: 70%;
+            background: #000000;
+            z-index: 1;
+            /* Hylian shield shape - pointed bottom, curved top */
+            clip-path: polygon(
+                50% 4%,
+                82% 10%,
+                92% 22%,
+                95% 38%,
+                92% 58%,
+                82% 76%,
+                50% 96%,
+                18% 76%,
+                8% 58%,
+                5% 38%,
+                8% 22%,
+                18% 10%
+            );
+        }
+
+        /* Sword animation - enters from top-left, lands behind shield */
+        .sword {
+            position: absolute;
+            width: 720px;
+            top: -40%;
+            left: -40%;
+            transform: rotate(-35deg) scaleX(-1);
+            z-index: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sword.animate {
+            animation: sword-enter 2s ease-out forwards;
+        }
+
+        @keyframes sword-enter {
+            0% {
+                top: -40%;
+                left: -40%;
+                transform: rotate(-35deg) scaleX(-1);
+                opacity: 0;
+            }
+            60% {
+                opacity: 1;
+            }
+            100% {
+                top: -51%;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg) scaleX(-1);
+                opacity: 1;
+            }
+        }
+
+        /* ZELDAS text container - zooms in from camera */
+        .zeldas-container {
+            position: absolute;
+            top: calc(50% - 24px);
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 1000px;
+            height: auto;
+            z-index: 15;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .zeldas-container.animate {
+            animation: zeldas-zoom 1.8s ease-out forwards;
+        }
+
+        /* ZELDAS text */
+        .zeldas-text {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes zeldas-zoom {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* PUZZLE text container - slides in from right */
+        .puzzle-container {
+            position: absolute;
+            top: calc(50% + 120px);
+            left: calc(50% + 192px);
+            transform: translate(-50%, -50%) translateX(200%);
+            width: 600px;
+            height: auto;
+            z-index: 15;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .puzzle-container.animate {
+            animation: puzzle-slide 1.5s ease-out forwards;
+        }
+
+        .puzzle-text {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes puzzle-slide {
+            0% {
+                transform: translate(-50%, -50%) translateX(200%);
+                opacity: 0;
+            }
+            30% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="click-to-start">Click to Start</div>
+        <div id="zelda-text"></div>
+        <div id="ocarina-text"></div>
+        <div id="song-title">Zelda's Lullaby</div>
+        <div id="shield-bg">
+            <img src="images/sword.png" class="sword" alt="Master Sword" />
+            <div class="shield-mask"></div>
+            <img src="images/shield.png" class="shield-img" alt="Hylian Shield" />
+        </div>
+        <div class="zeldas-container">
+            <img src="images/zeldas.png" class="zeldas-text" alt="ZELDAS" />
+        </div>
+        <div class="puzzle-container">
+            <img src="images/puzzle.png" class="puzzle-text" alt="PUZZLE" />
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <script>
+        // Scale game container to fit viewport while maintaining aspect ratio
+        const gameContainer = document.getElementById('game-container');
+        const BASE_WIDTH = 1200;
+        const BASE_HEIGHT = 800;
+        let currentScale = 1; // Track current scale for mouse coordinate conversion
+
+        function scaleGameContainer() {
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            // Calculate scale to fit window while maintaining aspect ratio
+            const scaleX = windowWidth / BASE_WIDTH;
+            const scaleY = windowHeight / BASE_HEIGHT;
+            currentScale = Math.min(scaleX, scaleY);
+
+            gameContainer.style.transform = `scale(${currentScale})`;
+        }
+
+        // Scale on load and window resize
+        scaleGameContainer();
+        window.addEventListener('resize', scaleGameContainer);
+
+        // Helper function to convert mouse coordinates accounting for CSS scale and centering
+        function getCanvasCoordinates(e) {
+            // Get the canvas bounding rect - this gives us the actual position and size after CSS transforms
+            const rect = canvas.getBoundingClientRect();
+
+            // Calculate scale based on the actual rendered size vs base size
+            const scaleX = rect.width / BASE_WIDTH;
+            const scaleY = rect.height / BASE_HEIGHT;
+
+            // Convert mouse position relative to the canvas element, then scale to base coordinates
+            const x = (e.clientX - rect.left) / scaleX;
+            const y = (e.clientY - rect.top) / scaleY;
+
+            return { x, y };
+        }
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 1200;
+        canvas.height = 800;
+
+        // Preload images
+        const img = new Image();
+        const whiteTriforce = new Image();
+        const goldTriforce = new Image();
+        const musicalNotes = new Image();
+        
+        whiteTriforce.src = 'images/single_triangle_white.png';
+        goldTriforce.src = 'images/single_triangle_gold.png';
+        musicalNotes.src = 'images/musical_notes.png';
+
+        // Load arrow images for note highlighting
+        const leftArrow = new Image();
+        const rightArrow = new Image();
+        const upArrow = new Image();
+
+        leftArrow.src = 'images/left.png';
+        rightArrow.src = 'images/right.png';
+        upArrow.src = 'images/up.png';
+
+        // Load logo parts for final animation
+        const shieldImg = new Image();
+        const swordImg = new Image();
+        const zeldasImg = new Image();
+        const puzzleImg = new Image();
+
+        shieldImg.src = 'images/shield.png';
+        swordImg.src = 'images/sword.png';
+        zeldasImg.src = 'images/zeldas.png';
+        puzzleImg.src = 'images/puzzle.png';
+        
+        img.onload = function() {
+            redrawCanvas();
+        };
+        img.src = 'images/ocarina_outline.png.png';
+        
+        // Preload audio
+        const puzzleSolvedAudio = new Audio('images/puzzlesolved.mp3');
+        puzzleSolvedAudio.volume = 0.15; // Set volume to 15%
+        
+        const heyListenAudio = new Audio('images/hey_listen.mp3');
+        heyListenAudio.preload = 'auto';
+        heyListenAudio.load();
+        
+        const zeldaMelodyAudio = new Audio('images/zelda_meldoy.mp3');
+        zeldaMelodyAudio.preload = 'auto';
+        zeldaMelodyAudio.load();
+        
+        const finishPuzzleAudio = new Audio('images/end.mp3');
+        finishPuzzleAudio.preload = 'auto';
+        finishPuzzleAudio.load();
+        finishPuzzleAudio.volume = 0; // Start at volume 0 for fade in
+        
+        // Function to fade in audio
+        function fadeInAudio(audio, duration = 2000) {
+            const steps = 50;
+            const stepTime = duration / steps;
+            const volumeIncrement = 1 / steps;
+            let currentStep = 0;
+            
+            const fadeInterval = setInterval(() => {
+                currentStep++;
+                audio.volume = Math.min(currentStep * volumeIncrement, 1);
+                
+                if (currentStep >= steps) {
+                    clearInterval(fadeInterval);
+                    audio.volume = 1;
+                }
+            }, stepTime);
+        }
+        
+        // Create audio context for playing notes
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Function to play a musical note
+        function playNote(frequency) {
+            const oscillator = audioContext.createOscillator();
+            const oscillator2 = audioContext.createOscillator();
+            const oscillator3 = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            const gainNode2 = audioContext.createGain();
+            const gainNode3 = audioContext.createGain();
+            const masterGain = audioContext.createGain();
+            const filter = audioContext.createBiquadFilter();
+            const filter2 = audioContext.createBiquadFilter();
+            
+            // Create N64 ocarina sound with square wave for that vintage digital quality
+            oscillator.connect(gainNode);
+            oscillator2.connect(gainNode2);
+            oscillator3.connect(gainNode3);
+            gainNode.connect(filter);
+            gainNode2.connect(filter);
+            gainNode3.connect(filter);
+            filter.connect(filter2);
+            filter2.connect(masterGain);
+            masterGain.connect(audioContext.destination);
+            
+            // Use square waves for that N64 digital ocarina sound
+            oscillator.frequency.value = frequency;
+            oscillator.type = 'square'; // N64 digital quality
+            
+            oscillator2.frequency.value = frequency * 2;
+            oscillator2.type = 'sine'; // Soften the square wave
+            
+            oscillator3.frequency.value = frequency * 0.5; // Sub-octave for depth
+            oscillator3.type = 'sine';
+            
+            // Balance for N64 ocarina timbre
+            gainNode.gain.setValueAtTime(0.4, audioContext.currentTime);
+            gainNode2.gain.setValueAtTime(0.15, audioContext.currentTime);
+            gainNode3.gain.setValueAtTime(0.25, audioContext.currentTime);
+            
+            // First filter for warmth
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(1800, audioContext.currentTime);
+            filter.Q.setValueAtTime(2, audioContext.currentTime);
+            
+            // Second filter for that characteristic muffled N64 sound
+            filter2.type = 'lowpass';
+            filter2.frequency.setValueAtTime(3000, audioContext.currentTime);
+            filter2.Q.setValueAtTime(0.5, audioContext.currentTime);
+            
+            // N64 ocarina envelope - quick attack, sustained tone
+            masterGain.gain.setValueAtTime(0, audioContext.currentTime);
+            masterGain.gain.linearRampToValueAtTime(0.35, audioContext.currentTime + 0.05);
+            masterGain.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.1);
+            masterGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.8);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator2.start(audioContext.currentTime);
+            oscillator3.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.8);
+            oscillator2.stop(audioContext.currentTime + 0.8);
+            oscillator3.stop(audioContext.currentTime + 0.8);
+        }
+        
+        // Note frequencies for Zelda's Lullaby (TRUE N64 Ocarina pitches, one octave higher)
+        const notes = {
+            'ArrowLeft': 880.00,   // A5 - Left arrow (N64 octave up)
+            'ArrowUp': 698.46,     // F5 - Up arrow (N64 octave up)
+            'ArrowRight': 1174.66  // D6 - Right arrow (N64 octave up)
+        };
+        
+        // Function to play the full Zelda's Lullaby melody
+        function playZeldasLullaby() {
+            const melody = [
+                { note: 880.00, delay: 0 },      // A5 (Left)
+                { note: 698.46, delay: 600 },    // F5 (Up)
+                { note: 587.33, delay: 1200 },   // D5 (Right)
+                { note: 880.00, delay: 1800 },   // A5 (Left)
+                { note: 698.46, delay: 2400 },   // F5 (Up)
+                { note: 587.33, delay: 3000 }    // D5 (Right)
+            ];
+            
+            melody.forEach(({ note, delay }) => {
+                setTimeout(() => {
+                    playNote(note);
+                }, delay);
+            });
+        }
+        
+        // Game state
+        let gameStarted = false;
+        
+        // Define hotspot positions (x, y, radius) - adjust these coordinates
+        const hotspots = [
+            { x: 380, y: 328, radius: 30 },  // Hotspot 1
+            { x: 387, y: 367, radius: 30 },  // Hotspot 2
+            { x: 413, y: 340, radius: 30 }   // Hotspot 3
+        ];
+        
+        // Track clicked hotspots
+        const clickedHotspots = new Set();
+        
+        // Animation state
+        let isAnimating = false;
+        let animationProgress = 0;
+        let scale = 1;
+        let offsetY = 0;
+        let showNotes = false;
+        let notesOpacity = 0;
+        let fadeInNotes = false;
+        let initialFadeIn = false;
+        let ocarínaOpacity = 0;
+        let hasPlayedHeyListen = false;
+        
+        // Arrow key sequence state
+        const arrowSequence = ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowRight'];
+        let currentSequenceIndex = 0;
+        let sequenceActive = false;
+        let litNotes = new Set(); // Track which notes are lit up
+        let isBlinking = false;
+        let blinkCount = 0;
+        let blinkState = true; // true = visible, false = hidden
+        let lastBlinkTime = 0;
+        const blinkInterval = 500; // 500ms for slow blink
+        const maxBlinks = 18; // 9 complete on/off cycles (18 state changes)
+        let isFadingOut = false;
+        let fadeOutProgress = 0;
+
+        // Logo assembly animation state
+        let logoAnimationStarted = false;
+        let triforceAssemblyProgress = 0; // 0 to 1: triangles move to center and emblem fades in
+        let triangleFadeOutProgress = 0; // 0 to 1: triangles fade out after shield appears
+
+        // Store the gold triangle positions when logo animation starts
+        let savedTrianglePositions = [];
+
+        // Final triforce formation in center of screen
+        const triforceSize = 60; // Size of each triangle side in the final formation
+
+        // Note positions on the musical sheet (exact coordinates for each arrow)
+        const notePositions = [
+            { key: 'ArrowLeft', x: 461, y: 651 },   // First left arrow
+            { key: 'ArrowUp', x: 519, y: 628 },     // First up arrow
+            { key: 'ArrowRight', x: 578, y: 651 },  // First right arrow
+            { key: 'ArrowLeft', x: 660, y: 651 },   // Second left arrow
+            { key: 'ArrowUp', x: 718, y: 628 },     // Second up arrow
+            { key: 'ArrowRight', x: 779, y: 651 }   // Second right arrow
+        ];
+        
+        // Store original positions for scaling
+        const originalHotspots = hotspots.map(h => ({...h}));
+        
+        function redrawCanvas() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Calculate target position (top center, half size)
+            const targetScale = 0.5;
+            const targetY = img.height * targetScale / 2 + 50; // 50px from top
+            
+            // Initial fade in
+            if (initialFadeIn) {
+                ocarínaOpacity += 0.004; // Slower fade in
+                if (ocarínaOpacity >= 1) {
+                    ocarínaOpacity = 1;
+                    initialFadeIn = false;
+                }
+            }
+            
+            // Apply animation
+            if (isAnimating) {
+                animationProgress += 0.007; // Slower animation speed
+                if (animationProgress >= 1) {
+                    animationProgress = 1;
+                    isAnimating = false;
+                    // Start fading in notes immediately when ocarina reaches final position
+                    fadeInNotes = true;
+                    // Show ocarina instruction text
+                    setTimeout(function() {
+                        typeWriterEffectOcarina();
+                    }, 500);
+                }
+                
+                // Ease out animation
+                const eased = 1 - Math.pow(1 - animationProgress, 3);
+                scale = 1 - (1 - targetScale) * eased;
+                offsetY = (centerY - targetY) * eased;
+                
+                // Update hotspot positions relative to the ocarina
+                const imgCenterX = centerX;
+                const imgCenterY = centerY - offsetY;
+                
+                for (let i = 0; i < hotspots.length; i++) {
+                    const original = originalHotspots[i];
+                    // Calculate relative position from original center
+                    const relX = (original.x - canvas.width / 2) * scale;
+                    const relY = (original.y - canvas.height / 2) * scale;
+                    
+                    hotspots[i].x = imgCenterX + relX;
+                    hotspots[i].y = imgCenterY + relY;
+                }
+            }
+            
+            // Fade in musical notes
+            if (fadeInNotes) {
+                notesOpacity += 0.005; // Slower fade in
+                if (notesOpacity >= 1) {
+                    notesOpacity = 1;
+                    fadeInNotes = false;
+                    // Activate arrow key sequence
+                    sequenceActive = true;
+                }
+            }
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Calculate fade out alpha if active
+            let globalFadeAlpha = 1;
+            if (isFadingOut && !logoAnimationStarted) {
+                fadeOutProgress += 0.005; // Slow fade out
+                if (fadeOutProgress >= 1) {
+                    fadeOutProgress = 1;
+                }
+                globalFadeAlpha = 1 - fadeOutProgress;
+                // Sync text fade with canvas fade - disable CSS transition first
+                const titleElement = document.getElementById('song-title');
+                titleElement.style.transition = 'none';
+                titleElement.style.opacity = globalFadeAlpha;
+                // Also fade out ocarina instruction text
+                const ocarinaTextElement = document.getElementById('ocarina-text');
+                ocarinaTextElement.style.opacity = globalFadeAlpha;
+            }
+
+            // Handle logo animation phase
+            if (logoAnimationStarted) {
+                // Fade out ocarina, notes, and text FIRST before triangles move
+                if (fadeOutProgress < 1) {
+                    fadeOutProgress += 0.006; // Fade speed
+                    if (fadeOutProgress > 1) fadeOutProgress = 1;
+                    globalFadeAlpha = 1 - fadeOutProgress;
+                    // Hide text elements
+                    document.getElementById('song-title').style.opacity = 0;
+                    document.getElementById('ocarina-text').style.opacity = 0;
+                } else {
+                    // Only progress triforce assembly AFTER fade out is complete
+                    triforceAssemblyProgress += 0.004;
+                    if (triforceAssemblyProgress > 1) triforceAssemblyProgress = 1;
+                }
+            }
+
+            // Draw ocarina with scaling, positioning, and fade in (only if not in logo phase)
+            if (!logoAnimationStarted || fadeOutProgress < 1) {
+                ctx.save();
+                ctx.globalAlpha = ocarínaOpacity * globalFadeAlpha;
+                ctx.translate(centerX, centerY - offsetY);
+                ctx.scale(scale * 0.8, scale * 0.8); // Shrink to 80% size
+                ctx.drawImage(img, -img.width / 2, -img.height / 2);
+                ctx.restore();
+            }
+
+            // Draw gold triangles - animate to triforce formation during logo animation
+            if (logoAnimationStarted && savedTrianglePositions.length === 3) {
+                // Triangle size for the final triforce (reduced by ~12%)
+                const finalTriangleSize = 52; // Size of each triangle's base
+                const finalTriangleHeight = finalTriangleSize * Math.sqrt(3) / 2;
+
+                // Target positions - center of screen forming triforce (moved up a touch more, shifted left 3 inches)
+                const offsetUp = 104; // was 96, now +8px higher
+                const offsetLeft = 192; // 2 inches to the left
+                const targetPositions = [
+                    { x: centerX - offsetLeft, y: centerY - finalTriangleHeight / 2 - offsetUp },                           // Top triangle
+                    { x: centerX - offsetLeft - finalTriangleSize * 0.52 - 8, y: centerY + finalTriangleHeight * 0.58 - offsetUp },   // Bottom left
+                    { x: centerX - offsetLeft + finalTriangleSize * 0.52 + 8, y: centerY + finalTriangleHeight * 0.58 - offsetUp }    // Bottom right
+                ];
+
+                const eased = 1 - Math.pow(1 - triforceAssemblyProgress, 3); // Ease out
+
+                // Show shield behind triforce when assembly is mostly complete
+                const shieldBg = document.getElementById('shield-bg');
+                if (triforceAssemblyProgress > 0.7) {
+                    shieldBg.classList.add('show');
+                    shieldBg.style.opacity = (triforceAssemblyProgress - 0.7) / 0.3; // Fade in over last 30%
+
+                    // Trigger sword animation when shield is almost fully visible
+                    if (triforceAssemblyProgress > 0.85) {
+                        const sword = document.querySelector('.sword');
+                        if (!sword.classList.contains('animate')) {
+                            sword.classList.add('animate');
+                            // Start fading out triangles when sword lands (after 2s sword animation)
+                            setTimeout(() => {
+                                // Fade out triangles slowly
+                                const fadeTriangles = setInterval(() => {
+                                    triangleFadeOutProgress += 0.02;
+                                    if (triangleFadeOutProgress >= 1) {
+                                        triangleFadeOutProgress = 1;
+                                        clearInterval(fadeTriangles);
+                                    }
+                                }, 16);
+                            }, 2000);
+                            // Trigger ZELDAS animation after sword lands (2s sword animation + delay)
+                            setTimeout(() => {
+                                const zeldas = document.querySelector('.zeldas-container');
+                                zeldas.classList.add('animate');
+                                // Trigger PUZZLE animation after ZELDAS finishes (1.8s zeldas animation + delay)
+                                setTimeout(() => {
+                                    const puzzle = document.querySelector('.puzzle-container');
+                                    puzzle.classList.add('animate');
+                                    // Exit fullscreen after PUZZLE animation completes (1.5s)
+                                    setTimeout(() => {
+                                        if (document.fullscreenElement) {
+                                            document.exitFullscreen();
+                                        } else if (document.webkitFullscreenElement) {
+                                            document.webkitExitFullscreen();
+                                        } else if (document.msFullscreenElement) {
+                                            document.msExitFullscreen();
+                                        }
+                                    }, 1500);
+                                }, 2200);
+                            }, 2500);
+                        }
+                    }
+                }
+
+                // Draw animating triangles on main canvas
+                for (let i = 0; i < 3; i++) {
+                    const startPos = savedTrianglePositions[i];
+                    const endPos = targetPositions[i];
+
+                    const currentX = startPos.x + (endPos.x - startPos.x) * eased;
+                    const currentY = startPos.y + (endPos.y - startPos.y) * eased;
+
+                    ctx.save();
+                    ctx.translate(currentX, currentY);
+
+                    // Interpolate triangle size from original to final
+                    const startSize = 24 * startPos.scale;
+                    const size = startSize + (finalTriangleSize - startSize) * eased;
+                    const height = size * Math.sqrt(3) / 2;
+
+                    // Create rich gold gradient
+                    const gradient = ctx.createLinearGradient(0, -height/2, 0, height/2);
+                    gradient.addColorStop(0, '#FFE066');
+                    gradient.addColorStop(0.25, '#FFD700');
+                    gradient.addColorStop(0.5, '#DAA520');
+                    gradient.addColorStop(0.75, '#B8860B');
+                    gradient.addColorStop(1, '#8B6914');
+
+                    ctx.beginPath();
+                    ctx.moveTo(0, -height/2);
+                    ctx.lineTo(-size/2, height/2);
+                    ctx.lineTo(size/2, height/2);
+                    ctx.closePath();
+
+                    ctx.globalAlpha = 1 - triangleFadeOutProgress; // Fade out triangles
+                    ctx.fillStyle = gradient;
+                    ctx.shadowColor = '#FFD700';
+                    ctx.shadowBlur = 12;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+
+                    ctx.restore();
+                }
+            } else if (!logoAnimationStarted) {
+                // Normal drawing of gold triangles (before logo animation)
+                clickedHotspots.forEach(index => {
+                    if (goldTriforce.complete) {
+                        const hotspot = hotspots[index];
+                        ctx.save();
+                        ctx.translate(hotspot.x, hotspot.y);
+                        ctx.scale(scale, scale);
+                        ctx.globalAlpha = globalFadeAlpha;
+                        ctx.drawImage(goldTriforce, -goldTriforce.width / 2, -goldTriforce.height / 2);
+                        ctx.restore();
+                    }
+                });
+            }
+
+            // Draw musical notes at bottom center with fade in (half size) - only if not in logo phase
+            if (notesOpacity > 0 && musicalNotes.complete && (!logoAnimationStarted || fadeOutProgress < 1)) {
+                ctx.globalAlpha = notesOpacity * globalFadeAlpha;
+                const notesScale = 0.5; // Half size
+                const scaledWidth = musicalNotes.width * notesScale;
+                const scaledHeight = musicalNotes.height * notesScale;
+                const notesX = centerX - scaledWidth / 2;
+                const notesY = canvas.height - scaledHeight - 50; // Brought up 2 inches (192 pixels up from bottom)
+                ctx.drawImage(musicalNotes, notesX, notesY, scaledWidth, scaledHeight);
+                ctx.globalAlpha = 1.0;
+
+                // Draw lit notes on top
+                if ((sequenceActive || litNotes.size > 0) && blinkState) {
+                    litNotes.forEach(index => {
+                        const notePos = notePositions[index];
+                        if (notePos) {
+                            ctx.globalAlpha = notesOpacity * globalFadeAlpha;
+                            const arrowSize = 70; // Arrow size set to 70 pixels
+
+                            // Choose the correct arrow image based on the key
+                            let arrowImg;
+                            if (notePos.key === 'ArrowLeft') arrowImg = leftArrow;
+                            else if (notePos.key === 'ArrowRight') arrowImg = rightArrow;
+                            else if (notePos.key === 'ArrowUp') arrowImg = upArrow;
+
+                            if (arrowImg && arrowImg.complete) {
+                                ctx.drawImage(arrowImg, notePos.x - arrowSize / 2, notePos.y - arrowSize / 2, arrowSize, arrowSize);
+                            }
+                            ctx.globalAlpha = 1.0;
+                        }
+                    });
+                }
+            }
+        }
+        
+        // Animation loop
+        function animate() {
+            // Handle blinking animation
+            if (isBlinking) {
+                const currentTime = Date.now();
+                if (currentTime - lastBlinkTime >= blinkInterval) {
+                    blinkState = !blinkState;
+                    blinkCount++;
+                    lastBlinkTime = currentTime;
+                    
+                    if (blinkCount >= maxBlinks) {
+                        isBlinking = false;
+                        blinkState = true; // End with arrows visible
+                        console.log('Blinking complete!');
+                        // TODO: Add what happens after blinking completes
+                    }
+                }
+            }
+            
+            if (isAnimating || fadeInNotes || initialFadeIn || sequenceActive || litNotes.size > 0 || isBlinking || isFadingOut || logoAnimationStarted) {
+                redrawCanvas();
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+        
+        // Check if mouse is over any hotspot
+        function getHoveredHotspot(mouseX, mouseY) {
+            for (let i = 0; i < hotspots.length; i++) {
+                const hotspot = hotspots[i];
+                const distance = Math.sqrt(Math.pow(mouseX - hotspot.x, 2) + Math.pow(mouseY - hotspot.y, 2));
+                if (distance <= hotspot.radius) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        
+        // Hover effect - show white triforce over hotspots
+        let currentHotspot = -1;
+        
+        canvas.addEventListener('mousemove', function(e) {
+            if (isAnimating) return; // Don't allow hover during animation
+
+            const coords = getCanvasCoordinates(e);
+            const mouseX = coords.x;
+            const mouseY = coords.y;
+
+            const hoveredIndex = getHoveredHotspot(mouseX, mouseY);
+            
+            if (hoveredIndex !== currentHotspot) {
+                currentHotspot = hoveredIndex;
+                redrawCanvas();
+                
+                // Show white triangle if hovering over a hotspot that hasn't been clicked
+                if (hoveredIndex !== -1 && !clickedHotspots.has(hoveredIndex) && whiteTriforce.complete) {
+                    const hotspot = hotspots[hoveredIndex];
+                    ctx.save();
+                    ctx.translate(hotspot.x, hotspot.y);
+                    ctx.scale(scale, scale);
+                    ctx.globalAlpha = 0.8;
+                    ctx.drawImage(whiteTriforce, -whiteTriforce.width / 2, -whiteTriforce.height / 2);
+                    ctx.globalAlpha = 1.0;
+                    ctx.restore();
+                }
+            }
+        });
+        
+        // Click event - log coordinates and mark hotspot as clicked
+        canvas.addEventListener('click', function(e) {
+            // Handle click to start
+            if (!gameStarted) {
+                // Enter fullscreen mode
+                const container = document.documentElement;
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+
+                // Play Hey Listen FIRST before anything else
+                heyListenAudio.play().catch(err => console.log('Audio play failed:', err));
+
+                gameStarted = true;
+                document.getElementById('click-to-start').classList.add('hide');
+                initialFadeIn = true;
+
+                // Start typewriter effect after audio finishes (Hey Listen is about 1.5 seconds)
+                setTimeout(function() {
+                    typeWriterEffect();
+                }, 1500);
+                return;
+            }
+            
+            const coords = getCanvasCoordinates(e);
+            const x = coords.x;
+            const y = coords.y;
+
+            console.log(`Click coordinates: x=${Math.round(x)}, y=${Math.round(y)}`);
+            
+            const clickedIndex = getHoveredHotspot(x, y);
+            if (clickedIndex !== -1) {
+                clickedHotspots.add(clickedIndex);
+                console.log(`Hotspot ${clickedIndex + 1} clicked!`);
+                
+                // Check if all hotspots are clicked
+                if (clickedHotspots.size === 3 && !isAnimating) {
+                    console.log('All hotspots activated! Starting animation...');
+                    // Hide the text
+                    document.getElementById('zelda-text').classList.add('hide');
+                    // Play sound immediately when all triangles turn gold
+                    puzzleSolvedAudio.play().catch(err => console.log('Audio play failed:', err));
+                    isAnimating = true;
+                    animationProgress = 0;
+                }
+            }
+            
+            redrawCanvas();
+        });
+        
+        // Click to start handler
+        document.getElementById('click-to-start').addEventListener('click', function() {
+            if (!gameStarted) {
+                // Enter fullscreen mode
+                const container = document.documentElement;
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+
+                // Play Hey Listen FIRST before anything else
+                heyListenAudio.play().catch(err => console.log('Audio play failed:', err));
+
+                gameStarted = true;
+                this.classList.add('hide');
+                initialFadeIn = true;
+
+                // Start typewriter effect after audio finishes (Hey Listen is about 1.5 seconds)
+                setTimeout(function() {
+                    typeWriterEffect();
+                }, 1500);
+            }
+        });
+        
+        // Typewriter effect for zelda text
+        function typeWriterEffect() {
+            const textElement = document.getElementById('zelda-text');
+            const fullText = 'Let the Triforce guide you. Only its glow will open the path.';
+            let index = 0;
+            textElement.textContent = '';
+            
+            function typeNextChar() {
+                if (index < fullText.length) {
+                    textElement.textContent += fullText.charAt(index);
+                    index++;
+                    setTimeout(typeNextChar, 50); // 50ms per character
+                }
+            }
+            
+            typeNextChar();
+        }
+        
+        // Typewriter effect for ocarina instruction text
+        function typeWriterEffectOcarina() {
+            const textElement = document.getElementById('ocarina-text');
+            const fullText = 'The ocarina awaits. Perform the song with the right direction';
+            let index = 0;
+            textElement.textContent = '';
+            textElement.classList.add('show');
+            
+            function typeNextChar() {
+                if (index < fullText.length) {
+                    textElement.textContent += fullText.charAt(index);
+                    index++;
+                    setTimeout(typeNextChar, 50); // 50ms per character
+                }
+            }
+            
+            typeNextChar();
+        }
+        
+        // Arrow key listener for music sequence
+        document.addEventListener('keydown', function(e) {
+            if (!sequenceActive) return;
+            
+            // Check if the pressed key matches the expected sequence
+            if (e.key === arrowSequence[currentSequenceIndex]) {
+                console.log(`Correct! Pressed ${e.key} (${currentSequenceIndex + 1}/${arrowSequence.length})`);
+                
+                // Play the corresponding note
+                if (notes[e.key]) {
+                    playNote(notes[e.key]);
+                }
+                
+                // Light up the corresponding note
+                litNotes.add(currentSequenceIndex);
+                
+                // Move to next note in sequence
+                currentSequenceIndex++;
+                
+                // Check if sequence is complete
+                if (currentSequenceIndex >= arrowSequence.length) {
+                    console.log('Sequence complete!');
+                    sequenceActive = false;
+                    // Show song title
+                    document.getElementById('song-title').classList.add('show');
+                    // Play the Zelda melody audio file starting at 0.5 seconds
+                    zeldaMelodyAudio.currentTime = 0.5;
+                    zeldaMelodyAudio.play().catch(err => console.log('Audio play failed:', err));
+                    
+                    // Stop the melody 0.5 seconds before it ends
+                    const checkTime = setInterval(() => {
+                        if (zeldaMelodyAudio.currentTime >= zeldaMelodyAudio.duration - 0.5) {
+                            zeldaMelodyAudio.pause();
+                            zeldaMelodyAudio.dispatchEvent(new Event('ended'));
+                            clearInterval(checkTime);
+                        }
+                    }, 100);
+                    
+                    // When zelda melody ends, play end music and start logo animation
+                    zeldaMelodyAudio.addEventListener('ended', function() {
+                        console.log('Zelda melody finished, playing end music and starting logo animation...');
+                        finishPuzzleAudio.play().catch(err => console.log('Audio play failed:', err));
+                        fadeInAudio(finishPuzzleAudio, 2000); // Fade in over 2 seconds
+                        isFadingOut = true;
+                        fadeOutProgress = 0;
+
+                        // Save current triangle positions for animation
+                        savedTrianglePositions = [];
+                        clickedHotspots.forEach(index => {
+                            savedTrianglePositions.push({
+                                x: hotspots[index].x,
+                                y: hotspots[index].y,
+                                scale: scale
+                            });
+                        });
+
+                        // Start logo animation
+                        logoAnimationStarted = true;
+                    }, { once: true });
+                    
+                    // Start blinking animation
+                    isBlinking = true;
+                    blinkCount = 0;
+                    blinkState = true;
+                    lastBlinkTime = Date.now();
+                }
+                
+                redrawCanvas();
+            } else if (e.key.startsWith('Arrow')) {
+                // Wrong arrow key pressed - reset sequence
+                console.log(`Wrong key! Expected ${arrowSequence[currentSequenceIndex]}, got ${e.key}. Resetting...`);
+                currentSequenceIndex = 0;
+                litNotes.clear();
+                redrawCanvas();
+            }
+        });
+    </script>
+</body>
+</html>

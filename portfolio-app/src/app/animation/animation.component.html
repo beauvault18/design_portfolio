@@ -165,7 +165,7 @@
         <!-- Design Template Image -->
         <div class="misfit-item misfit-item--clickable" (click)="openImageModal(misfitBottomItems.designTemplate.image, misfitBottomItems.designTemplate.title)">
           <div class="misfit-item__media">
-            <img [src]="misfitBottomItems.designTemplate.image" [alt]="misfitBottomItems.designTemplate.title" class="misfit-item__image">
+            <img [src]="misfitBottomItems.designTemplate.image" [alt]="misfitBottomItems.designTemplate.title" class="misfit-item__image" loading="lazy">
             <div class="misfit-item__overlay">
               <div class="expand-button expand-button--purple">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -184,7 +184,7 @@
         <!-- Keychain Image -->
         <div class="misfit-item misfit-item--clickable" (click)="openImageModal(misfitBottomItems.keychain.image, misfitBottomItems.keychain.title)">
           <div class="misfit-item__media misfit-item__media--contain">
-            <img [src]="misfitBottomItems.keychain.image" [alt]="misfitBottomItems.keychain.title" class="misfit-item__image misfit-item__image--contain">
+            <img [src]="misfitBottomItems.keychain.image" [alt]="misfitBottomItems.keychain.title" class="misfit-item__image misfit-item__image--contain" loading="lazy">
             <div class="misfit-item__overlay">
               <div class="expand-button expand-button--purple">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
