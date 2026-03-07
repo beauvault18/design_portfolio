@@ -1,0 +1,221 @@
+<!-- Shared Navbar Component -->
+<app-navbar></app-navbar>
+
+<!-- Rebuilt to Inspire Case Study -->
+<div class="rti-case-study">
+
+  <!-- SECTION 1: HERO / INTRO -->
+  <section class="rti-hero">
+    <div class="rti-hero__content">
+      <h1 class="rti-hero__title">Rebuilt to Inspire</h1>
+      <p class="rti-hero__subtitle">AI Powered Cancer Recovery Platform</p>
+    </div>
+    <div class="rti-hero__image">
+      <img src="assets/projects/rebuilt-to-inspire/rti-hero.png" alt="Rebuilt to Inspire Platform Hero" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- SECTION 2: PROJECT META ROW -->
+  <section class="rti-meta">
+    <div class="rti-meta__row">
+      <div class="rti-meta__item">
+        <span class="rti-meta__label">MY ROLE</span>
+        <span class="rti-meta__value">Full Stack Designer & Developer</span>
+      </div>
+      <div class="rti-meta__item">
+        <span class="rti-meta__label">DELIVERABLES</span>
+        <span class="rti-meta__value">UX/UI Design, RAG Pipeline, Frontend, Backend, AI Integration</span>
+      </div>
+      <div class="rti-meta__item">
+        <span class="rti-meta__label">TEAM</span>
+        <span class="rti-meta__value">Solo Project</span>
+      </div>
+      <div class="rti-meta__item">
+        <span class="rti-meta__label">YEAR</span>
+        <span class="rti-meta__value">2025 - 2026</span>
+      </div>
+      <div class="rti-meta__item">
+        <span class="rti-meta__label">TECH STACK</span>
+        <span class="rti-meta__value">Next.js, FastAPI, Claude AI, ChromaDB</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: WHAT WAS THE PROBLEM? -->
+  <section class="rti-section">
+    <h2 class="rti-section__title">What was the problem?</h2>
+    <div class="rti-section__content">
+      <p>There are over 18 million cancer survivors in the United States. After treatment ends, most are sent home with little guidance on how to safely rebuild their physical fitness, manage nutrition, or address the mental health challenges of recovery.</p>
+      <p>Generic fitness apps are dangerous for this population. They do not account for surgery history, treatment side effects, bone metastases, lymphedema risk, or the psychological weight of returning to exercise after a life threatening illness.</p>
+      <p><strong>The gap was clear:</strong> survivors need personalized, evidence based recovery plans that adapt to their specific cancer type, treatment history, symptoms, and fitness level, delivered through an experience that feels supportive rather than clinical.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: WHY THIS IS PERSONAL -->
+  <section class="rti-section">
+    <h2 class="rti-section__title">Why This Is Personal</h2>
+    <div class="rti-section__content">
+      <p>I am a Stage 3 cancer survivor. I went through treatment in my mid twenties while working as a fitness coach. I know what it feels like to lose your identity as an athlete, to fear movement, and to have no roadmap for getting back to the person you were before diagnosis.</p>
+      <p>I also hold an ACE Cancer Exercise Specialist certification and spent years designing recovery programs for cancer patients. This app is the tool I wish I had when I was rebuilding myself.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 5: THE SOLUTION -->
+  <section class="rti-section">
+    <h2 class="rti-section__title">The Solution: Three Pillar Recovery System</h2>
+    <div class="rti-section__content">
+      <p>Rebuilt to Inspire is organized around three interconnected pillars that address the full spectrum of cancer recovery:</p>
+    </div>
+    <div class="rti-pillars">
+      <div class="rti-pillar-card rti-pillar-card--fitness">
+        <span class="rti-pillar-card__label">FITNESS</span>
+        <h3 class="rti-pillar-card__title">Exercise Planning</h3>
+        <p class="rti-pillar-card__text">AI generated weekly workout plans personalized to cancer type, surgery history, symptoms, and recovery stage. 5 stage progression model from reconditioning through advanced training.</p>
+      </div>
+      <div class="rti-pillar-card rti-pillar-card--nutrition">
+        <span class="rti-pillar-card__label">NUTRITION</span>
+        <h3 class="rti-pillar-card__title">Meal Planning</h3>
+        <p class="rti-pillar-card__text">Treatment specific nutrition plans with calorie and macro tracking. Adaptive check ins every 7 to 14 days adjust recommendations based on adherence and recovery progress.</p>
+      </div>
+      <div class="rti-pillar-card rti-pillar-card--mental">
+        <span class="rti-pillar-card__label">MENTAL HEALTH</span>
+        <h3 class="rti-pillar-card__title">Emotional Recovery</h3>
+        <p class="rti-pillar-card__text">Mood tracking on a 1 to 10 scale, guided journaling with AI reflection prompts, breathing exercises, and recovery check ins. Crisis screening ensures safety at all times.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: THE AI PIPELINE -->
+  <section class="rti-section">
+    <h2 class="rti-section__title">The AI Pipeline: From Research to Recovery Plan</h2>
+    <div class="rti-section__content">
+      <p>The backend is powered by a custom RAG (Retrieval Augmented Generation) pipeline that transforms published cancer exercise research into personalized recovery plans.</p>
+    </div>
+    <div class="rti-pipeline">
+      <div class="rti-pipeline__step">
+        <span class="rti-pipeline__number">01</span>
+        <div class="rti-pipeline__detail">
+          <strong>Discovery and Ingestion</strong>
+          <p>479 exercise papers and 300 nutrition papers discovered and downloaded from open access repositories (DOAB, OAPEN, PMC, Zenodo). License verified for CC BY / CC0 compliance.</p>
+        </div>
+      </div>
+      <div class="rti-pipeline__step">
+        <span class="rti-pipeline__number">02</span>
+        <div class="rti-pipeline__detail">
+          <strong>Extract, Classify, and Chunk</strong>
+          <p>Text extracted page by page, classified for survivorship relevance, then split into 22,551 semantic chunks with deduplication. Each chunk is optimized for retrieval accuracy.</p>
+        </div>
+      </div>
+      <div class="rti-pipeline__step">
+        <span class="rti-pipeline__number">03</span>
+        <div class="rti-pipeline__detail">
+          <strong>Embed and Index</strong>
+          <p>Local SentenceTransformer model (all-MiniLM-L6-v2) generates vector embeddings stored in ChromaDB. 22,551 indexed chunks form the knowledge base for retrieval.</p>
+        </div>
+      </div>
+      <div class="rti-pipeline__step">
+        <span class="rti-pipeline__number">04</span>
+        <div class="rti-pipeline__detail">
+          <strong>Safety Gate and Plan Generation</strong>
+          <p>User questionnaire feeds through a two layer safety gate (universal screening plus cancer specific rules). FITT baseline calculated, progression stage assigned, then Claude AI generates the plan with RAG context.</p>
+        </div>
+      </div>
+      <div class="rti-pipeline__step">
+        <span class="rti-pipeline__number">05</span>
+        <div class="rti-pipeline__detail">
+          <strong>Post Generation Validation</strong>
+          <p>Every AI generated plan passes through validation that strips medical claims, rejects proprietary program names, flags intensity violations, and ensures all recommendations are cited. Safety is not optional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: SAFETY SYSTEM -->
+  <section class="rti-section">
+    <h2 class="rti-section__title">Safety First: The Protection Layer</h2>
+    <div class="rti-section__content">
+      <p>This is not a generic fitness app. Every interaction passes through a safety system designed for the most vulnerable population in exercise science:</p>
+    </div>
+    <div class="rti-metrics-grid">
+      <div class="rti-metric-card">
+        <span class="rti-metric-card__label">BONE METASTASES</span>
+        <p class="rti-metric-card__text">Always blocks auto plan generation. Requires physician clearance before any exercise recommendation is provided.</p>
+      </div>
+      <div class="rti-metric-card">
+        <span class="rti-metric-card__label">SEVERE SYMPTOMS</span>
+        <p class="rti-metric-card__text">Locks user to Stage 1 reconditioning only with intensity capped at RPE 4. No progression until symptoms improve.</p>
+      </div>
+      <div class="rti-metric-card">
+        <span class="rti-metric-card__label">FORMER ATHLETES</span>
+        <p class="rti-metric-card__text">Must rebuild from Stage 1 regardless of pre diagnosis fitness level. Cancer treatment resets the baseline.</p>
+      </div>
+      <div class="rti-metric-card">
+        <span class="rti-metric-card__label">6 CANCER TYPES</span>
+        <p class="rti-metric-card__text">Breast, colorectal, prostate, lung, thyroid, and testicular. Each has surgery specific and treatment specific safety rules.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: UX DESIGN DECISIONS -->
+  <section class="rti-section">
+    <h2 class="rti-section__title">UX Design Decisions</h2>
+    <div class="rti-section__content">
+      <ul class="rti-feature-list">
+        <li>
+          <strong>7 Step Questionnaire</strong>
+          <p>Progressive multi page form covering clinician clearance, cancer history, symptoms, fitness goals, equipment access, and personal info. Validated at each step to prevent user error. Designed to feel supportive rather than clinical.</p>
+        </li>
+        <li>
+          <strong>Dashboard as Recovery Hub</strong>
+          <p>Central dashboard organized around three pillars: fitness, nutrition, and mental health. Each pillar shows current status at a glance with quick access to detailed views. Recovery stage and week number displayed prominently.</p>
+        </li>
+        <li>
+          <strong>Stage Reveal Animation</strong>
+          <p>When a user generates their first plan, a dedicated animation reveals their assigned recovery stage with context about what it means. This moment was designed to feel empowering rather than limiting.</p>
+        </li>
+        <li>
+          <strong>Adaptive Plan Logic</strong>
+          <p>Plans evolve based on user feedback. Fitness adaptation tracks RPE and performance over time. Nutrition adaptation runs adherence check ins. Mental health modules adjust based on mood entries. The app grows with the survivor.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SECTION 9: TECHNICAL STATS -->
+  <section class="rti-section">
+    <h2 class="rti-section__title">By the Numbers</h2>
+    <div class="rti-metrics-grid">
+      <div class="rti-metric-card">
+        <span class="rti-metric-card__number">22,551</span>
+        <p class="rti-metric-card__text">Research chunks indexed in ChromaDB vector database from 803 open access documents</p>
+      </div>
+      <div class="rti-metric-card">
+        <span class="rti-metric-card__number">144</span>
+        <p class="rti-metric-card__text">Passing tests across 15 test files covering safety, progression, FITT generation, and validation</p>
+      </div>
+      <div class="rti-metric-card">
+        <span class="rti-metric-card__number">6</span>
+        <p class="rti-metric-card__text">Cancer types fully supported with surgery specific and treatment specific safety rules</p>
+      </div>
+      <div class="rti-metric-card">
+        <span class="rti-metric-card__number">5</span>
+        <p class="rti-metric-card__text">Stage progression model from reconditioning through advanced training with deterministic assignment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: CONCLUSION -->
+  <section class="rti-section">
+    <h2 class="rti-section__title">Conclusion</h2>
+    <div class="rti-section__content">
+      <p>Rebuilt to Inspire demonstrates that AI can be used responsibly in healthcare when combined with rigorous safety systems, evidence based knowledge, and deeply personal domain expertise. This is not a chatbot giving generic advice. It is a validated pipeline that transforms peer reviewed research into actionable, personalized recovery plans.</p>
+      <p>The project represents the intersection of everything I have built over the past decade: design thinking, development skills, fitness expertise, cancer recovery knowledge, and a personal understanding of what survivors need to rebuild their lives.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 11: NEXT PROJECT CTA -->
+  <section class="rti-next-project">
+    <button class="rti-next-project__btn" routerLink="/projects/lock-it-in">Next Project: Lock It In</button>
+  </section>
+
+</div>

@@ -39,6 +39,18 @@ const routes = [
     path: 'projects/fall-detection',
     loadComponent: () => import('./projects/fall-detection/fall-detection.component').then(m => m.FallDetectionComponent)
   },
+  {
+    path: 'projects/rebuilt-to-inspire',
+    loadComponent: () => import('./projects/rebuilt-to-inspire/rebuilt-to-inspire.component').then(m => m.RebuiltToInspireComponent)
+  },
+  {
+    path: 'projects/lock-it-in',
+    loadComponent: () => import('./projects/lock-it-in/lock-it-in.component').then(m => m.LockItInComponent)
+  },
+  {
+    path: 'projects/recovery-rebuild',
+    loadComponent: () => import('./projects/recovery-rebuild/recovery-rebuild.component').then(m => m.RecoveryRebuildComponent)
+  },
 ];
 
 export const appConfig: ApplicationConfig = {

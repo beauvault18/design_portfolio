@@ -1,0 +1,358 @@
+// =============================
+// LOCK IT IN CASE STUDY STYLES
+// =============================
+
+// Variables
+$lockin-bg: #000;
+$lockin-text-primary: #fff;
+$lockin-text-secondary: rgba(255, 255, 255, 0.7);
+$lockin-text-muted: rgba(255, 255, 255, 0.5);
+$lockin-accent: #FFD700;
+$lockin-accent-green: #00c853;
+$lockin-card-bg: #1a1a1a;
+$lockin-max-width: 1140px;
+$lockin-font: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+// Host styles
+:host {
+  display: block;
+  background: $lockin-bg;
+  min-height: 100vh;
+  color: $lockin-text-primary;
+  font-family: $lockin-font;
+}
+
+// Main container
+.lockin-case-study {
+  width: 100%;
+  background: $lockin-bg;
+  padding-top: 72px;
+}
+
+// =============================
+// SECTION 1: HERO
+// =============================
+.lockin-hero {
+  max-width: $lockin-max-width;
+  margin: 0 auto;
+  padding: 80px 48px 60px;
+  text-align: center;
+}
+
+.lockin-hero__content {
+  margin-bottom: 48px;
+}
+
+.lockin-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: $lockin-text-primary;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.lockin-hero__subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: $lockin-text-secondary;
+  margin: 0;
+}
+
+.lockin-hero__image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+}
+
+// =============================
+// SECTION 2: PROJECT META ROW
+// =============================
+.lockin-meta {
+  max-width: $lockin-max-width;
+  margin: 0 auto;
+  padding: 48px 48px 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lockin-meta__row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+}
+
+.lockin-meta__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lockin-meta__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $lockin-text-muted;
+}
+
+.lockin-meta__value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $lockin-text-primary;
+  line-height: 1.5;
+}
+
+// =============================
+// GENERAL SECTIONS
+// =============================
+.lockin-section {
+  max-width: $lockin-max-width;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+.lockin-section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $lockin-text-primary;
+  margin: 0 0 32px;
+  letter-spacing: -0.01em;
+}
+
+.lockin-section__content {
+  max-width: 800px;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $lockin-text-secondary;
+    margin: 0 0 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: $lockin-text-primary;
+      font-weight: 600;
+    }
+  }
+}
+
+// =============================
+// THREE PILLAR CARDS
+// =============================
+.lockin-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.lockin-pillar-card {
+  background: $lockin-card-bg;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-top: 3px solid transparent;
+}
+
+.lockin-pillar-card--odds {
+  border-top-color: $lockin-accent;
+}
+
+.lockin-pillar-card--bracket {
+  border-top-color: $lockin-accent-green;
+}
+
+.lockin-pillar-card--social {
+  border-top-color: #00B4D8;
+}
+
+.lockin-pillar-card__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $lockin-accent;
+  margin-bottom: 12px;
+}
+
+.lockin-pillar-card--bracket .lockin-pillar-card__label {
+  color: $lockin-accent-green;
+}
+
+.lockin-pillar-card--social .lockin-pillar-card__label {
+  color: #00B4D8;
+}
+
+.lockin-pillar-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $lockin-text-primary;
+  margin: 0 0 12px;
+}
+
+.lockin-pillar-card__text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: $lockin-text-secondary;
+  margin: 0;
+}
+
+// =============================
+// PIPELINE / ARCHITECTURE STEPS
+// =============================
+.lockin-pipeline {
+  margin-top: 40px;
+  max-width: 800px;
+}
+
+.lockin-pipeline__step {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.lockin-pipeline__number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: $lockin-accent;
+  line-height: 1;
+  min-width: 48px;
+}
+
+.lockin-pipeline__detail {
+  strong {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $lockin-text-primary;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $lockin-text-secondary;
+    margin: 0;
+  }
+}
+
+// =============================
+// METRICS GRID
+// =============================
+.lockin-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+}
+
+.lockin-metric-card {
+  background: $lockin-card-bg;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.lockin-metric-card__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $lockin-accent;
+  margin-bottom: 16px;
+}
+
+.lockin-metric-card__number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: $lockin-accent;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.lockin-metric-card__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $lockin-text-secondary;
+  margin: 0;
+}
+
+// =============================
+// FEATURE LIST
+// =============================
+.lockin-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+
+  li {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: $lockin-text-primary;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: $lockin-text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// =============================
+// NEXT PROJECT CTA
+// =============================
+.lockin-next-project {
+  max-width: $lockin-max-width;
+  margin: 0 auto;
+  padding: 64px 48px 100px;
+  text-align: center;
+}
+
+.lockin-next-project__btn {
+  display: inline-block;
+  background: transparent;
+  color: $lockin-accent;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: $lockin-font;
+  padding: 16px 40px;
+  border: 2px solid $lockin-accent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $lockin-accent;
+    color: #000;
+  }
+}

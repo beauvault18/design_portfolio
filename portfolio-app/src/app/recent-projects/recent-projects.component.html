@@ -63,14 +63,26 @@
           <h3 class="project-card__title">{{ project.title }}</h3>
 
           <!-- Subtitle -->
+          <p class="project-card__subtitle" *ngIf="project.title === 'Rebuilt to Inspire'">AI Powered Cancer Recovery Platform</p>
           <p class="project-card__subtitle" *ngIf="project.title === 'KSP Mental Performance'">Human First, Athlete Always</p>
+          <p class="project-card__subtitle" *ngIf="project.title === 'Lock It In'">FIFA World Cup 2026 Betting Companion</p>
+          <p class="project-card__subtitle" *ngIf="project.title === 'Recovery Rebuild'">WHOOP Strategic Expansion Deck</p>
           <p class="project-card__subtitle" *ngIf="project.title === 'Continuo iPad App'">Healthcare AI Innovation for Live Demos</p>
           <p class="project-card__subtitle" *ngIf="project.title === 'Zelda Puzzle'">Interactive Web Puzzle Experience</p>
           <p class="project-card__subtitle" *ngIf="project.title === 'AI Fall Detection System'">Real-Time Safety Monitoring with YOLOv8</p>
 
           <!-- Description -->
+          <p class="project-card__description" *ngIf="project.title === 'Rebuilt to Inspire'">
+            Full stack AI platform with RAG pipeline transforming 22,551 research chunks into personalized cancer recovery plans across fitness, nutrition, and mental health.
+          </p>
           <p class="project-card__description" *ngIf="project.title === 'KSP Mental Performance'">
             A wellness program for youth athletes combining sports psychology with micro-learning technology.
+          </p>
+          <p class="project-card__description" *ngIf="project.title === 'Lock It In'">
+            React Native betting companion for the 2026 World Cup featuring 48 team bracket visualization, 8 bet types, and social group betting.
+          </p>
+          <p class="project-card__description" *ngIf="project.title === 'Recovery Rebuild'">
+            Strategic product deck analyzing WHOOP's expansion into healthcare recovery, corporate wellness, and clinical research with design system recommendations.
           </p>
           <p class="project-card__description" *ngIf="project.title === 'Continuo iPad App'">
             Professional iPad app showcasing healthcare AI through interactive, event-ready demonstrations.

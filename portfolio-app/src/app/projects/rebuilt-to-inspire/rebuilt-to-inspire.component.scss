@@ -1,0 +1,357 @@
+// =============================
+// REBUILT TO INSPIRE CASE STUDY STYLES
+// =============================
+
+// Variables
+$rti-bg: #000;
+$rti-text-primary: #fff;
+$rti-text-secondary: rgba(255, 255, 255, 0.7);
+$rti-text-muted: rgba(255, 255, 255, 0.5);
+$rti-accent: #00c853;
+$rti-card-bg: #1a1a1a;
+$rti-max-width: 1140px;
+$rti-font: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+// Host styles
+:host {
+  display: block;
+  background: $rti-bg;
+  min-height: 100vh;
+  color: $rti-text-primary;
+  font-family: $rti-font;
+}
+
+// Main container
+.rti-case-study {
+  width: 100%;
+  background: $rti-bg;
+  padding-top: 72px;
+}
+
+// =============================
+// SECTION 1: HERO
+// =============================
+.rti-hero {
+  max-width: $rti-max-width;
+  margin: 0 auto;
+  padding: 80px 48px 60px;
+  text-align: center;
+}
+
+.rti-hero__content {
+  margin-bottom: 48px;
+}
+
+.rti-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: $rti-text-primary;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.rti-hero__subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: $rti-text-secondary;
+  margin: 0;
+}
+
+.rti-hero__image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+}
+
+// =============================
+// SECTION 2: PROJECT META ROW
+// =============================
+.rti-meta {
+  max-width: $rti-max-width;
+  margin: 0 auto;
+  padding: 48px 48px 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rti-meta__row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+}
+
+.rti-meta__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rti-meta__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $rti-text-muted;
+}
+
+.rti-meta__value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $rti-text-primary;
+  line-height: 1.5;
+}
+
+// =============================
+// GENERAL SECTIONS
+// =============================
+.rti-section {
+  max-width: $rti-max-width;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+.rti-section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $rti-text-primary;
+  margin: 0 0 32px;
+  letter-spacing: -0.01em;
+}
+
+.rti-section__content {
+  max-width: 800px;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $rti-text-secondary;
+    margin: 0 0 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: $rti-text-primary;
+      font-weight: 600;
+    }
+  }
+}
+
+// =============================
+// THREE PILLAR CARDS
+// =============================
+.rti-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.rti-pillar-card {
+  background: $rti-card-bg;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-top: 3px solid transparent;
+}
+
+.rti-pillar-card--fitness {
+  border-top-color: $rti-accent;
+}
+
+.rti-pillar-card--nutrition {
+  border-top-color: #FF9800;
+}
+
+.rti-pillar-card--mental {
+  border-top-color: #7C4DFF;
+}
+
+.rti-pillar-card__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $rti-accent;
+  margin-bottom: 12px;
+}
+
+.rti-pillar-card--nutrition .rti-pillar-card__label {
+  color: #FF9800;
+}
+
+.rti-pillar-card--mental .rti-pillar-card__label {
+  color: #7C4DFF;
+}
+
+.rti-pillar-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $rti-text-primary;
+  margin: 0 0 12px;
+}
+
+.rti-pillar-card__text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: $rti-text-secondary;
+  margin: 0;
+}
+
+// =============================
+// AI PIPELINE STEPS
+// =============================
+.rti-pipeline {
+  margin-top: 40px;
+  max-width: 800px;
+}
+
+.rti-pipeline__step {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.rti-pipeline__number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: $rti-accent;
+  line-height: 1;
+  min-width: 48px;
+}
+
+.rti-pipeline__detail {
+  strong {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $rti-text-primary;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $rti-text-secondary;
+    margin: 0;
+  }
+}
+
+// =============================
+// METRICS GRID
+// =============================
+.rti-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+}
+
+.rti-metric-card {
+  background: $rti-card-bg;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.rti-metric-card__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $rti-accent;
+  margin-bottom: 16px;
+}
+
+.rti-metric-card__number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: $rti-accent;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.rti-metric-card__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $rti-text-secondary;
+  margin: 0;
+}
+
+// =============================
+// FEATURE LIST
+// =============================
+.rti-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+
+  li {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: $rti-text-primary;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: $rti-text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// =============================
+// NEXT PROJECT CTA
+// =============================
+.rti-next-project {
+  max-width: $rti-max-width;
+  margin: 0 auto;
+  padding: 64px 48px 100px;
+  text-align: center;
+}
+
+.rti-next-project__btn {
+  display: inline-block;
+  background: transparent;
+  color: $rti-accent;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: $rti-font;
+  padding: 16px 40px;
+  border: 2px solid $rti-accent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $rti-accent;
+    color: $rti-text-primary;
+  }
+}

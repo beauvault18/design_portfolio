@@ -40,12 +40,36 @@ export class RecentProjectsComponent {
   // Projects data
   projects: Project[] = [
     {
+      title: 'Rebuilt to Inspire',
+      year: '2025',
+      role: 'Full Stack Designer & Developer',
+      tags: ['AI/ML', 'Healthcare', 'Full Stack', 'Cancer Recovery'],
+      image: 'assets/projects/rebuilt-to-inspire/rti-hero.png',
+      route: '/projects/rebuilt-to-inspire'
+    },
+    {
       title: 'KSP Mental Performance',
       year: '2024',
       role: 'UX Designer',
       tags: ['Mobile App', 'UX/UI', 'Mental Health'],
       image: 'assets/projects/ksp/ksp-hero.png',
       route: '/projects/ksp-mental-performance'
+    },
+    {
+      title: 'Lock It In',
+      year: '2025',
+      role: 'Full Stack Designer & Developer',
+      tags: ['React Native', 'Mobile App', 'Sports', 'Firebase'],
+      image: 'assets/projects/lock-it-in/lockin-hero.png',
+      route: '/projects/lock-it-in'
+    },
+    {
+      title: 'Recovery Rebuild',
+      year: '2025',
+      role: 'Product Designer & Strategist',
+      tags: ['Product Strategy', 'Design System', 'WHOOP', 'Wearables'],
+      image: 'assets/projects/recovery-rebuild/whoop-hero.png',
+      route: '/projects/recovery-rebuild'
     },
     {
       title: 'Continuo iPad App',
