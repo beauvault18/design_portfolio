@@ -568,6 +568,7 @@ $font: 'Inter', -apple-system, sans-serif;
 
   .hero__right {
     max-width: 400px;
+    width: 100%;
   }
 
   .services__grid {
@@ -577,25 +578,52 @@ $font: 'Inter', -apple-system, sans-serif;
 
 @media (max-width: 768px) {
   .hero {
-    padding: 120px 24px 60px;
+    padding: 100px 24px 60px;
     min-height: auto;
+  }
+
+  .hero__grid {
+    gap: 36px;
   }
 
   .hero__title {
     font-size: 2.2rem;
   }
 
+  .hero__desc {
+    font-size: 0.95rem;
+  }
+
   .hero__actions {
     flex-direction: column;
+    gap: 10px;
 
     .btn {
       text-align: center;
       justify-content: center;
+      width: 100%;
     }
+  }
+
+  .hero__right {
+    max-width: 100%;
   }
 
   .hero__stats {
     max-width: 100%;
+    width: 100%;
+  }
+
+  .stat {
+    padding: 24px 16px;
+
+    &__value {
+      font-size: 1.5rem;
+    }
+
+    &__label {
+      font-size: 0.65rem;
+    }
   }
 
   .services {
@@ -604,6 +632,27 @@ $font: 'Inter', -apple-system, sans-serif;
 
   .services__grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 28px 24px;
+
+    &__meta {
+      gap: 24px;
+    }
+
+    &__meta-value--accent {
+      font-size: 1.15rem;
+    }
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+
+    &__title {
+      font-size: 1.8rem;
+    }
   }
 
   .process {
@@ -617,17 +666,33 @@ $font: 'Inter', -apple-system, sans-serif;
   }
 
   .step {
-    padding: 24px 0;
+    padding: 20px 0;
+    width: 100%;
+
+    &__content {
+      p {
+        max-width: 100%;
+      }
+    }
   }
 
   .step__line {
     width: 1px;
-    height: 32px;
+    height: 24px;
     margin-top: 0;
   }
 
   .tools {
     padding: 48px 24px;
+  }
+
+  .tools__list {
+    gap: 8px;
+  }
+
+  .tools__item {
+    font-size: 0.72rem;
+    padding: 6px 14px;
   }
 
   .cta {
@@ -636,36 +701,65 @@ $font: 'Inter', -apple-system, sans-serif;
     &__title {
       font-size: 1.8rem;
     }
+
+    &__desc {
+      font-size: 0.9rem;
+    }
   }
 
-  .section-header__title {
-    font-size: 1.8rem;
+  .contact-modal {
+    padding: 36px 28px;
+    border-radius: 16px;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 100px 16px 48px;
+    padding: 90px 16px 40px;
+  }
+
+  .hero__eyebrow {
+    font-size: 0.68rem;
+    padding: 5px 12px;
   }
 
   .hero__title {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
   }
 
   .hero__desc {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    margin-bottom: 24px;
+  }
+
+  .hero__stats {
+    border-radius: 12px;
   }
 
   .stat {
-    padding: 24px 16px;
+    padding: 20px 12px;
 
     &__value {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
+    }
+
+    &__label {
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
     }
   }
 
   .card {
     padding: 24px 20px;
+  }
+
+  .card__title {
+    font-size: 1.15rem;
+  }
+
+  .card__desc {
+    font-size: 0.82rem;
   }
 
   .services {
@@ -676,11 +770,87 @@ $font: 'Inter', -apple-system, sans-serif;
     padding: 48px 16px;
   }
 
+  .step__number {
+    width: 40px;
+    height: 40px;
+    font-size: 0.7rem;
+  }
+
+  .step__content {
+    h3 {
+      font-size: 0.95rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
   .tools {
     padding: 40px 16px;
   }
 
+  .tools__item {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+  }
+
   .cta {
     padding: 64px 16px;
+
+    &__title {
+      font-size: 1.6rem;
+    }
+  }
+
+  .btn {
+    &--primary,
+    &--ghost {
+      padding: 12px 24px;
+      font-size: 0.85rem;
+    }
+
+    &--large {
+      padding: 14px 36px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+
+    &__eyebrow {
+      font-size: 0.68rem;
+    }
+
+    &__title {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 84px 14px 36px;
+  }
+
+  .hero__title {
+    font-size: 1.6rem;
+  }
+
+  .stat {
+    padding: 16px 10px;
+
+    &__value {
+      font-size: 1.2rem;
+    }
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .cta__title {
+    font-size: 1.4rem;
   }
 }
