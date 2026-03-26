@@ -1,79 +1,126 @@
 <app-navbar></app-navbar>
 
-<section class="services-hero">
-  <div class="services-hero__content">
-    <p class="services-hero__label">Design + Code</p>
-    <h1 class="services-hero__title">I design it.<br>I build it.<br>You ship it.</h1>
-    <p class="services-hero__subtitle">
-      Most designers hand off a file. I hand off a working product. 10 years of design experience and production code in Angular, React, Flutter, and TypeScript.
-    </p>
-    <a href="mailto:Beauvault18&#64;gmail.com?subject=Project%20Inquiry" class="services-hero__cta">
-      Start a Project
-    </a>
-  </div>
-</section>
-
-<section class="services-packages">
-  <div class="services-packages__header">
-    <h2 class="services-packages__title">Services</h2>
-    <p class="services-packages__desc">Fast turnaround. Production quality. No middleman.</p>
-  </div>
-
-  <div class="services-packages__grid">
-    <div class="service-card" *ngFor="let service of services">
-      <h3 class="service-card__title">{{ service.title }}</h3>
-      <p class="service-card__description">{{ service.description }}</p>
-
-      <div class="service-card__price">
-        <span class="service-card__price-label">Starting at</span>
-        <span class="service-card__price-value">{{ service.startingAt }}</span>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__grid">
+    <div class="hero__left animate-in">
+      <span class="hero__eyebrow">Available for freelance</span>
+      <h1 class="hero__title">I design it.<br>I build it.<br>You ship it.</h1>
+      <p class="hero__desc">
+        Most designers hand off a file. I hand off a working product.
+        10 years of design experience backed by production code.
+      </p>
+      <div class="hero__actions">
+        <a href="mailto:Beauvault18&#64;gmail.com?subject=Project%20Inquiry" class="btn btn--primary">Start a Project</a>
+        <a href="/recent-projects" class="btn btn--ghost">View My Work</a>
       </div>
-
-      <div class="service-card__turnaround">
-        <span class="service-card__turnaround-label">Turnaround</span>
-        <span class="service-card__turnaround-value">{{ service.turnaround }}</span>
-      </div>
-
-      <ul class="service-card__deliverables">
-        <li *ngFor="let item of service.deliverables">{{ item }}</li>
-      </ul>
-
-      <a href="mailto:Beauvault18&#64;gmail.com?subject=Project%20Inquiry%20%E2%80%93%20{{ service.title }}" class="service-card__cta">
-        Get Started
-      </a>
     </div>
-  </div>
-</section>
-
-<section class="services-difference">
-  <div class="services-difference__content">
-    <h2 class="services-difference__title">Why work with me</h2>
-    <div class="services-difference__grid">
-      <div class="diff-item">
-        <h3>Designer + Developer</h3>
-        <p>I design the interface and write the production code. No handoff gaps, no miscommunication, no waiting on a second person.</p>
-      </div>
-      <div class="diff-item">
-        <h3>Speed</h3>
-        <p>Landing pages in 48 hours. Full websites in under two weeks. I move fast because I control both sides of the process.</p>
-      </div>
-      <div class="diff-item">
-        <h3>10 Years of Experience</h3>
-        <p>B.S. in Design from Lehigh University. Google UX Certified. Work featured across fitness, healthcare, AI, and sports industries.</p>
-      </div>
-      <div class="diff-item">
-        <h3>Real Code, Not Templates</h3>
-        <p>Every project is custom built. Angular, React, Next.js, Flutter, TypeScript. Clean, performant, and maintainable.</p>
+    <div class="hero__right animate-in">
+      <div class="hero__stats">
+        <div class="stat" *ngFor="let stat of stats">
+          <span class="stat__value">{{ stat.value }}</span>
+          <span class="stat__label">{{ stat.label }}</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services-cta-section">
-  <div class="services-cta-section__content">
-    <h2>Ready to build something?</h2>
-    <p>Tell me about your project and I will get back to you within 24 hours.</p>
-    <a href="mailto:Beauvault18&#64;gmail.com?subject=Project%20Inquiry" class="services-cta-section__btn">
+<!-- Services -->
+<section class="services">
+  <div class="services__inner">
+    <div class="section-header animate-in">
+      <span class="section-header__eyebrow">What I Offer</span>
+      <h2 class="section-header__title">Services</h2>
+    </div>
+
+    <div class="services__grid">
+      <div class="card animate-in" *ngFor="let service of services">
+        <div class="card__top">
+          <span class="card__number">{{ service.icon }}</span>
+          <h3 class="card__title">{{ service.title }}</h3>
+          <p class="card__desc">{{ service.description }}</p>
+        </div>
+
+        <div class="card__meta">
+          <div class="card__meta-item">
+            <span class="card__meta-label">Price</span>
+            <span class="card__meta-value card__meta-value--accent">{{ service.startingAt }}</span>
+          </div>
+          <div class="card__meta-item">
+            <span class="card__meta-label">Turnaround</span>
+            <span class="card__meta-value">{{ service.turnaround }}</span>
+          </div>
+        </div>
+
+        <ul class="card__list">
+          <li *ngFor="let item of service.deliverables">{{ item }}</li>
+        </ul>
+
+        <a href="mailto:Beauvault18&#64;gmail.com?subject=Project%20Inquiry%20%E2%80%93%20{{ service.title }}" class="btn btn--card">
+          Get Started
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="process__inner">
+    <div class="section-header animate-in">
+      <span class="section-header__eyebrow">How It Works</span>
+      <h2 class="section-header__title">Simple Process</h2>
+    </div>
+
+    <div class="process__steps">
+      <div class="step animate-in">
+        <div class="step__number">01</div>
+        <div class="step__content">
+          <h3>You reach out</h3>
+          <p>Tell me what you need. I respond within 24 hours with a scope and timeline.</p>
+        </div>
+      </div>
+      <div class="step__line"></div>
+      <div class="step animate-in">
+        <div class="step__number">02</div>
+        <div class="step__content">
+          <h3>I design and build</h3>
+          <p>You get a working product, not a mockup. Design and code delivered together.</p>
+        </div>
+      </div>
+      <div class="step__line"></div>
+      <div class="step animate-in">
+        <div class="step__number">03</div>
+        <div class="step__content">
+          <h3>You ship</h3>
+          <p>One round of revisions included. Then it is yours to deploy and grow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools -->
+<section class="tools">
+  <div class="tools__inner animate-in">
+    <span class="section-header__eyebrow">Built With</span>
+    <div class="tools__list">
+      <span class="tools__item" *ngFor="let tool of tools">{{ tool }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta__inner animate-in">
+    <h2 class="cta__title">Ready to build something?</h2>
+    <p class="cta__desc">Tell me about your project. I will get back to you within 24 hours.</p>
+    <a href="mailto:Beauvault18&#64;gmail.com?subject=Project%20Inquiry" class="btn btn--primary btn--large">
       Get in Touch
     </a>
   </div>
@@ -82,7 +129,12 @@
 <!-- Contact Modal -->
 <div class="contact-overlay" *ngIf="showContactModal" (click)="closeContactModal()">
   <div class="contact-modal" (click)="$event.stopPropagation()">
-    <button class="contact-modal__close" (click)="closeContactModal()">&times;</button>
+    <button class="contact-modal__close" (click)="closeContactModal()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
     <h2>Let's work together</h2>
     <p>Email me at <a href="mailto:Beauvault18&#64;gmail.com">Beauvault18&#64;gmail.com</a></p>
     <p>Or call <a href="tel:4845420542">484-542-0542</a></p>

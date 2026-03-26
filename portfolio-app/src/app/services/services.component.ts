@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 
@@ -8,6 +8,12 @@ interface ServicePackage {
   deliverables: string[];
   turnaround: string;
   startingAt: string;
+  icon: string;
+}
+
+interface StatItem {
+  value: string;
+  label: string;
 }
 
 @Component({
@@ -17,13 +23,21 @@ interface ServicePackage {
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
 })
-export class ServicesComponent {
+export class ServicesComponent implements AfterViewInit {
   showContactModal = false;
+
+  stats: StatItem[] = [
+    { value: '10+', label: 'Years Experience' },
+    { value: '48hr', label: 'Fastest Delivery' },
+    { value: '100%', label: 'Custom Code' },
+    { value: '0', label: 'Templates Used' },
+  ];
 
   services: ServicePackage[] = [
     {
       title: 'Landing Page',
-      description: 'High converting landing page designed and built in code. Fully responsive, optimized for speed, and ready to deploy.',
+      description: 'Designed and built in code. Responsive, fast, and ready to convert.',
+      icon: '01',
       deliverables: [
         'Custom design',
         'Responsive HTML/CSS/JS',
@@ -36,7 +50,8 @@ export class ServicesComponent {
     },
     {
       title: 'Full Website',
-      description: 'Multi page website with custom design system, animations, and production code. Built in Angular, React, or Next.js.',
+      description: 'Multi page site with design system, animations, and production code.',
+      icon: '02',
       deliverables: [
         'Up to 5 pages',
         'Custom design system',
@@ -49,7 +64,8 @@ export class ServicesComponent {
     },
     {
       title: 'Pitch Deck',
-      description: 'Investor ready presentation with compelling visual storytelling, data visualization, and brand aligned design.',
+      description: 'Investor ready presentation with visual storytelling and data design.',
+      icon: '03',
       deliverables: [
         'Up to 20 slides',
         'Custom visual design',
@@ -62,7 +78,8 @@ export class ServicesComponent {
     },
     {
       title: 'Design System',
-      description: 'Complete design system with typography, color tokens, spacing, components, and documentation. Built for scale.',
+      description: 'Typography, tokens, components, and documentation. Built for scale.',
+      icon: '04',
       deliverables: [
         'Typography scale',
         'Color and spacing tokens',
@@ -74,6 +91,29 @@ export class ServicesComponent {
       startingAt: '$1,500',
     },
   ];
+
+  tools: string[] = [
+    'Angular', 'React', 'Next.js', 'Flutter', 'TypeScript',
+    'HTML/CSS', 'Python', 'After Effects', 'Blender', 'Adobe Suite'
+  ];
+
+  constructor(private el: ElementRef) {}
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = this.el.nativeElement.querySelectorAll('.animate-in');
+    elements.forEach((el: Element) => observer.observe(el));
+  }
 
   openContactModal(): void {
     this.showContactModal = true;
