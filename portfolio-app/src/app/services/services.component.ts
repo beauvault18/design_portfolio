@@ -32,7 +32,7 @@ export class ServicesComponent {
         'Deployed and live',
       ],
       turnaround: '48 hours',
-      startingAt: '$1,500',
+      startingAt: '$500',
     },
     {
       title: 'Full Website',
@@ -45,7 +45,7 @@ export class ServicesComponent {
         'CMS integration available',
       ],
       turnaround: '1 to 2 weeks',
-      startingAt: '$4,000',
+      startingAt: '$1,500',
     },
     {
       title: 'Pitch Deck',
@@ -58,7 +58,7 @@ export class ServicesComponent {
         'PDF export',
       ],
       turnaround: '3 to 5 days',
-      startingAt: '$1,200',
+      startingAt: '$400',
     },
     {
       title: 'Design System',
@@ -71,7 +71,7 @@ export class ServicesComponent {
         'Developer handoff ready',
       ],
       turnaround: '1 to 2 weeks',
-      startingAt: '$3,000',
+      startingAt: '$1,500',
     },
   ];
 
