@@ -79,6 +79,15 @@
   }
 }
 
+// Hire Me Button Styles
+.nav-services-item {
+  color: #00d9ff !important;
+
+  &::after {
+    background: #00d9ff !important;
+  }
+}
+
 // CV Button Styles
 .nav-cv-item {
   background: none !important;

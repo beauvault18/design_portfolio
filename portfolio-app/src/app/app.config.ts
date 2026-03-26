@@ -24,6 +24,10 @@ const routes = [
     loadComponent: () => import('./recent-projects/recent-projects.component').then(m => m.RecentProjectsComponent)
   },
   {
+    path: 'services',
+    loadComponent: () => import('./services/services.component').then(m => m.ServicesComponent)
+  },
+  {
     path: 'projects/ksp-mental-performance',
     loadComponent: () => import('./projects/ksp-mental-performance/ksp-mental-performance.component').then(m => m.KspMentalPerformanceComponent)
   },
