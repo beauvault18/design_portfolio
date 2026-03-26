@@ -648,17 +648,28 @@ $font: 'Inter', -apple-system, sans-serif;
 // =============================
 @media (max-width: 1024px) {
   .hero__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 48px;
   }
 
-  .hero__right {
-    max-width: 400px;
-    width: 100%;
+  .hero__title {
+    font-size: 2.6rem;
   }
 
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero__right {
+    max-width: 360px;
+    width: 100%;
   }
 }
 
