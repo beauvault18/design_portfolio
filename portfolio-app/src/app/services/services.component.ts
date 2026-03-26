@@ -92,6 +92,14 @@ export class ServicesComponent implements AfterViewInit {
     },
   ];
 
+  works: { image: string; title: string; type: string }[] = [
+    { image: 'assets/services/portfolio.png', title: 'beauwhitman.org', type: 'Portfolio Website' },
+    { image: 'assets/services/digitalbullet.png', title: 'DigitalBullet Studio', type: 'Landing Page' },
+    { image: 'assets/services/trecs.png', title: 'TRECS Institute', type: 'Full Website' },
+    { image: 'assets/services/whoop.png', title: 'Recovery Rebuild', type: 'Pitch Deck' },
+    { image: 'assets/projects/lock-it-in/lockin-hero.png', title: 'Lock It In', type: 'Mobile App' },
+  ];
+
   tools: string[] = [
     'Angular', 'React', 'Next.js', 'Flutter', 'TypeScript',
     'HTML/CSS', 'Python', 'After Effects', 'Blender', 'Adobe Suite'

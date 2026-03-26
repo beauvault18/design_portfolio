@@ -69,6 +69,28 @@
   </div>
 </section>
 
+<!-- Work -->
+<section class="work">
+  <div class="work__inner">
+    <div class="section-header animate-in">
+      <span class="section-header__eyebrow">Recent Work</span>
+      <h2 class="section-header__title">Sample Projects</h2>
+    </div>
+
+    <div class="work__grid">
+      <div class="work-item animate-in" *ngFor="let item of works">
+        <div class="work-item__image">
+          <img [src]="item.image" [alt]="item.title" loading="lazy" />
+        </div>
+        <div class="work-item__info">
+          <span class="work-item__type">{{ item.type }}</span>
+          <h3 class="work-item__title">{{ item.title }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Process -->
 <section class="process">
   <div class="process__inner">
