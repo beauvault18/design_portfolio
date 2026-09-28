@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Beau Whitman</title>
+<meta name="description" content="Questions, concerns, or a note about your triangle. Send Beau Whitman a message about The Grit to Heal, the Grit Triangle assessment, or The Tolled.">
+<meta name="author" content="Beau Whitman">
+<meta name="theme-color" content="#16242A">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://beauwhitman.org/triangle/contact.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2316242A'/%3E%3Cpolygon points='12,4 21,20 3,20' fill='none' stroke='%23E7B65F' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beau Whitman">
+<meta property="og:title" content="Contact Beau Whitman">
+<meta property="og:description" content="Questions, concerns, or a note about your triangle.">
+<meta property="og:url" content="https://beauwhitman.org/triangle/contact.html">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --ink:#16242A; --ink-2:#233238; --paper:#F4F5F2; --panel:#ECEEE8; --line:#D8D9D0; --muted:#5C6968;
+    --vuln:#B5566A; --vuln-ink:#983B4F; --res:#2E7360; --res-ink:#215645; --cour:#BE842D; --cour-ink:#8F6017;
+    --cour-lite:#E7B65F;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --maxw:1120px; --prose:66ch; --nav-h:64px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.06;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:inherit}
+  ::selection{background:var(--cour);color:#fff}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 1rem;display:flex;align-items:center;gap:.7em}
+  .eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.7}
+  .lead{font-size:clamp(1.12rem,1.7vw,1.32rem);line-height:1.6;color:var(--ink-2);max-width:var(--prose)}
+  .skip{position:absolute;left:1rem;top:-100px;z-index:100;background:var(--ink);color:#fff;padding:.6rem 1rem;border-radius:2px;font-weight:600;text-decoration:none}
+  .skip:focus{top:1rem}
+  :focus-visible{outline:2px solid var(--cour);outline-offset:3px;border-radius:2px}
+  section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
+
+  /* ============ NAV ============ */
+  .nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+  .nav.scrolled{border-bottom-color:var(--line)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:.85rem clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{font-family:var(--serif);font-weight:700;font-size:1.12rem;letter-spacing:-.01em;display:flex;align-items:center;gap:.6em;white-space:nowrap;text-decoration:none}
+  .brand .mk{width:16px;height:16px;flex:none}
+  .nav-links{display:flex;gap:1.6rem;align-items:center}
+  .nav-links a{font-size:.86rem;color:var(--muted);text-decoration:none;transition:color .2s;white-space:nowrap}
+  .nav-links a:hover,.nav-links a[aria-current]{color:var(--ink)}
+  .nav-links a.soon{color:var(--cour-ink);font-weight:600}
+  .nav-links a.soon::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cour);margin-right:.45em;vertical-align:middle}
+  .nav-cta{font-family:var(--sans);font-size:.82rem;font-weight:600;background:var(--ink);color:var(--paper);padding:.5rem .95rem;border-radius:2px;text-decoration:none;white-space:nowrap}
+  .nav-right{display:flex;align-items:center;gap:.7rem;flex:none}
+  .nav-toggle{display:none;appearance:none;background:transparent;border:1px solid var(--line);border-radius:2px;width:40px;height:36px;padding:0;cursor:pointer;color:var(--ink);align-items:center;justify-content:center;flex:none}
+  .nav-toggle:hover{border-color:var(--ink)}
+  .nav-toggle svg{width:20px;height:20px;display:block}
+  .nav-toggle .x{display:none}
+  .nav.open .nav-toggle .bars{display:none}
+  .nav.open .nav-toggle .x{display:block}
+  @media (max-width:1080px){.nav-links{gap:1.1rem}.nav-links a{font-size:.8rem}}
+  @media (max-width:1000px){
+    .nav-toggle{display:inline-flex}
+    .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(22,36,42,.35);padding:.3rem 0 .5rem}
+    .nav.open .nav-links{display:flex}
+    .nav-links a{font-size:1rem;padding:.8rem clamp(20px,5vw,48px);border-top:1px solid var(--line)}
+    .nav-links a:first-child{border-top:0}
+  }
+  .nav-cta .short{display:none}
+  @media (max-width:480px){.nav-cta{padding:.45rem .7rem;font-size:.76rem}.brand{font-size:1.02rem}.nav-in{gap:.6rem}.nav-cta .full{display:none}.nav-cta .short{display:inline}}
+  @media (max-width:380px){.nav-cta{padding:.4rem .55rem}.brand{font-size:.9rem;gap:.45em}.nav-toggle{width:34px;height:32px}.nav-right{gap:.5rem}}
+
+  /* ============ BUTTONS ============ */
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.9rem 1.5rem;border-radius:2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .15s,background .2s,color .2s,border-color .2s}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--cour);color:#1a1205;border-color:var(--cour)}
+  .btn-primary:hover{background:var(--cour-ink);border-color:var(--cour-ink);color:#fff}
+  .btn-ghost{background:transparent;color:inherit;border-color:currentColor}
+  .btn-ghost:hover{background:rgba(22,36,42,.06)}
+
+  /* ============ HERO ============ */
+  .hero{background:var(--ink);color:#EAEDE9;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 80% at 78% 12%,rgba(99,187,161,.14),transparent 55%),radial-gradient(90% 70% at 15% 95%,rgba(226,138,156,.10),transparent 55%)}
+  .hero-in{max-width:var(--maxw);margin:0 auto;padding:clamp(2.8rem,7vh,4.5rem) clamp(20px,5vw,48px);position:relative;z-index:1}
+  .hero .eyebrow{color:#9FB1AC}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);letter-spacing:-.02em;margin:0 0 1rem}
+  .hero h1 em{font-style:normal;color:var(--cour-lite)}
+  .hero .lead{color:#C4CFCA}
+
+  /* ============ FORM ============ */
+  section.blk{padding:clamp(3rem,7vh,5rem) 0;border-bottom:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  @media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:clamp(1.4rem,3vw,2.4rem)}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.2rem}
+  @media (max-width:560px){.fields{grid-template-columns:1fr}}
+  .field{display:flex;flex-direction:column;gap:.4rem}
+  .field.wide{grid-column:1 / -1}
+  .field label{font-weight:600;font-size:.92rem;color:var(--ink)}
+  .field label .opt{font-weight:400;color:var(--muted);font-size:.82rem;margin-left:.4em}
+  .field input,.field textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:.8rem .9rem;width:100%;transition:border-color .15s,background .15s}
+  .field input:hover,.field textarea:hover{border-color:#B9BCB2}
+  .field input:focus,.field textarea:focus{outline:2px solid var(--cour);outline-offset:1px;border-color:var(--cour);background:#fff}
+  .field textarea{min-height:170px;resize:vertical;line-height:1.55}
+  .field input:user-invalid,.field textarea:user-invalid{border-color:var(--vuln)}
+  .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  .form-foot{margin-top:1.4rem;display:flex;gap:1rem 1.4rem;align-items:center;flex-wrap:wrap}
+  .form-note{font-size:.85rem;color:var(--muted);max-width:44ch}
+  .sent{display:none;background:var(--ink);color:#EAEDE9;border-radius:4px;padding:clamp(1.4rem,3vw,2.2rem);margin-bottom:1.4rem}
+  .sent.show{display:block}
+  .sent .pl{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#8FA39D;margin-bottom:.5rem}
+  .sent h2{font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;margin-bottom:.6rem}
+  .sent p{color:#C9D3CE;font-size:.98rem}
+  .sent p+p{margin-top:.6rem}
+  .sent b{color:var(--cour-lite)}
+
+  /* side notes */
+  .side{display:grid;gap:1rem}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:3px;padding:1.1rem 1.25rem}
+  .note .nh{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;display:block;margin-bottom:.45rem}
+  .note p{font-size:.92rem;color:var(--muted);line-height:1.6}
+  .note p+p{margin-top:.55rem}
+  .note a{color:var(--ink);text-underline-offset:3px}
+  .note.care{border-left-color:var(--vuln)}
+  .note.care b{color:var(--ink)}
+  .note ul{margin:.4rem 0 0;padding-left:1.1rem;font-size:.92rem;color:var(--muted)}
+  .note li+li{margin-top:.25rem}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--ink);color:#AEBDB8;padding:clamp(2.5rem,6vh,4rem) 0 2.5rem}
+  footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:start}
+  @media (max-width:720px){footer .fgrid{grid-template-columns:1fr;gap:1.6rem}}
+  footer h4{font-family:var(--serif);color:#fff;font-size:1.35rem;font-weight:700;margin:0 0 .6rem}
+  footer p{font-size:.92rem;line-height:1.65}
+  footer .flinks{display:grid;gap:.5rem;font-size:.92rem;align-content:start}
+  footer .flinks a{text-decoration-color:rgba(255,255,255,.25);text-underline-offset:3px}
+  .disc{font-size:.82rem;color:#849791;background:rgba(255,255,255,.04);border-radius:3px;padding:1rem 1.2rem;margin-top:1rem}
+  .disc b{color:#C9D3CE}
+  footer .base{margin-top:2.2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:#7C8F89}
+  footer .base a{color:inherit;text-decoration-color:rgba(255,255,255,.25);text-underline-offset:3px}
+  @media print{.nav,.skip{display:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <svg class="mk" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 22,21 2,21" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      The Grit Triangle
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#framework">The Framework</a>
+      <a href="index.html#book">The Grit to Heal</a>
+      <a href="index.html#about">About Beau</a>
+      <a href="tolled.html" class="soon">Coming Soon</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-cta" href="index.html#assessment"><span class="full">Take the assessment</span><span class="short">Assessment</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+        <svg class="bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-in">
+    <p class="eyebrow">Contact</p>
+    <h1>Say <em>hello</em>.</h1>
+    <p class="lead">Questions, concerns, a note about your triangle, or something you want Beau to know. Every message lands in his inbox, and he reads them all.</p>
+  </div>
+</header>
+
+<main id="main">
+  <section class="blk" id="form">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="sent" id="sent" role="status" aria-live="polite" tabindex="-1">
+            <div class="pl">Sent</div>
+            <h2>Thank you. It’s on its way.</h2>
+            <p>Your message is headed to Beau’s inbox. He replies to real people, so give it a little time.</p>
+            <p>If you are struggling right now, please don’t wait on a reply. In the U.S., call or text <b>988</b>, the Suicide &amp; Crisis Lifeline, any time.</p>
+          </div>
+
+          <!-- Handled by Netlify Forms. In the Netlify dashboard: enable form detection, then add an email
+               notification for the "contact" form pointing at the address messages should go to. -->
+          <form class="form-card" id="contactForm" name="contact" method="POST" action="contact.html?sent=1" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="contact">
+            <p class="hp" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+            <div class="fields">
+              <div class="field">
+                <label for="firstName">First name</label>
+                <input id="firstName" name="first_name" type="text" autocomplete="given-name" required maxlength="80">
+              </div>
+              <div class="field">
+                <label for="lastName">Last name</label>
+                <input id="lastName" name="last_name" type="text" autocomplete="family-name" required maxlength="80">
+              </div>
+              <div class="field wide">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="So Beau can write back">
+              </div>
+              <div class="field wide">
+                <label for="message">Comments or message</label>
+                <textarea id="message" name="message" required maxlength="4000" placeholder="A question, a concern, or what your triangle looked like today."></textarea>
+              </div>
+            </div>
+            <div class="form-foot">
+              <button type="submit" class="btn btn-primary" id="sendBtn">Send message →</button>
+              <p class="form-note">Goes straight to Beau. No newsletter, no list, and your email is only used to reply.</p>
+            </div>
+          </form>
+        </div>
+
+        <aside class="side">
+          <div class="note">
+            <span class="nh">Good things to write about</span>
+            <ul>
+              <li>A question about <a href="index.html#book"><i>The Grit to Heal</i></a> or the Grit Triangle Method.</li>
+              <li>Your result from <a href="index.html#assessment">the assessment</a>, and what it stirred up.</li>
+              <li>Anything about <a href="tolled.html"><i>The Tolled</i></a>.</li>
+              <li>A concern, a correction, or a thank-you. All welcome.</li>
+            </ul>
+          </div>
+          <div class="note care">
+            <span class="nh">Before you write</span>
+            <p><b>This is a contact form, not a crisis line, and Beau is a companion, not a clinician.</b> If you are in danger or thinking about harming yourself, please reach out to someone you trust or a professional right now. In the U.S., call or text <b>988</b> any time.</p>
+          </div>
+          <div class="note">
+            <span class="nh">Replies</span>
+            <p>Beau answers personally, so replies can take a few days. If you don’t hear back within a couple of weeks, send it again. Things get lost.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>The Grit Triangle</h4>
+        <p>Vulnerability, resilience, and courage. Three sides that have to hold at once. A framework from <i>The Grit to Heal</i>, built from a hospital bed by Beau Whitman.</p>
+        <div class="disc">
+          <b>This site is a self-reflection tool, not medical or psychological advice.</b> If you’re struggling, please reach out to someone you trust or a professional. In the U.S., you can call or text <b>988</b> (Suicide &amp; Crisis Lifeline) anytime.
+        </div>
+      </div>
+      <div class="flinks">
+        <a href="index.html">The Grit Triangle</a>
+        <a href="index.html#assessment">Take the assessment</a>
+        <a href="index.html#book">The Grit to Heal</a>
+        <a href="tolled.html">Coming soon: The Tolled</a>
+        <a href="index.html#about">About Beau</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Beau Whitman · The Grit Triangle™</span>
+      <span><a href="https://beauwhitman.org/">beauwhitman.org</a> · Vulnerability · Resilience · Courage</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var nav=document.getElementById("nav");
+  function setNavH(){ document.documentElement.style.setProperty("--nav-h", nav.offsetHeight+"px"); }
+  setNavH(); window.addEventListener("resize", setNavH, {passive:true});
+  var toggle=document.querySelector(".nav-toggle"), linksEl=document.getElementById("navLinks");
+  function setOpen(o){ nav.classList.toggle("open", o); toggle.setAttribute("aria-expanded", o ? "true" : "false"); }
+  toggle.addEventListener("click", function(){ setOpen(!nav.classList.contains("open")); });
+  linksEl.addEventListener("click", function(e){ if(e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && nav.classList.contains("open")){ setOpen(false); toggle.focus(); } });
+  document.addEventListener("click", function(e){ if(nav.classList.contains("open") && !nav.contains(e.target)) setOpen(false); });
+  window.addEventListener("resize", function(){ if(window.innerWidth>1000 && nav.classList.contains("open")) setOpen(false); }, {passive:true});
+  window.addEventListener("scroll", function(){ nav.classList.toggle("scrolled", window.scrollY>8); }, {passive:true});
+
+  var form=document.getElementById("contactForm");
+  var sent=document.getElementById("sent");
+
+  // After Netlify accepts the submission it redirects back here with ?sent=1
+  if(/[?&]sent=1/.test(window.location.search)){
+    sent.classList.add("show");
+    form.reset();
+    setTimeout(function(){ sent.focus(); }, 50);
+    if(window.history && window.history.replaceState){ window.history.replaceState(null, "", window.location.pathname); }
+  }
+
+  // Native validation with a visible nudge, then a real POST (no JavaScript needed to send)
+  form.addEventListener("submit", function(e){
+    if(!form.checkValidity()){
+      e.preventDefault();
+      var bad=form.querySelector(":invalid");
+      if(bad){ bad.focus(); bad.reportValidity(); }
+      return;
+    }
+    var btn=document.getElementById("sendBtn");
+    btn.disabled=true; btn.textContent="Sending…";
+  });
+})();
+</script>
+</body>
+</html>

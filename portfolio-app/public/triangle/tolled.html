@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Tolled, Book One: The First Asking, by Beau Whitman (coming soon)</title>
+<meta name="description" content="A door hangs in the sky over Harrow's Shelf, and it is facing Keel. The Tolled is the Grit Triangle turned into a dungeon crawl. Book One: The First Asking, by Beau Whitman, is finished and coming soon.">
+<meta name="author" content="Beau Whitman">
+<meta name="theme-color" content="#16242A">
+<link rel="canonical" href="https://beauwhitman.org/triangle/tolled.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2316242A'/%3E%3Cpolygon points='3,4 21,4 12,20' fill='none' stroke='%23E7B65F' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beau Whitman">
+<meta property="og:title" content="The Tolled, Book One: The First Asking (coming soon)">
+<meta property="og:description" content="A door hangs in the sky over Harrow's Shelf, and it is facing Keel. The Grit Triangle turned into a dungeon crawl. Finished, not yet released.">
+<meta property="og:url" content="https://beauwhitman.org/triangle/tolled.html">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --ink:#16242A; --ink-2:#233238; --paper:#F4F5F2; --panel:#ECEEE8; --line:#D8D9D0; --muted:#5C6968;
+    --vuln:#B5566A; --vuln-ink:#983B4F; --res:#2E7360; --res-ink:#215645; --cour:#BE842D; --cour-ink:#8F6017;
+    --vuln-lite:#E28A9C; --res-lite:#63BBA1; --cour-lite:#E7B65F;
+    --voice:#8FD9A8; --voice-ink:#2E7360;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --maxw:1120px; --prose:66ch; --nav-h:64px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  img{max-width:100%;height:auto;display:block}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.06;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:inherit}
+  ::selection{background:var(--cour);color:#fff}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 1rem;display:flex;align-items:center;gap:.7em}
+  .eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.7}
+  .lead{font-size:clamp(1.12rem,1.7vw,1.32rem);line-height:1.6;color:var(--ink-2);max-width:var(--prose)}
+  .prose{max-width:var(--prose)}
+  .prose p+p{margin-top:1.1rem}
+  .skip{position:absolute;left:1rem;top:-100px;z-index:100;background:var(--ink);color:#fff;padding:.6rem 1rem;border-radius:2px;font-weight:600;text-decoration:none}
+  .skip:focus{top:1rem}
+  :focus-visible{outline:2px solid var(--cour);outline-offset:3px;border-radius:2px}
+  section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
+  .voice{font-family:var(--mono);letter-spacing:.02em}
+  .voice.big{text-transform:uppercase;letter-spacing:.08em}
+
+  /* ============ NAV ============ */
+  .nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+  .nav.scrolled{border-bottom-color:var(--line)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:.85rem clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{font-family:var(--serif);font-weight:700;font-size:1.12rem;letter-spacing:-.01em;display:flex;align-items:center;gap:.6em;white-space:nowrap;text-decoration:none}
+  .brand .mk{width:16px;height:16px;flex:none}
+  .nav-links{display:flex;gap:1.6rem;align-items:center}
+  .nav-links a{font-size:.86rem;color:var(--muted);text-decoration:none;transition:color .2s;white-space:nowrap}
+  .nav-links a:hover,.nav-links a[aria-current]{color:var(--ink)}
+  .nav-links a.soon{color:var(--cour-ink);font-weight:600}
+  .nav-links a.soon::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cour);margin-right:.45em;vertical-align:middle}
+  .nav-cta{font-family:var(--sans);font-size:.82rem;font-weight:600;background:var(--ink);color:var(--paper);padding:.5rem .95rem;border-radius:2px;text-decoration:none;white-space:nowrap}
+  .nav-right{display:flex;align-items:center;gap:.7rem;flex:none}
+  .nav-toggle{display:none;appearance:none;background:transparent;border:1px solid var(--line);border-radius:2px;width:40px;height:36px;padding:0;cursor:pointer;color:var(--ink);align-items:center;justify-content:center;flex:none}
+  .nav-toggle:hover{border-color:var(--ink)}
+  .nav-toggle svg{width:20px;height:20px;display:block}
+  .nav-toggle .x{display:none}
+  .nav.open .nav-toggle .bars{display:none}
+  .nav.open .nav-toggle .x{display:block}
+  @media (max-width:1080px){.nav-links{gap:1.1rem}.nav-links a{font-size:.8rem}}
+  @media (max-width:1000px){
+    .nav-toggle{display:inline-flex}
+    .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(22,36,42,.35);padding:.3rem 0 .5rem}
+    .nav.open .nav-links{display:flex}
+    .nav-links a{font-size:1rem;padding:.8rem clamp(20px,5vw,48px);border-top:1px solid var(--line)}
+    .nav-links a:first-child{border-top:0}
+  }
+  .nav-cta .short{display:none}
+  @media (max-width:480px){.nav-cta{padding:.45rem .7rem;font-size:.76rem}.brand{font-size:1.02rem}.nav-in{gap:.6rem}.nav-cta .full{display:none}.nav-cta .short{display:inline}}
+  @media (max-width:380px){.nav-cta{padding:.4rem .55rem}.brand{font-size:.9rem;gap:.45em}.nav-toggle{width:34px;height:32px}.nav-right{gap:.5rem}}
+
+  /* ============ BUTTONS ============ */
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.9rem 1.5rem;border-radius:2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .15s,background .2s,color .2s,border-color .2s}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--cour);color:#1a1205;border-color:var(--cour)}
+  .btn-primary:hover{background:var(--cour-ink);border-color:var(--cour-ink);color:#fff}
+  .btn-ghost{background:transparent;color:inherit;border-color:currentColor}
+  .btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+  /* ============ HERO ============ */
+  .hero{background:var(--ink);color:#EAEDE9;position:relative;overflow:hidden;isolation:isolate}
+  .hero-in{max-width:var(--maxw);margin:0 auto;padding:clamp(3.2rem,8vh,6rem) clamp(20px,5vw,48px) clamp(3.4rem,8vh,6rem);display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,4rem);align-items:center;position:relative;z-index:1}
+  .hero .eyebrow{color:#9FB1AC}
+  .hero h1{font-size:clamp(3.2rem,8.5vw,6rem);letter-spacing:-.02em;margin:0 0 .35rem}
+  .hero h1 em{font-style:normal;color:var(--cour-lite)}
+  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.4vw,1.7rem);color:#C4CFCA;margin-bottom:1.3rem}
+  .hero .lead{color:#C4CFCA}
+  .status{display:inline-flex;align-items:center;gap:.6em;margin-top:1.5rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#C4CFCA;border:1px solid rgba(255,255,255,.18);padding:.5rem .95rem;border-radius:100px}
+  .status .dot{width:8px;height:8px;border-radius:50%;background:var(--cour-lite);box-shadow:0 0 0 4px rgba(231,182,95,.18);flex:none}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+  .hero-credit{margin-top:2.4rem;font-size:.85rem;color:#8A9C97;font-family:var(--mono);letter-spacing:.02em}
+  .hero-credit a{text-decoration-color:#4A5D62;text-underline-offset:3px}
+  .hero-credit a:hover{color:#EAEDE9}
+  .hero-art{display:flex;justify-content:center}
+  .hero-art svg{width:100%;max-width:360px;height:auto}
+  @media (max-width:860px){.hero-in{grid-template-columns:1fr;gap:2.2rem}.hero-art{order:-1;max-width:300px;margin:0 auto}}
+  .tri-edge{fill:none;stroke:#4A5D62;stroke-width:1.4;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s .2s cubic-bezier(.6,.05,.2,1) forwards}
+  .tri-vtx{opacity:0;animation:pop .5s forwards}
+  .tri-vtx.v1{animation-delay:1.5s} .tri-vtx.v2{animation-delay:1.75s} .tri-vtx.v3{animation-delay:2s}
+  .tri-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;fill:#B7C4BF;opacity:0;animation:pop .5s forwards}
+  .tri-lbl.v1{animation-delay:1.65s} .tri-lbl.v2{animation-delay:1.9s} .tri-lbl.v3{animation-delay:2.15s}
+  .tri-cap{font-family:var(--mono);font-size:10px;letter-spacing:.22em;fill:#6E8480;opacity:0;animation:pop .6s 2.4s forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+
+  /* ============ SECTIONS ============ */
+  section.blk{padding:clamp(3.5rem,8vh,6rem) 0;border-bottom:1px solid var(--line)}
+  section.alt{background:var(--panel)}
+  .sec-head{margin-bottom:clamp(2.2rem,5vw,3.4rem)}
+  .sec-head h2{font-size:clamp(2rem,4.4vw,3.05rem);letter-spacing:-.015em}
+  .sec-head .lead{margin-top:1.2rem}
+  .origin{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  @media (max-width:820px){.origin{grid-template-columns:1fr;gap:2rem}}
+
+  /* epigraph card (the Voice) */
+  .card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:clamp(1.4rem,2.6vw,2rem)}
+  .card .nh{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;display:block;margin-bottom:.9rem}
+  .card p{font-size:.92rem;color:var(--muted);line-height:1.6}
+  .card p+p{margin-top:.8rem}
+  .card p a{color:var(--ink);text-underline-offset:3px}
+  .epigraph{background:var(--ink);border-color:var(--ink);color:#C4CFCA}
+  .epigraph .nh{color:#8FA39D}
+  .epigraph .line{font-family:var(--mono);font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--voice);line-height:1.5;margin-bottom:1rem}
+  .epigraph p{color:#B6C2BD}
+
+  /* excerpt */
+  .excerpt{max-width:720px;margin:0 auto}
+  .excerpt .eyebrow{justify-content:center}
+  .excerpt .eyebrow::before{display:none}
+  .excerpt h2{font-size:clamp(1.6rem,3vw,2.2rem);text-align:center;margin-bottom:2rem}
+  .excerpt .text p{font-family:var(--serif);font-size:clamp(1.12rem,1.9vw,1.32rem);line-height:1.62;color:var(--ink)}
+  .excerpt .text p+p{margin-top:1.2rem}
+  .excerpt .text p.drop::first-letter{font-size:3.2em;float:left;line-height:.85;padding:.08em .12em 0 0;color:var(--cour-ink)}
+  .excerpt .text p.last{font-weight:700}
+  .excerpt .src{margin-top:1.6rem;text-align:center;font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+  /* the deep (dark) */
+  .scene{background:var(--ink);color:#EAEDE9}
+  .scene .eyebrow{color:#8FA39D}
+  .scene .sec-head h2{color:#fff}
+  .scene .lead{color:#C4CFCA}
+  .rules{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.4vw,1.4rem)}
+  @media (max-width:900px){.rules{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.rules{grid-template-columns:1fr}}
+  .rule{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:clamp(1.3rem,2.4vw,1.8rem);display:flex;flex-direction:column;gap:.6rem}
+  .rule .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cour-lite)}
+  .rule h3{font-size:1.4rem;color:#fff}
+  .rule p{color:#C4CFCA;font-size:.95rem}
+  .rule .voice{color:var(--voice);font-size:.86rem;margin-top:.3rem}
+
+  /* guardians */
+  .guard-grid{max-width:820px}
+  .ladder{list-style:none;margin:0;padding:0;counter-reset:g}
+  .ladder li{counter-increment:g;display:grid;grid-template-columns:2.2rem 1fr;gap:.6rem;padding:.9rem 0;border-top:1px dashed rgba(255,255,255,.14)}
+  .ladder li:last-child{border-bottom:1px dashed rgba(255,255,255,.14)}
+  .ladder li::before{content:counter(g,upper-roman);font-family:var(--mono);font-size:.78rem;color:var(--cour-lite);padding-top:.35rem}
+  .ladder b{display:block;font-family:var(--serif);font-size:1.15rem;color:#fff;font-weight:700}
+  .ladder span{grid-column:2;font-size:.92rem;color:#C4CFCA}
+  .ladder li.last b{color:var(--cour-lite)}
+  .guard-note{margin-top:1.4rem;font-size:.9rem;color:#9FB1AC;max-width:var(--prose)}
+
+  /* trestle + classes */
+  .trestle{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.4vw,1.6rem);margin-bottom:clamp(2.2rem,5vw,3.4rem)}
+  @media (max-width:820px){.trestle{grid-template-columns:1fr}}
+  .face{background:#fff;border:1px solid var(--line);border-top:3px solid var(--ac);border-radius:3px;padding:clamp(1.3rem,2.4vw,1.8rem)}
+  .face .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .face .line{font-family:var(--serif);font-size:clamp(1.35rem,2.4vw,1.7rem);line-height:1.2;color:var(--ink);margin:.5rem 0 .8rem}
+  .face .v{font-weight:600;color:var(--ac-ink)}
+  .face .b{font-size:.88rem;color:var(--muted);margin-top:.2rem}
+  .face.now{box-shadow:0 0 0 2px var(--ac)}
+  .face[data-dim=v]{--ac:var(--vuln);--ac-ink:var(--vuln-ink)}
+  .face[data-dim=r]{--ac:var(--res);--ac-ink:var(--res-ink)}
+  .face[data-dim=c]{--ac:var(--cour);--ac-ink:var(--cour-ink)}
+  .classes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
+  @media (max-width:820px){.classes{grid-template-columns:1fr}}
+  .ctable{width:100%;border-collapse:collapse;font-size:.95rem}
+  .ctable th{text-align:left;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:.5rem 0;border-bottom:1px solid var(--line)}
+  .ctable td{padding:.6rem 0;border-bottom:1px dashed var(--line);vertical-align:top}
+  .ctable td:first-child{color:var(--muted)}
+  .ctable td:last-child{font-weight:600;color:var(--ink)}
+  .ctable td em{font-weight:400;color:var(--muted)}
+  .cta-row{margin-top:1.8rem;display:flex;gap:.9rem;flex-wrap:wrap}
+
+  /* status */
+  .expect-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  @media (max-width:820px){.expect-grid{grid-template-columns:1fr;gap:2rem}}
+  .inside{margin:0;padding:0;list-style:none;display:grid;gap:.8rem;max-width:var(--prose)}
+  .inside li{position:relative;padding-left:1.6rem;font-size:1rem;color:var(--ink-2);line-height:1.55}
+  .inside li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:10px;border:2px solid var(--cour);border-radius:2px}
+  .srow{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-top:1px dashed var(--line);font-size:.95rem}
+  .srow:last-of-type{border-bottom:1px dashed var(--line)}
+  .srow span:first-child{color:var(--muted)}
+  .srow b{font-weight:600;color:var(--ink);text-align:right}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--ink);color:#AEBDB8;padding:clamp(2.5rem,6vh,4rem) 0 2.5rem}
+  footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:start}
+  @media (max-width:720px){footer .fgrid{grid-template-columns:1fr;gap:1.6rem}}
+  footer h4{font-family:var(--serif);color:#fff;font-size:1.35rem;font-weight:700;margin:0 0 .6rem}
+  footer p{font-size:.92rem;line-height:1.65}
+  footer .flinks{display:grid;gap:.5rem;font-size:.92rem;align-content:start}
+  footer .flinks a{text-decoration-color:rgba(255,255,255,.25);text-underline-offset:3px}
+  footer .base{margin-top:2.2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:#7C8F89}
+  footer .base a{color:inherit;text-decoration-color:rgba(255,255,255,.25);text-underline-offset:3px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.tri-edge,.tri-vtx,.tri-lbl,.tri-cap{animation:none;stroke-dashoffset:0;opacity:1}}
+  @media print{.nav,.skip,.hero-cta,.cta-row{display:none!important}.reveal{opacity:1;transform:none;transition:none}section.blk{padding:2rem 0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a class="brand" href="index.html">
+      <svg class="mk" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 22,21 2,21" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      The Grit Triangle
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#framework">The Framework</a>
+      <a href="index.html#book">The Grit to Heal</a>
+      <a href="index.html#about">About Beau</a>
+      <a href="tolled.html" class="soon" aria-current="page">Coming Soon</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-cta" href="index.html#assessment"><span class="full">Take the assessment</span><span class="short">Assessment</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+        <svg class="bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <p class="eyebrow">Coming soon · Book One</p>
+      <h1>The Tolled<em>.</em></h1>
+      <p class="sub">Book One: The First Asking</p>
+      <p class="lead">Keel is seventeen, a porter on the highest rope bridge in Harrow’s Shelf, the boy who has never dropped anything. Then a Door hangs in the sky, facing him. The way down takes a toll: his name, his memories, everything he has been holding up. And the deep wants the one thing he cannot do. It wants him to ask.</p>
+      <div class="status"><span class="dot" aria-hidden="true"></span>Manuscript finished · Release to be announced</div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#excerpt">Read the opening</a>
+        <a class="btn btn-ghost" href="#deep">How the deep works</a>
+      </div>
+      <p class="hero-credit">By Beau Whitman · the Grit Triangle from <a href="index.html#book"><em>The Grit to Heal</em></a>, turned into a dungeon crawl</p>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 340 320" role="img" aria-label="The Grit Triangle turned point-down, like a way down: Vulnerability and Resilience at the top corners, Courage at the bottom point.">
+        <polygon class="tri-edge" points="50,60 290,60 170,250"/>
+        <g class="tri-vtx v1"><circle cx="50" cy="60" r="7" fill="#E28A9C"/></g>
+        <g class="tri-vtx v2"><circle cx="290" cy="60" r="7" fill="#63BBA1"/></g>
+        <g class="tri-vtx v3"><circle cx="170" cy="250" r="7" fill="#E7B65F"/></g>
+        <text class="tri-lbl v1" x="38" y="38" text-anchor="start">VULNERABILITY</text>
+        <text class="tri-lbl v2" x="302" y="38" text-anchor="end">RESILIENCE</text>
+        <text class="tri-lbl v3" x="170" y="282" text-anchor="middle">COURAGE</text>
+        <text class="tri-cap" x="170" y="308" text-anchor="middle">THE WAY DOWN</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ THE STORY ============ -->
+  <section class="blk" id="story">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">The story</p>
+        <h2>The first thing he ever did about his Door was walk past it.</h2>
+        <p class="lead">Harrow’s Shelf is a town cut into the side of a mountain and strung together with rope. Everything gets where it is going on somebody’s back. Keel is the somebody.</p>
+      </div>
+      <div class="origin reveal">
+        <div class="prose">
+          <p>Then a Door appears in the sky over the Span. Plain planks, iron hinges, a handle worn bright, standing on empty air and facing exactly one person. Nobody sees your Door. But everybody knows the look of someone seeing one. Keel does what he has always done: finishes the delivery, shores up the whole town for three days, and lets nobody ask him a single question about himself.</p>
+          <p>Then he goes down. The Toll-stair takes its price on the way, and the price is memory. Names dissolve as he thinks them. He arrives at the bottom with nothing: no name, no class, no plan, and a Voice in the dark that counts everything.</p>
+          <p>Below are the floors, and every floor has a Guardian, and a Guardian is never killed, only relieved of what it carries. Every drop is an ordinary object, a bowl, a cord, a hat, heavy with a truth that was in the room when it happened. At the bottom stands a three-sided stone with one face waiting to be earned. And past it, a Wall built out of everything Keel never said.</p>
+        </div>
+        <aside class="card epigraph">
+          <span class="nh">The deep has a voice</span>
+          <p class="line">[begin where you can be seen.]</p>
+          <p>The deep keeps its own accounts, and it talks. Bracketed, counted, and not on your side. Full caps when it is being official. Lowercase when it is telling the truth and doesn’t want an audience.</p>
+          <p class="voice" style="color:var(--voice)">[CLASS: NONE]</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXCERPT ============ -->
+  <section class="blk alt" id="excerpt">
+    <div class="wrap">
+      <div class="excerpt reveal">
+        <p class="eyebrow">From Chapter 1 · The Door</p>
+        <h2>The opening.</h2>
+        <!-- EXCERPT: the first lines of the manuscript, verbatim. Remove this section if you would rather not show any of the text before release. -->
+        <div class="text">
+          <p class="drop">I have carried a lot of things across the Span. This one felt like it broke me.</p>
+          <p>Not the load. The load was nothing, forty pounds of stove iron for the widow Corl, strapped high and tight the way I like it, riding my shoulders like it had somewhere better to be. I’ve hauled triple that up the Ladder Stairs in sleet, and I was seventeen years old and stupid about it, the way you’re stupid about the one thing you’re actually good at. No. What broke me was what I saw when I reached the middle of the highest bridge in Harrow’s Shelf, eleven hundred feet of empty morning air under my boots, and looked up to check the wind-flags.</p>
+          <p class="last">There was a door hanging in the sky.</p>
+        </div>
+        <p class="src">The Tolled · Book One: The First Asking · Beau Whitman</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW THE DEEP WORKS ============ -->
+  <section class="blk scene" id="deep">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">How the deep works</p>
+        <h2>Nothing down there can be hurt until it is named.</h2>
+        <p class="lead">A dungeon crawl with a system, and the system is honest. It doesn’t reward speed. It rewards the truth, said out loud, in front of someone.</p>
+      </div>
+      <div class="rules">
+        <article class="rule reveal">
+          <span class="k">01</span>
+          <h3>The Door</h3>
+          <p>It Calls exactly one person. A Door faces its Called, and nobody else sees so much as a shadow. Plain planks, iron hinges, a handle worn bright. No thunder, no light, no choir. You can walk past it. For a while.</p>
+        </article>
+        <article class="rule reveal">
+          <span class="k">02</span>
+          <h3>The Toll</h3>
+          <p>The stair down takes its price in memory. Names dissolve as you think them. You reach the bottom with nothing. And the Toll never stops collecting.</p>
+          <p class="voice">[WELCOME, TOLLED.]</p>
+        </article>
+        <article class="rule reveal">
+          <span class="k">03</span>
+          <h3>The Voice</h3>
+          <p>The deep keeps count, and it tells you. Names known. Times risen. Carried. It is cruel at first, then accurate, then something closer to company. It is not your friend. Keep reading.</p>
+        </article>
+        <article class="rule reveal">
+          <span class="k">04</span>
+          <h3>The Unnamed</h3>
+          <p>Weapons pass straight through a thing that hasn’t been named. Read the blur. Say what it truly is. Then fight what appears. A name someone tells you doesn’t count. Nobody can do this part for you.</p>
+        </article>
+        <article class="rule reveal">
+          <span class="k">05</span>
+          <h3>The Guardians</h3>
+          <p>One to a floor, each made of something people carry: swallowed fear, rehearsed fear, the dread of what’s next, the load nobody would set down. You don’t kill a Guardian. You relieve it.</p>
+        </article>
+        <article class="rule reveal">
+          <span class="k">06</span>
+          <h3>The Artifacts</h3>
+          <p>An ordinary thing that was present at an extraordinary truth. A bowl. A cord with twelve knots. A spoon carried from home and never dropped. They do nothing at all. They just get heavier.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE GUARDIANS ============ -->
+  <section class="blk scene" id="guardians">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">The Guardians</p>
+        <h2>Each one is a harder version of don’t say it.</h2>
+        <p class="lead">They are not monsters. They are made of what people carry. The first one is knee-high and casts a shadow three stories tall.</p>
+      </div>
+      <div class="guard-grid">
+        <div class="reveal">
+          <ol class="ladder">
+            <li><b>Flinch</b><span>Everyday swallowed fear. Knee-high, faceless, and it casts a shadow three stories tall.</span></li>
+            <li><b>Draggle</b><span>A fear rehearsed until it learned to walk. Habits can’t improvise.</span></li>
+            <li><b>Gholm, Who Waits Behind</b><span>The dread of what’s next. It only exists behind you. The entire advice is: do not turn around.</span></li>
+            <li><b>Bracken, the Load That Is Never Set Down</b><span>Every load nobody would put down. You cannot beat a carrier. You can only relieve one.</span></li>
+            <li><b>Selle, the Song That Doesn’t Stop</b><span>The goodbyes the living never finished. Some Guardians are letters waiting for a reply.</span></li>
+            <li><b>The Audit</b><span>A whole town’s postponed reckonings, at raid scale. It is a desk. Its attacks are invoices.</span></li>
+            <li class="last"><b>The Wall</b><span>Everything he never said. It cannot be beaten by force, because force is what it eats.</span></li>
+          </ol>
+          <p class="guard-note">A Guardian relieved gives up an artifact. A Guardian merely killed gives up loot, and nothing banks. Precision has a body count.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THREE SIDES, THREE BOOKS ============ -->
+  <section class="blk" id="trilogy">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Three sides · three books</p>
+        <h2>At the bottom of every deep stands a three-sided stone.</h2>
+        <p class="lead">Past the last Guardian there is a trestle, carved in a language nobody reads any more. Each face is blank until the deep’s Tolled earns the virtue that belongs to it. One face per book. It is the same shape as the Grit Triangle, because it is the Grit Triangle.</p>
+      </div>
+      <div class="trestle reveal">
+        <article class="face now" data-dim="v">
+          <span class="k">Face I · Book One</span>
+          <p class="line">Stand where you can be seen.</p>
+          <div class="v">Vulnerability</div>
+          <p class="b">The First Asking. Finished, coming soon.</p>
+        </article>
+        <article class="face" data-dim="r">
+          <span class="k">Face II · Book Two</span>
+          <p class="line">Get up. Again.</p>
+          <div class="v">Resilience</div>
+          <p class="b">To come.</p>
+        </article>
+        <article class="face" data-dim="c">
+          <span class="k">Face III · Book Three</span>
+          <p class="line">Say it walking.</p>
+          <div class="v">Courage</div>
+          <p class="b">To come.</p>
+        </article>
+      </div>
+      <div class="classes reveal">
+        <div>
+          <h3 style="font-size:1.6rem;margin-bottom:.6rem">The Eight Shapes of Grit are the classes.</h3>
+          <p class="prose" style="color:var(--ink-2)">The healing profiles from <i>The Grit to Heal</i> are the character classes of the deep. Each one has its techniques and its flaw. Keel arrives with none of them, and he is the only person down there who can invent.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="index.html#assessment">Find your shape</a>
+            <a class="btn btn-ghost" href="index.html#framework">The framework</a>
+          </div>
+        </div>
+        <table class="ctable">
+          <thead><tr><th>Shape of grit</th><th>Class in the deep</th></tr></thead>
+          <tbody>
+            <tr><td>Fortress Grit</td><td>Bulwark</td></tr>
+            <tr><td>Empathic Grit</td><td>Mender</td></tr>
+            <tr><td>Stoic Grit</td><td>Stone</td></tr>
+            <tr><td>Hidden Grit</td><td>Shade</td></tr>
+            <tr><td>Soft Grit</td><td>Willow</td></tr>
+            <tr><td>Bold Grit</td><td>Vanguard</td></tr>
+            <tr><td>Rebuilding Grit</td><td>No class yet <em>(orphan skills that braid)</em></td></tr>
+            <tr><td>Authentic Grit</td><td>The completed Triangle <em>(not a class, a state)</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHERE IT STANDS ============ -->
+  <section class="blk alt" id="status">
+    <div class="wrap">
+      <div class="expect-grid">
+        <div class="reveal">
+          <div class="sec-head">
+            <p class="eyebrow">What to expect</p>
+            <h2>Fast, funny, and honest about what things cost.</h2>
+          </div>
+          <ul class="inside">
+            <li>A dungeon crawl told by Keel himself, floor by floor, with a system that counts and a Voice that talks back.</li>
+            <li>The Grit Triangle underneath all of it: the three sides from <i>The Grit to Heal</i>, now as rules with consequences.</li>
+            <li>Book One of a trilogy. One face of the stone per book.</li>
+            <li>Written for readers thirteen and up, and for anyone who has ever said <i>never better</i> and meant the opposite.</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="index.html#assessment">Plot your triangle</a>
+            <a class="btn btn-ghost" href="index.html#book">Read about The Grit to Heal</a>
+          </div>
+        </div>
+        <aside class="card reveal">
+          <span class="nh">Where it stands</span>
+          <div class="srow"><span>Title</span><b>The Tolled</b></div>
+          <div class="srow"><span>Book One</span><b>The First Asking</b></div>
+          <div class="srow"><span>Series</span><b>One of three</b></div>
+          <div class="srow"><span>Manuscript</span><b>Finished · 51 chapters</b></div>
+          <div class="srow"><span>Readers</span><b>13 and up</b></div>
+          <div class="srow"><span>Release</span><b>To be announced</b></div>
+          <div class="srow"><span>Also in the works</span><b>Colour manga · animated pilot · audiobook</b></div>
+          <!-- When there is a mailing list or preorder link, add it here as:
+               <a class="btn btn-primary" href="https://…">Tell me when it’s out</a> -->
+          <p>Want to hear first? Check back at <a href="https://beauwhitman.org/">beauwhitman.org</a>. There is nothing to sign up for yet.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>The Tolled</h4>
+        <p>Book One: The First Asking. The Grit Triangle turned into a dungeon crawl, by the author of <i>The Grit to Heal</i>. Finished, and not yet released.</p>
+      </div>
+      <div class="flinks">
+        <a href="index.html">The Grit Triangle</a>
+        <a href="index.html#assessment">Take the assessment</a>
+        <a href="index.html#book">The Grit to Heal</a>
+        <a href="index.html#about">About Beau</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Beau Whitman · The Tolled · The Grit Triangle™</span>
+      <span><a href="https://beauwhitman.org/">beauwhitman.org</a> · Vulnerability · Resilience · Courage</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var nav=document.getElementById("nav");
+  function setNavH(){ document.documentElement.style.setProperty("--nav-h", nav.offsetHeight+"px"); }
+  setNavH(); window.addEventListener("resize", setNavH, {passive:true});
+  var toggle=document.querySelector(".nav-toggle"), linksEl=document.getElementById("navLinks");
+  function setOpen(o){ nav.classList.toggle("open", o); toggle.setAttribute("aria-expanded", o ? "true" : "false"); }
+  toggle.addEventListener("click", function(){ setOpen(!nav.classList.contains("open")); });
+  linksEl.addEventListener("click", function(e){ if(e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && nav.classList.contains("open")){ setOpen(false); toggle.focus(); } });
+  document.addEventListener("click", function(e){ if(nav.classList.contains("open") && !nav.contains(e.target)) setOpen(false); });
+  window.addEventListener("resize", function(){ if(window.innerWidth>1000 && nav.classList.contains("open")) setOpen(false); }, {passive:true});
+  window.addEventListener("scroll", function(){ nav.classList.toggle("scrolled", window.scrollY>8); }, {passive:true});
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+  if("IntersectionObserver" in window && !reduced){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+    },{threshold:.08});
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+  }else{
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>
