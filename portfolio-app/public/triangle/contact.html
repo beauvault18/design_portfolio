@@ -194,7 +194,9 @@
           </div>
 
           <!-- Handled by Netlify Forms. In the Netlify dashboard: enable form detection, then add an email
-               notification for the "contact" form pointing at the address messages should go to. -->
+               notification for the "contact" form pointing at the address messages should go to.
+               Netlify only registers the form during a real build, and it skips builds when nothing inside
+               portfolio-app changed, so an empty commit will not do it: change a file, then push. -->
           <form class="form-card" id="contactForm" name="contact" method="POST" action="contact.html?sent=1" data-netlify="true" netlify-honeypot="bot-field" novalidate>
             <input type="hidden" name="form-name" value="contact">
             <p class="hp" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
