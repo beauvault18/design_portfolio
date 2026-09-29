@@ -1,38 +1,33 @@
+# beauwhitman.org is the Grit Triangle site: plain static pages, no build.
+# The Angular portfolio in this folder is kept in the repo but not deployed.
+# To bring the portfolio back, restore the previous config from git history:
+#   command = "npm run build"  /  publish = "dist/portfolio-app/browser"  /  redirect /* -> /index.html 200
 [build]
-  command = "npm run build"
-  publish = "dist/portfolio-app/browser"
+  command = "echo 'Static site: nothing to build'"
+  publish = "public/triangle"
 
-[build.environment]
-  GIT_LFS_ENABLED = "true"
-
-# The Grit Triangle site is the homepage. Its files live in public/triangle/.
-# force = true is required where a file already exists at the path (the Angular index.html).
+# Links shared while the site lived under /triangle keep working.
 [[redirects]]
-  from = "/"
-  to = "/triangle/index.html"
-  status = 200
-  force = true
+  from = "/triangle"
+  to = "/"
+  status = 301
 
 [[redirects]]
-  from = "/index.html"
-  to = "/triangle/index.html"
-  status = 200
-  force = true
+  from = "/triangle/"
+  to = "/"
+  status = 301
 
 [[redirects]]
-  from = "/tolled.html"
-  to = "/triangle/tolled.html"
-  status = 200
-  force = true
+  from = "/triangle/index.html"
+  to = "/"
+  status = 301
 
 [[redirects]]
-  from = "/contact.html"
-  to = "/triangle/contact.html"
-  status = 200
-  force = true
+  from = "/triangle/tolled.html"
+  to = "/tolled.html"
+  status = 301
 
-# Everything else is the Angular portfolio (client-side routes).
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/triangle/contact.html"
+  to = "/contact.html"
+  status = 301
