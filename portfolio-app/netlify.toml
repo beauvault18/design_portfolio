@@ -5,6 +5,33 @@
 [build.environment]
   GIT_LFS_ENABLED = "true"
 
+# The Grit Triangle site is the homepage. Its files live in public/triangle/.
+# force = true is required where a file already exists at the path (the Angular index.html).
+[[redirects]]
+  from = "/"
+  to = "/triangle/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/triangle/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tolled.html"
+  to = "/triangle/tolled.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/triangle/contact.html"
+  status = 200
+  force = true
+
+# Everything else is the Angular portfolio (client-side routes).
 [[redirects]]
   from = "/*"
   to = "/index.html"
