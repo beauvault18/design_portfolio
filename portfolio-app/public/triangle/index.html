@@ -660,7 +660,33 @@
             <span class="btn btn-soon" aria-disabled="true">Coming 2026</span>
             <a class="btn btn-ghost" href="#assessment">Plot your triangle now</a>
           </div>
-          <p class="also"><b>Also on the way:</b> <a href="/tolled.html"><i>The Tolled</i>, Book One: The First Asking</a>, the Grit Triangle turned into a dungeon crawl.</p>
+<!-- Book waitlist (Netlify Forms) -->
+          <form class="wl-form" name="waitlist" method="POST" action="/?waitlisted=1#book" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="waitlist">
+            <p class="wl-hp" aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+            <label class="wl-label" for="wlEmail">Be first to know when the book is out</label>
+            <div class="wl-row">
+              <input id="wlEmail" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="you@email.com" aria-label="Your email">
+              <button type="submit" class="btn btn-primary">Join the waitlist &#8594;</button>
+            </div>
+            <p class="wl-note">No newsletter, no spam. One email, the day <i>The Grit to Heal</i> launches.</p>
+          </form>
+          <p class="wl-success" id="wlSuccess" hidden>You are on the list. I will email you the moment <i>The Grit to Heal</i> is out. Thank you.</p>
+          <style>
+            .wl-form{margin:1.4rem 0 .2rem;max-width:34rem}
+            .wl-hp{position:absolute;left:-9999px}
+            .wl-label{display:block;font-family:var(--sans);font-weight:600;font-size:.95rem;color:var(--ink);margin:0 0 .55rem}
+            .wl-row{display:flex;gap:.5rem;flex-wrap:wrap}
+            .wl-row input{flex:1 1 15rem;min-width:0;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:.7rem .85rem}
+            .wl-row input:focus{outline:none;border-color:var(--ink)}
+            .wl-row .btn{flex:0 0 auto}
+            .wl-note{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin:.6rem 0 0}
+            .wl-success{font-family:var(--sans);font-size:1rem;color:var(--res-ink);background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:.9rem 1rem;margin:1.4rem 0 .2rem;max-width:34rem}
+          </style>
+          <script>
+            (function(){try{if(/[?&]waitlisted=1/.test(location.search)){var f=document.querySelector('.wl-form');var s=document.getElementById('wlSuccess');if(f)f.style.display='none';if(s)s.hidden=false;}}catch(e){}})();
+          </script>
+                    <p class="also"><b>Also on the way:</b> <a href="/tolled.html"><i>The Tolled</i>, Book One: The First Asking</a>, the Grit Triangle turned into a dungeon crawl.</p>
         </div>
       </div>
     </div>
