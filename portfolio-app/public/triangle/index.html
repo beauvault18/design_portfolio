@@ -131,11 +131,17 @@
   .hero .lead{color:#C4CFCA}
   .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
   .hero-credit{margin-top:2.4rem;font-size:.85rem;color:#8A9C97;font-family:var(--mono);letter-spacing:.02em}
+  .hero-endorse{margin:1.2rem 0 0;max-width:var(--prose);border-left:3px solid var(--cour-lite);padding-left:1.4rem;
+    font-family:var(--serif);font-size:1.08rem;line-height:1.4;color:#C4CFCA}
+  .hero-endorse cite{display:block;margin-top:1rem;font-family:var(--mono);font-size:.78rem;font-style:normal;letter-spacing:.06em;color:#8A9C97}
   .hero-art{display:flex;justify-content:center}
   .hero-art svg{width:100%;max-width:360px;height:auto}
   @media (max-width:860px){
     .hero-in{grid-template-columns:1fr;gap:2.2rem}
     .hero-art{order:-1;max-width:300px;margin:0 auto}
+  }
+  @media (max-width:600px){
+    .hero-art{order:0}
   }
 
   /* triangle stroke draw */
@@ -440,6 +446,10 @@
         <a class="btn btn-ghost" href="#framework">Learn the framework</a>
       </div>
       <p class="hero-credit">Created by Beau Whitman · from <a href="#book"><em>The Grit to Heal</em></a></p>
+      <blockquote class="hero-endorse">
+        “I respect Beau Whitman so very much. Not just for his grit, but also for his lived experience and voracious curiosity and desire to use all of the above to help others.”
+        <cite>Angela Duckworth, #1 New York Times bestselling author of <i>Grit</i></cite>
+      </blockquote>
     </div>
     <div class="hero-art">
       <svg viewBox="0 0 340 300" role="img" aria-label="The Grit Triangle: Vulnerability at the top, Resilience lower right, Courage lower left.">
