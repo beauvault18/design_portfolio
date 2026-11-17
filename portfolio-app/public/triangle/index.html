@@ -559,8 +559,8 @@
           <div class="monogram" aria-hidden="true">SD</div>
           <h3>Susan David, PhD</h3>
           <p class="cred">Psychologist · Harvard Medical School · author of Emotional Agility</p>
-          <blockquote>“Courage is not an absence of fear; courage is fear walking.”</blockquote>
-          <span class="src">TED (2017)</span>
+          <blockquote>Courage isn’t the absence of fear. It’s moving forward with the fear still there.</blockquote>
+          <span class="src">Paraphrased from Emotional Agility (2016) and TED (2017)</span>
         </article>
       </div>
       <p class="thinkers-note">Each side is mapped to the researcher whose work most shaped Beau’s understanding of it. The Grit Triangle is one survivor’s synthesis of their ideas, not their framework and not their endorsement. Their published work is cited here as its foundation. Their inclusion does not mean they have reviewed or endorsed this book or assessment.</p>
@@ -662,7 +662,7 @@
           <ul class="inside">
             <li>A true story, and the science behind each side in plain language.</li>
             <li>Short practices you can actually do on a chemo day.</li>
-            <li>The workbook: score each side, plot your own triangle, and find which of the eight shapes of grit you’re carrying right now.</li>
+            <li>The workbook: score each side, plot your own triangle, and find which of the 27 shapes of grit you’re carrying right now.</li>
             <li>How to grow one side at a time, and what to do on the day the triangle breaks.</li>
           </ul>
           <div class="about-cta">
@@ -831,34 +831,35 @@
           ["Choose one small act of courage to try this week","Tell someone your plan. Accountability builds bravery","Start smaller than feels impressive; starting is the win"]] ]
   };
 
-  /* levels: High=3 (8-10), Moderate=2 (5-7), Developing=1 (1-4) */
+  /* levels: High=3 (8-10), Moderate=2 (5-7), Developing=1 (1-4).
+     All 27 combinations are listed (8 core shapes from Chapter 14 + 19 from the book's appendix), so every score has an exact match. */
   var PROFILES = [
     { name:"Authentic Grit", sig:[3,3,3], label:"High Vulnerability · High Resilience · High Courage",
       tag:"The survivor who lets people in, speaks their truth, and keeps showing up.",
       desc:"You’ve faced it, shared your story, and kept moving even when afraid, showing up with openness. You’re not “over” the hardest thing; you’re growing through it, and inspiring others by being real.",
       thoughts:"“This sucks, and I’m still here.” “I’ll cry, but I’ll keep walking.”",
       invite:"" },
-    { name:"Fortress Grit", sig:[3,1,3], label:"Low Vulnerability · High Resilience · High Courage",
+    { name:"Fortress Grit", sig:[3,1,3], label:"Developing Vulnerability · High Resilience · High Courage",
       tag:"Keeps it together and handles it alone, but struggles to connect emotionally.",
       desc:"You show up strong to everything. But you don’t let others see the struggle. You push through, and may secretly feel exhausted, isolated, or unseen.",
       thoughts:"“I’ve got this. I don’t need help.” “If I let go, I’ll fall apart.”",
       invite:"Let someone carry the weight with you. Strength shared is strength multiplied." },
-    { name:"Empathic Grit", sig:[3,3,1], label:"High Vulnerability · High Resilience · Low Courage",
+    { name:"Empathic Grit", sig:[3,3,1], label:"High Vulnerability · High Resilience · Developing Courage",
       tag:"Supports everyone else, but avoids putting themselves first.",
       desc:"You cry. You connect. You check on everyone. But when it comes to advocating for your own needs, you hesitate.",
       thoughts:"“I don’t want to take up space.” “Others need more help than I do.”",
       invite:"You deserve the same space you hold for others. Your voice matters too." },
-    { name:"Bold Grit", sig:[2,1,3], label:"Low Vulnerability · Moderate Resilience · High Courage",
+    { name:"Bold Grit", sig:[2,1,3], label:"Developing Vulnerability · Moderate Resilience · High Courage",
       tag:"Takes action, maybe even reinvents, but hasn’t processed the emotion underneath.",
       desc:"You dive into fitness, advocacy, or “what’s next” energy. But grief or fatigue may be buried below. You’re courageous, and healing still needs your attention.",
       thoughts:"“If I just keep moving, it won’t catch up.” “I’m building something from this!”",
       invite:"Feel first. Then build. Your power will be deeper." },
-    { name:"Soft Grit", sig:[2,3,1], label:"High Vulnerability · Moderate Resilience · Low Courage",
+    { name:"Soft Grit", sig:[2,3,1], label:"High Vulnerability · Moderate Resilience · Developing Courage",
       tag:"Feels deeply, but often gets stuck in overwhelm or fear.",
       desc:"You’re emotionally aware and speak your truth. But fear of what’s next might be paralyzing. You may isolate, overthink, or feel “too fragile” to reenter life.",
       thoughts:"“What if I can’t handle another setback?” “What if I’m not ready?”",
       invite:"Take one micro-step. Don’t wait to feel fearless to begin." },
-    { name:"Stoic Grit", sig:[3,1,1], label:"Low Vulnerability · High Resilience · Low Courage",
+    { name:"Stoic Grit", sig:[3,1,1], label:"Developing Vulnerability · High Resilience · Developing Courage",
       tag:"Quietly endures, but avoids connection and new risks.",
       desc:"You manage with structure and reliability. You’re strong but often emotionally distant, and may avoid asking for help or facing your feelings about what comes after.",
       thoughts:"“It’s fine. It’s all fine.” “I’ll get through it by staying busy.”",
@@ -872,7 +873,121 @@
       tag:"Feels shut down, overwhelmed, or lost.",
       desc:"You may feel emotionally disconnected, physically depleted, or numb. Hidden Grit isn’t a weakness. It’s a starting point. With support and time, healing can begin.",
       thoughts:"“I’m too tired to start.” “What’s the point?”",
-      invite:"You still have grit. You’re here, you’re reading. Start with a whisper. You don’t have to roar." }
+      invite:"You still have grit. You’re here, you’re reading. Start with a whisper. You don’t have to roar." },
+    { name:"Rooted Grit", sig:[3,3,2], label:"High Vulnerability · High Resilience · Moderate Courage",
+      tag:"The survivor who’s honest and steady, and working up to the next brave step.",
+      desc:"You let people in, and you’ve found your footing. What’s left is the next leap: the new job, the trip, the conversation you keep putting off. Courage is just one step behind the other two.",
+      thoughts:"“I’m good where I am.” “I’ll try it when I’m a little more ready.”",
+      invite:"You already have solid ground under you. Use it to take one step you’ve been saving for later.",
+      close:"Authentic Grit", chapters:"Chapter 11" },
+    { name:"Heartfirst Grit", sig:[2,3,3], label:"High Vulnerability · Moderate Resilience · High Courage",
+      tag:"The survivor who feels it all and moves anyway, but is running low on recovery.",
+      desc:"You’re open and you’re brave. You say yes, you share your story, you show up. But your tank refills slowly, and hard days hit harder than they used to.",
+      thoughts:"“I’ll rest when this is over.” “Why am I so tired?”",
+      invite:"Rest is part of the work. Protect your recovery the way you protect your appointments.",
+      close:"Authentic Grit", chapters:"Chapters 7 and 15" },
+    { name:"Storm Grit", sig:[1,3,3], label:"High Vulnerability · Developing Resilience · High Courage",
+      tag:"The survivor who feels everything and charges in, then crashes.",
+      desc:"You’re open and fearless, and it shows. But there’s no floor under you yet. Big days are followed by hard crashes, and every setback feels like starting over. You don’t need more courage. You need something steady to come back to.",
+      thoughts:"“I was fine yesterday. What happened?” “I’ll just push through it.”",
+      invite:"Build a floor before the next leap: one grounding ritual, every day, even on the good ones.",
+      close:"Authentic Grit", chapters:"Chapters 6 and 7" },
+    { name:"Guarded Grit", sig:[3,2,3], label:"Moderate Vulnerability · High Resilience · High Courage",
+      tag:"The survivor who’s tough and brave, and starting to let people in.",
+      desc:"You have the strength of Fortress Grit with the door partly open. You’ll share some of it, with some people, some of the time. You’re on the bridge between handling it alone and being fully seen.",
+      thoughts:"“I’ll tell them the parts they can handle.” “I’m getting better at this.”",
+      invite:"Pick one person and tell them one more true thing than you normally would.",
+      close:"Fortress Grit, moving toward Authentic Grit", chapters:"Chapters 2 and 3" },
+    { name:"Iron Grit", sig:[3,1,2], label:"Developing Vulnerability · High Resilience · Moderate Courage",
+      tag:"The survivor who handles it alone and moves carefully.",
+      desc:"You’re strong and private. You get through it without leaning on anyone, and you take risks only when you’ve thought them through. You sit between Fortress and Stoic Grit: steady, closed, careful.",
+      thoughts:"“I don’t want to burden anyone.” “I’ll handle it.”",
+      invite:"Strength doesn’t have to be solo. Tell one person one hard thing this week.",
+      close:"Fortress Grit (and Stoic Grit)", chapters:"Chapters 2 and 3" },
+    { name:"Forward Grit", sig:[2,2,3], label:"Moderate Vulnerability · Moderate Resilience · High Courage",
+      tag:"The survivor whose courage is out in front, with the other two catching up.",
+      desc:"You’re making moves: new goals, new risks, new chapters. Your openness and steadiness are solid, just not as strong yet. Keep going, and let feeling and rest catch up so the moves hold.",
+      thoughts:"“Let’s go.” “I’ll figure out the rest on the way.”",
+      invite:"Bring someone with you, and schedule your recovery. Courage lasts longer with company and rest.",
+      close:"Bold Grit", chapters:"Chapters 3 and 7" },
+    { name:"Sprint Grit", sig:[1,2,3], label:"Moderate Vulnerability · Developing Resilience · High Courage",
+      tag:"The survivor who keeps charging forward on an empty tank.",
+      desc:"You push. You commit. You say yes. But recovery isn’t keeping up, and you’re closer to empty than you let on. It’s the same instinct that had me coaching four classes on an injured back. It works until it doesn’t.",
+      thoughts:"“Stopping feels like losing.” “I’ll recover later.”",
+      invite:"Slowing down is not quitting. Plan your recovery like a training block.",
+      close:"Bold Grit", chapters:"Chapters 7 and 15" },
+    { name:"Lone Wolf Grit", sig:[1,1,3], label:"Developing Vulnerability · Developing Resilience · High Courage",
+      tag:"The survivor who charges ahead alone on an empty tank.",
+      desc:"You keep taking on hard things, but you’re running on fumes and nobody knows. Your courage is real, but courage alone can’t hold the shape up. This is the shape most likely to look fine from the outside right up until it breaks.",
+      thoughts:"“I’ll just keep going.” “Don’t worry about me.”",
+      invite:"Courage includes letting someone see you’re tired. Tell one person the truth today.",
+      close:"Bold Grit", chapters:"Chapters 2 and 7" },
+    { name:"Sheltered Grit", sig:[3,2,1], label:"Moderate Vulnerability · High Resilience · Developing Courage",
+      tag:"The survivor who’s steady and partly open, but staying inside the safe zone.",
+      desc:"You’ve built a life that works, and you’re protecting it. Some people know how you’re doing. But new risks feel off-limits: the plan you keep postponing, the life after treatment you haven’t stepped into yet.",
+      thoughts:"“Why risk what’s working?” “Maybe next year.”",
+      invite:"Safety got you here. Now pick one small step outside it.",
+      close:"Stoic Grit (and Empathic Grit)", chapters:"Chapters 11 and 16" },
+    { name:"Withdrawn Grit", sig:[2,1,1], label:"Developing Vulnerability · Moderate Resilience · Developing Courage",
+      tag:"The survivor who’s coping, but alone and staying small.",
+      desc:"You’re getting through the days, but you’ve pulled in: fewer people, fewer plans, less of yourself out in the world. It feels safer. It also keeps your world small.",
+      thoughts:"“It’s easier to stay home.” “People don’t get it anyway.”",
+      invite:"Reach out once this week, to one person. Small counts.",
+      close:"Stoic Grit (and Hidden Grit)", chapters:"Chapters 3 and 11" },
+    { name:"Tender Grit", sig:[2,3,2], label:"High Vulnerability · Moderate Resilience · Moderate Courage",
+      tag:"The survivor who’s honest about how it feels and still finding solid footing.",
+      desc:"You don’t hide what you’re going through. You talk about it, you cry when you need to, you let people help. Steadiness and courage are both still in progress, and your openness is the foundation they get built on.",
+      thoughts:"“At least I’m not pretending.” “Some days are good, some aren’t.”",
+      invite:"Your honesty is working. Add one steadying habit and one small risk this week.",
+      close:"Soft Grit (and Rebuilding Grit)", chapters:"Chapters 6 and 9" },
+    { name:"Raw Grit", sig:[1,3,2], label:"High Vulnerability · Developing Resilience · Moderate Courage",
+      tag:"The survivor who’s wide open and worn thin, still taking small steps.",
+      desc:"You let people see all of it, because hiding takes energy you don’t have. You’re exhausted and shaky, but you’re still making some moves. That isn’t weakness. That’s someone who keeps going with almost nothing in the tank.",
+      thoughts:"“I can’t hide it anymore.” “I’m doing what I can.”",
+      invite:"Be as gentle with yourself as you would be with a friend this tired. Let others carry part of the load.",
+      close:"Soft Grit", chapters:"Chapters 6 and 15" },
+    { name:"Flooded Grit", sig:[1,3,1], label:"High Vulnerability · Developing Resilience · Developing Courage",
+      tag:"The survivor who feels everything and can’t find solid ground yet.",
+      desc:"The feelings come in waves and there’s nowhere to stand. You’re honest about it, which matters, but it’s hard to plan, decide, or try anything new while you’re underwater. This is a time to lean on people and professionals, not to push.",
+      thoughts:"“It’s too much.” “I can’t think straight.”",
+      invite:"You don’t have to swim alone. Tell your care team how heavy it is, and let one person sit with you in it. If it ever feels unsafe, call or text 988.",
+      close:"Soft Grit", chapters:"Chapters 6 and 16" },
+    { name:"Anchor Grit", sig:[3,2,2], label:"Moderate Vulnerability · High Resilience · Moderate Courage",
+      tag:"The survivor who holds steady for everyone and moves carefully.",
+      desc:"You’re the calm one. You keep routines going, you keep others steady, and you don’t fall apart easily. You open up a little and take some risks, but your main strength is steadiness. Make sure it’s holding you, not just everyone else.",
+      thoughts:"“Someone has to keep it together.” “I’m fine. Really.”",
+      invite:"Let your steadiness hold you up while you try one thing that scares you a little.",
+      close:"Rebuilding Grit", chapters:"Chapters 3 and 11" },
+    { name:"Paused Grit", sig:[2,2,1], label:"Moderate Vulnerability · Moderate Resilience · Developing Courage",
+      tag:"The survivor who’s coping okay but has put life on hold.",
+      desc:"You’re getting by, and you can talk about it. But the bigger life (work, dating, travel, plans) is on pause. Maybe you’re waiting for a clear scan or a sign you’re safe. That waiting can quietly turn into years.",
+      thoughts:"“Once I’m sure it’s gone, then...” “I’m just not there yet.”",
+      invite:"You don’t have to wait for certainty. Pick one thing you’ve paused and restart a small piece of it.",
+      close:"Rebuilding Grit (and Soft Grit)", chapters:"Chapters 11 and 16" },
+    { name:"Weathered Grit", sig:[1,2,2], label:"Moderate Vulnerability · Developing Resilience · Moderate Courage",
+      tag:"The survivor who’s worn down but still partly open and partly moving.",
+      desc:"The long haul has taken a lot out of you. You still talk to a few people and still take some steps, but you’re tired in a way sleep doesn’t fix. You haven’t lost your grit. It’s been used hard.",
+      thoughts:"“I’m just tired.” “How long can I keep this up?”",
+      invite:"Refill before you push. One restoring thing a day, chosen on purpose.",
+      close:"Rebuilding Grit", chapters:"Chapters 5 to 7" },
+    { name:"Quiet Grit", sig:[2,1,2], label:"Developing Vulnerability · Moderate Resilience · Moderate Courage",
+      tag:"The survivor who’s getting through it without letting anyone in on how.",
+      desc:"You’re coping and you’re moving, at a steady pace. But almost nobody knows what this has been like for you. Getting by quietly works for a while. Over time, carrying it alone gets heavier.",
+      thoughts:"“No one needs to know.” “I’m handling it.”",
+      invite:"Your story deserves at least one witness. Start by writing it down, then share one piece of it.",
+      close:"Rebuilding Grit (and Bold Grit)", chapters:"Chapter 2" },
+    { name:"Searching Grit", sig:[1,2,1], label:"Moderate Vulnerability · Developing Resilience · Developing Courage",
+      tag:"The survivor who’s willing to talk but has little left to move with.",
+      desc:"You can still say how you feel, at least to someone. But you’re depleted, and the next step is hard to find. You’re closer to Hidden Grit than you’d like, and your openness is the rope out.",
+      thoughts:"“I don’t know what to do next.” “I’ll talk, but don’t ask me to do much.”",
+      invite:"Use your voice. Tell your care team and one person exactly where you are.",
+      close:"Hidden Grit", chapters:"Chapters 3 and 16" },
+    { name:"Bracing Grit", sig:[1,1,2], label:"Developing Vulnerability · Developing Resilience · Moderate Courage",
+      tag:"The survivor who’s closed off and worn down, still forcing small steps.",
+      desc:"You’re exhausted and you’re keeping it to yourself, but you haven’t stopped. You still get yourself to appointments and through the days. That’s grit, even when it doesn’t feel like it. It’s also a lot to carry alone.",
+      thoughts:"“Just get through today.” “I don’t want to talk about it.”",
+      invite:"You’ve proven you can keep moving. Now let someone move with you.",
+      close:"Hidden Grit", chapters:"Chapters 2 and 16" }
   ];
 
   /* ---------- BUILD FORM ---------- */
@@ -960,7 +1075,8 @@
     for(var i=0;i<PROFILES.length;i++){
       var s=PROFILES[i].sig; // [R,V,C]
       var d=Math.abs(s[0]-lr)+Math.abs(s[1]-lv)+Math.abs(s[2]-lc);
-      if(d<bestD){ bestD=d; best=PROFILES[i]; } // first-in-order wins ties
+      if(d===0) return PROFILES[i]; // all 27 shapes exist, so this always hits
+      if(d<bestD){ bestD=d; best=PROFILES[i]; }
     }
     return best;
   }
@@ -1090,13 +1206,14 @@
     // profile
     var p=document.getElementById("profile");
     var inviteHTML = prof.invite ? '<div class="invite"><b>An invitation.</b> '+prof.invite+'</div>' : '';
-    p.innerHTML='<div class="pl">Your closest healing profile</div>'+
+    p.innerHTML='<div class="pl">Your healing profile</div>'+
       '<h3>'+prof.name+'</h3>'+
       '<div class="sig">'+prof.label+'</div>'+
       '<div class="tag">'+prof.tag+'</div>'+
       '<p>'+prof.desc+'</p>'+
       '<div class="think"><b>Sound familiar?</b>'+prof.thoughts+'</div>'+
-      inviteHTML;
+      inviteHTML+
+      (prof.close ? '<div class="think"><b>In the book</b>Closest of the eight core shapes: '+prof.close+'. In <i>The Grit to Heal</i>, go back to '+prof.chapters+'.</div>' : '');
 
     // bands + concrete next steps
     var bl=document.getElementById("bandList");
