@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · The Grit Triangle</title>
+<meta name="description" content="How beauwhitman.org handles your information. Your assessment answers stay on your device.">
+<meta name="author" content="Beau Whitman">
+<meta name="theme-color" content="#16242A">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://beauwhitman.org/privacy.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2316242A'/%3E%3Cpolygon points='12,4 21,20 3,20' fill='none' stroke='%23E7B65F' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beau Whitman">
+<meta property="og:title" content="Privacy · The Grit Triangle">
+<meta property="og:description" content="Your assessment answers stay on your device.">
+<meta property="og:url" content="https://beauwhitman.org/privacy.html">
+<meta name="twitter:card" content="summary">
+<style>
+  :root{
+    --ink:#16242A; --ink-2:#233238; --paper:#F4F5F2; --panel:#ECEEE8; --line:#D8D9D0; --muted:#5C6968;
+    --vuln:#B5566A; --vuln-ink:#983B4F; --res:#2E7360; --res-ink:#215645; --cour:#BE842D; --cour-ink:#8F6017;
+    --cour-lite:#E7B65F;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --maxw:1120px; --prose:66ch; --nav-h:64px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.06;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:inherit}
+  ::selection{background:var(--cour);color:#fff}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 1rem;display:flex;align-items:center;gap:.7em}
+  .eyebrow::before{content:"";width:26px;height:1px;background:currentColor;opacity:.7}
+  .lead{font-size:clamp(1.12rem,1.7vw,1.32rem);line-height:1.6;color:var(--ink-2);max-width:var(--prose)}
+  .skip{position:absolute;left:1rem;top:-100px;z-index:100;background:var(--ink);color:#fff;padding:.6rem 1rem;border-radius:2px;font-weight:600;text-decoration:none}
+  .skip:focus{top:1rem}
+  :focus-visible{outline:2px solid var(--cour);outline-offset:3px;border-radius:2px}
+  section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
+
+  /* ============ NAV ============ */
+  .nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+  .nav.scrolled{border-bottom-color:var(--line)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:.85rem clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{font-family:var(--serif);font-weight:700;font-size:1.12rem;letter-spacing:-.01em;display:flex;align-items:center;gap:.6em;white-space:nowrap;text-decoration:none}
+  .brand .mk{width:16px;height:16px;flex:none}
+  .nav-links{display:flex;gap:1.6rem;align-items:center}
+  .nav-links a{font-size:.86rem;color:var(--muted);text-decoration:none;transition:color .2s;white-space:nowrap}
+  .nav-links a:hover,.nav-links a[aria-current]{color:var(--ink)}
+  .nav-links a.soon{color:var(--cour-ink);font-weight:600}
+  .nav-links a.soon::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cour);margin-right:.45em;vertical-align:middle}
+  .nav-cta{font-family:var(--sans);font-size:.82rem;font-weight:600;background:var(--ink);color:var(--paper);padding:.5rem .95rem;border-radius:2px;text-decoration:none;white-space:nowrap}
+  .nav-right{display:flex;align-items:center;gap:.7rem;flex:none}
+  .nav-toggle{display:none;appearance:none;background:transparent;border:1px solid var(--line);border-radius:2px;width:40px;height:36px;padding:0;cursor:pointer;color:var(--ink);align-items:center;justify-content:center;flex:none}
+  .nav-toggle:hover{border-color:var(--ink)}
+  .nav-toggle svg{width:20px;height:20px;display:block}
+  .nav-toggle .x{display:none}
+  .nav.open .nav-toggle .bars{display:none}
+  .nav.open .nav-toggle .x{display:block}
+  @media (max-width:1080px){.nav-links{gap:1.1rem}.nav-links a{font-size:.8rem}}
+  @media (max-width:1000px){
+    .nav-toggle{display:inline-flex}
+    .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(22,36,42,.35);padding:.3rem 0 .5rem}
+    .nav.open .nav-links{display:flex}
+    .nav-links a{font-size:1rem;padding:.8rem clamp(20px,5vw,48px);border-top:1px solid var(--line)}
+    .nav-links a:first-child{border-top:0}
+  }
+  .nav-cta .short{display:none}
+  @media (max-width:480px){.nav-cta{padding:.45rem .7rem;font-size:.76rem}.brand{font-size:1.02rem}.nav-in{gap:.6rem}.nav-cta .full{display:none}.nav-cta .short{display:inline}}
+  @media (max-width:380px){.nav-cta{padding:.4rem .55rem}.brand{font-size:.9rem;gap:.45em}.nav-toggle{width:34px;height:32px}.nav-right{gap:.5rem}}
+
+  /* ============ BUTTONS ============ */
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.9rem 1.5rem;border-radius:2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .15s,background .2s,color .2s,border-color .2s}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--cour);color:#1a1205;border-color:var(--cour)}
+  .btn-primary:hover{background:var(--cour-ink);border-color:var(--cour-ink);color:#fff}
+  .btn-ghost{background:transparent;color:inherit;border-color:currentColor}
+  .btn-ghost:hover{background:rgba(22,36,42,.06)}
+
+  /* ============ HERO ============ */
+  .hero{background:var(--ink);color:#EAEDE9;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 80% at 78% 12%,rgba(99,187,161,.14),transparent 55%),radial-gradient(90% 70% at 15% 95%,rgba(226,138,156,.10),transparent 55%)}
+  .hero-in{max-width:var(--maxw);margin:0 auto;padding:clamp(2.8rem,7vh,4.5rem) clamp(20px,5vw,48px);position:relative;z-index:1}
+  .hero .eyebrow{color:#9FB1AC}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);letter-spacing:-.02em;margin:0 0 1rem}
+  .hero h1 em{font-style:normal;color:var(--cour-lite)}
+  .hero .lead{color:#C4CFCA}
+
+  section.blk{padding:clamp(3rem,7vh,5rem) 0;border-bottom:1px solid var(--line)}
+  /* side notes */
+  .side{display:grid;gap:1rem}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:3px;padding:1.1rem 1.25rem}
+  .note .nh{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;display:block;margin-bottom:.45rem}
+  .note p{font-size:.92rem;color:var(--muted);line-height:1.6}
+  .note p+p{margin-top:.55rem}
+  .note a{color:var(--ink);text-underline-offset:3px}
+  .note.care{border-left-color:var(--vuln)}
+  .note.care b{color:var(--ink)}
+  .note ul{margin:.4rem 0 0;padding-left:1.1rem;font-size:.92rem;color:var(--muted)}
+  .note li+li{margin-top:.25rem}
+
+  /* privacy text */
+  .policy{max-width:var(--prose)}
+  .policy h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:2.4rem 0 .6rem}
+  .policy h2:first-child{margin-top:0}
+  .policy p+p{margin-top:.6rem}
+  .policy ul{margin:.6rem 0 0;padding-left:1.1rem}
+  .policy li+li{margin-top:.25rem}
+  .policy a{text-underline-offset:3px}
+  .policy .note{margin-top:2.4rem}
+  /* ============ FOOTER ============ */
+  footer{background:var(--ink);color:#AEBDB8;padding:clamp(2.5rem,6vh,4rem) 0 2.5rem}
+  footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:start}
+  @media (max-width:720px){footer .fgrid{grid-template-columns:1fr;gap:1.6rem}}
+  footer h4{font-family:var(--serif);color:#fff;font-size:1.35rem;font-weight:700;margin:0 0 .6rem}
+  footer p{font-size:.92rem;line-height:1.65}
+  footer .flinks{display:grid;gap:.5rem;font-size:.92rem;align-content:start}
+  footer .flinks a{text-decoration-color:rgba(255,255,255,.25);text-underline-offset:3px}
+  .disc{font-size:.82rem;color:#849791;background:rgba(255,255,255,.04);border-radius:3px;padding:1rem 1.2rem;margin-top:1rem}
+  .disc b{color:#C9D3CE}
+  footer .base{margin-top:2.2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:#7C8F89}
+  footer .base a{color:inherit;text-decoration-color:rgba(255,255,255,.25);text-underline-offset:3px}
+  @media print{.nav,.skip{display:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a class="brand" href="/">
+      <svg class="mk" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 22,21 2,21" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      The Grit Triangle
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="/#framework">The Framework</a>
+      <a href="/#book">The Grit to Heal</a>
+      <a href="/#about">About Beau</a>
+      <a href="/tolled.html" class="soon">Coming Soon</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a class="nav-cta" href="/#assessment"><span class="full">Take the assessment</span><span class="short">Assessment</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+        <svg class="bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-in">
+    <p class="eyebrow">Privacy</p>
+    <h1>Your <em>privacy</em>.</h1>
+    <p class="lead">The short version: your assessment answers never leave your device. Beau only receives what you choose to send him through a form, and he never sells or shares it.</p>
+  </div>
+</header>
+
+<main id="main">
+  <section class="blk">
+    <div class="wrap">
+      <div class="policy">
+        <h2>Your assessment answers</h2>
+        <p>When you take the Grit Triangle assessment, your answers and scores are calculated in your own browser. They are not sent to Beau or to anyone else.</p>
+        <p>So the site can show how your triangle changes over time, your scores for each stage (diagnosis, treatment, remission, and so on) are saved in your browser’s local storage, on your device only. To erase them, clear this site’s data in your browser settings. If you use a private or incognito window, nothing is kept after you close it.</p>
+
+        <h2>The book waitlist</h2>
+        <p>If you join the waitlist, the site collects your email address and nothing else. It is used for one thing: to tell you when <i>The Grit to Heal</i> comes out. Any email you get will include a way to unsubscribe.</p>
+
+        <h2>The contact form</h2>
+        <p>If you send a message, the site collects your first name, last name, email address, and message. They are used only to read and reply to you.</p>
+        <p>Please don’t send medical records or anything you wouldn’t want stored in an email inbox. This site is not a medical provider.</p>
+
+        <h2>Where form messages are stored</h2>
+        <p>Waitlist sign-ups and contact messages are received and stored by Netlify, the company that hosts this website, and forwarded to Beau’s email. Like most web hosts, Netlify also automatically records basic technical information, such as IP addresses and browser type, to keep the site running and secure.</p>
+
+        <h2>What this site doesn’t do</h2>
+        <ul>
+          <li>No ads.</li>
+          <li>No tracking scripts, analytics tools, or advertising cookies.</li>
+          <li>No selling, renting, or sharing your information with anyone.</li>
+        </ul>
+
+        <h2>Your choices</h2>
+        <p>You can ask to see, correct, or delete anything you have sent through a form, or ask to be taken off the waitlist, at any time. Just <a href="/contact.html">send a message</a>.</p>
+        <p>This site is not directed at children under 13, and it does not knowingly collect their information.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes, the new version will be posted on this page with a new date.</p>
+
+        <div class="note">
+          <span class="nh">Last updated</span>
+          <p>November 16, 2026. Questions about privacy? <a href="/contact.html">Contact Beau</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>The Grit Triangle</h4>
+        <p>Vulnerability, resilience, and courage. Three sides that have to hold at once. A framework from <i>The Grit to Heal</i>, built from a hospital bed by Beau Whitman.</p>
+        <div class="disc">
+          <b>This site is a self-reflection tool, not medical or psychological advice.</b> If you’re struggling, please reach out to someone you trust or a professional. In the U.S., you can call or text <b>988</b> (Suicide &amp; Crisis Lifeline) anytime.
+        </div>
+      </div>
+      <div class="flinks">
+        <a href="/">The Grit Triangle</a>
+        <a href="/#assessment">Take the assessment</a>
+        <a href="/#book">The Grit to Heal</a>
+        <a href="/tolled.html">Coming soon: The Tolled</a>
+        <a href="/#about">About Beau</a>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Beau Whitman · The Grit Triangle™ · <a href="/privacy.html">Privacy</a></span>
+      <span><a href="https://beauwhitman.org/">beauwhitman.org</a> · Vulnerability · Resilience · Courage</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var nav=document.getElementById("nav");
+  function setNavH(){ document.documentElement.style.setProperty("--nav-h", nav.offsetHeight+"px"); }
+  setNavH(); window.addEventListener("resize", setNavH, {passive:true});
+  var toggle=document.querySelector(".nav-toggle"), linksEl=document.getElementById("navLinks");
+  function setOpen(o){ nav.classList.toggle("open", o); toggle.setAttribute("aria-expanded", o ? "true" : "false"); }
+  toggle.addEventListener("click", function(){ setOpen(!nav.classList.contains("open")); });
+  linksEl.addEventListener("click", function(e){ if(e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && nav.classList.contains("open")){ setOpen(false); toggle.focus(); } });
+  document.addEventListener("click", function(e){ if(nav.classList.contains("open") && !nav.contains(e.target)) setOpen(false); });
+  window.addEventListener("resize", function(){ if(window.innerWidth>1000 && nav.classList.contains("open")) setOpen(false); }, {passive:true});
+  window.addEventListener("scroll", function(){ nav.classList.toggle("scrolled", window.scrollY>8); }, {passive:true});
+
+})();
+</script>
+</body>
+</html>

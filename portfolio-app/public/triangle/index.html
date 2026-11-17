@@ -680,7 +680,7 @@
               <input id="wlEmail" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="you@email.com" aria-label="Your email">
               <button type="submit" class="btn btn-primary">Join the waitlist &#8594;</button>
             </div>
-            <p class="wl-note">No newsletter, no spam. One email, the day <i>The Grit to Heal</i> launches.</p>
+            <p class="wl-note">No newsletter, no spam. One email, the day <i>The Grit to Heal</i> launches. <a href="/privacy.html">Privacy</a></p>
           </form>
           <p class="wl-success" id="wlSuccess" hidden>You are on the list. I will email you the moment <i>The Grit to Heal</i> is out. Thank you.</p>
           <style>
@@ -772,7 +772,7 @@
       </div>
     </div>
     <div class="base">
-      <span>© 2026 Beau Whitman · The Grit Triangle™</span>
+      <span>© 2026 Beau Whitman · The Grit Triangle™ · <a href="/privacy.html">Privacy</a></span>
       <span><a href="https://beauwhitman.org/">beauwhitman.org</a> · Vulnerability · Resilience · Courage</span>
     </div>
   </div>
@@ -1213,7 +1213,8 @@
       '<p>'+prof.desc+'</p>'+
       '<div class="think"><b>Sound familiar?</b>'+prof.thoughts+'</div>'+
       inviteHTML+
-      (prof.close ? '<div class="think"><b>In the book</b>Closest of the eight core shapes: '+prof.close+'. In <i>The Grit to Heal</i>, go back to '+prof.chapters+'.</div>' : '');
+      (prof.close ? '<div class="think"><b>In the book</b>Closest of the eight core shapes: '+prof.close+'. In <i>The Grit to Heal</i>, go back to '+prof.chapters+'.</div>' : '')+
+      '<div class="think"><b>If you’re struggling</b>This is a snapshot, not a diagnosis. Please talk to your care team or someone you trust. In the U.S., you can call or text 988, the Suicide &amp; Crisis Lifeline, any time.</div>';
 
     // bands + concrete next steps
     var bl=document.getElementById("bandList");
