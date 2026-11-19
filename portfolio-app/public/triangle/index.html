@@ -304,6 +304,19 @@
   .stage-req{display:none;font-size:.85rem;color:var(--vuln-ink);font-weight:600;margin-top:.6rem}
   .stage-select.needs .stage-req{display:block}
   .stage-select.needs .stage-opts{outline:2px solid var(--vuln);outline-offset:6px;border-radius:8px}
+  .path-opts{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1.1rem}
+  .path-opt{position:relative;display:block}
+  .path-opt input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+  .path-opt span{display:block;height:100%;padding:.9rem 1.1rem;border:1px solid var(--line);border-radius:12px;background:#fff;transition:all .15s}
+  .path-opt b{display:block;font-size:1rem;color:var(--ink)}
+  .path-opt small{display:block;font-size:.84rem;color:var(--muted);margin-top:.2rem;line-height:1.4}
+  .path-opt input:hover+span{border-color:var(--ink)}
+  .path-opt input:checked+span{background:var(--ink);border-color:var(--ink)}
+  .path-opt input:checked+span b,.path-opt input:checked+span small{color:#fff}
+  .path-opt input:focus-visible+span{outline:2px solid var(--cour);outline-offset:2px}
+  .stage-group[hidden]{display:none}
+  .stage-sub{font-weight:600;font-size:.95rem;color:var(--ink);display:block;margin:.2rem 0 .7rem}
+  @media (max-width:560px){.path-opts{grid-template-columns:1fr}}
   /* journey */
   .journey{margin-top:2rem}
   .journey h4{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:.25rem}
@@ -585,15 +598,32 @@
       </div>
 
       <div class="stage-select reveal" id="stageSelect">
-        <span class="stage-label">Where are you in your journey?</span>
-        <div class="stage-opts" role="radiogroup" aria-label="Stage of your journey">
-          <label class="stage-opt"><input type="radio" name="stage" value="diagnosed"><span>Newly diagnosed</span></label>
-          <label class="stage-opt"><input type="radio" name="stage" value="treatment"><span>In treatment</span></label>
-          <label class="stage-opt"><input type="radio" name="stage" value="remission"><span>In remission</span></label>
-          <label class="stage-opt"><input type="radio" name="stage" value="other"><span>Somewhere else</span></label>
+        <span class="stage-label">What are you working through?</span>
+        <div class="path-opts" role="radiogroup" aria-label="What you are working through">
+          <label class="path-opt"><input type="radio" name="path" value="cancer"><span><b>Cancer</b><small>Diagnosis, treatment, remission, or life after.</small></span></label>
+          <label class="path-opt"><input type="radio" name="path" value="life"><span><b>Another hard season</b><small>Injury, illness, loss, burnout, recovery, or any life-changing challenge.</small></span></label>
         </div>
-        <p class="stage-hint">Take this at diagnosis, during treatment, and in remission, and watch your triangle change over time.</p>
-        <span class="stage-req" id="stageReq" role="alert">Please choose where you are so we can track your journey.</span>
+        <div class="stage-group" id="stagesCancer" hidden>
+          <span class="stage-sub">Where are you right now?</span>
+          <div class="stage-opts" role="radiogroup" aria-label="Where you are with cancer">
+            <label class="stage-opt"><input type="radio" name="stage" value="diagnosed"><span>Newly diagnosed</span></label>
+            <label class="stage-opt"><input type="radio" name="stage" value="treatment"><span>In treatment</span></label>
+            <label class="stage-opt"><input type="radio" name="stage" value="remission"><span>In remission</span></label>
+            <label class="stage-opt"><input type="radio" name="stage" value="other"><span>Somewhere else</span></label>
+          </div>
+          <p class="stage-hint">Take this at diagnosis, during treatment, and in remission, and watch your triangle change over time.</p>
+        </div>
+        <div class="stage-group" id="stagesLife" hidden>
+          <span class="stage-sub">Where are you right now?</span>
+          <div class="stage-opts" role="radiogroup" aria-label="Where you are in your hard season">
+            <label class="stage-opt"><input type="radio" name="stage" value="life_now"><span>In the middle of it</span></label>
+            <label class="stage-opt"><input type="radio" name="stage" value="life_after"><span>Rebuilding after it</span></label>
+            <label class="stage-opt"><input type="radio" name="stage" value="life_support"><span>Supporting someone I love</span></label>
+            <label class="stage-opt"><input type="radio" name="stage" value="life_ok"><span>Doing okay, curious about my shape</span></label>
+          </div>
+          <p class="stage-hint">Take it now, and again in 90 days, and watch your triangle change over time.</p>
+        </div>
+        <span class="stage-req" id="stageReq" role="alert">Please choose what you’re working through and where you are, so we can track your triangle over time.</span>
       </div>
 
       <div class="progress-wrap reveal">
@@ -636,7 +666,7 @@
         <div class="result-actions">
           <button type="button" class="btn btn-ghost" id="copyBtn">Copy my result</button>
           <button type="button" class="btn btn-ghost" id="retakeBtn">↺ Retake the assessment</button>
-          <span class="submit-note">Come back at diagnosis, treatment, and remission to watch your triangle change.</span>
+          <span class="submit-note" id="comeBack">Come back in 90 days, or at your next turning point, to watch your triangle change.</span>
         </div>
       </div>
     </div>
@@ -1143,15 +1173,23 @@
   /* ---------- STAGE + JOURNEY ---------- */
   var JKEY="gritTriangleJourney";
   var journeyMem=[];
-  var STAGE_LABELS={diagnosed:"Newly diagnosed",treatment:"In treatment",remission:"In remission",other:"Somewhere else",unspecified:"This moment"};
-  var STAGE_ORDER={diagnosed:0,treatment:1,remission:2,other:3,unspecified:4};
+  var STAGE_LABELS={diagnosed:"Newly diagnosed",treatment:"In treatment",remission:"In remission",other:"Somewhere else",life_now:"In the middle of it",life_after:"Rebuilding",life_support:"Supporting someone",life_ok:"Doing okay",unspecified:"This moment"};
+  var STAGE_ORDER={diagnosed:0,treatment:1,remission:2,other:3,life_support:4,life_now:5,life_after:6,life_ok:7,unspecified:8};
   var STAGE_FIRST={
     diagnosed:"This is your triangle at <b>diagnosis</b>. Come back and take it again during treatment, then in remission, to watch your shape change across the journey.",
     treatment:"This is your triangle <b>in treatment</b>. Come back and take it again in remission to watch your shape change across the journey.",
     remission:"This is your triangle <b>in remission</b>. The shape will keep changing, so come back whenever you need a mirror.",
-    other:"This is your triangle for <b>today</b>. Take it again after the next hard chapter. The shape is meant to change."
+    other:"This is your triangle for <b>today</b>. Take it again after the next hard chapter. The shape is meant to change.",
+    life_now:"This is your triangle <b>in the middle of it</b>. Come back and take it again once you’re on the other side, and watch your shape change.",
+    life_after:"This is your triangle while you’re <b>rebuilding</b>. Take it again in 90 days and watch your shape move.",
+    life_support:"This is your triangle while you’re <b>supporting someone you love</b>. Carrying someone else is its own hard season. Come back in 90 days and see how you're holding up.",
+    life_ok:"This is your triangle for <b>today</b>. Knowing your shape before the next hard season is its own kind of strength. Come back in 90 days."
   };
-  var STAGE_SINCE={diagnosed:"Since you were <b>newly diagnosed</b>",treatment:"Since <b>treatment</b>",remission:"Since <b>remission</b>",other:"Since your <b>earlier triangle</b>"};
+  var STAGE_SINCE={diagnosed:"Since you were <b>newly diagnosed</b>",treatment:"Since <b>treatment</b>",remission:"Since <b>remission</b>",other:"Since your <b>earlier triangle</b>",life_now:"Since you were <b>in the middle of it</b>",life_after:"Since you started <b>rebuilding</b>",life_support:"Since you were <b>supporting someone</b>",life_ok:"Since your <b>earlier triangle</b>"};
+  function getPath(){ var r=document.querySelector('input[name="path"]:checked'); return r? r.value : null; }
+  // Swap the few cancer-specific phrases in results for people on the other path.
+  var LIFE_SWAPS=[["the life after treatment you haven’t stepped into yet","the life after the hard part you haven’t stepped into yet"],["a clear scan or a sign you’re safe","a clear sign you’re safe"],["Tell your care team how heavy it is","Tell a doctor, counselor, or someone you trust how heavy it is"],["Tell your care team and one person exactly where you are","Tell one person exactly where you are"],["You still get yourself to appointments and through the days","You still get yourself through the days"],["talk to your care team or someone you trust","talk to a doctor, counselor, or someone you trust"]];
+  function forPath(t){ if(!t || getPath()!=="life") return t; LIFE_SWAPS.forEach(function(w){ t=t.split(w[0]).join(w[1]); }); return t; }
   function getStage(){ var r=document.querySelector('input[name="stage"]:checked'); return r? r.value : null; }
   function loadJourney(){ try{ var s=localStorage.getItem(JKEY); if(s){ journeyMem=JSON.parse(s)||[]; } }catch(e){} return journeyMem.slice(); }
   function saveJourney(a){ journeyMem=a; try{ localStorage.setItem(JKEY, JSON.stringify(a)); }catch(e){} }
@@ -1205,16 +1243,16 @@
 
     // profile
     var p=document.getElementById("profile");
-    var inviteHTML = prof.invite ? '<div class="invite"><b>An invitation.</b> '+prof.invite+'</div>' : '';
+    var inviteHTML = prof.invite ? '<div class="invite"><b>An invitation.</b> '+forPath(prof.invite)+'</div>' : '';
     p.innerHTML='<div class="pl">Your healing profile</div>'+
       '<h3>'+prof.name+'</h3>'+
       '<div class="sig">'+prof.label+'</div>'+
       '<div class="tag">'+prof.tag+'</div>'+
-      '<p>'+prof.desc+'</p>'+
+      '<p>'+forPath(prof.desc)+'</p>'+
       '<div class="think"><b>Sound familiar?</b>'+prof.thoughts+'</div>'+
       inviteHTML+
       (prof.close ? '<div class="think"><b>In the book</b>Closest of the eight core shapes: '+prof.close+'. In <i>The Grit to Heal</i>, go back to '+prof.chapters+'.</div>' : '')+
-      '<div class="think"><b>If you’re struggling</b>This is a snapshot, not a diagnosis. Please talk to your care team or someone you trust. In the U.S., you can call or text 988, the Suicide &amp; Crisis Lifeline, any time.</div>';
+      '<div class="think"><b>If you’re struggling</b>This is a snapshot, not a diagnosis. Please '+forPath('talk to your care team or someone you trust')+'. In the U.S., you can call or text 988, the Suicide &amp; Crisis Lifeline, any time.</div>';
 
     // bands + concrete next steps
     var bl=document.getElementById("bandList");
@@ -1259,6 +1297,12 @@
     render();
   });
   document.addEventListener("change", function(e){
+    if(e.target && e.target.name==="path"){
+      var isC=(e.target.value==="cancer");
+      document.getElementById("stagesCancer").hidden=!isC;
+      document.getElementById("stagesLife").hidden=isC;
+      document.querySelectorAll('input[name="stage"]').forEach(function(r){ r.checked=false; });
+    }
     if(e.target && e.target.name==="stage"){
       var ss=document.getElementById("stageSelect"); if(ss) ss.classList.remove("needs");
     }
@@ -1267,7 +1311,9 @@
   document.getElementById("retakeBtn").addEventListener("click", function(){
     answers={};
     form.querySelectorAll("input[type=radio]").forEach(function(r){ r.checked=false; });
-    document.querySelectorAll('input[name="stage"]').forEach(function(r){ r.checked=false; });
+    document.querySelectorAll('input[name="stage"],input[name="path"]').forEach(function(r){ r.checked=false; });
+    document.getElementById("stagesCancer").hidden=true;
+    document.getElementById("stagesLife").hidden=true;
     document.getElementById("result").classList.remove("show");
     document.getElementById("assessment").classList.remove("done");
     lastSummary = "";
