@@ -8,3 +8,5 @@
 # Exclude public folder from LFS - these need to deploy directly as regular binary files
 portfolio-app/public/assets/about/*.jpg -filter -diff -merge binary
 portfolio-app/public/assets/about/*.JPG -filter -diff -merge binary
+portfolio-app/public/triangle/media/*.jpg -filter -diff -merge binary
+portfolio-app/public/triangle/media/*.pdf -filter -diff -merge binary
